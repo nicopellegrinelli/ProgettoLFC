@@ -1,10 +1,10 @@
 // $ANTLR 3.5.1 C:\\Users\\lenovo\\Desktop\\UniBG\\Linguaggi Formali e Compilatori\\NotazionePolacca\\src\\myCompilerPackage\\Espressioni.g 2023-12-18 17:53:47
 
-package myCompilerPackage; 		
-import util.Variable;
-
-
+package compiler; 		
 import org.antlr.runtime.*;
+
+import utils.Variable;
+
 import java.util.Stack;
 import java.util.List;
 import java.util.ArrayList;
@@ -59,7 +59,7 @@ public class EspressioniParser extends Parser {
 		}
 		
 		public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
-			// in tokenNames c'è la lista dei token che si sarebbe voluto trovare
+			// in tokenNames c'ï¿½ la lista dei token che si sarebbe voluto trovare
 			// token che genera l'errore
 			Token tk = input.LT(1);
 			// header e corpo dell'errore gestito automaticamente da ANTLR

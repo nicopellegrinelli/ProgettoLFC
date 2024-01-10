@@ -1,20 +1,20 @@
-package myPackage;
+package launcher;
 
 import java.io.FileReader;
 
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
 
-import myCompilerPackage.EspressioniLexer;
-import myCompilerPackage.EspressioniParser;
-import myCompilerPackage.SemanticHandler;
+import compiler.EspressioniLexer;
+import compiler.EspressioniParser;
+import compiler.SemanticHandler;
 
 /* 
  * Questa � una classe di esempio
  * che simula un'applicazione 
  * che vuole usare un parser
  */
-public class ParserLauncher {
+public class CompilerLauncher {
 	public static void main(String[] args) {
 		EspressioniParser parser;
 		String fileIn = ".\\resources\\input.file";

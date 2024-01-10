@@ -1,4 +1,4 @@
-package myCompilerPackage;
+package compiler;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -6,7 +6,7 @@ import java.util.Hashtable;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.Token;
 
-import util.Variable;
+import utils.Variable;
 
 public class SemanticHandler {
 	public static int DIVSION_BY_ZERO_ERROR = 0;

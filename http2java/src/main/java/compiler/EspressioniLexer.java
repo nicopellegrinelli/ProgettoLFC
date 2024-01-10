@@ -1,6 +1,6 @@
 // $ANTLR 3.5.1 C:\\Users\\lenovo\\Desktop\\UniBG\\Linguaggi Formali e Compilatori\\NotazionePolacca\\src\\myCompilerPackage\\Espressioni.g 2023-12-18 17:53:47
 
-package myCompilerPackage; 	
+package compiler; 	
 
 
 import org.antlr.runtime.*;
