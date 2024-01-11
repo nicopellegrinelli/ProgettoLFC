@@ -5,18 +5,18 @@ import java.io.FileReader;
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
 
-import compiler.EspressioniLexer;
-import compiler.EspressioniParser;
+import compiler.HttpLexer;
+import compiler.HttpParser;
 import compiler.SemanticHandler;
 
 /* 
- * Questa � una classe di esempio
+ * Questa è una classe di esempio
  * che simula un'applicazione 
  * che vuole usare un parser
  */
 public class CompilerLauncher {
 	public static void main(String[] args) {
-		EspressioniParser parser;
+		HttpParser parser;
 		String fileIn = ".\\resources\\input.file";
   	
   	try {
@@ -26,7 +26,7 @@ public class CompilerLauncher {
   		//		3. si istanzia il parser passandogli lo stream di token
 
   		// 1. 
-  		EspressioniLexer lexer = new EspressioniLexer (
+  		HttpLexer lexer = new HttpLexer (
   										new ANTLRReaderStream(
   											new FileReader(fileIn))); 
 
@@ -34,15 +34,16 @@ public class CompilerLauncher {
   		CommonTokenStream tokens = new CommonTokenStream(lexer);	
 
   		// 3. 
-		parser = new EspressioniParser(tokens);
+		parser = new HttpParser(tokens);
 
 			
 	    // 4. si lancia il parser dallo start simbol (prima produzione specificata)
-	    parser.axiom();
+	    parser.request();
 	    
 	    // 5. mi faccio restituire l'handler semantico per analizzare i risultati
 	    SemanticHandler h = parser.getHandler();
-	    h.printResult();
+	    
+	    System.out.println ("\n\nParsing con ANTLR terminato con successo\n\n");
 	    
   	
   	} catch (Exception e) {
