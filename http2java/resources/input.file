@@ -1,3 +1,8 @@
-GET /da-54/3%20s/?prova=3&ciao=e-s_-a HTTP/1.1
-header
+GET /prova1/?val1=3&val2=test HTTP/1.1 |
+
+Host: www.esempio.com |
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) chrome/2.0 (due) chrome/2.0 |
+Accept: application/json, model/vnd1+xml;q=0.753 |
+Cookie:	"time" = "17"; "user" = "pino" |
+
 "body"

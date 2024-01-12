@@ -21,67 +21,174 @@ package compiler;
 		return h;
 	}
 	
+	public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
+		String hdr = getErrorHeader(e);
+		String msg = getErrorMessage(e, tokenNames);
+		System.err.println(hdr + " -- " + msg);
+	}
+	
 }
 
 /* ***********************************************
-			Syntactic Rule definition starts here
+			Syntactic Rules
 ************************************************** */ 
 
 // The 1st rule is the axiom
 request
-	:
-		requestLine
-		header*
-		body?
+	:	requestLine
+		(header)*
+		(body)?
 	;
 	
 requestLine
-	:
-		method
+	:	method
 		PATH
 		VERSION
+		TERMINAL
 	;
 
 method
-	:
-		  GET
-		| POST
+	:	GET
+	|	POST
 	;
 	
 header
-	:
-		'header'
+	:	hostRule
+	|	userAgentRule
+	|	contentTypeRule
+	|	acceptRule
+	|	cookieRule
+	;
+	
+	
+hostRule
+	:	HOST COLUMN 
+		(DNS | IPV4)
+		(COLUMN INT_NUM)?
+		TERMINAL
+	;
+	
+userAgentRule
+	:	USER_AGENT COLUMN
+		productOrPlatformRule
+		productOrPlatformRule?
+		extensionRule*
+		TERMINAL
+	;
+	
+productOrPlatformRule
+	:	UA_ELEMENT UA_INFO?
+	;
+	
+extensionRule
+	:	UA_EXTENSION
+	;
+	
+acceptRule
+	:	ACCEPT COLUMN
+		mimeList
+		TERMINAL
+	;
+	
+mimeList
+	:	mimeElement
+		(COMMA mimeElement)*
+	;
+	
+mimeElement
+	:	MIME (qValueRule)?
+	;
+	
+contentTypeRule
+	:	CONTENT_TYPE COLUMN
+		TERMINAL
+	;
+		
+cookieRule
+	:	COOKIE COLUMN
+		cookieList
+		TERMINAL
+	;
+	
+cookieList
+	:	cookieElement
+		(SEMI_COLUMN cookieElement)* 
+	;
+	
+cookieElement
+	:	STRING EQUALS STRING
+	;
+	
+qValueRule
+	:	SEMI_COLUMN Q EQUALS Q_VAL
 	;
 
 body
-	:
-		STRING
+	:	STRING
 	;
 
 /* ***********************************************
-			Tokens defintion part starts here
+			Tokens defintion
 ************************************************** */ 
-GET		: 'GET' ;
-POST		: 'POST' ;
-		
-INTNUM	
+GET			: 'GET' ;
+POST			: 'POST' ;
+HOST			: 'Host' ;
+USER_AGENT	: 'User-Agent' ;
+CONTENT_TYPE	: 'Content-Type' ;
+ACCEPT		: 'Accept' ;
+COOKIE		: 'Cookie' ;
+Q			: 'q';
+EQUALS		: '=' ;
+COMMA		: ',' ;
+COLUMN		: ':' ;
+SEMI_COLUMN	: ';' ;
+TERMINAL		: '|' ;
+
+INT_NUM	
 	:	NUM
 	;
-
-DOTNUM	
-	:	NUM ('.' NUM)+
-	;
-		
-COMMANUM	
-	:	NUM ',' ('0'..'9')+
-	;
-
+	
 VERSION
-	: 'HTTP/' DOTNUM
+	:	'HTTP/' ('1.0'
+				|'1.1'
+				|'2'
+				|'3')
 	;
 
 PATH
 	:	('/' | ('/' PATH_ELEMENT)+ '/'?) ('?' QUERY_ELEMENT ('&' QUERY_ELEMENT)*)?
+	;
+	
+DNS
+	:	DNS_ELEMENT ('.' DNS_ELEMENT)* ('.' ALPHA_CHAR ALPHA_CHAR+)
+	;
+	
+IPV4
+	:	NUM '.' NUM '.' NUM '.' NUM
+	;
+	
+MIME
+	:	MIME_TYPE '/' MIME_SUBTYPE
+	|	'*/*'
+	;
+	
+Q_VAL
+	:	'0' '.' (('0'..'9') 
+				|('0'..'9') ('0'..'9')
+				|('0'..'9') ('0'..'9') ('0'..'9'))
+	|	'1.0'
+	;
+	
+UA_ELEMENT
+	:	(ALPHA_NUM_CHAR | ',')+ '/' VERS_NUM
+	;
+	
+UA_EXTENSION
+	:	(ALPHA_NUM_CHAR | ',')+ ('/' VERS_NUM)?
+	;
+	
+UA_INFO
+	:	'(' (~('('|')'))* ')'
 	;
 
 STRING
@@ -101,17 +208,19 @@ WS
 	)	{$channel=HIDDEN;}
 	;
 
-fragment 
-NUM	
-	:	'0'
-	|	('1'..'9')('0'..'9')*
+fragment
+VERS_NUM	
+	:	ALPHA_NUM_CHAR+ ('.' ALPHA_NUM_CHAR+)*
 	;
 	
 fragment
+DNS_ELEMENT
+	:	(ALPHA_NUM_CHAR | '-') (ALPHA_NUM_CHAR | '-')+
+	;
+
+fragment
 PATH_ELEMENT
-	:	(('0'..'9')
-	|	('a'..'z')
-	|	('A'..'Z')
+	:	(ALPHA_NUM_CHAR
 	|	'.' | '~' | '-' | '_'
 	|	'%' HEX_DIGIT HEX_DIGIT)+
 	;
@@ -119,6 +228,43 @@ PATH_ELEMENT
 fragment
 QUERY_ELEMENT
 	:	PATH_ELEMENT '=' PATH_ELEMENT
+	;
+
+fragment
+MIME_TYPE
+	:	'application'
+	|	'audio'
+	|	'chemical'
+	|	'font'
+	|	'image'
+	|	'message'
+	|	'model'
+	|	'text'
+	|	'video'
+	;	
+
+fragment
+MIME_SUBTYPE
+	:	(ALPHA_NUM_CHAR | '-')+ ('.' (ALPHA_NUM_CHAR | '-')+)* ('+' ALPHA_CHAR+)?
+	|	'*'
+	;
+	
+fragment 
+NUM	
+	:	'0'
+	|	('1'..'9')('0'..'9')*
+	;
+
+fragment
+ALPHA_CHAR
+	:	('a'..'z')
+	|	('A'..'Z')
+	;
+	
+fragment
+ALPHA_NUM_CHAR
+	:	('0'..'9')
+	|	ALPHA_CHAR
 	;
 
 fragment
