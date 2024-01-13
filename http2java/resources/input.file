@@ -1,8 +1,19 @@
-GET /prova1/?val1=3&val2=test HTTP/1.1 |
+GET /prova1/?val1=3&val2=test HTTP/1.1	|
 
-Host: www.esempio.com |
-User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) chrome/2.0 (due) chrome/2.0 |
-Accept: application/json, model/vnd1+xml;q=0.753 |
-Cookie:	"time" = "17"; "user" = "pino" |
+Host: www.esempio.com	|
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) 
+			chrome/2.0 (Linux 3.1; x32) firefox/2.0
+			|
+Accept: application/json, model/vnd1+xml;q=0.753	|
+Cookie:	'time' = '17'; 'user' = 'pino'	|
+Authorization: 	Digest
+				username = 'sdasdicaskadc',
+				uri = 'www.esempio2.it',
+				algorithm = 'MD5',
+				response='7cffhfr54685gnnfgerg8'
+				|
+Authorization: Basic 'sL7kladnfa'	|
+Content-Type: application/json;charset= 'utf-8'	|
+Content-Type: multipart/from-data; boundary = '_edadaxasx_'	| 
 
-"body"
+'body'	|

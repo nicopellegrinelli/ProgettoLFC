@@ -58,6 +58,7 @@ header
 	|	contentTypeRule
 	|	acceptRule
 	|	cookieRule
+	|	authorizationRule
 	;
 	
 	
@@ -71,8 +72,8 @@ hostRule
 userAgentRule
 	:	USER_AGENT COLUMN
 		productOrPlatformRule
-		productOrPlatformRule?
-		extensionRule*
+		(productOrPlatformRule
+		extensionRule*)?
 		TERMINAL
 	;
 	
@@ -81,7 +82,7 @@ productOrPlatformRule
 	;
 	
 extensionRule
-	:	UA_EXTENSION
+	:	UA_ELEMENT
 	;
 	
 acceptRule
@@ -101,6 +102,8 @@ mimeElement
 	
 contentTypeRule
 	:	CONTENT_TYPE COLUMN
+		(MIME charsetRule?
+		|MULTIPART_MIME boundaryRule)
 		TERMINAL
 	;
 		
@@ -122,27 +125,82 @@ cookieElement
 qValueRule
 	:	SEMI_COLUMN Q EQUALS Q_VAL
 	;
+	
+charsetRule
+	:	SEMI_COLUMN CHARSET EQUALS STRING
+	;
+	
+boundaryRule
+	:	SEMI_COLUMN BOUNDARY EQUALS STRING
+	;
+	
+authorizationRule
+	:	AUTHORIZATION COLUMN
+		(basicAuthRule
+		|digestAuthRule)
+		TERMINAL
+	;
+	
+basicAuthRule
+	:	BASIC STRING
+	;
+	
+digestAuthRule
+	:	DIGEST
+		authRule
+		(COMMA	authRule)*
+	;
+	
+authRule
+	:	(USERNAME	
+	|	REALM
+	|	URI	
+	|	ALGORITHM
+	|	NONCE
+	|	NC
+	|	CNONCE
+	|	QOP
+	|	RESPONSE
+	|	OPAQUE
+	)	EQUALS STRING
+	;
 
 body
 	:	STRING
+		TERMINAL
 	;
 
 /* ***********************************************
 			Tokens defintion
 ************************************************** */ 
-GET			: 'GET' ;
-POST			: 'POST' ;
-HOST			: 'Host' ;
-USER_AGENT	: 'User-Agent' ;
-CONTENT_TYPE	: 'Content-Type' ;
-ACCEPT		: 'Accept' ;
-COOKIE		: 'Cookie' ;
-Q			: 'q';
-EQUALS		: '=' ;
-COMMA		: ',' ;
-COLUMN		: ':' ;
-SEMI_COLUMN	: ';' ;
-TERMINAL		: '|' ;
+GET				: 'GET'				;
+POST				: 'POST'				;
+HOST				: 'Host'				;
+USER_AGENT		: 'User-Agent'		;
+CONTENT_TYPE		: 'Content-Type'		;
+ACCEPT			: 'Accept'			;
+COOKIE			: 'Cookie'			;
+AUTHORIZATION	: 'Authorization'	;
+Q				: 'q'				;
+CHARSET			: 'charset'			;
+BOUNDARY			: 'boundary'			;
+BASIC			: 'Basic'			;
+DIGEST			: 'Digest'			;
+USERNAME			: 'username'			;
+REALM			: 'realm'			;
+URI				: 'uri'				;
+ALGORITHM		: 'algorithm'		;
+NONCE			: 'nonce'			;
+NC				: 'nc'				;
+CNONCE			: 'cnonce'			;
+QOP				: 'qop'				;
+RESPONSE			: 'response'			;
+OPAQUE			: 'opaque'			;
+EQUALS			: '='				;
+COMMA			: ',' 				;
+COLUMN			: ':'				;
+SEMI_COLUMN		: ';'				;
+TERMINAL			: '|'				;
 
 INT_NUM	
 	:	NUM
@@ -172,6 +230,10 @@ MIME
 	|	'*/*'
 	;
 	
+MULTIPART_MIME
+	:	'multipart/' MIME_SUBTYPE
+	;
+	
 Q_VAL
 	:	'0' '.' (('0'..'9') 
 				|('0'..'9') ('0'..'9')
@@ -183,16 +245,12 @@ UA_ELEMENT
 	:	(ALPHA_NUM_CHAR | ',')+ '/' VERS_NUM
 	;
 	
-UA_EXTENSION
-	:	(ALPHA_NUM_CHAR | ',')+ ('/' VERS_NUM)?
-	;
-	
 UA_INFO
 	:	'(' (~('('|')'))* ')'
 	;
 
 STRING
-    :	'"' (ESC_SEQ | ~('\\'|'"'))* '"'
+    :	'\'' (ESC_SEQ | ~('\\'|'\''))* '\''
     ;
 
 COMMENT
