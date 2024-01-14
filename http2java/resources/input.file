@@ -12,8 +12,11 @@ Authorization: 	Digest
 				algorithm = 'MD5',
 				response='7cffhfr54685gnnfgerg8'
 				|
-Authorization: Basic 'sL7kladnfa'	|
 Content-Type: application/json;charset= 'utf-8'	|
-Content-Type: multipart/from-data; boundary = '_edadaxasx_'	| 
+Content-Length: 475	|
+Connection: keep-alive	|
+Accept-Language: it,en-US,en;q=0.5, *; q=1.0	|
+Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5,br	|
+Cache-Control: 'public', 'max-age=604800', 'immutable'	|
 
 'body'	|

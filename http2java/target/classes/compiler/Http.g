@@ -2,7 +2,7 @@ grammar Http;
 
 options {
   language = Java;
-  k = 1;		
+  k = 2;		
 }
 
 @header{
@@ -42,9 +42,14 @@ request
 	
 requestLine
 	:	method
-		PATH
-		VERSION
+		pathRule
+		HTTP_VERSION
 		TERMINAL
+	;
+
+pathRule
+	:	PATH
+	|	STRING
 	;
 
 method
@@ -59,6 +64,12 @@ header
 	|	acceptRule
 	|	cookieRule
 	|	authorizationRule
+	|	contentLengthRule
+	|	connectionRule
+	|	acceptLanguageRule
+	|	acceptEncodingRule
+	|	chacheControlRule
+	|	genericHeaderRule
 	;
 	
 	
@@ -71,18 +82,18 @@ hostRule
 	
 userAgentRule
 	:	USER_AGENT COLUMN
-		productOrPlatformRule
-		(productOrPlatformRule
+		productRule
+		(productRule
 		extensionRule*)?
 		TERMINAL
 	;
 	
-productOrPlatformRule
-	:	UA_ELEMENT UA_INFO?
+productRule
+	:	PRODUCT PRODUCT_INFO?
 	;
 	
 extensionRule
-	:	UA_ELEMENT
+	:	PRODUCT
 	;
 	
 acceptRule
@@ -97,7 +108,7 @@ mimeList
 	;
 	
 mimeElement
-	:	MIME (qValueRule)?
+	:	MIME qValueRule?
 	;
 	
 contentTypeRule
@@ -165,6 +176,61 @@ authRule
 	)	EQUALS STRING
 	;
 
+contentLengthRule
+	:	CONTENT_LENGTH COLUMN
+		INT_NUM
+		TERMINAL
+	;
+	
+connectionRule
+	:	CONNECTION COLUMN
+		(KEEP_ALIVE | CLOSE)
+		TERMINAL
+	;
+	
+acceptLanguageRule
+	:	ACCEPT_LANGUAGE COLUMN
+		languageList
+		TERMINAL
+	;
+	
+languageList
+	:	languageElement
+		(COMMA languageElement)* 
+	;
+	
+languageElement
+	:	(LANGUAGE_ELEMENT|STAR)
+		qValueRule?
+	;
+	
+acceptEncodingRule
+	:	ACCEPT_ENCODING COLUMN
+		encodingList
+		TERMINAL
+	;
+	
+encodingList
+	:	encodingElement
+		(COMMA encodingElement)* 
+	;
+	
+encodingElement
+	:	(ENCODING_ELEMENT|STAR)
+		qValueRule?
+	;
+	
+chacheControlRule
+	:	CACHE_CONTROL COLUMN
+		STRING (COMMA STRING)*
+		TERMINAL
+	;
+	
+genericHeaderRule
+	:	STRING COLUMN STRING
+		TERMINAL
+	;
+
 body
 	:	STRING
 		TERMINAL
@@ -181,6 +247,11 @@ CONTENT_TYPE		: 'Content-Type'		;
 ACCEPT			: 'Accept'			;
 COOKIE			: 'Cookie'			;
 AUTHORIZATION	: 'Authorization'	;
+CONTENT_LENGTH	: 'Content-Length'	;
+CONNECTION		: 'Connection'		;
+ACCEPT_LANGUAGE	: 'Accept-Language'	;
+ACCEPT_ENCODING	: 'Accept-Encoding'	;
+CACHE_CONTROL	: 'Cache-Control'	;
 Q				: 'q'				;
 CHARSET			: 'charset'			;
 BOUNDARY			: 'boundary'			;
@@ -196,21 +267,22 @@ CNONCE			: 'cnonce'			;
 QOP				: 'qop'				;
 RESPONSE			: 'response'			;
 OPAQUE			: 'opaque'			;
+KEEP_ALIVE		: 'keep-alive'		;
+CLOSE			: 'close'			;
 EQUALS			: '='				;
 COMMA			: ',' 				;
 COLUMN			: ':'				;
 SEMI_COLUMN		: ';'				;
 TERMINAL			: '|'				;
+STAR				: '*'				;
 
 INT_NUM	
 	:	NUM
 	;
 	
-VERSION
-	:	'HTTP/' ('1.0'
-				|'1.1'
-				|'2'
-				|'3')
+HTTP_VERSION
+	:	'HTTP/' ('1.1'
+				|'2')
 	;
 
 PATH
@@ -241,12 +313,24 @@ Q_VAL
 	|	'1.0'
 	;
 	
-UA_ELEMENT
-	:	(ALPHA_NUM_CHAR | ',')+ '/' VERS_NUM
+PRODUCT
+	:	ALPHA_NUM_CHAR+ '/' VERS_NUM
 	;
 	
-UA_INFO
+PRODUCT_INFO
 	:	'(' (~('('|')'))* ')'
+	;
+	
+ENCODING_ELEMENT
+	:	'gzip'
+	|	'compress'
+	|	'deflate'
+	|	'br'
+	|	'identity'
+	;
+
+LANGUAGE_ELEMENT
+	:	('a'..'z')('a'..'z')('a'..'z')? ('-' ALPHA_CHAR+)?
 	;
 
 STRING
@@ -280,7 +364,8 @@ fragment
 PATH_ELEMENT
 	:	(ALPHA_NUM_CHAR
 	|	'.' | '~' | '-' | '_'
-	|	'%' HEX_DIGIT HEX_DIGIT)+
+	|	'%' HEX_DIGIT HEX_DIGIT
+	)+
 	;
 	
 fragment
