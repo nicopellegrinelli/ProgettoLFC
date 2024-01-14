@@ -29,32 +29,32 @@ public class CompilerLauncher {
 			// 1.
 			HttpLexer lexer = new HttpLexer(new ANTLRReaderStream(new FileReader(fileIn)));
 
-			Token tk;
-			int i;
-
-			System.out.println("Test ANTLR lexer");
-
-			i = 1;
-			// attivo un ciclo che scandisce lo stream dall'inizio alla fine
-			// richiedendo ogni volta allo scanner di fornire il token successivo (metodo
-			// nextToken)
-			// fino ad incontrare l' End Of File EOF
-			while ((tk = lexer.nextToken()).getType() != HttpLexer.EOF) {
-				// recuper le informazioni relative ai token rilevati
-				int line = tk.getLine();
-				int col = tk.getCharPositionInLine() + 1;
-				int type = tk.getType();
-				String text = tk.getText();
-
-				// attivo questo controllo se voglio scartare i token nascosti
-				if (tk.getChannel() != HttpLexer.HIDDEN)
-					// stampo le informazioni del token corrente
-					System.out.println("Token " + i++ + ": " + "(" + line + "," + col + ")\t\t" + "TokenType: " + type
-							+ "\t" + text);
-			}
-
-			// 3.
-			lexer = new HttpLexer(new ANTLRReaderStream(new FileReader(fileIn)));
+//			Token tk;
+//			int i;
+//
+//			System.out.println("Test ANTLR lexer");
+//
+//			i = 1;
+//			// attivo un ciclo che scandisce lo stream dall'inizio alla fine
+//			// richiedendo ogni volta allo scanner di fornire il token successivo (metodo
+//			// nextToken)
+//			// fino ad incontrare l' End Of File EOF
+//			while ((tk = lexer.nextToken()).getType() != HttpLexer.EOF) {
+//				// recuper le informazioni relative ai token rilevati
+//				int line = tk.getLine();
+//				int col = tk.getCharPositionInLine() + 1;
+//				int type = tk.getType();
+//				String text = tk.getText();
+//
+//				// attivo questo controllo se voglio scartare i token nascosti
+//				if (tk.getChannel() != HttpLexer.HIDDEN)
+//					// stampo le informazioni del token corrente
+//					System.out.println("Token " + i++ + ": " + "(" + line + "," + col + ")\t\t" + "TokenType: " + type
+//							+ "\t" + text);
+//			}
+//
+//			// 3.
+//			lexer = new HttpLexer(new ANTLRReaderStream(new FileReader(fileIn)));
 			CommonTokenStream tokens = new CommonTokenStream(lexer);
 			parser = new HttpParser(tokens);
 
@@ -63,6 +63,7 @@ public class CompilerLauncher {
 
 			// 5. mi faccio restituire l'handler semantico per analizzare i risultati
 			SemanticHandler h = parser.getHandler();
+			h.printJavaCode();
 
 			System.out.println("\n\nParsing con ANTLR terminato con successo\n\n");
 

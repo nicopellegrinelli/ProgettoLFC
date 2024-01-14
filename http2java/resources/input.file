@@ -1,11 +1,11 @@
-GET /prova1/?val1=3&val2=test HTTP/1.1	|
+POST /prova1/?val1=3&val2=test HTTP/1.1	|
 
 Host: www.esempio.com	|
 User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) 
 			chrome/2.0 (Linux 3.1; x32) firefox/2.0
 			|
 Accept: application/json, model/vnd1+xml;q=0.753	|
-Cookie:	'time' = '17'; 'user' = 'pino'	|
+Cookie:	'time' = '17'; 'user'='pino'	|
 Authorization: 	Digest
 				username = 'sdasdicaskadc',
 				uri = 'www.esempio2.it',
@@ -18,5 +18,6 @@ Connection: keep-alive	|
 Accept-Language: it,en-US,en;q=0.5, *; q=1.0	|
 Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5,br	|
 Cache-Control: 'public', 'max-age=604800', 'immutable'	|
+'a': 'b'|
 
-'body'	|
+'bo"dy'	|

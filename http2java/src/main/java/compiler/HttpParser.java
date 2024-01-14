@@ -1,7 +1,7 @@
-// $ANTLR 3.5.1 C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g 2024-01-13 15:42:19
+// $ANTLR 3.5.1 C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g 2024-01-14 17:08:23
 
-package compiler; 		
-import utils.Variable;
+	package compiler; 		
+	import utils.*;
 
 
 import org.antlr.runtime.*;
@@ -107,7 +107,7 @@ public class HttpParser extends Parser {
 	}
 
 	@Override public String[] getTokenNames() { return HttpParser.tokenNames; }
-	@Override public String getGrammarFileName() { return "C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g"; }
+	@Override public String getGrammarFileName() { return "C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g"; }
 
 
 		SemanticHandler h = new SemanticHandler();
@@ -126,17 +126,22 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "request"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:37:1: request : requestLine ( header )* ( body )? ;
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:37:1: request : rl= requestLine (hdr= header )* (b= body )? ;
 	public final void request() throws RecognitionException {
+		RequestLine rl =null;
+		Header hdr =null;
+		String b =null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:38:2: ( requestLine ( header )* ( body )? )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:38:4: requestLine ( header )* ( body )?
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:38:2: (rl= requestLine (hdr= header )* (b= body )? )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:38:4: rl= requestLine (hdr= header )* (b= body )?
 			{
-			pushFollow(FOLLOW_requestLine_in_request59);
-			requestLine();
+			pushFollow(FOLLOW_requestLine_in_request61);
+			rl=requestLine();
 			state._fsp--;
 
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:39:3: ( header )*
+			 h.addRequestLine(rl); 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:39:3: (hdr= header )*
 			loop1:
 			while (true) {
 				int alt1=2;
@@ -154,12 +159,13 @@ public class HttpParser extends Parser {
 
 				switch (alt1) {
 				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:39:4: header
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:39:4: hdr= header
 					{
-					pushFollow(FOLLOW_header_in_request64);
-					header();
+					pushFollow(FOLLOW_header_in_request70);
+					hdr=header();
 					state._fsp--;
 
+					 h.addHeader(hdr); 
 					}
 					break;
 
@@ -168,7 +174,7 @@ public class HttpParser extends Parser {
 				}
 			}
 
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:40:3: ( body )?
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:40:3: (b= body )?
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0==STRING) ) {
@@ -176,17 +182,19 @@ public class HttpParser extends Parser {
 			}
 			switch (alt2) {
 				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:40:4: body
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:40:4: b= body
 					{
-					pushFollow(FOLLOW_body_in_request71);
-					body();
+					pushFollow(FOLLOW_body_in_request81);
+					b=body();
 					state._fsp--;
 
+					 h.addBody(b); 
 					}
 					break;
 
 			}
 
+			 h.generateJavaCode(); 
 			}
 
 		}
@@ -203,22 +211,30 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "requestLine"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:43:1: requestLine : method pathRule HTTP_VERSION TERMINAL ;
-	public final void requestLine() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:44:1: requestLine returns [RequestLine rl] : m= method p= pathRule v= HTTP_VERSION TERMINAL ;
+	public final RequestLine requestLine() throws RecognitionException {
+		RequestLine rl = null;
+
+
+		Token v=null;
+		String m =null;
+		String p =null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:44:2: ( method pathRule HTTP_VERSION TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:44:4: method pathRule HTTP_VERSION TERMINAL
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:45:2: (m= method p= pathRule v= HTTP_VERSION TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:45:4: m= method p= pathRule v= HTTP_VERSION TERMINAL
 			{
-			pushFollow(FOLLOW_method_in_requestLine85);
-			method();
+			pushFollow(FOLLOW_method_in_requestLine106);
+			m=method();
 			state._fsp--;
 
-			pushFollow(FOLLOW_pathRule_in_requestLine89);
-			pathRule();
+			pushFollow(FOLLOW_pathRule_in_requestLine112);
+			p=pathRule();
 			state._fsp--;
 
-			match(input,HTTP_VERSION,FOLLOW_HTTP_VERSION_in_requestLine93); 
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_requestLine97); 
+			v=(Token)match(input,HTTP_VERSION,FOLLOW_HTTP_VERSION_in_requestLine118); 
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_requestLine122); 
+			 rl = h.createRequestLine(m, p, v.getText()); 
 			}
 
 		}
@@ -229,26 +245,57 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return rl;
 	}
 	// $ANTLR end "requestLine"
 
 
 
 	// $ANTLR start "pathRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:50:1: pathRule : ( PATH | STRING );
-	public final void pathRule() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:51:1: pathRule returns [String p] : (s= PATH |s= STRING ) ;
+	public final String pathRule() throws RecognitionException {
+		String p = null;
+
+
+		Token s=null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:51:2: ( PATH | STRING )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:52:2: ( (s= PATH |s= STRING ) )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:52:4: (s= PATH |s= STRING )
 			{
-			if ( input.LA(1)==PATH||input.LA(1)==STRING ) {
-				input.consume();
-				state.errorRecovery=false;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:52:4: (s= PATH |s= STRING )
+			int alt3=2;
+			int LA3_0 = input.LA(1);
+			if ( (LA3_0==PATH) ) {
+				alt3=1;
 			}
+			else if ( (LA3_0==STRING) ) {
+				alt3=2;
+			}
+
 			else {
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				throw mse;
+				NoViableAltException nvae =
+					new NoViableAltException("", 3, 0, input);
+				throw nvae;
 			}
+
+			switch (alt3) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:52:5: s= PATH
+					{
+					s=(Token)match(input,PATH,FOLLOW_PATH_in_pathRule141); 
+					}
+					break;
+				case 2 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:53:4: s= STRING
+					{
+					s=(Token)match(input,STRING,FOLLOW_STRING_in_pathRule148); 
+					}
+					break;
+
+			}
+
+			 p = s.getText(); 
 			}
 
 		}
@@ -259,26 +306,57 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return p;
 	}
 	// $ANTLR end "pathRule"
 
 
 
 	// $ANTLR start "method"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:55:1: method : ( GET | POST );
-	public final void method() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:56:1: method returns [String m] : (s= GET |s= POST ) ;
+	public final String method() throws RecognitionException {
+		String m = null;
+
+
+		Token s=null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:56:2: ( GET | POST )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:57:2: ( (s= GET |s= POST ) )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:57:4: (s= GET |s= POST )
 			{
-			if ( input.LA(1)==GET||input.LA(1)==POST ) {
-				input.consume();
-				state.errorRecovery=false;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:57:4: (s= GET |s= POST )
+			int alt4=2;
+			int LA4_0 = input.LA(1);
+			if ( (LA4_0==GET) ) {
+				alt4=1;
 			}
+			else if ( (LA4_0==POST) ) {
+				alt4=2;
+			}
+
 			else {
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				throw mse;
+				NoViableAltException nvae =
+					new NoViableAltException("", 4, 0, input);
+				throw nvae;
 			}
+
+			switch (alt4) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:57:5: s= GET
+					{
+					s=(Token)match(input,GET,FOLLOW_GET_in_method168); 
+					}
+					break;
+				case 2 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:58:4: s= POST
+					{
+					s=(Token)match(input,POST,FOLLOW_POST_in_method175); 
+					}
+					break;
+
+			}
+
+			 m = s.getText(); 
 			}
 
 		}
@@ -289,194 +367,207 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return m;
 	}
 	// $ANTLR end "method"
 
 
 
 	// $ANTLR start "header"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:60:1: header : ( hostRule | userAgentRule | contentTypeRule | acceptRule | cookieRule | authorizationRule | contentLengthRule | connectionRule | acceptLanguageRule | acceptEncodingRule | chacheControlRule | genericHeaderRule );
-	public final void header() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:61:1: header returns [Header hdr] : (hd= hostRule |hd= userAgentRule |hd= contentTypeRule |hd= acceptRule |hd= cookieRule |hd= authorizationRule |hd= contentLengthRule |hd= connectionRule |hd= acceptLanguageRule |hd= acceptEncodingRule |hd= chacheControlRule |hd= genericHeaderRule ) ;
+	public final Header header() throws RecognitionException {
+		Header hdr = null;
+
+
+		Header hd =null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:61:2: ( hostRule | userAgentRule | contentTypeRule | acceptRule | cookieRule | authorizationRule | contentLengthRule | connectionRule | acceptLanguageRule | acceptEncodingRule | chacheControlRule | genericHeaderRule )
-			int alt3=12;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:62:2: ( (hd= hostRule |hd= userAgentRule |hd= contentTypeRule |hd= acceptRule |hd= cookieRule |hd= authorizationRule |hd= contentLengthRule |hd= connectionRule |hd= acceptLanguageRule |hd= acceptEncodingRule |hd= chacheControlRule |hd= genericHeaderRule ) )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:62:4: (hd= hostRule |hd= userAgentRule |hd= contentTypeRule |hd= acceptRule |hd= cookieRule |hd= authorizationRule |hd= contentLengthRule |hd= connectionRule |hd= acceptLanguageRule |hd= acceptEncodingRule |hd= chacheControlRule |hd= genericHeaderRule )
+			{
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:62:4: (hd= hostRule |hd= userAgentRule |hd= contentTypeRule |hd= acceptRule |hd= cookieRule |hd= authorizationRule |hd= contentLengthRule |hd= connectionRule |hd= acceptLanguageRule |hd= acceptEncodingRule |hd= chacheControlRule |hd= genericHeaderRule )
+			int alt5=12;
 			switch ( input.LA(1) ) {
 			case HOST:
 				{
-				alt3=1;
+				alt5=1;
 				}
 				break;
 			case USER_AGENT:
 				{
-				alt3=2;
+				alt5=2;
 				}
 				break;
 			case CONTENT_TYPE:
 				{
-				alt3=3;
+				alt5=3;
 				}
 				break;
 			case ACCEPT:
 				{
-				alt3=4;
+				alt5=4;
 				}
 				break;
 			case COOKIE:
 				{
-				alt3=5;
+				alt5=5;
 				}
 				break;
 			case AUTHORIZATION:
 				{
-				alt3=6;
+				alt5=6;
 				}
 				break;
 			case CONTENT_LENGTH:
 				{
-				alt3=7;
+				alt5=7;
 				}
 				break;
 			case CONNECTION:
 				{
-				alt3=8;
+				alt5=8;
 				}
 				break;
 			case ACCEPT_LANGUAGE:
 				{
-				alt3=9;
+				alt5=9;
 				}
 				break;
 			case ACCEPT_ENCODING:
 				{
-				alt3=10;
+				alt5=10;
 				}
 				break;
 			case CACHE_CONTROL:
 				{
-				alt3=11;
+				alt5=11;
 				}
 				break;
 			case STRING:
 				{
-				alt3=12;
+				alt5=12;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 3, 0, input);
+					new NoViableAltException("", 5, 0, input);
 				throw nvae;
 			}
-			switch (alt3) {
+			switch (alt5) {
 				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:61:4: hostRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:62:5: hd= hostRule
 					{
-					pushFollow(FOLLOW_hostRule_in_header141);
-					hostRule();
+					pushFollow(FOLLOW_hostRule_in_header196);
+					hd=hostRule();
 					state._fsp--;
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:62:4: userAgentRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:63:4: hd= userAgentRule
 					{
-					pushFollow(FOLLOW_userAgentRule_in_header146);
-					userAgentRule();
+					pushFollow(FOLLOW_userAgentRule_in_header203);
+					hd=userAgentRule();
 					state._fsp--;
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:63:4: contentTypeRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:64:4: hd= contentTypeRule
 					{
-					pushFollow(FOLLOW_contentTypeRule_in_header151);
-					contentTypeRule();
+					pushFollow(FOLLOW_contentTypeRule_in_header210);
+					hd=contentTypeRule();
 					state._fsp--;
 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:64:4: acceptRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:65:4: hd= acceptRule
 					{
-					pushFollow(FOLLOW_acceptRule_in_header156);
-					acceptRule();
+					pushFollow(FOLLOW_acceptRule_in_header217);
+					hd=acceptRule();
 					state._fsp--;
 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:65:4: cookieRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:66:4: hd= cookieRule
 					{
-					pushFollow(FOLLOW_cookieRule_in_header161);
-					cookieRule();
+					pushFollow(FOLLOW_cookieRule_in_header224);
+					hd=cookieRule();
 					state._fsp--;
 
 					}
 					break;
 				case 6 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:66:4: authorizationRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:67:4: hd= authorizationRule
 					{
-					pushFollow(FOLLOW_authorizationRule_in_header166);
-					authorizationRule();
+					pushFollow(FOLLOW_authorizationRule_in_header231);
+					hd=authorizationRule();
 					state._fsp--;
 
 					}
 					break;
 				case 7 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:67:4: contentLengthRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:68:4: hd= contentLengthRule
 					{
-					pushFollow(FOLLOW_contentLengthRule_in_header171);
-					contentLengthRule();
+					pushFollow(FOLLOW_contentLengthRule_in_header238);
+					hd=contentLengthRule();
 					state._fsp--;
 
 					}
 					break;
 				case 8 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:68:4: connectionRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:69:4: hd= connectionRule
 					{
-					pushFollow(FOLLOW_connectionRule_in_header176);
-					connectionRule();
+					pushFollow(FOLLOW_connectionRule_in_header245);
+					hd=connectionRule();
 					state._fsp--;
 
 					}
 					break;
 				case 9 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:69:4: acceptLanguageRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:70:4: hd= acceptLanguageRule
 					{
-					pushFollow(FOLLOW_acceptLanguageRule_in_header181);
-					acceptLanguageRule();
+					pushFollow(FOLLOW_acceptLanguageRule_in_header252);
+					hd=acceptLanguageRule();
 					state._fsp--;
 
 					}
 					break;
 				case 10 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:70:4: acceptEncodingRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:71:4: hd= acceptEncodingRule
 					{
-					pushFollow(FOLLOW_acceptEncodingRule_in_header186);
-					acceptEncodingRule();
+					pushFollow(FOLLOW_acceptEncodingRule_in_header259);
+					hd=acceptEncodingRule();
 					state._fsp--;
 
 					}
 					break;
 				case 11 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:71:4: chacheControlRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:72:4: hd= chacheControlRule
 					{
-					pushFollow(FOLLOW_chacheControlRule_in_header191);
-					chacheControlRule();
+					pushFollow(FOLLOW_chacheControlRule_in_header266);
+					hd=chacheControlRule();
 					state._fsp--;
 
 					}
 					break;
 				case 12 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:72:4: genericHeaderRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:73:4: hd= genericHeaderRule
 					{
-					pushFollow(FOLLOW_genericHeaderRule_in_header196);
-					genericHeaderRule();
+					pushFollow(FOLLOW_genericHeaderRule_in_header273);
+					hd=genericHeaderRule();
 					state._fsp--;
 
 					}
 					break;
 
 			}
+
+			 hdr = hd;
+			}
+
 		}
 		catch (RecognitionException re) {
 			reportError(re);
@@ -485,20 +576,34 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return hdr;
 	}
 	// $ANTLR end "header"
 
 
 
 	// $ANTLR start "hostRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:76:1: hostRule : HOST COLUMN ( DNS | IPV4 ) ( COLUMN INT_NUM )? TERMINAL ;
-	public final void hostRule() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:77:1: hostRule returns [Header hd] :k= HOST COLUMN (v= ( DNS | IPV4 ) ) ( (c= COLUMN n= INT_NUM ) )? TERMINAL ;
+	public final Header hostRule() throws RecognitionException {
+		Header hd = null;
+
+
+		Token k=null;
+		Token v=null;
+		Token c=null;
+		Token n=null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:77:2: ( HOST COLUMN ( DNS | IPV4 ) ( COLUMN INT_NUM )? TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:77:4: HOST COLUMN ( DNS | IPV4 ) ( COLUMN INT_NUM )? TERMINAL
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:78:2: (k= HOST COLUMN (v= ( DNS | IPV4 ) ) ( (c= COLUMN n= INT_NUM ) )? TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:78:4: k= HOST COLUMN (v= ( DNS | IPV4 ) ) ( (c= COLUMN n= INT_NUM ) )? TERMINAL
 			{
-			match(input,HOST,FOLLOW_HOST_in_hostRule210); 
-			match(input,COLUMN,FOLLOW_COLUMN_in_hostRule212); 
+			 String value = ""; 
+			k=(Token)match(input,HOST,FOLLOW_HOST_in_hostRule299); 
+			match(input,COLUMN,FOLLOW_COLUMN_in_hostRule301); 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:80:3: (v= ( DNS | IPV4 ) )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:80:4: v= ( DNS | IPV4 )
+			{
+			v=input.LT(1);
 			if ( input.LA(1)==DNS||input.LA(1)==IPV4 ) {
 				input.consume();
 				state.errorRecovery=false;
@@ -507,24 +612,34 @@ public class HttpParser extends Parser {
 				MismatchedSetException mse = new MismatchedSetException(null,input);
 				throw mse;
 			}
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:79:3: ( COLUMN INT_NUM )?
-			int alt4=2;
-			int LA4_0 = input.LA(1);
-			if ( (LA4_0==COLUMN) ) {
-				alt4=1;
+			 value = v.getText(); 
 			}
-			switch (alt4) {
+
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:81:3: ( (c= COLUMN n= INT_NUM ) )?
+			int alt6=2;
+			int LA6_0 = input.LA(1);
+			if ( (LA6_0==COLUMN) ) {
+				alt6=1;
+			}
+			switch (alt6) {
 				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:79:4: COLUMN INT_NUM
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:81:4: (c= COLUMN n= INT_NUM )
 					{
-					match(input,COLUMN,FOLLOW_COLUMN_in_hostRule228); 
-					match(input,INT_NUM,FOLLOW_INT_NUM_in_hostRule230); 
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:81:4: (c= COLUMN n= INT_NUM )
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:81:5: c= COLUMN n= INT_NUM
+					{
+					c=(Token)match(input,COLUMN,FOLLOW_COLUMN_in_hostRule326); 
+					n=(Token)match(input,INT_NUM,FOLLOW_INT_NUM_in_hostRule330); 
+					}
+
+					 value += c.getText() + n.getText(); 
 					}
 					break;
 
 			}
 
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_hostRule236); 
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_hostRule339); 
+			 hd = new Header(k.getText(), value); 
 			}
 
 		}
@@ -535,60 +650,73 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return hd;
 	}
 	// $ANTLR end "hostRule"
 
 
 
 	// $ANTLR start "userAgentRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:83:1: userAgentRule : USER_AGENT COLUMN productRule ( productRule ( extensionRule )* )? TERMINAL ;
-	public final void userAgentRule() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:85:1: userAgentRule returns [Header hd] :k= USER_AGENT COLUMN p= productRule (p1= productRule (e= extensionRule )* )? TERMINAL ;
+	public final Header userAgentRule() throws RecognitionException {
+		Header hd = null;
+
+
+		Token k=null;
+		String p =null;
+		String p1 =null;
+		String e =null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:84:2: ( USER_AGENT COLUMN productRule ( productRule ( extensionRule )* )? TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:84:4: USER_AGENT COLUMN productRule ( productRule ( extensionRule )* )? TERMINAL
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:86:2: (k= USER_AGENT COLUMN p= productRule (p1= productRule (e= extensionRule )* )? TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:86:4: k= USER_AGENT COLUMN p= productRule (p1= productRule (e= extensionRule )* )? TERMINAL
 			{
-			match(input,USER_AGENT,FOLLOW_USER_AGENT_in_userAgentRule248); 
-			match(input,COLUMN,FOLLOW_COLUMN_in_userAgentRule250); 
-			pushFollow(FOLLOW_productRule_in_userAgentRule254);
-			productRule();
+			 String value = ""; 
+			k=(Token)match(input,USER_AGENT,FOLLOW_USER_AGENT_in_userAgentRule362); 
+			match(input,COLUMN,FOLLOW_COLUMN_in_userAgentRule364); 
+			pushFollow(FOLLOW_productRule_in_userAgentRule370);
+			p=productRule();
 			state._fsp--;
 
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:86:3: ( productRule ( extensionRule )* )?
-			int alt6=2;
-			int LA6_0 = input.LA(1);
-			if ( (LA6_0==PRODUCT) ) {
-				alt6=1;
+			 value = p; 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:89:3: (p1= productRule (e= extensionRule )* )?
+			int alt8=2;
+			int LA8_0 = input.LA(1);
+			if ( (LA8_0==PRODUCT) ) {
+				alt8=1;
 			}
-			switch (alt6) {
+			switch (alt8) {
 				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:86:4: productRule ( extensionRule )*
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:89:4: p1= productRule (e= extensionRule )*
 					{
-					pushFollow(FOLLOW_productRule_in_userAgentRule259);
-					productRule();
+					pushFollow(FOLLOW_productRule_in_userAgentRule379);
+					p1=productRule();
 					state._fsp--;
 
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:87:3: ( extensionRule )*
-					loop5:
+					 value += " " + p1; 
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:90:3: (e= extensionRule )*
+					loop7:
 					while (true) {
-						int alt5=2;
-						int LA5_0 = input.LA(1);
-						if ( (LA5_0==PRODUCT) ) {
-							alt5=1;
+						int alt7=2;
+						int LA7_0 = input.LA(1);
+						if ( (LA7_0==PRODUCT) ) {
+							alt7=1;
 						}
 
-						switch (alt5) {
+						switch (alt7) {
 						case 1 :
-							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:87:3: extensionRule
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:90:4: e= extensionRule
 							{
-							pushFollow(FOLLOW_extensionRule_in_userAgentRule263);
-							extensionRule();
+							pushFollow(FOLLOW_extensionRule_in_userAgentRule388);
+							e=extensionRule();
 							state._fsp--;
 
+							 value += " " + e; 
 							}
 							break;
 
 						default :
-							break loop5;
+							break loop7;
 						}
 					}
 
@@ -597,7 +725,8 @@ public class HttpParser extends Parser {
 
 			}
 
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_userAgentRule270); 
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_userAgentRule398); 
+			 hd = new Header(k.getText(), value); 
 			}
 
 		}
@@ -608,30 +737,39 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return hd;
 	}
 	// $ANTLR end "userAgentRule"
 
 
 
 	// $ANTLR start "productRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:91:1: productRule : PRODUCT ( PRODUCT_INFO )? ;
-	public final void productRule() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:94:1: productRule returns [String s] : p= PRODUCT (pi= PRODUCT_INFO )? ;
+	public final String productRule() throws RecognitionException {
+		String s = null;
+
+
+		Token p=null;
+		Token pi=null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:92:2: ( PRODUCT ( PRODUCT_INFO )? )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:92:4: PRODUCT ( PRODUCT_INFO )?
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:95:2: (p= PRODUCT (pi= PRODUCT_INFO )? )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:95:4: p= PRODUCT (pi= PRODUCT_INFO )?
 			{
-			match(input,PRODUCT,FOLLOW_PRODUCT_in_productRule282); 
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:92:12: ( PRODUCT_INFO )?
-			int alt7=2;
-			int LA7_0 = input.LA(1);
-			if ( (LA7_0==PRODUCT_INFO) ) {
-				alt7=1;
+			p=(Token)match(input,PRODUCT,FOLLOW_PRODUCT_in_productRule417); 
+			 s = p.getText(); 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:96:3: (pi= PRODUCT_INFO )?
+			int alt9=2;
+			int LA9_0 = input.LA(1);
+			if ( (LA9_0==PRODUCT_INFO) ) {
+				alt9=1;
 			}
-			switch (alt7) {
+			switch (alt9) {
 				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:92:12: PRODUCT_INFO
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:96:4: pi= PRODUCT_INFO
 					{
-					match(input,PRODUCT_INFO,FOLLOW_PRODUCT_INFO_in_productRule284); 
+					pi=(Token)match(input,PRODUCT_INFO,FOLLOW_PRODUCT_INFO_in_productRule426); 
+					 s += " " + pi.getText();
 					}
 					break;
 
@@ -647,19 +785,26 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return s;
 	}
 	// $ANTLR end "productRule"
 
 
 
 	// $ANTLR start "extensionRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:95:1: extensionRule : PRODUCT ;
-	public final void extensionRule() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:99:1: extensionRule returns [String s] : p= PRODUCT ;
+	public final String extensionRule() throws RecognitionException {
+		String s = null;
+
+
+		Token p=null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:96:2: ( PRODUCT )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:96:4: PRODUCT
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:100:2: (p= PRODUCT )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:100:4: p= PRODUCT
 			{
-			match(input,PRODUCT,FOLLOW_PRODUCT_in_extensionRule297); 
+			p=(Token)match(input,PRODUCT,FOLLOW_PRODUCT_in_extensionRule447); 
+			 s = p.getText(); 
 			}
 
 		}
@@ -670,25 +815,33 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return s;
 	}
 	// $ANTLR end "extensionRule"
 
 
 
 	// $ANTLR start "acceptRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:99:1: acceptRule : ACCEPT COLUMN mimeList TERMINAL ;
-	public final void acceptRule() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:103:1: acceptRule returns [Header hd] : k= ACCEPT COLUMN value= mimeList TERMINAL ;
+	public final Header acceptRule() throws RecognitionException {
+		Header hd = null;
+
+
+		Token k=null;
+		String value =null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:100:2: ( ACCEPT COLUMN mimeList TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:100:4: ACCEPT COLUMN mimeList TERMINAL
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:104:2: (k= ACCEPT COLUMN value= mimeList TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:104:4: k= ACCEPT COLUMN value= mimeList TERMINAL
 			{
-			match(input,ACCEPT,FOLLOW_ACCEPT_in_acceptRule309); 
-			match(input,COLUMN,FOLLOW_COLUMN_in_acceptRule311); 
-			pushFollow(FOLLOW_mimeList_in_acceptRule315);
-			mimeList();
+			k=(Token)match(input,ACCEPT,FOLLOW_ACCEPT_in_acceptRule466); 
+			match(input,COLUMN,FOLLOW_COLUMN_in_acceptRule468); 
+			pushFollow(FOLLOW_mimeList_in_acceptRule474);
+			value=mimeList();
 			state._fsp--;
 
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_acceptRule319); 
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_acceptRule478); 
+			 hd = new Header(k.getText(), value); 
 			}
 
 		}
@@ -699,45 +852,55 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return hd;
 	}
 	// $ANTLR end "acceptRule"
 
 
 
 	// $ANTLR start "mimeList"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:105:1: mimeList : mimeElement ( COMMA mimeElement )* ;
-	public final void mimeList() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:109:1: mimeList returns [String s] : m= mimeElement (c= COMMA m1= mimeElement )* ;
+	public final String mimeList() throws RecognitionException {
+		String s = null;
+
+
+		Token c=null;
+		String m =null;
+		String m1 =null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:106:2: ( mimeElement ( COMMA mimeElement )* )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:106:4: mimeElement ( COMMA mimeElement )*
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:110:2: (m= mimeElement (c= COMMA m1= mimeElement )* )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:110:4: m= mimeElement (c= COMMA m1= mimeElement )*
 			{
-			pushFollow(FOLLOW_mimeElement_in_mimeList331);
-			mimeElement();
+			pushFollow(FOLLOW_mimeElement_in_mimeList497);
+			m=mimeElement();
 			state._fsp--;
 
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:107:3: ( COMMA mimeElement )*
-			loop8:
+			 s = m; 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:111:3: (c= COMMA m1= mimeElement )*
+			loop10:
 			while (true) {
-				int alt8=2;
-				int LA8_0 = input.LA(1);
-				if ( (LA8_0==COMMA) ) {
-					alt8=1;
+				int alt10=2;
+				int LA10_0 = input.LA(1);
+				if ( (LA10_0==COMMA) ) {
+					alt10=1;
 				}
 
-				switch (alt8) {
+				switch (alt10) {
 				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:107:4: COMMA mimeElement
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:111:4: c= COMMA m1= mimeElement
 					{
-					match(input,COMMA,FOLLOW_COMMA_in_mimeList336); 
-					pushFollow(FOLLOW_mimeElement_in_mimeList338);
-					mimeElement();
+					c=(Token)match(input,COMMA,FOLLOW_COMMA_in_mimeList506); 
+					pushFollow(FOLLOW_mimeElement_in_mimeList510);
+					m1=mimeElement();
 					state._fsp--;
 
+					 s += c.getText() + " " + m1; 
 					}
 					break;
 
 				default :
-					break loop8;
+					break loop10;
 				}
 			}
 
@@ -751,33 +914,42 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return s;
 	}
 	// $ANTLR end "mimeList"
 
 
 
 	// $ANTLR start "mimeElement"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:110:1: mimeElement : MIME ( qValueRule )? ;
-	public final void mimeElement() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:114:1: mimeElement returns [String s] : m= MIME (q= qValueRule )? ;
+	public final String mimeElement() throws RecognitionException {
+		String s = null;
+
+
+		Token m=null;
+		String q =null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:111:2: ( MIME ( qValueRule )? )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:111:4: MIME ( qValueRule )?
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:115:2: (m= MIME (q= qValueRule )? )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:115:4: m= MIME (q= qValueRule )?
 			{
-			match(input,MIME,FOLLOW_MIME_in_mimeElement352); 
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:111:9: ( qValueRule )?
-			int alt9=2;
-			int LA9_0 = input.LA(1);
-			if ( (LA9_0==SEMI_COLUMN) ) {
-				alt9=1;
+			m=(Token)match(input,MIME,FOLLOW_MIME_in_mimeElement531); 
+			 s = m.getText();
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:116:3: (q= qValueRule )?
+			int alt11=2;
+			int LA11_0 = input.LA(1);
+			if ( (LA11_0==SEMI_COLUMN) ) {
+				alt11=1;
 			}
-			switch (alt9) {
+			switch (alt11) {
 				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:111:9: qValueRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:116:4: q= qValueRule
 					{
-					pushFollow(FOLLOW_qValueRule_in_mimeElement354);
-					qValueRule();
+					pushFollow(FOLLOW_qValueRule_in_mimeElement540);
+					q=qValueRule();
 					state._fsp--;
 
+					 s += q; 
 					}
 					break;
 
@@ -793,291 +965,37 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return s;
 	}
 	// $ANTLR end "mimeElement"
 
 
 
 	// $ANTLR start "contentTypeRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:114:1: contentTypeRule : CONTENT_TYPE COLUMN ( MIME ( charsetRule )? | MULTIPART_MIME boundaryRule ) TERMINAL ;
-	public final void contentTypeRule() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:119:1: contentTypeRule returns [Header hd] :k= CONTENT_TYPE COLUMN (m= MIME (cs= charsetRule )? |m= MULTIPART_MIME b= boundaryRule ) TERMINAL ;
+	public final Header contentTypeRule() throws RecognitionException {
+		Header hd = null;
+
+
+		Token k=null;
+		Token m=null;
+		String cs =null;
+		String b =null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:115:2: ( CONTENT_TYPE COLUMN ( MIME ( charsetRule )? | MULTIPART_MIME boundaryRule ) TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:115:4: CONTENT_TYPE COLUMN ( MIME ( charsetRule )? | MULTIPART_MIME boundaryRule ) TERMINAL
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:120:2: (k= CONTENT_TYPE COLUMN (m= MIME (cs= charsetRule )? |m= MULTIPART_MIME b= boundaryRule ) TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:120:4: k= CONTENT_TYPE COLUMN (m= MIME (cs= charsetRule )? |m= MULTIPART_MIME b= boundaryRule ) TERMINAL
 			{
-			match(input,CONTENT_TYPE,FOLLOW_CONTENT_TYPE_in_contentTypeRule367); 
-			match(input,COLUMN,FOLLOW_COLUMN_in_contentTypeRule369); 
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:116:3: ( MIME ( charsetRule )? | MULTIPART_MIME boundaryRule )
-			int alt11=2;
-			int LA11_0 = input.LA(1);
-			if ( (LA11_0==MIME) ) {
-				alt11=1;
-			}
-			else if ( (LA11_0==MULTIPART_MIME) ) {
-				alt11=2;
-			}
-
-			else {
-				NoViableAltException nvae =
-					new NoViableAltException("", 11, 0, input);
-				throw nvae;
-			}
-
-			switch (alt11) {
-				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:116:4: MIME ( charsetRule )?
-					{
-					match(input,MIME,FOLLOW_MIME_in_contentTypeRule374); 
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:116:9: ( charsetRule )?
-					int alt10=2;
-					int LA10_0 = input.LA(1);
-					if ( (LA10_0==SEMI_COLUMN) ) {
-						alt10=1;
-					}
-					switch (alt10) {
-						case 1 :
-							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:116:9: charsetRule
-							{
-							pushFollow(FOLLOW_charsetRule_in_contentTypeRule376);
-							charsetRule();
-							state._fsp--;
-
-							}
-							break;
-
-					}
-
-					}
-					break;
-				case 2 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:117:4: MULTIPART_MIME boundaryRule
-					{
-					match(input,MULTIPART_MIME,FOLLOW_MULTIPART_MIME_in_contentTypeRule382); 
-					pushFollow(FOLLOW_boundaryRule_in_contentTypeRule384);
-					boundaryRule();
-					state._fsp--;
-
-					}
-					break;
-
-			}
-
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_contentTypeRule389); 
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "contentTypeRule"
-
-
-
-	// $ANTLR start "cookieRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:121:1: cookieRule : COOKIE COLUMN cookieList TERMINAL ;
-	public final void cookieRule() throws RecognitionException {
-		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:122:2: ( COOKIE COLUMN cookieList TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:122:4: COOKIE COLUMN cookieList TERMINAL
-			{
-			match(input,COOKIE,FOLLOW_COOKIE_in_cookieRule402); 
-			match(input,COLUMN,FOLLOW_COLUMN_in_cookieRule404); 
-			pushFollow(FOLLOW_cookieList_in_cookieRule408);
-			cookieList();
-			state._fsp--;
-
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_cookieRule412); 
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "cookieRule"
-
-
-
-	// $ANTLR start "cookieList"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:127:1: cookieList : cookieElement ( SEMI_COLUMN cookieElement )* ;
-	public final void cookieList() throws RecognitionException {
-		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:128:2: ( cookieElement ( SEMI_COLUMN cookieElement )* )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:128:4: cookieElement ( SEMI_COLUMN cookieElement )*
-			{
-			pushFollow(FOLLOW_cookieElement_in_cookieList424);
-			cookieElement();
-			state._fsp--;
-
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:129:3: ( SEMI_COLUMN cookieElement )*
-			loop12:
-			while (true) {
-				int alt12=2;
-				int LA12_0 = input.LA(1);
-				if ( (LA12_0==SEMI_COLUMN) ) {
-					alt12=1;
-				}
-
-				switch (alt12) {
-				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:129:4: SEMI_COLUMN cookieElement
-					{
-					match(input,SEMI_COLUMN,FOLLOW_SEMI_COLUMN_in_cookieList429); 
-					pushFollow(FOLLOW_cookieElement_in_cookieList431);
-					cookieElement();
-					state._fsp--;
-
-					}
-					break;
-
-				default :
-					break loop12;
-				}
-			}
-
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "cookieList"
-
-
-
-	// $ANTLR start "cookieElement"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:132:1: cookieElement : STRING EQUALS STRING ;
-	public final void cookieElement() throws RecognitionException {
-		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:133:2: ( STRING EQUALS STRING )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:133:4: STRING EQUALS STRING
-			{
-			match(input,STRING,FOLLOW_STRING_in_cookieElement446); 
-			match(input,EQUALS,FOLLOW_EQUALS_in_cookieElement448); 
-			match(input,STRING,FOLLOW_STRING_in_cookieElement450); 
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "cookieElement"
-
-
-
-	// $ANTLR start "qValueRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:136:1: qValueRule : SEMI_COLUMN Q EQUALS Q_VAL ;
-	public final void qValueRule() throws RecognitionException {
-		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:137:2: ( SEMI_COLUMN Q EQUALS Q_VAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:137:4: SEMI_COLUMN Q EQUALS Q_VAL
-			{
-			match(input,SEMI_COLUMN,FOLLOW_SEMI_COLUMN_in_qValueRule462); 
-			match(input,Q,FOLLOW_Q_in_qValueRule464); 
-			match(input,EQUALS,FOLLOW_EQUALS_in_qValueRule466); 
-			match(input,Q_VAL,FOLLOW_Q_VAL_in_qValueRule468); 
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "qValueRule"
-
-
-
-	// $ANTLR start "charsetRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:140:1: charsetRule : SEMI_COLUMN CHARSET EQUALS STRING ;
-	public final void charsetRule() throws RecognitionException {
-		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:141:2: ( SEMI_COLUMN CHARSET EQUALS STRING )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:141:4: SEMI_COLUMN CHARSET EQUALS STRING
-			{
-			match(input,SEMI_COLUMN,FOLLOW_SEMI_COLUMN_in_charsetRule480); 
-			match(input,CHARSET,FOLLOW_CHARSET_in_charsetRule482); 
-			match(input,EQUALS,FOLLOW_EQUALS_in_charsetRule484); 
-			match(input,STRING,FOLLOW_STRING_in_charsetRule486); 
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "charsetRule"
-
-
-
-	// $ANTLR start "boundaryRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:144:1: boundaryRule : SEMI_COLUMN BOUNDARY EQUALS STRING ;
-	public final void boundaryRule() throws RecognitionException {
-		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:145:2: ( SEMI_COLUMN BOUNDARY EQUALS STRING )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:145:4: SEMI_COLUMN BOUNDARY EQUALS STRING
-			{
-			match(input,SEMI_COLUMN,FOLLOW_SEMI_COLUMN_in_boundaryRule498); 
-			match(input,BOUNDARY,FOLLOW_BOUNDARY_in_boundaryRule500); 
-			match(input,EQUALS,FOLLOW_EQUALS_in_boundaryRule502); 
-			match(input,STRING,FOLLOW_STRING_in_boundaryRule504); 
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "boundaryRule"
-
-
-
-	// $ANTLR start "authorizationRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:148:1: authorizationRule : AUTHORIZATION COLUMN ( basicAuthRule | digestAuthRule ) TERMINAL ;
-	public final void authorizationRule() throws RecognitionException {
-		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:149:2: ( AUTHORIZATION COLUMN ( basicAuthRule | digestAuthRule ) TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:149:4: AUTHORIZATION COLUMN ( basicAuthRule | digestAuthRule ) TERMINAL
-			{
-			match(input,AUTHORIZATION,FOLLOW_AUTHORIZATION_in_authorizationRule516); 
-			match(input,COLUMN,FOLLOW_COLUMN_in_authorizationRule518); 
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:150:3: ( basicAuthRule | digestAuthRule )
+			 String value = ""; 
+			k=(Token)match(input,CONTENT_TYPE,FOLLOW_CONTENT_TYPE_in_contentTypeRule566); 
+			match(input,COLUMN,FOLLOW_COLUMN_in_contentTypeRule568); 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:122:3: (m= MIME (cs= charsetRule )? |m= MULTIPART_MIME b= boundaryRule )
 			int alt13=2;
 			int LA13_0 = input.LA(1);
-			if ( (LA13_0==BASIC) ) {
+			if ( (LA13_0==MIME) ) {
 				alt13=1;
 			}
-			else if ( (LA13_0==DIGEST) ) {
+			else if ( (LA13_0==MULTIPART_MIME) ) {
 				alt13=2;
 			}
 
@@ -1089,27 +1007,48 @@ public class HttpParser extends Parser {
 
 			switch (alt13) {
 				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:150:4: basicAuthRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:122:4: m= MIME (cs= charsetRule )?
 					{
-					pushFollow(FOLLOW_basicAuthRule_in_authorizationRule523);
-					basicAuthRule();
-					state._fsp--;
+					m=(Token)match(input,MIME,FOLLOW_MIME_in_contentTypeRule575); 
+					 value = m.getText(); 
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:122:37: (cs= charsetRule )?
+					int alt12=2;
+					int LA12_0 = input.LA(1);
+					if ( (LA12_0==SEMI_COLUMN) ) {
+						alt12=1;
+					}
+					switch (alt12) {
+						case 1 :
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:122:38: cs= charsetRule
+							{
+							pushFollow(FOLLOW_charsetRule_in_contentTypeRule582);
+							cs=charsetRule();
+							state._fsp--;
+
+							 value += cs; 
+							}
+							break;
+
+					}
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:151:4: digestAuthRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:123:4: m= MULTIPART_MIME b= boundaryRule
 					{
-					pushFollow(FOLLOW_digestAuthRule_in_authorizationRule528);
-					digestAuthRule();
+					m=(Token)match(input,MULTIPART_MIME,FOLLOW_MULTIPART_MIME_in_contentTypeRule593); 
+					pushFollow(FOLLOW_boundaryRule_in_contentTypeRule597);
+					b=boundaryRule();
 					state._fsp--;
 
+					 value = m.getText() + b; 
 					}
 					break;
 
 			}
 
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_authorizationRule533); 
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_contentTypeRule605); 
+			 hd = new Header(k.getText(), value); 
 			}
 
 		}
@@ -1120,20 +1059,32 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return hd;
 	}
-	// $ANTLR end "authorizationRule"
+	// $ANTLR end "contentTypeRule"
 
 
 
-	// $ANTLR start "basicAuthRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:155:1: basicAuthRule : BASIC STRING ;
-	public final void basicAuthRule() throws RecognitionException {
+	// $ANTLR start "charsetRule"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:127:1: charsetRule returns [String s] : sc= SEMI_COLUMN cs= CHARSET e= EQUALS str= STRING ;
+	public final String charsetRule() throws RecognitionException {
+		String s = null;
+
+
+		Token sc=null;
+		Token cs=null;
+		Token e=null;
+		Token str=null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:156:2: ( BASIC STRING )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:156:4: BASIC STRING
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:128:2: (sc= SEMI_COLUMN cs= CHARSET e= EQUALS str= STRING )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:128:4: sc= SEMI_COLUMN cs= CHARSET e= EQUALS str= STRING
 			{
-			match(input,BASIC,FOLLOW_BASIC_in_basicAuthRule545); 
-			match(input,STRING,FOLLOW_STRING_in_basicAuthRule547); 
+			sc=(Token)match(input,SEMI_COLUMN,FOLLOW_SEMI_COLUMN_in_charsetRule624); 
+			cs=(Token)match(input,CHARSET,FOLLOW_CHARSET_in_charsetRule628); 
+			e=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_charsetRule632); 
+			str=(Token)match(input,STRING,FOLLOW_STRING_in_charsetRule636); 
+			 s = sc.getText() + " " + cs.getText() + e.getText() + h.substituteSingleQuote(str.getText(), ""); 
 			}
 
 		}
@@ -1144,41 +1095,123 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return s;
 	}
-	// $ANTLR end "basicAuthRule"
+	// $ANTLR end "charsetRule"
 
 
 
-	// $ANTLR start "digestAuthRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:159:1: digestAuthRule : DIGEST authRule ( COMMA authRule )* ;
-	public final void digestAuthRule() throws RecognitionException {
+	// $ANTLR start "boundaryRule"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:132:1: boundaryRule returns [String s] : sc= SEMI_COLUMN b= BOUNDARY e= EQUALS str= STRING ;
+	public final String boundaryRule() throws RecognitionException {
+		String s = null;
+
+
+		Token sc=null;
+		Token b=null;
+		Token e=null;
+		Token str=null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:160:2: ( DIGEST authRule ( COMMA authRule )* )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:160:4: DIGEST authRule ( COMMA authRule )*
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:133:2: (sc= SEMI_COLUMN b= BOUNDARY e= EQUALS str= STRING )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:133:4: sc= SEMI_COLUMN b= BOUNDARY e= EQUALS str= STRING
 			{
-			match(input,DIGEST,FOLLOW_DIGEST_in_digestAuthRule559); 
-			pushFollow(FOLLOW_authRule_in_digestAuthRule563);
-			authRule();
+			sc=(Token)match(input,SEMI_COLUMN,FOLLOW_SEMI_COLUMN_in_boundaryRule658); 
+			b=(Token)match(input,BOUNDARY,FOLLOW_BOUNDARY_in_boundaryRule662); 
+			e=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_boundaryRule666); 
+			str=(Token)match(input,STRING,FOLLOW_STRING_in_boundaryRule670); 
+			 s = sc.getText() + " " + b.getText() + e.getText() + h.substituteSingleQuote(str.getText(), ""); 
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return s;
+	}
+	// $ANTLR end "boundaryRule"
+
+
+
+	// $ANTLR start "cookieRule"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:137:1: cookieRule returns [Header hd] : k= COOKIE COLUMN value= cookieList TERMINAL ;
+	public final Header cookieRule() throws RecognitionException {
+		Header hd = null;
+
+
+		Token k=null;
+		String value =null;
+
+		try {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:138:2: (k= COOKIE COLUMN value= cookieList TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:138:4: k= COOKIE COLUMN value= cookieList TERMINAL
+			{
+			k=(Token)match(input,COOKIE,FOLLOW_COOKIE_in_cookieRule692); 
+			match(input,COLUMN,FOLLOW_COLUMN_in_cookieRule694); 
+			pushFollow(FOLLOW_cookieList_in_cookieRule700);
+			value=cookieList();
 			state._fsp--;
 
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:162:3: ( COMMA authRule )*
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_cookieRule704); 
+			 hd = new Header(k.getText(), value); 
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return hd;
+	}
+	// $ANTLR end "cookieRule"
+
+
+
+	// $ANTLR start "cookieList"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:143:1: cookieList returns [String s] : ce= cookieElement (sc= SEMI_COLUMN ce1= cookieElement )* ;
+	public final String cookieList() throws RecognitionException {
+		String s = null;
+
+
+		Token sc=null;
+		String ce =null;
+		String ce1 =null;
+
+		try {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:144:2: (ce= cookieElement (sc= SEMI_COLUMN ce1= cookieElement )* )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:144:4: ce= cookieElement (sc= SEMI_COLUMN ce1= cookieElement )*
+			{
+			pushFollow(FOLLOW_cookieElement_in_cookieList723);
+			ce=cookieElement();
+			state._fsp--;
+
+			 s = ce; 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:145:3: (sc= SEMI_COLUMN ce1= cookieElement )*
 			loop14:
 			while (true) {
 				int alt14=2;
 				int LA14_0 = input.LA(1);
-				if ( (LA14_0==COMMA) ) {
+				if ( (LA14_0==SEMI_COLUMN) ) {
 					alt14=1;
 				}
 
 				switch (alt14) {
 				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:162:4: COMMA authRule
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:145:4: sc= SEMI_COLUMN ce1= cookieElement
 					{
-					match(input,COMMA,FOLLOW_COMMA_in_digestAuthRule568); 
-					pushFollow(FOLLOW_authRule_in_digestAuthRule570);
-					authRule();
+					sc=(Token)match(input,SEMI_COLUMN,FOLLOW_SEMI_COLUMN_in_cookieList732); 
+					pushFollow(FOLLOW_cookieElement_in_cookieList736);
+					ce1=cookieElement();
 					state._fsp--;
 
+					 s += sc.getText() + " " + ce1; 
 					}
 					break;
 
@@ -1197,28 +1230,393 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return s;
+	}
+	// $ANTLR end "cookieList"
+
+
+
+	// $ANTLR start "cookieElement"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:148:1: cookieElement returns [String s] : str1= STRING e= EQUALS str2= STRING ;
+	public final String cookieElement() throws RecognitionException {
+		String s = null;
+
+
+		Token str1=null;
+		Token e=null;
+		Token str2=null;
+
+		try {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:149:2: (str1= STRING e= EQUALS str2= STRING )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:149:4: str1= STRING e= EQUALS str2= STRING
+			{
+			str1=(Token)match(input,STRING,FOLLOW_STRING_in_cookieElement758); 
+			e=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_cookieElement762); 
+			str2=(Token)match(input,STRING,FOLLOW_STRING_in_cookieElement766); 
+			 s = h.substituteSingleQuote(str1.getText(), "") + e.getText() + h.substituteSingleQuote(str2.getText(), ""); 
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return s;
+	}
+	// $ANTLR end "cookieElement"
+
+
+
+	// $ANTLR start "qValueRule"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:153:1: qValueRule returns [String s] : sc= SEMI_COLUMN q= Q e= EQUALS qv= Q_VAL ;
+	public final String qValueRule() throws RecognitionException {
+		String s = null;
+
+
+		Token sc=null;
+		Token q=null;
+		Token e=null;
+		Token qv=null;
+
+		try {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:154:2: (sc= SEMI_COLUMN q= Q e= EQUALS qv= Q_VAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:154:4: sc= SEMI_COLUMN q= Q e= EQUALS qv= Q_VAL
+			{
+			sc=(Token)match(input,SEMI_COLUMN,FOLLOW_SEMI_COLUMN_in_qValueRule787); 
+			q=(Token)match(input,Q,FOLLOW_Q_in_qValueRule791); 
+			e=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_qValueRule795); 
+			qv=(Token)match(input,Q_VAL,FOLLOW_Q_VAL_in_qValueRule799); 
+			 s = sc.getText() + q.getText() + e.getText() + qv.getText(); 
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return s;
+	}
+	// $ANTLR end "qValueRule"
+
+
+
+	// $ANTLR start "authorizationRule"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:158:1: authorizationRule returns [Header hd] : k= AUTHORIZATION COLUMN (value= basicAuthRule |value= digestAuthRule ) TERMINAL ;
+	public final Header authorizationRule() throws RecognitionException {
+		Header hd = null;
+
+
+		Token k=null;
+		String value =null;
+
+		try {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:159:2: (k= AUTHORIZATION COLUMN (value= basicAuthRule |value= digestAuthRule ) TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:159:4: k= AUTHORIZATION COLUMN (value= basicAuthRule |value= digestAuthRule ) TERMINAL
+			{
+			k=(Token)match(input,AUTHORIZATION,FOLLOW_AUTHORIZATION_in_authorizationRule821); 
+			match(input,COLUMN,FOLLOW_COLUMN_in_authorizationRule823); 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:160:3: (value= basicAuthRule |value= digestAuthRule )
+			int alt15=2;
+			int LA15_0 = input.LA(1);
+			if ( (LA15_0==BASIC) ) {
+				alt15=1;
+			}
+			else if ( (LA15_0==DIGEST) ) {
+				alt15=2;
+			}
+
+			else {
+				NoViableAltException nvae =
+					new NoViableAltException("", 15, 0, input);
+				throw nvae;
+			}
+
+			switch (alt15) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:160:4: value= basicAuthRule
+					{
+					pushFollow(FOLLOW_basicAuthRule_in_authorizationRule830);
+					value=basicAuthRule();
+					state._fsp--;
+
+					}
+					break;
+				case 2 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:161:5: value= digestAuthRule
+					{
+					pushFollow(FOLLOW_digestAuthRule_in_authorizationRule838);
+					value=digestAuthRule();
+					state._fsp--;
+
+					}
+					break;
+
+			}
+
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_authorizationRule843); 
+			 hd = new Header(k.getText(), value); 
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return hd;
+	}
+	// $ANTLR end "authorizationRule"
+
+
+
+	// $ANTLR start "basicAuthRule"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:165:1: basicAuthRule returns [String s] : b= BASIC str= STRING ;
+	public final String basicAuthRule() throws RecognitionException {
+		String s = null;
+
+
+		Token b=null;
+		Token str=null;
+
+		try {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:166:2: (b= BASIC str= STRING )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:166:4: b= BASIC str= STRING
+			{
+			b=(Token)match(input,BASIC,FOLLOW_BASIC_in_basicAuthRule862); 
+			str=(Token)match(input,STRING,FOLLOW_STRING_in_basicAuthRule866); 
+			 s = b.getText() + " " + h.substituteSingleQuote(str.getText(), ""); 
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return s;
+	}
+	// $ANTLR end "basicAuthRule"
+
+
+
+	// $ANTLR start "digestAuthRule"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:170:1: digestAuthRule returns [String s] : d= DIGEST a= authRule (c= COMMA a1= authRule )* ;
+	public final String digestAuthRule() throws RecognitionException {
+		String s = null;
+
+
+		Token d=null;
+		Token c=null;
+		String a =null;
+		String a1 =null;
+
+		try {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:171:2: (d= DIGEST a= authRule (c= COMMA a1= authRule )* )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:171:4: d= DIGEST a= authRule (c= COMMA a1= authRule )*
+			{
+			d=(Token)match(input,DIGEST,FOLLOW_DIGEST_in_digestAuthRule887); 
+			 s = d.getText(); 
+			pushFollow(FOLLOW_authRule_in_digestAuthRule895);
+			a=authRule();
+			state._fsp--;
+
+			 s += " " + a; 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:173:3: (c= COMMA a1= authRule )*
+			loop16:
+			while (true) {
+				int alt16=2;
+				int LA16_0 = input.LA(1);
+				if ( (LA16_0==COMMA) ) {
+					alt16=1;
+				}
+
+				switch (alt16) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:173:4: c= COMMA a1= authRule
+					{
+					c=(Token)match(input,COMMA,FOLLOW_COMMA_in_digestAuthRule904); 
+					pushFollow(FOLLOW_authRule_in_digestAuthRule908);
+					a1=authRule();
+					state._fsp--;
+
+					 s += c.getText() + " " + a1; 
+					}
+					break;
+
+				default :
+					break loop16;
+				}
+			}
+
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return s;
 	}
 	// $ANTLR end "digestAuthRule"
 
 
 
 	// $ANTLR start "authRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:165:1: authRule : ( USERNAME | REALM | URI | ALGORITHM | NONCE | NC | CNONCE | QOP | RESPONSE | OPAQUE ) EQUALS STRING ;
-	public final void authRule() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:176:1: authRule returns [String s] : (t= USERNAME |t= REALM |t= URI |t= ALGORITHM |t= NONCE |t= NC |t= CNONCE |t= QOP |t= RESPONSE |t= OPAQUE ) e= EQUALS str= STRING ;
+	public final String authRule() throws RecognitionException {
+		String s = null;
+
+
+		Token t=null;
+		Token e=null;
+		Token str=null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:166:2: ( ( USERNAME | REALM | URI | ALGORITHM | NONCE | NC | CNONCE | QOP | RESPONSE | OPAQUE ) EQUALS STRING )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:166:4: ( USERNAME | REALM | URI | ALGORITHM | NONCE | NC | CNONCE | QOP | RESPONSE | OPAQUE ) EQUALS STRING
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:177:2: ( (t= USERNAME |t= REALM |t= URI |t= ALGORITHM |t= NONCE |t= NC |t= CNONCE |t= QOP |t= RESPONSE |t= OPAQUE ) e= EQUALS str= STRING )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:177:4: (t= USERNAME |t= REALM |t= URI |t= ALGORITHM |t= NONCE |t= NC |t= CNONCE |t= QOP |t= RESPONSE |t= OPAQUE ) e= EQUALS str= STRING
 			{
-			if ( input.LA(1)==ALGORITHM||input.LA(1)==CNONCE||(input.LA(1) >= NC && input.LA(1) <= NONCE)||input.LA(1)==OPAQUE||input.LA(1)==QOP||(input.LA(1) >= REALM && input.LA(1) <= RESPONSE)||(input.LA(1) >= URI && input.LA(1) <= USERNAME) ) {
-				input.consume();
-				state.errorRecovery=false;
+			 String substituter = "\\\\\""; 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:178:2: (t= USERNAME |t= REALM |t= URI |t= ALGORITHM |t= NONCE |t= NC |t= CNONCE |t= QOP |t= RESPONSE |t= OPAQUE )
+			int alt17=10;
+			switch ( input.LA(1) ) {
+			case USERNAME:
+				{
+				alt17=1;
+				}
+				break;
+			case REALM:
+				{
+				alt17=2;
+				}
+				break;
+			case URI:
+				{
+				alt17=3;
+				}
+				break;
+			case ALGORITHM:
+				{
+				alt17=4;
+				}
+				break;
+			case NONCE:
+				{
+				alt17=5;
+				}
+				break;
+			case NC:
+				{
+				alt17=6;
+				}
+				break;
+			case CNONCE:
+				{
+				alt17=7;
+				}
+				break;
+			case QOP:
+				{
+				alt17=8;
+				}
+				break;
+			case RESPONSE:
+				{
+				alt17=9;
+				}
+				break;
+			case OPAQUE:
+				{
+				alt17=10;
+				}
+				break;
+			default:
+				NoViableAltException nvae =
+					new NoViableAltException("", 17, 0, input);
+				throw nvae;
 			}
-			else {
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				throw mse;
+			switch (alt17) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:178:3: t= USERNAME
+					{
+					t=(Token)match(input,USERNAME,FOLLOW_USERNAME_in_authRule934); 
+					}
+					break;
+				case 2 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:179:4: t= REALM
+					{
+					t=(Token)match(input,REALM,FOLLOW_REALM_in_authRule942); 
+					}
+					break;
+				case 3 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:180:4: t= URI
+					{
+					t=(Token)match(input,URI,FOLLOW_URI_in_authRule949); 
+					}
+					break;
+				case 4 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:181:4: t= ALGORITHM
+					{
+					t=(Token)match(input,ALGORITHM,FOLLOW_ALGORITHM_in_authRule957); 
+					 substituter = ""; 
+					}
+					break;
+				case 5 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:182:4: t= NONCE
+					{
+					t=(Token)match(input,NONCE,FOLLOW_NONCE_in_authRule966); 
+					}
+					break;
+				case 6 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:183:4: t= NC
+					{
+					t=(Token)match(input,NC,FOLLOW_NC_in_authRule973); 
+					 substituter = ""; 
+					}
+					break;
+				case 7 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:184:4: t= CNONCE
+					{
+					t=(Token)match(input,CNONCE,FOLLOW_CNONCE_in_authRule982); 
+					}
+					break;
+				case 8 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:185:4: t= QOP
+					{
+					t=(Token)match(input,QOP,FOLLOW_QOP_in_authRule989); 
+					 substituter = ""; 
+					}
+					break;
+				case 9 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:186:4: t= RESPONSE
+					{
+					t=(Token)match(input,RESPONSE,FOLLOW_RESPONSE_in_authRule998); 
+					}
+					break;
+				case 10 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:187:4: t= OPAQUE
+					{
+					t=(Token)match(input,OPAQUE,FOLLOW_OPAQUE_in_authRule1005); 
+					}
+					break;
+
 			}
-			match(input,EQUALS,FOLLOW_EQUALS_in_authRule637); 
-			match(input,STRING,FOLLOW_STRING_in_authRule639); 
+
+			e=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_authRule1012); 
+			str=(Token)match(input,STRING,FOLLOW_STRING_in_authRule1016); 
+			 s = t.getText() + e.getText() + h.substituteSingleQuote(str.getText(), substituter); 
 			}
 
 		}
@@ -1229,22 +1627,30 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return s;
 	}
 	// $ANTLR end "authRule"
 
 
 
 	// $ANTLR start "contentLengthRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:179:1: contentLengthRule : CONTENT_LENGTH COLUMN INT_NUM TERMINAL ;
-	public final void contentLengthRule() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:192:1: contentLengthRule returns [Header hd] : k= CONTENT_LENGTH COLUMN value= INT_NUM TERMINAL ;
+	public final Header contentLengthRule() throws RecognitionException {
+		Header hd = null;
+
+
+		Token k=null;
+		Token value=null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:180:2: ( CONTENT_LENGTH COLUMN INT_NUM TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:180:4: CONTENT_LENGTH COLUMN INT_NUM TERMINAL
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:193:2: (k= CONTENT_LENGTH COLUMN value= INT_NUM TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:193:4: k= CONTENT_LENGTH COLUMN value= INT_NUM TERMINAL
 			{
-			match(input,CONTENT_LENGTH,FOLLOW_CONTENT_LENGTH_in_contentLengthRule650); 
-			match(input,COLUMN,FOLLOW_COLUMN_in_contentLengthRule652); 
-			match(input,INT_NUM,FOLLOW_INT_NUM_in_contentLengthRule656); 
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_contentLengthRule660); 
+			k=(Token)match(input,CONTENT_LENGTH,FOLLOW_CONTENT_LENGTH_in_contentLengthRule1035); 
+			match(input,COLUMN,FOLLOW_COLUMN_in_contentLengthRule1037); 
+			value=(Token)match(input,INT_NUM,FOLLOW_INT_NUM_in_contentLengthRule1043); 
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_contentLengthRule1047); 
+			 hd = new Header(k.getText(), value.getText()); 
 			}
 
 		}
@@ -1255,29 +1661,61 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return hd;
 	}
 	// $ANTLR end "contentLengthRule"
 
 
 
 	// $ANTLR start "connectionRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:185:1: connectionRule : CONNECTION COLUMN ( KEEP_ALIVE | CLOSE ) TERMINAL ;
-	public final void connectionRule() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:198:1: connectionRule returns [Header hd] : k= CONNECTION COLUMN (value= KEEP_ALIVE |value= CLOSE ) TERMINAL ;
+	public final Header connectionRule() throws RecognitionException {
+		Header hd = null;
+
+
+		Token k=null;
+		Token value=null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:186:2: ( CONNECTION COLUMN ( KEEP_ALIVE | CLOSE ) TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:186:4: CONNECTION COLUMN ( KEEP_ALIVE | CLOSE ) TERMINAL
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:199:2: (k= CONNECTION COLUMN (value= KEEP_ALIVE |value= CLOSE ) TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:199:4: k= CONNECTION COLUMN (value= KEEP_ALIVE |value= CLOSE ) TERMINAL
 			{
-			match(input,CONNECTION,FOLLOW_CONNECTION_in_connectionRule672); 
-			match(input,COLUMN,FOLLOW_COLUMN_in_connectionRule674); 
-			if ( input.LA(1)==CLOSE||input.LA(1)==KEEP_ALIVE ) {
-				input.consume();
-				state.errorRecovery=false;
+			k=(Token)match(input,CONNECTION,FOLLOW_CONNECTION_in_connectionRule1066); 
+			match(input,COLUMN,FOLLOW_COLUMN_in_connectionRule1068); 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:200:3: (value= KEEP_ALIVE |value= CLOSE )
+			int alt18=2;
+			int LA18_0 = input.LA(1);
+			if ( (LA18_0==KEEP_ALIVE) ) {
+				alt18=1;
 			}
+			else if ( (LA18_0==CLOSE) ) {
+				alt18=2;
+			}
+
 			else {
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				throw mse;
+				NoViableAltException nvae =
+					new NoViableAltException("", 18, 0, input);
+				throw nvae;
 			}
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_connectionRule688); 
+
+			switch (alt18) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:200:4: value= KEEP_ALIVE
+					{
+					value=(Token)match(input,KEEP_ALIVE,FOLLOW_KEEP_ALIVE_in_connectionRule1075); 
+					}
+					break;
+				case 2 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:200:23: value= CLOSE
+					{
+					value=(Token)match(input,CLOSE,FOLLOW_CLOSE_in_connectionRule1081); 
+					}
+					break;
+
+			}
+
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_connectionRule1086); 
+			 hd = new Header(k.getText(), value.getText()); 
 			}
 
 		}
@@ -1288,25 +1726,33 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return hd;
 	}
 	// $ANTLR end "connectionRule"
 
 
 
 	// $ANTLR start "acceptLanguageRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:191:1: acceptLanguageRule : ACCEPT_LANGUAGE COLUMN languageList TERMINAL ;
-	public final void acceptLanguageRule() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:204:1: acceptLanguageRule returns [Header hd] : k= ACCEPT_LANGUAGE COLUMN value= languageList TERMINAL ;
+	public final Header acceptLanguageRule() throws RecognitionException {
+		Header hd = null;
+
+
+		Token k=null;
+		String value =null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:192:2: ( ACCEPT_LANGUAGE COLUMN languageList TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:192:4: ACCEPT_LANGUAGE COLUMN languageList TERMINAL
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:205:2: (k= ACCEPT_LANGUAGE COLUMN value= languageList TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:205:4: k= ACCEPT_LANGUAGE COLUMN value= languageList TERMINAL
 			{
-			match(input,ACCEPT_LANGUAGE,FOLLOW_ACCEPT_LANGUAGE_in_acceptLanguageRule700); 
-			match(input,COLUMN,FOLLOW_COLUMN_in_acceptLanguageRule702); 
-			pushFollow(FOLLOW_languageList_in_acceptLanguageRule706);
-			languageList();
+			k=(Token)match(input,ACCEPT_LANGUAGE,FOLLOW_ACCEPT_LANGUAGE_in_acceptLanguageRule1105); 
+			match(input,COLUMN,FOLLOW_COLUMN_in_acceptLanguageRule1107); 
+			pushFollow(FOLLOW_languageList_in_acceptLanguageRule1113);
+			value=languageList();
 			state._fsp--;
 
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_acceptLanguageRule710); 
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_acceptLanguageRule1117); 
+			 hd = new Header(k.getText(), value); 
 			}
 
 		}
@@ -1317,253 +1763,32 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return hd;
 	}
 	// $ANTLR end "acceptLanguageRule"
 
 
 
 	// $ANTLR start "languageList"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:197:1: languageList : languageElement ( COMMA languageElement )* ;
-	public final void languageList() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:210:1: languageList returns [String s] : le= languageElement (c= COMMA le1= languageElement )* ;
+	public final String languageList() throws RecognitionException {
+		String s = null;
+
+
+		Token c=null;
+		String le =null;
+		String le1 =null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:198:2: ( languageElement ( COMMA languageElement )* )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:198:4: languageElement ( COMMA languageElement )*
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:211:2: (le= languageElement (c= COMMA le1= languageElement )* )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:211:4: le= languageElement (c= COMMA le1= languageElement )*
 			{
-			pushFollow(FOLLOW_languageElement_in_languageList722);
-			languageElement();
+			pushFollow(FOLLOW_languageElement_in_languageList1136);
+			le=languageElement();
 			state._fsp--;
 
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:199:3: ( COMMA languageElement )*
-			loop15:
-			while (true) {
-				int alt15=2;
-				int LA15_0 = input.LA(1);
-				if ( (LA15_0==COMMA) ) {
-					alt15=1;
-				}
-
-				switch (alt15) {
-				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:199:4: COMMA languageElement
-					{
-					match(input,COMMA,FOLLOW_COMMA_in_languageList727); 
-					pushFollow(FOLLOW_languageElement_in_languageList729);
-					languageElement();
-					state._fsp--;
-
-					}
-					break;
-
-				default :
-					break loop15;
-				}
-			}
-
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "languageList"
-
-
-
-	// $ANTLR start "languageElement"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:202:1: languageElement : ( LANGUAGE_ELEMENT | STAR ) ( qValueRule )? ;
-	public final void languageElement() throws RecognitionException {
-		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:203:2: ( ( LANGUAGE_ELEMENT | STAR ) ( qValueRule )? )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:203:4: ( LANGUAGE_ELEMENT | STAR ) ( qValueRule )?
-			{
-			if ( input.LA(1)==LANGUAGE_ELEMENT||input.LA(1)==STAR ) {
-				input.consume();
-				state.errorRecovery=false;
-			}
-			else {
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				throw mse;
-			}
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:204:3: ( qValueRule )?
-			int alt16=2;
-			int LA16_0 = input.LA(1);
-			if ( (LA16_0==SEMI_COLUMN) ) {
-				alt16=1;
-			}
-			switch (alt16) {
-				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:204:3: qValueRule
-					{
-					pushFollow(FOLLOW_qValueRule_in_languageElement752);
-					qValueRule();
-					state._fsp--;
-
-					}
-					break;
-
-			}
-
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "languageElement"
-
-
-
-	// $ANTLR start "acceptEncodingRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:207:1: acceptEncodingRule : ACCEPT_ENCODING COLUMN encodingList TERMINAL ;
-	public final void acceptEncodingRule() throws RecognitionException {
-		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:208:2: ( ACCEPT_ENCODING COLUMN encodingList TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:208:4: ACCEPT_ENCODING COLUMN encodingList TERMINAL
-			{
-			match(input,ACCEPT_ENCODING,FOLLOW_ACCEPT_ENCODING_in_acceptEncodingRule765); 
-			match(input,COLUMN,FOLLOW_COLUMN_in_acceptEncodingRule767); 
-			pushFollow(FOLLOW_encodingList_in_acceptEncodingRule771);
-			encodingList();
-			state._fsp--;
-
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_acceptEncodingRule775); 
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "acceptEncodingRule"
-
-
-
-	// $ANTLR start "encodingList"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:213:1: encodingList : encodingElement ( COMMA encodingElement )* ;
-	public final void encodingList() throws RecognitionException {
-		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:214:2: ( encodingElement ( COMMA encodingElement )* )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:214:4: encodingElement ( COMMA encodingElement )*
-			{
-			pushFollow(FOLLOW_encodingElement_in_encodingList787);
-			encodingElement();
-			state._fsp--;
-
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:215:3: ( COMMA encodingElement )*
-			loop17:
-			while (true) {
-				int alt17=2;
-				int LA17_0 = input.LA(1);
-				if ( (LA17_0==COMMA) ) {
-					alt17=1;
-				}
-
-				switch (alt17) {
-				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:215:4: COMMA encodingElement
-					{
-					match(input,COMMA,FOLLOW_COMMA_in_encodingList792); 
-					pushFollow(FOLLOW_encodingElement_in_encodingList794);
-					encodingElement();
-					state._fsp--;
-
-					}
-					break;
-
-				default :
-					break loop17;
-				}
-			}
-
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "encodingList"
-
-
-
-	// $ANTLR start "encodingElement"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:218:1: encodingElement : ( ENCODING_ELEMENT | STAR ) ( qValueRule )? ;
-	public final void encodingElement() throws RecognitionException {
-		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:219:2: ( ( ENCODING_ELEMENT | STAR ) ( qValueRule )? )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:219:4: ( ENCODING_ELEMENT | STAR ) ( qValueRule )?
-			{
-			if ( input.LA(1)==ENCODING_ELEMENT||input.LA(1)==STAR ) {
-				input.consume();
-				state.errorRecovery=false;
-			}
-			else {
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				throw mse;
-			}
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:220:3: ( qValueRule )?
-			int alt18=2;
-			int LA18_0 = input.LA(1);
-			if ( (LA18_0==SEMI_COLUMN) ) {
-				alt18=1;
-			}
-			switch (alt18) {
-				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:220:3: qValueRule
-					{
-					pushFollow(FOLLOW_qValueRule_in_encodingElement817);
-					qValueRule();
-					state._fsp--;
-
-					}
-					break;
-
-			}
-
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "encodingElement"
-
-
-
-	// $ANTLR start "chacheControlRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:223:1: chacheControlRule : CACHE_CONTROL COLUMN STRING ( COMMA STRING )* TERMINAL ;
-	public final void chacheControlRule() throws RecognitionException {
-		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:224:2: ( CACHE_CONTROL COLUMN STRING ( COMMA STRING )* TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:224:4: CACHE_CONTROL COLUMN STRING ( COMMA STRING )* TERMINAL
-			{
-			match(input,CACHE_CONTROL,FOLLOW_CACHE_CONTROL_in_chacheControlRule830); 
-			match(input,COLUMN,FOLLOW_COLUMN_in_chacheControlRule832); 
-			match(input,STRING,FOLLOW_STRING_in_chacheControlRule836); 
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:225:10: ( COMMA STRING )*
+			 s = le; 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:212:3: (c= COMMA le1= languageElement )*
 			loop19:
 			while (true) {
 				int alt19=2;
@@ -1574,10 +1799,14 @@ public class HttpParser extends Parser {
 
 				switch (alt19) {
 				case 1 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:225:11: COMMA STRING
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:212:4: c= COMMA le1= languageElement
 					{
-					match(input,COMMA,FOLLOW_COMMA_in_chacheControlRule839); 
-					match(input,STRING,FOLLOW_STRING_in_chacheControlRule841); 
+					c=(Token)match(input,COMMA,FOLLOW_COMMA_in_languageList1145); 
+					pushFollow(FOLLOW_languageElement_in_languageList1149);
+					le1=languageElement();
+					state._fsp--;
+
+					 s += c.getText() + " " + le1; 
 					}
 					break;
 
@@ -1586,7 +1815,6 @@ public class HttpParser extends Parser {
 				}
 			}
 
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_chacheControlRule847); 
 			}
 
 		}
@@ -1597,22 +1825,355 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return s;
+	}
+	// $ANTLR end "languageList"
+
+
+
+	// $ANTLR start "languageElement"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:215:1: languageElement returns [String s] : (le= LANGUAGE_ELEMENT |le= STAR ) (q= qValueRule )? ;
+	public final String languageElement() throws RecognitionException {
+		String s = null;
+
+
+		Token le=null;
+		String q =null;
+
+		try {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:216:2: ( (le= LANGUAGE_ELEMENT |le= STAR ) (q= qValueRule )? )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:216:4: (le= LANGUAGE_ELEMENT |le= STAR ) (q= qValueRule )?
+			{
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:216:4: (le= LANGUAGE_ELEMENT |le= STAR )
+			int alt20=2;
+			int LA20_0 = input.LA(1);
+			if ( (LA20_0==LANGUAGE_ELEMENT) ) {
+				alt20=1;
+			}
+			else if ( (LA20_0==STAR) ) {
+				alt20=2;
+			}
+
+			else {
+				NoViableAltException nvae =
+					new NoViableAltException("", 20, 0, input);
+				throw nvae;
+			}
+
+			switch (alt20) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:216:5: le= LANGUAGE_ELEMENT
+					{
+					le=(Token)match(input,LANGUAGE_ELEMENT,FOLLOW_LANGUAGE_ELEMENT_in_languageElement1172); 
+					}
+					break;
+				case 2 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:216:25: le= STAR
+					{
+					le=(Token)match(input,STAR,FOLLOW_STAR_in_languageElement1176); 
+					}
+					break;
+
+			}
+
+			 s = le.getText(); 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:217:3: (q= qValueRule )?
+			int alt21=2;
+			int LA21_0 = input.LA(1);
+			if ( (LA21_0==SEMI_COLUMN) ) {
+				alt21=1;
+			}
+			switch (alt21) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:217:4: q= qValueRule
+					{
+					pushFollow(FOLLOW_qValueRule_in_languageElement1186);
+					q=qValueRule();
+					state._fsp--;
+
+					 s += q; 
+					}
+					break;
+
+			}
+
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return s;
+	}
+	// $ANTLR end "languageElement"
+
+
+
+	// $ANTLR start "acceptEncodingRule"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:220:1: acceptEncodingRule returns [Header hd] : k= ACCEPT_ENCODING COLUMN value= encodingList TERMINAL ;
+	public final Header acceptEncodingRule() throws RecognitionException {
+		Header hd = null;
+
+
+		Token k=null;
+		String value =null;
+
+		try {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:221:2: (k= ACCEPT_ENCODING COLUMN value= encodingList TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:221:4: k= ACCEPT_ENCODING COLUMN value= encodingList TERMINAL
+			{
+			k=(Token)match(input,ACCEPT_ENCODING,FOLLOW_ACCEPT_ENCODING_in_acceptEncodingRule1207); 
+			match(input,COLUMN,FOLLOW_COLUMN_in_acceptEncodingRule1209); 
+			pushFollow(FOLLOW_encodingList_in_acceptEncodingRule1215);
+			value=encodingList();
+			state._fsp--;
+
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_acceptEncodingRule1219); 
+			 hd = new Header(k.getText(), value); 
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return hd;
+	}
+	// $ANTLR end "acceptEncodingRule"
+
+
+
+	// $ANTLR start "encodingList"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:226:1: encodingList returns [String s] : ee= encodingElement (c= COMMA ee1= encodingElement )* ;
+	public final String encodingList() throws RecognitionException {
+		String s = null;
+
+
+		Token c=null;
+		String ee =null;
+		String ee1 =null;
+
+		try {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:227:2: (ee= encodingElement (c= COMMA ee1= encodingElement )* )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:227:4: ee= encodingElement (c= COMMA ee1= encodingElement )*
+			{
+			pushFollow(FOLLOW_encodingElement_in_encodingList1238);
+			ee=encodingElement();
+			state._fsp--;
+
+			 s = ee; 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:228:3: (c= COMMA ee1= encodingElement )*
+			loop22:
+			while (true) {
+				int alt22=2;
+				int LA22_0 = input.LA(1);
+				if ( (LA22_0==COMMA) ) {
+					alt22=1;
+				}
+
+				switch (alt22) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:228:4: c= COMMA ee1= encodingElement
+					{
+					c=(Token)match(input,COMMA,FOLLOW_COMMA_in_encodingList1247); 
+					pushFollow(FOLLOW_encodingElement_in_encodingList1251);
+					ee1=encodingElement();
+					state._fsp--;
+
+					 s += c.getText() + " " + ee1; 
+					}
+					break;
+
+				default :
+					break loop22;
+				}
+			}
+
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return s;
+	}
+	// $ANTLR end "encodingList"
+
+
+
+	// $ANTLR start "encodingElement"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:231:1: encodingElement returns [String s] : (ee= ENCODING_ELEMENT |ee= STAR ) (q= qValueRule )? ;
+	public final String encodingElement() throws RecognitionException {
+		String s = null;
+
+
+		Token ee=null;
+		String q =null;
+
+		try {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:232:2: ( (ee= ENCODING_ELEMENT |ee= STAR ) (q= qValueRule )? )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:232:4: (ee= ENCODING_ELEMENT |ee= STAR ) (q= qValueRule )?
+			{
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:232:4: (ee= ENCODING_ELEMENT |ee= STAR )
+			int alt23=2;
+			int LA23_0 = input.LA(1);
+			if ( (LA23_0==ENCODING_ELEMENT) ) {
+				alt23=1;
+			}
+			else if ( (LA23_0==STAR) ) {
+				alt23=2;
+			}
+
+			else {
+				NoViableAltException nvae =
+					new NoViableAltException("", 23, 0, input);
+				throw nvae;
+			}
+
+			switch (alt23) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:232:5: ee= ENCODING_ELEMENT
+					{
+					ee=(Token)match(input,ENCODING_ELEMENT,FOLLOW_ENCODING_ELEMENT_in_encodingElement1274); 
+					}
+					break;
+				case 2 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:232:25: ee= STAR
+					{
+					ee=(Token)match(input,STAR,FOLLOW_STAR_in_encodingElement1278); 
+					}
+					break;
+
+			}
+
+			 s = ee.getText(); 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:233:3: (q= qValueRule )?
+			int alt24=2;
+			int LA24_0 = input.LA(1);
+			if ( (LA24_0==SEMI_COLUMN) ) {
+				alt24=1;
+			}
+			switch (alt24) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:233:4: q= qValueRule
+					{
+					pushFollow(FOLLOW_qValueRule_in_encodingElement1288);
+					q=qValueRule();
+					state._fsp--;
+
+					 s += q; 
+					}
+					break;
+
+			}
+
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return s;
+	}
+	// $ANTLR end "encodingElement"
+
+
+
+	// $ANTLR start "chacheControlRule"
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:236:1: chacheControlRule returns [Header hd] :k= CACHE_CONTROL COLUMN str= STRING (c= COMMA str1= STRING )* TERMINAL ;
+	public final Header chacheControlRule() throws RecognitionException {
+		Header hd = null;
+
+
+		Token k=null;
+		Token str=null;
+		Token c=null;
+		Token str1=null;
+
+		try {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:237:2: (k= CACHE_CONTROL COLUMN str= STRING (c= COMMA str1= STRING )* TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:237:4: k= CACHE_CONTROL COLUMN str= STRING (c= COMMA str1= STRING )* TERMINAL
+			{
+			 String value = ""; 
+			k=(Token)match(input,CACHE_CONTROL,FOLLOW_CACHE_CONTROL_in_chacheControlRule1313); 
+			match(input,COLUMN,FOLLOW_COLUMN_in_chacheControlRule1315); 
+			str=(Token)match(input,STRING,FOLLOW_STRING_in_chacheControlRule1321); 
+			 value = h.substituteSingleQuote(str.getText(), ""); 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:240:3: (c= COMMA str1= STRING )*
+			loop25:
+			while (true) {
+				int alt25=2;
+				int LA25_0 = input.LA(1);
+				if ( (LA25_0==COMMA) ) {
+					alt25=1;
+				}
+
+				switch (alt25) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:240:4: c= COMMA str1= STRING
+					{
+					c=(Token)match(input,COMMA,FOLLOW_COMMA_in_chacheControlRule1330); 
+					str1=(Token)match(input,STRING,FOLLOW_STRING_in_chacheControlRule1334); 
+					 value += h.substituteSingleQuote(c.getText(), "") + " " + h.substituteSingleQuote(str1.getText(), ""); 
+					}
+					break;
+
+				default :
+					break loop25;
+				}
+			}
+
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_chacheControlRule1342); 
+			 hd = new Header(k.getText(), value); 
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return hd;
 	}
 	// $ANTLR end "chacheControlRule"
 
 
 
 	// $ANTLR start "genericHeaderRule"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:229:1: genericHeaderRule : STRING COLUMN STRING TERMINAL ;
-	public final void genericHeaderRule() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:244:1: genericHeaderRule returns [Header hd] : k= STRING COLUMN value= STRING TERMINAL ;
+	public final Header genericHeaderRule() throws RecognitionException {
+		Header hd = null;
+
+
+		Token k=null;
+		Token value=null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:230:2: ( STRING COLUMN STRING TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:230:4: STRING COLUMN STRING TERMINAL
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:245:2: (k= STRING COLUMN value= STRING TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:245:4: k= STRING COLUMN value= STRING TERMINAL
 			{
-			match(input,STRING,FOLLOW_STRING_in_genericHeaderRule859); 
-			match(input,COLUMN,FOLLOW_COLUMN_in_genericHeaderRule861); 
-			match(input,STRING,FOLLOW_STRING_in_genericHeaderRule863); 
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_genericHeaderRule867); 
+			k=(Token)match(input,STRING,FOLLOW_STRING_in_genericHeaderRule1361); 
+			match(input,COLUMN,FOLLOW_COLUMN_in_genericHeaderRule1363); 
+			value=(Token)match(input,STRING,FOLLOW_STRING_in_genericHeaderRule1367); 
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_genericHeaderRule1371); 
+			 hd = new Header(h.substituteSingleQuote(k.getText(), ""), h.substituteSingleQuote(value.getText(), "")); 
 			}
 
 		}
@@ -1623,20 +2184,27 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return hd;
 	}
 	// $ANTLR end "genericHeaderRule"
 
 
 
 	// $ANTLR start "body"
-	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:234:1: body : STRING TERMINAL ;
-	public final void body() throws RecognitionException {
+	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:249:1: body returns [String s] : str= STRING TERMINAL ;
+	public final String body() throws RecognitionException {
+		String s = null;
+
+
+		Token str=null;
+
 		try {
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:235:2: ( STRING TERMINAL )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:235:4: STRING TERMINAL
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:250:2: (str= STRING TERMINAL )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:250:4: str= STRING TERMINAL
 			{
-			match(input,STRING,FOLLOW_STRING_in_body878); 
-			match(input,TERMINAL,FOLLOW_TERMINAL_in_body882); 
+			str=(Token)match(input,STRING,FOLLOW_STRING_in_body1389); 
+			match(input,TERMINAL,FOLLOW_TERMINAL_in_body1393); 
+			 s = h.substituteSingleQuote(str.getText(), ""); 
 			}
 
 		}
@@ -1647,6 +2215,7 @@ public class HttpParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return s;
 	}
 	// $ANTLR end "body"
 
@@ -1654,128 +2223,144 @@ public class HttpParser extends Parser {
 
 
 
-	public static final BitSet FOLLOW_requestLine_in_request59 = new BitSet(new long[]{0x2000000200F02472L,0x0000000000000004L});
-	public static final BitSet FOLLOW_header_in_request64 = new BitSet(new long[]{0x2000000200F02472L,0x0000000000000004L});
-	public static final BitSet FOLLOW_body_in_request71 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_method_in_requestLine85 = new BitSet(new long[]{0x2001000000000000L});
-	public static final BitSet FOLLOW_pathRule_in_requestLine89 = new BitSet(new long[]{0x0000000400000000L});
-	public static final BitSet FOLLOW_HTTP_VERSION_in_requestLine93 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_requestLine97 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_hostRule_in_header141 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_userAgentRule_in_header146 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_contentTypeRule_in_header151 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_acceptRule_in_header156 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_cookieRule_in_header161 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_authorizationRule_in_header166 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_contentLengthRule_in_header171 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_connectionRule_in_header176 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_acceptLanguageRule_in_header181 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_acceptEncodingRule_in_header186 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_chacheControlRule_in_header191 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_genericHeaderRule_in_header196 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_HOST_in_hostRule210 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_hostRule212 = new BitSet(new long[]{0x0000001002000000L});
-	public static final BitSet FOLLOW_set_in_hostRule217 = new BitSet(new long[]{0x4000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_hostRule228 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_INT_NUM_in_hostRule230 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_hostRule236 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_USER_AGENT_in_userAgentRule248 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_userAgentRule250 = new BitSet(new long[]{0x0008000000000000L});
-	public static final BitSet FOLLOW_productRule_in_userAgentRule254 = new BitSet(new long[]{0x4008000000000000L});
-	public static final BitSet FOLLOW_productRule_in_userAgentRule259 = new BitSet(new long[]{0x4008000000000000L});
-	public static final BitSet FOLLOW_extensionRule_in_userAgentRule263 = new BitSet(new long[]{0x4008000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_userAgentRule270 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_PRODUCT_in_productRule282 = new BitSet(new long[]{0x0010000000000002L});
-	public static final BitSet FOLLOW_PRODUCT_INFO_in_productRule284 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_PRODUCT_in_extensionRule297 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ACCEPT_in_acceptRule309 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_acceptRule311 = new BitSet(new long[]{0x0000008000000000L});
-	public static final BitSet FOLLOW_mimeList_in_acceptRule315 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_acceptRule319 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_mimeElement_in_mimeList331 = new BitSet(new long[]{0x0000000000040002L});
-	public static final BitSet FOLLOW_COMMA_in_mimeList336 = new BitSet(new long[]{0x0000008000000000L});
-	public static final BitSet FOLLOW_mimeElement_in_mimeList338 = new BitSet(new long[]{0x0000000000040002L});
-	public static final BitSet FOLLOW_MIME_in_mimeElement352 = new BitSet(new long[]{0x0800000000000002L});
-	public static final BitSet FOLLOW_qValueRule_in_mimeElement354 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CONTENT_TYPE_in_contentTypeRule367 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_contentTypeRule369 = new BitSet(new long[]{0x0000048000000000L});
-	public static final BitSet FOLLOW_MIME_in_contentTypeRule374 = new BitSet(new long[]{0x4800000000000000L});
-	public static final BitSet FOLLOW_charsetRule_in_contentTypeRule376 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_MULTIPART_MIME_in_contentTypeRule382 = new BitSet(new long[]{0x0800000000000000L});
-	public static final BitSet FOLLOW_boundaryRule_in_contentTypeRule384 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_contentTypeRule389 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_COOKIE_in_cookieRule402 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_cookieRule404 = new BitSet(new long[]{0x2000000000000000L});
-	public static final BitSet FOLLOW_cookieList_in_cookieRule408 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_cookieRule412 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_cookieElement_in_cookieList424 = new BitSet(new long[]{0x0800000000000002L});
-	public static final BitSet FOLLOW_SEMI_COLUMN_in_cookieList429 = new BitSet(new long[]{0x2000000000000000L});
-	public static final BitSet FOLLOW_cookieElement_in_cookieList431 = new BitSet(new long[]{0x0800000000000002L});
-	public static final BitSet FOLLOW_STRING_in_cookieElement446 = new BitSet(new long[]{0x0000000010000000L});
-	public static final BitSet FOLLOW_EQUALS_in_cookieElement448 = new BitSet(new long[]{0x2000000000000000L});
-	public static final BitSet FOLLOW_STRING_in_cookieElement450 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SEMI_COLUMN_in_qValueRule462 = new BitSet(new long[]{0x0020000000000000L});
-	public static final BitSet FOLLOW_Q_in_qValueRule464 = new BitSet(new long[]{0x0000000010000000L});
-	public static final BitSet FOLLOW_EQUALS_in_qValueRule466 = new BitSet(new long[]{0x0100000000000000L});
-	public static final BitSet FOLLOW_Q_VAL_in_qValueRule468 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SEMI_COLUMN_in_charsetRule480 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_CHARSET_in_charsetRule482 = new BitSet(new long[]{0x0000000010000000L});
-	public static final BitSet FOLLOW_EQUALS_in_charsetRule484 = new BitSet(new long[]{0x2000000000000000L});
-	public static final BitSet FOLLOW_STRING_in_charsetRule486 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SEMI_COLUMN_in_boundaryRule498 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_BOUNDARY_in_boundaryRule500 = new BitSet(new long[]{0x0000000010000000L});
-	public static final BitSet FOLLOW_EQUALS_in_boundaryRule502 = new BitSet(new long[]{0x2000000000000000L});
-	public static final BitSet FOLLOW_STRING_in_boundaryRule504 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_AUTHORIZATION_in_authorizationRule516 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_authorizationRule518 = new BitSet(new long[]{0x0000000001000800L});
-	public static final BitSet FOLLOW_basicAuthRule_in_authorizationRule523 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_digestAuthRule_in_authorizationRule528 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_authorizationRule533 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_BASIC_in_basicAuthRule545 = new BitSet(new long[]{0x2000000000000000L});
-	public static final BitSet FOLLOW_STRING_in_basicAuthRule547 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DIGEST_in_digestAuthRule559 = new BitSet(new long[]{0x0640980000010080L,0x0000000000000003L});
-	public static final BitSet FOLLOW_authRule_in_digestAuthRule563 = new BitSet(new long[]{0x0000000000040002L});
-	public static final BitSet FOLLOW_COMMA_in_digestAuthRule568 = new BitSet(new long[]{0x0640980000010080L,0x0000000000000003L});
-	public static final BitSet FOLLOW_authRule_in_digestAuthRule570 = new BitSet(new long[]{0x0000000000040002L});
-	public static final BitSet FOLLOW_set_in_authRule584 = new BitSet(new long[]{0x0000000010000000L});
-	public static final BitSet FOLLOW_EQUALS_in_authRule637 = new BitSet(new long[]{0x2000000000000000L});
-	public static final BitSet FOLLOW_STRING_in_authRule639 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CONTENT_LENGTH_in_contentLengthRule650 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_contentLengthRule652 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_INT_NUM_in_contentLengthRule656 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_contentLengthRule660 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CONNECTION_in_connectionRule672 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_connectionRule674 = new BitSet(new long[]{0x0000002000008000L});
-	public static final BitSet FOLLOW_set_in_connectionRule678 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_connectionRule688 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ACCEPT_LANGUAGE_in_acceptLanguageRule700 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_acceptLanguageRule702 = new BitSet(new long[]{0x1000004000000000L});
-	public static final BitSet FOLLOW_languageList_in_acceptLanguageRule706 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_acceptLanguageRule710 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_languageElement_in_languageList722 = new BitSet(new long[]{0x0000000000040002L});
-	public static final BitSet FOLLOW_COMMA_in_languageList727 = new BitSet(new long[]{0x1000004000000000L});
-	public static final BitSet FOLLOW_languageElement_in_languageList729 = new BitSet(new long[]{0x0000000000040002L});
-	public static final BitSet FOLLOW_set_in_languageElement744 = new BitSet(new long[]{0x0800000000000002L});
-	public static final BitSet FOLLOW_qValueRule_in_languageElement752 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ACCEPT_ENCODING_in_acceptEncodingRule765 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_acceptEncodingRule767 = new BitSet(new long[]{0x1000000008000000L});
-	public static final BitSet FOLLOW_encodingList_in_acceptEncodingRule771 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_acceptEncodingRule775 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_encodingElement_in_encodingList787 = new BitSet(new long[]{0x0000000000040002L});
-	public static final BitSet FOLLOW_COMMA_in_encodingList792 = new BitSet(new long[]{0x1000000008000000L});
-	public static final BitSet FOLLOW_encodingElement_in_encodingList794 = new BitSet(new long[]{0x0000000000040002L});
-	public static final BitSet FOLLOW_set_in_encodingElement809 = new BitSet(new long[]{0x0800000000000002L});
-	public static final BitSet FOLLOW_qValueRule_in_encodingElement817 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CACHE_CONTROL_in_chacheControlRule830 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_chacheControlRule832 = new BitSet(new long[]{0x2000000000000000L});
-	public static final BitSet FOLLOW_STRING_in_chacheControlRule836 = new BitSet(new long[]{0x4000000000040000L});
-	public static final BitSet FOLLOW_COMMA_in_chacheControlRule839 = new BitSet(new long[]{0x2000000000000000L});
-	public static final BitSet FOLLOW_STRING_in_chacheControlRule841 = new BitSet(new long[]{0x4000000000040000L});
-	public static final BitSet FOLLOW_TERMINAL_in_chacheControlRule847 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_STRING_in_genericHeaderRule859 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_COLUMN_in_genericHeaderRule861 = new BitSet(new long[]{0x2000000000000000L});
-	public static final BitSet FOLLOW_STRING_in_genericHeaderRule863 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_genericHeaderRule867 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_STRING_in_body878 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_TERMINAL_in_body882 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_requestLine_in_request61 = new BitSet(new long[]{0x2000000200F02472L,0x0000000000000004L});
+	public static final BitSet FOLLOW_header_in_request70 = new BitSet(new long[]{0x2000000200F02472L,0x0000000000000004L});
+	public static final BitSet FOLLOW_body_in_request81 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_method_in_requestLine106 = new BitSet(new long[]{0x2001000000000000L});
+	public static final BitSet FOLLOW_pathRule_in_requestLine112 = new BitSet(new long[]{0x0000000400000000L});
+	public static final BitSet FOLLOW_HTTP_VERSION_in_requestLine118 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_requestLine122 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_PATH_in_pathRule141 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_STRING_in_pathRule148 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GET_in_method168 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_POST_in_method175 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_hostRule_in_header196 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_userAgentRule_in_header203 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_contentTypeRule_in_header210 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_acceptRule_in_header217 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_cookieRule_in_header224 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_authorizationRule_in_header231 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_contentLengthRule_in_header238 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_connectionRule_in_header245 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_acceptLanguageRule_in_header252 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_acceptEncodingRule_in_header259 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_chacheControlRule_in_header266 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_genericHeaderRule_in_header273 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_HOST_in_hostRule299 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_hostRule301 = new BitSet(new long[]{0x0000001002000000L});
+	public static final BitSet FOLLOW_set_in_hostRule309 = new BitSet(new long[]{0x4000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_hostRule326 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_INT_NUM_in_hostRule330 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_hostRule339 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_USER_AGENT_in_userAgentRule362 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_userAgentRule364 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_productRule_in_userAgentRule370 = new BitSet(new long[]{0x4008000000000000L});
+	public static final BitSet FOLLOW_productRule_in_userAgentRule379 = new BitSet(new long[]{0x4008000000000000L});
+	public static final BitSet FOLLOW_extensionRule_in_userAgentRule388 = new BitSet(new long[]{0x4008000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_userAgentRule398 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_PRODUCT_in_productRule417 = new BitSet(new long[]{0x0010000000000002L});
+	public static final BitSet FOLLOW_PRODUCT_INFO_in_productRule426 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_PRODUCT_in_extensionRule447 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ACCEPT_in_acceptRule466 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_acceptRule468 = new BitSet(new long[]{0x0000008000000000L});
+	public static final BitSet FOLLOW_mimeList_in_acceptRule474 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_acceptRule478 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_mimeElement_in_mimeList497 = new BitSet(new long[]{0x0000000000040002L});
+	public static final BitSet FOLLOW_COMMA_in_mimeList506 = new BitSet(new long[]{0x0000008000000000L});
+	public static final BitSet FOLLOW_mimeElement_in_mimeList510 = new BitSet(new long[]{0x0000000000040002L});
+	public static final BitSet FOLLOW_MIME_in_mimeElement531 = new BitSet(new long[]{0x0800000000000002L});
+	public static final BitSet FOLLOW_qValueRule_in_mimeElement540 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CONTENT_TYPE_in_contentTypeRule566 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_contentTypeRule568 = new BitSet(new long[]{0x0000048000000000L});
+	public static final BitSet FOLLOW_MIME_in_contentTypeRule575 = new BitSet(new long[]{0x4800000000000000L});
+	public static final BitSet FOLLOW_charsetRule_in_contentTypeRule582 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_MULTIPART_MIME_in_contentTypeRule593 = new BitSet(new long[]{0x0800000000000000L});
+	public static final BitSet FOLLOW_boundaryRule_in_contentTypeRule597 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_contentTypeRule605 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SEMI_COLUMN_in_charsetRule624 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_CHARSET_in_charsetRule628 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_EQUALS_in_charsetRule632 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_STRING_in_charsetRule636 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SEMI_COLUMN_in_boundaryRule658 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_BOUNDARY_in_boundaryRule662 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_EQUALS_in_boundaryRule666 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_STRING_in_boundaryRule670 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_COOKIE_in_cookieRule692 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_cookieRule694 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_cookieList_in_cookieRule700 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_cookieRule704 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_cookieElement_in_cookieList723 = new BitSet(new long[]{0x0800000000000002L});
+	public static final BitSet FOLLOW_SEMI_COLUMN_in_cookieList732 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_cookieElement_in_cookieList736 = new BitSet(new long[]{0x0800000000000002L});
+	public static final BitSet FOLLOW_STRING_in_cookieElement758 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_EQUALS_in_cookieElement762 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_STRING_in_cookieElement766 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SEMI_COLUMN_in_qValueRule787 = new BitSet(new long[]{0x0020000000000000L});
+	public static final BitSet FOLLOW_Q_in_qValueRule791 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_EQUALS_in_qValueRule795 = new BitSet(new long[]{0x0100000000000000L});
+	public static final BitSet FOLLOW_Q_VAL_in_qValueRule799 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_AUTHORIZATION_in_authorizationRule821 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_authorizationRule823 = new BitSet(new long[]{0x0000000001000800L});
+	public static final BitSet FOLLOW_basicAuthRule_in_authorizationRule830 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_digestAuthRule_in_authorizationRule838 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_authorizationRule843 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_BASIC_in_basicAuthRule862 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_STRING_in_basicAuthRule866 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DIGEST_in_digestAuthRule887 = new BitSet(new long[]{0x0640980000010080L,0x0000000000000003L});
+	public static final BitSet FOLLOW_authRule_in_digestAuthRule895 = new BitSet(new long[]{0x0000000000040002L});
+	public static final BitSet FOLLOW_COMMA_in_digestAuthRule904 = new BitSet(new long[]{0x0640980000010080L,0x0000000000000003L});
+	public static final BitSet FOLLOW_authRule_in_digestAuthRule908 = new BitSet(new long[]{0x0000000000040002L});
+	public static final BitSet FOLLOW_USERNAME_in_authRule934 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_REALM_in_authRule942 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_URI_in_authRule949 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_ALGORITHM_in_authRule957 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_NONCE_in_authRule966 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_NC_in_authRule973 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_CNONCE_in_authRule982 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_QOP_in_authRule989 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_RESPONSE_in_authRule998 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_OPAQUE_in_authRule1005 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_EQUALS_in_authRule1012 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_STRING_in_authRule1016 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CONTENT_LENGTH_in_contentLengthRule1035 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_contentLengthRule1037 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_INT_NUM_in_contentLengthRule1043 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_contentLengthRule1047 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CONNECTION_in_connectionRule1066 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_connectionRule1068 = new BitSet(new long[]{0x0000002000008000L});
+	public static final BitSet FOLLOW_KEEP_ALIVE_in_connectionRule1075 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_CLOSE_in_connectionRule1081 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_connectionRule1086 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ACCEPT_LANGUAGE_in_acceptLanguageRule1105 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_acceptLanguageRule1107 = new BitSet(new long[]{0x1000004000000000L});
+	public static final BitSet FOLLOW_languageList_in_acceptLanguageRule1113 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_acceptLanguageRule1117 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_languageElement_in_languageList1136 = new BitSet(new long[]{0x0000000000040002L});
+	public static final BitSet FOLLOW_COMMA_in_languageList1145 = new BitSet(new long[]{0x1000004000000000L});
+	public static final BitSet FOLLOW_languageElement_in_languageList1149 = new BitSet(new long[]{0x0000000000040002L});
+	public static final BitSet FOLLOW_LANGUAGE_ELEMENT_in_languageElement1172 = new BitSet(new long[]{0x0800000000000002L});
+	public static final BitSet FOLLOW_STAR_in_languageElement1176 = new BitSet(new long[]{0x0800000000000002L});
+	public static final BitSet FOLLOW_qValueRule_in_languageElement1186 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ACCEPT_ENCODING_in_acceptEncodingRule1207 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_acceptEncodingRule1209 = new BitSet(new long[]{0x1000000008000000L});
+	public static final BitSet FOLLOW_encodingList_in_acceptEncodingRule1215 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_acceptEncodingRule1219 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_encodingElement_in_encodingList1238 = new BitSet(new long[]{0x0000000000040002L});
+	public static final BitSet FOLLOW_COMMA_in_encodingList1247 = new BitSet(new long[]{0x1000000008000000L});
+	public static final BitSet FOLLOW_encodingElement_in_encodingList1251 = new BitSet(new long[]{0x0000000000040002L});
+	public static final BitSet FOLLOW_ENCODING_ELEMENT_in_encodingElement1274 = new BitSet(new long[]{0x0800000000000002L});
+	public static final BitSet FOLLOW_STAR_in_encodingElement1278 = new BitSet(new long[]{0x0800000000000002L});
+	public static final BitSet FOLLOW_qValueRule_in_encodingElement1288 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CACHE_CONTROL_in_chacheControlRule1313 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_chacheControlRule1315 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_STRING_in_chacheControlRule1321 = new BitSet(new long[]{0x4000000000040000L});
+	public static final BitSet FOLLOW_COMMA_in_chacheControlRule1330 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_STRING_in_chacheControlRule1334 = new BitSet(new long[]{0x4000000000040000L});
+	public static final BitSet FOLLOW_TERMINAL_in_chacheControlRule1342 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_STRING_in_genericHeaderRule1361 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_COLUMN_in_genericHeaderRule1363 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_STRING_in_genericHeaderRule1367 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_genericHeaderRule1371 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_STRING_in_body1389 = new BitSet(new long[]{0x4000000000000000L});
+	public static final BitSet FOLLOW_TERMINAL_in_body1393 = new BitSet(new long[]{0x0000000000000002L});
 }
