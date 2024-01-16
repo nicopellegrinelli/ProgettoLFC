@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g 2024-01-14 17:08:23
+// $ANTLR 3.5.1 C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g 2024-01-16 18:50:21
 
 	package compiler; 	
 
@@ -14,68 +14,53 @@ public class HttpLexer extends Lexer {
 	public static final int ACCEPT=4;
 	public static final int ACCEPT_ENCODING=5;
 	public static final int ACCEPT_LANGUAGE=6;
-	public static final int ALGORITHM=7;
-	public static final int ALPHA_CHAR=8;
-	public static final int ALPHA_NUM_CHAR=9;
-	public static final int AUTHORIZATION=10;
-	public static final int BASIC=11;
-	public static final int BOUNDARY=12;
-	public static final int CACHE_CONTROL=13;
-	public static final int CHARSET=14;
-	public static final int CLOSE=15;
-	public static final int CNONCE=16;
-	public static final int COLUMN=17;
-	public static final int COMMA=18;
-	public static final int COMMENT=19;
-	public static final int CONNECTION=20;
-	public static final int CONTENT_LENGTH=21;
-	public static final int CONTENT_TYPE=22;
-	public static final int COOKIE=23;
-	public static final int DIGEST=24;
-	public static final int DNS=25;
-	public static final int DNS_ELEMENT=26;
-	public static final int ENCODING_ELEMENT=27;
-	public static final int EQUALS=28;
-	public static final int ERROR_TOKEN=29;
-	public static final int ESC_SEQ=30;
-	public static final int GET=31;
-	public static final int HEX_DIGIT=32;
-	public static final int HOST=33;
-	public static final int HTTP_VERSION=34;
-	public static final int INT_NUM=35;
-	public static final int IPV4=36;
-	public static final int KEEP_ALIVE=37;
-	public static final int LANGUAGE_ELEMENT=38;
-	public static final int MIME=39;
-	public static final int MIME_SUBTYPE=40;
-	public static final int MIME_TYPE=41;
-	public static final int MULTIPART_MIME=42;
-	public static final int NC=43;
-	public static final int NONCE=44;
-	public static final int NUM=45;
-	public static final int OCTAL_ESC=46;
-	public static final int OPAQUE=47;
-	public static final int PATH=48;
-	public static final int PATH_ELEMENT=49;
-	public static final int POST=50;
-	public static final int PRODUCT=51;
-	public static final int PRODUCT_INFO=52;
-	public static final int Q=53;
-	public static final int QOP=54;
-	public static final int QUERY_ELEMENT=55;
-	public static final int Q_VAL=56;
-	public static final int REALM=57;
-	public static final int RESPONSE=58;
-	public static final int SEMI_COLUMN=59;
-	public static final int STAR=60;
-	public static final int STRING=61;
-	public static final int TERMINAL=62;
-	public static final int UNICODE_ESC=63;
-	public static final int URI=64;
-	public static final int USERNAME=65;
-	public static final int USER_AGENT=66;
-	public static final int VERS_NUM=67;
-	public static final int WS=68;
+	public static final int ALPHA_CHAR=7;
+	public static final int ALPHA_NUM_CHAR=8;
+	public static final int AUTHORIZATION=9;
+	public static final int BODY_STRING=10;
+	public static final int CACHE_CONTROL=11;
+	public static final int COLUMN=12;
+	public static final int COMMA=13;
+	public static final int COMMENT=14;
+	public static final int CONTENT_TYPE=15;
+	public static final int COOKIE=16;
+	public static final int DNS=17;
+	public static final int DNS_ELEMENT=18;
+	public static final int EQUALS=19;
+	public static final int ERROR_TOKEN=20;
+	public static final int ESC_SEQ=21;
+	public static final int GET=22;
+	public static final int HEX_DIGIT=23;
+	public static final int HOST=24;
+	public static final int HTTP_VERSION=25;
+	public static final int ID=26;
+	public static final int INT_NUM=27;
+	public static final int IPV4=28;
+	public static final int LANGUAGE_ELEMENT=29;
+	public static final int MAX_FORWARDS=30;
+	public static final int MIME=31;
+	public static final int MIME_SUBTYPE=32;
+	public static final int MIME_TYPE=33;
+	public static final int MULTIPART_MIME=34;
+	public static final int NUM=35;
+	public static final int OCTAL_ESC=36;
+	public static final int PATH=37;
+	public static final int PATH_ELEMENT=38;
+	public static final int POST=39;
+	public static final int PRODUCT=40;
+	public static final int PRODUCT_INFO=41;
+	public static final int Q=42;
+	public static final int QUERY=43;
+	public static final int QUERY_ELEMENT=44;
+	public static final int Q_VAL=45;
+	public static final int SEMI_COLUMN=46;
+	public static final int STAR=47;
+	public static final int STRING=48;
+	public static final int TERMINAL=49;
+	public static final int UNICODE_ESC=50;
+	public static final int USER_AGENT=51;
+	public static final int VERS_NUM=52;
+	public static final int WS=53;
 
 	// delegates
 	// delegators
@@ -97,8 +82,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = GET;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:257:9: ( 'GET' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:257:11: 'GET'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:252:9: ( 'GET' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:252:11: 'GET'
 			{
 			match("GET"); 
 
@@ -118,8 +103,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = POST;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:258:10: ( 'POST' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:258:12: 'POST'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:253:10: ( 'POST' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:253:12: 'POST'
 			{
 			match("POST"); 
 
@@ -139,8 +124,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = HOST;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:259:10: ( 'Host' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:259:12: 'Host'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:254:10: ( 'Host' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:254:12: 'Host'
 			{
 			match("Host"); 
 
@@ -160,8 +145,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = USER_AGENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:260:14: ( 'User-Agent' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:260:16: 'User-Agent'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:255:14: ( 'User-Agent' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:255:16: 'User-Agent'
 			{
 			match("User-Agent"); 
 
@@ -181,8 +166,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = CONTENT_TYPE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:261:15: ( 'Content-Type' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:261:17: 'Content-Type'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:256:15: ( 'Content-Type' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:256:17: 'Content-Type'
 			{
 			match("Content-Type"); 
 
@@ -202,8 +187,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = ACCEPT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:262:11: ( 'Accept' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:262:13: 'Accept'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:257:11: ( 'Accept' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:257:13: 'Accept'
 			{
 			match("Accept"); 
 
@@ -223,8 +208,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = COOKIE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:263:11: ( 'Cookie' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:263:13: 'Cookie'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:258:11: ( 'Cookie' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:258:13: 'Cookie'
 			{
 			match("Cookie"); 
 
@@ -244,8 +229,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = AUTHORIZATION;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:264:16: ( 'Authorization' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:264:18: 'Authorization'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:259:16: ( 'Authorization' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:259:18: 'Authorization'
 			{
 			match("Authorization"); 
 
@@ -260,55 +245,13 @@ public class HttpLexer extends Lexer {
 	}
 	// $ANTLR end "AUTHORIZATION"
 
-	// $ANTLR start "CONTENT_LENGTH"
-	public final void mCONTENT_LENGTH() throws RecognitionException {
-		try {
-			int _type = CONTENT_LENGTH;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:265:17: ( 'Content-Length' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:265:19: 'Content-Length'
-			{
-			match("Content-Length"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "CONTENT_LENGTH"
-
-	// $ANTLR start "CONNECTION"
-	public final void mCONNECTION() throws RecognitionException {
-		try {
-			int _type = CONNECTION;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:266:14: ( 'Connection' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:266:16: 'Connection'
-			{
-			match("Connection"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "CONNECTION"
-
 	// $ANTLR start "ACCEPT_LANGUAGE"
 	public final void mACCEPT_LANGUAGE() throws RecognitionException {
 		try {
 			int _type = ACCEPT_LANGUAGE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:267:17: ( 'Accept-Language' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:267:19: 'Accept-Language'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:260:17: ( 'Accept-Language' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:260:19: 'Accept-Language'
 			{
 			match("Accept-Language"); 
 
@@ -328,8 +271,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = ACCEPT_ENCODING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:268:17: ( 'Accept-Encoding' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:268:19: 'Accept-Encoding'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:261:17: ( 'Accept-Encoding' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:261:19: 'Accept-Encoding'
 			{
 			match("Accept-Encoding"); 
 
@@ -349,8 +292,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = CACHE_CONTROL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:269:16: ( 'Cache-Control' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:269:18: 'Cache-Control'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:262:16: ( 'Cache-Control' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:262:18: 'Cache-Control'
 			{
 			match("Cache-Control"); 
 
@@ -365,13 +308,34 @@ public class HttpLexer extends Lexer {
 	}
 	// $ANTLR end "CACHE_CONTROL"
 
+	// $ANTLR start "MAX_FORWARDS"
+	public final void mMAX_FORWARDS() throws RecognitionException {
+		try {
+			int _type = MAX_FORWARDS;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:263:15: ( 'Max-Forwards' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:263:17: 'Max-Forwards'
+			{
+			match("Max-Forwards"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "MAX_FORWARDS"
+
 	// $ANTLR start "Q"
 	public final void mQ() throws RecognitionException {
 		try {
 			int _type = Q;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:270:8: ( 'q' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:270:10: 'q'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:264:8: ( 'q' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:264:10: 'q'
 			{
 			match('q'); 
 			}
@@ -385,349 +349,13 @@ public class HttpLexer extends Lexer {
 	}
 	// $ANTLR end "Q"
 
-	// $ANTLR start "CHARSET"
-	public final void mCHARSET() throws RecognitionException {
-		try {
-			int _type = CHARSET;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:271:12: ( 'charset' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:271:14: 'charset'
-			{
-			match("charset"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "CHARSET"
-
-	// $ANTLR start "BOUNDARY"
-	public final void mBOUNDARY() throws RecognitionException {
-		try {
-			int _type = BOUNDARY;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:272:13: ( 'boundary' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:272:15: 'boundary'
-			{
-			match("boundary"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "BOUNDARY"
-
-	// $ANTLR start "BASIC"
-	public final void mBASIC() throws RecognitionException {
-		try {
-			int _type = BASIC;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:273:11: ( 'Basic' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:273:13: 'Basic'
-			{
-			match("Basic"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "BASIC"
-
-	// $ANTLR start "DIGEST"
-	public final void mDIGEST() throws RecognitionException {
-		try {
-			int _type = DIGEST;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:274:11: ( 'Digest' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:274:13: 'Digest'
-			{
-			match("Digest"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "DIGEST"
-
-	// $ANTLR start "USERNAME"
-	public final void mUSERNAME() throws RecognitionException {
-		try {
-			int _type = USERNAME;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:275:13: ( 'username' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:275:15: 'username'
-			{
-			match("username"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "USERNAME"
-
-	// $ANTLR start "REALM"
-	public final void mREALM() throws RecognitionException {
-		try {
-			int _type = REALM;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:276:11: ( 'realm' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:276:13: 'realm'
-			{
-			match("realm"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "REALM"
-
-	// $ANTLR start "URI"
-	public final void mURI() throws RecognitionException {
-		try {
-			int _type = URI;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:9: ( 'uri' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:11: 'uri'
-			{
-			match("uri"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "URI"
-
-	// $ANTLR start "ALGORITHM"
-	public final void mALGORITHM() throws RecognitionException {
-		try {
-			int _type = ALGORITHM;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:278:13: ( 'algorithm' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:278:15: 'algorithm'
-			{
-			match("algorithm"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "ALGORITHM"
-
-	// $ANTLR start "NONCE"
-	public final void mNONCE() throws RecognitionException {
-		try {
-			int _type = NONCE;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:279:11: ( 'nonce' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:279:13: 'nonce'
-			{
-			match("nonce"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "NONCE"
-
-	// $ANTLR start "NC"
-	public final void mNC() throws RecognitionException {
-		try {
-			int _type = NC;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:280:9: ( 'nc' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:280:11: 'nc'
-			{
-			match("nc"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "NC"
-
-	// $ANTLR start "CNONCE"
-	public final void mCNONCE() throws RecognitionException {
-		try {
-			int _type = CNONCE;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:11: ( 'cnonce' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:13: 'cnonce'
-			{
-			match("cnonce"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "CNONCE"
-
-	// $ANTLR start "QOP"
-	public final void mQOP() throws RecognitionException {
-		try {
-			int _type = QOP;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:282:9: ( 'qop' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:282:11: 'qop'
-			{
-			match("qop"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "QOP"
-
-	// $ANTLR start "RESPONSE"
-	public final void mRESPONSE() throws RecognitionException {
-		try {
-			int _type = RESPONSE;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:283:13: ( 'response' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:283:15: 'response'
-			{
-			match("response"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "RESPONSE"
-
-	// $ANTLR start "OPAQUE"
-	public final void mOPAQUE() throws RecognitionException {
-		try {
-			int _type = OPAQUE;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:284:11: ( 'opaque' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:284:13: 'opaque'
-			{
-			match("opaque"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "OPAQUE"
-
-	// $ANTLR start "KEEP_ALIVE"
-	public final void mKEEP_ALIVE() throws RecognitionException {
-		try {
-			int _type = KEEP_ALIVE;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:285:14: ( 'keep-alive' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:285:16: 'keep-alive'
-			{
-			match("keep-alive"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "KEEP_ALIVE"
-
-	// $ANTLR start "CLOSE"
-	public final void mCLOSE() throws RecognitionException {
-		try {
-			int _type = CLOSE;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:11: ( 'close' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:13: 'close'
-			{
-			match("close"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "CLOSE"
-
 	// $ANTLR start "EQUALS"
 	public final void mEQUALS() throws RecognitionException {
 		try {
 			int _type = EQUALS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:287:11: ( '=' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:287:13: '='
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:265:11: ( '=' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:265:13: '='
 			{
 			match('='); 
 			}
@@ -746,8 +374,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = COMMA;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:288:11: ( ',' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:288:13: ','
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:266:11: ( ',' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:266:13: ','
 			{
 			match(','); 
 			}
@@ -766,8 +394,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = COLUMN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:289:11: ( ':' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:289:13: ':'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:267:11: ( ':' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:267:13: ':'
 			{
 			match(':'); 
 			}
@@ -786,8 +414,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = SEMI_COLUMN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:290:15: ( ';' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:290:17: ';'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:268:15: ( ';' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:268:17: ';'
 			{
 			match(';'); 
 			}
@@ -806,8 +434,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = TERMINAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:291:13: ( '|' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:291:15: '|'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:269:13: ( '|' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:269:15: '|'
 			{
 			match('|'); 
 			}
@@ -826,8 +454,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = STAR;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:292:10: ( '*' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:292:12: '*'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:270:10: ( '*' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:270:12: '*'
 			{
 			match('*'); 
 			}
@@ -841,13 +469,67 @@ public class HttpLexer extends Lexer {
 	}
 	// $ANTLR end "STAR"
 
+	// $ANTLR start "ID"
+	public final void mID() throws RecognitionException {
+		try {
+			int _type = ID;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:273:2: ( ALPHA_CHAR ( ALPHA_CHAR )+ )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:273:4: ALPHA_CHAR ( ALPHA_CHAR )+
+			{
+			mALPHA_CHAR(); 
+
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:273:15: ( ALPHA_CHAR )+
+			int cnt1=0;
+			loop1:
+			while (true) {
+				int alt1=2;
+				int LA1_0 = input.LA(1);
+				if ( ((LA1_0 >= 'A' && LA1_0 <= 'Z')||(LA1_0 >= 'a' && LA1_0 <= 'z')) ) {
+					alt1=1;
+				}
+
+				switch (alt1) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+					{
+					if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
+						input.consume();
+					}
+					else {
+						MismatchedSetException mse = new MismatchedSetException(null,input);
+						recover(mse);
+						throw mse;
+					}
+					}
+					break;
+
+				default :
+					if ( cnt1 >= 1 ) break loop1;
+					EarlyExitException eee = new EarlyExitException(1, input);
+					throw eee;
+				}
+				cnt1++;
+			}
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "ID"
+
 	// $ANTLR start "INT_NUM"
 	public final void mINT_NUM() throws RecognitionException {
 		try {
 			int _type = INT_NUM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:295:2: ( NUM )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:295:4: NUM
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:2: ( NUM )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:4: NUM
 			{
 			mNUM(); 
 
@@ -867,37 +549,37 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = HTTP_VERSION;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:299:2: ( 'HTTP/' ( '1.1' | '2' ) )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:299:4: 'HTTP/' ( '1.1' | '2' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:2: ( 'HTTP/' ( '1.1' | '2' ) )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:4: 'HTTP/' ( '1.1' | '2' )
 			{
 			match("HTTP/"); 
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:299:12: ( '1.1' | '2' )
-			int alt1=2;
-			int LA1_0 = input.LA(1);
-			if ( (LA1_0=='1') ) {
-				alt1=1;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:12: ( '1.1' | '2' )
+			int alt2=2;
+			int LA2_0 = input.LA(1);
+			if ( (LA2_0=='1') ) {
+				alt2=1;
 			}
-			else if ( (LA1_0=='2') ) {
-				alt1=2;
+			else if ( (LA2_0=='2') ) {
+				alt2=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 1, 0, input);
+					new NoViableAltException("", 2, 0, input);
 				throw nvae;
 			}
 
-			switch (alt1) {
+			switch (alt2) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:299:13: '1.1'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:13: '1.1'
 					{
 					match("1.1"); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:300:6: '2'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:282:6: '2'
 					{
 					match('2'); 
 					}
@@ -921,57 +603,57 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = PATH;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:2: ( ( '/' | ( '/' PATH_ELEMENT )+ ( '/' )? ) ( '?' QUERY_ELEMENT ( '&' QUERY_ELEMENT )* )? )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:4: ( '/' | ( '/' PATH_ELEMENT )+ ( '/' )? ) ( '?' QUERY_ELEMENT ( '&' QUERY_ELEMENT )* )?
-			{
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:4: ( '/' | ( '/' PATH_ELEMENT )+ ( '/' )? )
-			int alt4=2;
-			int LA4_0 = input.LA(1);
-			if ( (LA4_0=='/') ) {
-				int LA4_1 = input.LA(2);
-				if ( (LA4_1=='%'||(LA4_1 >= '-' && LA4_1 <= '.')||(LA4_1 >= '0' && LA4_1 <= '9')||(LA4_1 >= 'A' && LA4_1 <= 'Z')||LA4_1=='_'||(LA4_1 >= 'a' && LA4_1 <= 'z')||LA4_1=='~') ) {
-					alt4=2;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:2: ( '/' | ( ( '/' PATH_ELEMENT )+ ( '/' )? ) )
+			int alt5=2;
+			int LA5_0 = input.LA(1);
+			if ( (LA5_0=='/') ) {
+				int LA5_1 = input.LA(2);
+				if ( (LA5_1=='%'||(LA5_1 >= '-' && LA5_1 <= '.')||(LA5_1 >= '0' && LA5_1 <= '9')||(LA5_1 >= 'A' && LA5_1 <= 'Z')||LA5_1=='_'||(LA5_1 >= 'a' && LA5_1 <= 'z')||LA5_1=='~') ) {
+					alt5=2;
 				}
 
 				else {
-					alt4=1;
+					alt5=1;
 				}
 
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 4, 0, input);
+					new NoViableAltException("", 5, 0, input);
 				throw nvae;
 			}
 
-			switch (alt4) {
+			switch (alt5) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:5: '/'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:4: '/'
 					{
 					match('/'); 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:11: ( '/' PATH_ELEMENT )+ ( '/' )?
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:10: ( ( '/' PATH_ELEMENT )+ ( '/' )? )
 					{
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:11: ( '/' PATH_ELEMENT )+
-					int cnt2=0;
-					loop2:
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:10: ( ( '/' PATH_ELEMENT )+ ( '/' )? )
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:11: ( '/' PATH_ELEMENT )+ ( '/' )?
+					{
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:11: ( '/' PATH_ELEMENT )+
+					int cnt3=0;
+					loop3:
 					while (true) {
-						int alt2=2;
-						int LA2_0 = input.LA(1);
-						if ( (LA2_0=='/') ) {
-							int LA2_1 = input.LA(2);
-							if ( (LA2_1=='%'||(LA2_1 >= '-' && LA2_1 <= '.')||(LA2_1 >= '0' && LA2_1 <= '9')||(LA2_1 >= 'A' && LA2_1 <= 'Z')||LA2_1=='_'||(LA2_1 >= 'a' && LA2_1 <= 'z')||LA2_1=='~') ) {
-								alt2=1;
+						int alt3=2;
+						int LA3_0 = input.LA(1);
+						if ( (LA3_0=='/') ) {
+							int LA3_1 = input.LA(2);
+							if ( (LA3_1=='%'||(LA3_1 >= '-' && LA3_1 <= '.')||(LA3_1 >= '0' && LA3_1 <= '9')||(LA3_1 >= 'A' && LA3_1 <= 'Z')||LA3_1=='_'||(LA3_1 >= 'a' && LA3_1 <= 'z')||LA3_1=='~') ) {
+								alt3=1;
 							}
 
 						}
 
-						switch (alt2) {
+						switch (alt3) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:12: '/' PATH_ELEMENT
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:12: '/' PATH_ELEMENT
 							{
 							match('/'); 
 							mPATH_ELEMENT(); 
@@ -980,22 +662,22 @@ public class HttpLexer extends Lexer {
 							break;
 
 						default :
-							if ( cnt2 >= 1 ) break loop2;
-							EarlyExitException eee = new EarlyExitException(2, input);
+							if ( cnt3 >= 1 ) break loop3;
+							EarlyExitException eee = new EarlyExitException(3, input);
 							throw eee;
 						}
-						cnt2++;
+						cnt3++;
 					}
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:31: ( '/' )?
-					int alt3=2;
-					int LA3_0 = input.LA(1);
-					if ( (LA3_0=='/') ) {
-						alt3=1;
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:31: ( '/' )?
+					int alt4=2;
+					int LA4_0 = input.LA(1);
+					if ( (LA4_0=='/') ) {
+						alt4=1;
 					}
-					switch (alt3) {
+					switch (alt4) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:31: '/'
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:31: '/'
 							{
 							match('/'); 
 							}
@@ -1004,50 +686,53 @@ public class HttpLexer extends Lexer {
 					}
 
 					}
+
+					}
 					break;
 
 			}
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "PATH"
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:37: ( '?' QUERY_ELEMENT ( '&' QUERY_ELEMENT )* )?
-			int alt6=2;
-			int LA6_0 = input.LA(1);
-			if ( (LA6_0=='?') ) {
-				alt6=1;
-			}
-			switch (alt6) {
+	// $ANTLR start "QUERY"
+	public final void mQUERY() throws RecognitionException {
+		try {
+			int _type = QUERY;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:290:2: ( '?' QUERY_ELEMENT ( '&' QUERY_ELEMENT )* )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:290:4: '?' QUERY_ELEMENT ( '&' QUERY_ELEMENT )*
+			{
+			match('?'); 
+			mQUERY_ELEMENT(); 
+
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:290:22: ( '&' QUERY_ELEMENT )*
+			loop6:
+			while (true) {
+				int alt6=2;
+				int LA6_0 = input.LA(1);
+				if ( (LA6_0=='&') ) {
+					alt6=1;
+				}
+
+				switch (alt6) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:38: '?' QUERY_ELEMENT ( '&' QUERY_ELEMENT )*
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:290:23: '&' QUERY_ELEMENT
 					{
-					match('?'); 
+					match('&'); 
 					mQUERY_ELEMENT(); 
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:56: ( '&' QUERY_ELEMENT )*
-					loop5:
-					while (true) {
-						int alt5=2;
-						int LA5_0 = input.LA(1);
-						if ( (LA5_0=='&') ) {
-							alt5=1;
-						}
-
-						switch (alt5) {
-						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:57: '&' QUERY_ELEMENT
-							{
-							match('&'); 
-							mQUERY_ELEMENT(); 
-
-							}
-							break;
-
-						default :
-							break loop5;
-						}
-					}
-
 					}
 					break;
 
+				default :
+					break loop6;
+				}
 			}
 
 			}
@@ -1059,26 +744,26 @@ public class HttpLexer extends Lexer {
 			// do for sure before leaving
 		}
 	}
-	// $ANTLR end "PATH"
+	// $ANTLR end "QUERY"
 
 	// $ANTLR start "DNS"
 	public final void mDNS() throws RecognitionException {
 		try {
 			int _type = DNS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:308:2: ( DNS_ELEMENT ( '.' DNS_ELEMENT )* ( '.' ALPHA_CHAR ( ALPHA_CHAR )+ ) )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:308:4: DNS_ELEMENT ( '.' DNS_ELEMENT )* ( '.' ALPHA_CHAR ( ALPHA_CHAR )+ )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:2: ( DNS_ELEMENT ( '.' DNS_ELEMENT )* ( '.' ALPHA_CHAR ( ALPHA_CHAR )+ ) )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:4: DNS_ELEMENT ( '.' DNS_ELEMENT )* ( '.' ALPHA_CHAR ( ALPHA_CHAR )+ )
 			{
 			mDNS_ELEMENT(); 
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:308:16: ( '.' DNS_ELEMENT )*
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:16: ( '.' DNS_ELEMENT )*
 			loop7:
 			while (true) {
 				int alt7=2;
 				alt7 = dfa7.predict(input);
 				switch (alt7) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:308:17: '.' DNS_ELEMENT
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:17: '.' DNS_ELEMENT
 					{
 					match('.'); 
 					mDNS_ELEMENT(); 
@@ -1091,13 +776,13 @@ public class HttpLexer extends Lexer {
 				}
 			}
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:308:35: ( '.' ALPHA_CHAR ( ALPHA_CHAR )+ )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:308:36: '.' ALPHA_CHAR ( ALPHA_CHAR )+
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:35: ( '.' ALPHA_CHAR ( ALPHA_CHAR )+ )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:36: '.' ALPHA_CHAR ( ALPHA_CHAR )+
 			{
 			match('.'); 
 			mALPHA_CHAR(); 
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:308:51: ( ALPHA_CHAR )+
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:51: ( ALPHA_CHAR )+
 			int cnt8=0;
 			loop8:
 			while (true) {
@@ -1148,8 +833,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = IPV4;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:312:2: ( NUM '.' NUM '.' NUM '.' NUM )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:312:4: NUM '.' NUM '.' NUM '.' NUM
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:298:2: ( NUM '.' NUM '.' NUM '.' NUM )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:298:4: NUM '.' NUM '.' NUM '.' NUM
 			{
 			mNUM(); 
 
@@ -1178,7 +863,7 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = MIME;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:316:2: ( MIME_TYPE '/' MIME_SUBTYPE | '*/*' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:302:2: ( MIME_TYPE '/' MIME_SUBTYPE | '*/*' )
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0=='a'||LA9_0=='c'||LA9_0=='f'||LA9_0=='i'||LA9_0=='m'||LA9_0=='t'||LA9_0=='v') ) {
@@ -1196,7 +881,7 @@ public class HttpLexer extends Lexer {
 
 			switch (alt9) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:316:4: MIME_TYPE '/' MIME_SUBTYPE
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:302:4: MIME_TYPE '/' MIME_SUBTYPE
 					{
 					mMIME_TYPE(); 
 
@@ -1206,7 +891,7 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:317:4: '*/*'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:303:4: '*/*'
 					{
 					match("*/*"); 
 
@@ -1228,8 +913,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = MULTIPART_MIME;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:2: ( 'multipart/' MIME_SUBTYPE )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:4: 'multipart/' MIME_SUBTYPE
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:307:2: ( 'multipart/' MIME_SUBTYPE )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:307:4: 'multipart/' MIME_SUBTYPE
 			{
 			match("multipart/"); 
 
@@ -1251,7 +936,7 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = Q_VAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:325:2: ( '0' '.' ( ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) ) | '1.0' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:311:2: ( '0' '.' ( ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) ) | '1.0' )
 			int alt11=2;
 			int LA11_0 = input.LA(1);
 			if ( (LA11_0=='0') ) {
@@ -1269,11 +954,11 @@ public class HttpLexer extends Lexer {
 
 			switch (alt11) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:325:4: '0' '.' ( ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) )
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:311:4: '0' '.' ( ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) )
 					{
 					match('0'); 
 					match('.'); 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:325:12: ( ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) )
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:311:12: ( ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) )
 					int alt10=3;
 					int LA10_0 = input.LA(1);
 					if ( ((LA10_0 >= '0' && LA10_0 <= '9')) ) {
@@ -1304,7 +989,7 @@ public class HttpLexer extends Lexer {
 
 					switch (alt10) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:325:13: ( '0' .. '9' )
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:311:13: ( '0' .. '9' )
 							{
 							if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 								input.consume();
@@ -1317,7 +1002,7 @@ public class HttpLexer extends Lexer {
 							}
 							break;
 						case 2 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:6: ( '0' .. '9' ) ( '0' .. '9' )
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:312:6: ( '0' .. '9' ) ( '0' .. '9' )
 							{
 							if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 								input.consume();
@@ -1338,7 +1023,7 @@ public class HttpLexer extends Lexer {
 							}
 							break;
 						case 3 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:327:6: ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' )
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:313:6: ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' )
 							{
 							if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 								input.consume();
@@ -1372,7 +1057,7 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:328:4: '1.0'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:314:4: '1.0'
 					{
 					match("1.0"); 
 
@@ -1394,10 +1079,10 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = PRODUCT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:332:2: ( ( ALPHA_NUM_CHAR )+ '/' VERS_NUM )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:332:4: ( ALPHA_NUM_CHAR )+ '/' VERS_NUM
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:318:2: ( ( ALPHA_NUM_CHAR )+ '/' VERS_NUM )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:318:4: ( ALPHA_NUM_CHAR )+ '/' VERS_NUM
 			{
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:332:4: ( ALPHA_NUM_CHAR )+
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:318:4: ( ALPHA_NUM_CHAR )+
 			int cnt12=0;
 			loop12:
 			while (true) {
@@ -1449,11 +1134,11 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = PRODUCT_INFO;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:336:2: ( '(' (~ ( '(' | ')' ) )* ')' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:336:4: '(' (~ ( '(' | ')' ) )* ')'
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:322:2: ( '(' (~ ( '(' | ')' ) )* ')' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:322:4: '(' (~ ( '(' | ')' ) )* ')'
 			{
 			match('('); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:336:8: (~ ( '(' | ')' ) )*
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:322:8: (~ ( '(' | ')' ) )*
 			loop13:
 			while (true) {
 				int alt13=2;
@@ -1494,126 +1179,29 @@ public class HttpLexer extends Lexer {
 	}
 	// $ANTLR end "PRODUCT_INFO"
 
-	// $ANTLR start "ENCODING_ELEMENT"
-	public final void mENCODING_ELEMENT() throws RecognitionException {
-		try {
-			int _type = ENCODING_ELEMENT;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:340:2: ( 'gzip' | 'compress' | 'deflate' | 'br' | 'identity' )
-			int alt14=5;
-			switch ( input.LA(1) ) {
-			case 'g':
-				{
-				alt14=1;
-				}
-				break;
-			case 'c':
-				{
-				alt14=2;
-				}
-				break;
-			case 'd':
-				{
-				alt14=3;
-				}
-				break;
-			case 'b':
-				{
-				alt14=4;
-				}
-				break;
-			case 'i':
-				{
-				alt14=5;
-				}
-				break;
-			default:
-				NoViableAltException nvae =
-					new NoViableAltException("", 14, 0, input);
-				throw nvae;
-			}
-			switch (alt14) {
-				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:340:4: 'gzip'
-					{
-					match("gzip"); 
-
-					}
-					break;
-				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:341:4: 'compress'
-					{
-					match("compress"); 
-
-					}
-					break;
-				case 3 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:342:4: 'deflate'
-					{
-					match("deflate"); 
-
-					}
-					break;
-				case 4 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:343:4: 'br'
-					{
-					match("br"); 
-
-					}
-					break;
-				case 5 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:344:4: 'identity'
-					{
-					match("identity"); 
-
-					}
-					break;
-
-			}
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "ENCODING_ELEMENT"
-
 	// $ANTLR start "LANGUAGE_ELEMENT"
 	public final void mLANGUAGE_ELEMENT() throws RecognitionException {
 		try {
 			int _type = LANGUAGE_ELEMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:348:2: ( ( 'a' .. 'z' ) ( 'a' .. 'z' ) ( 'a' .. 'z' )? ( '-' ( ALPHA_CHAR )+ )? )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:348:4: ( 'a' .. 'z' ) ( 'a' .. 'z' ) ( 'a' .. 'z' )? ( '-' ( ALPHA_CHAR )+ )?
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:2: ( ALPHA_CHAR ALPHA_CHAR ( ALPHA_CHAR )? ( '-' ( ALPHA_CHAR )+ ) )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:4: ALPHA_CHAR ALPHA_CHAR ( ALPHA_CHAR )? ( '-' ( ALPHA_CHAR )+ )
 			{
-			if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
-				input.consume();
+			mALPHA_CHAR(); 
+
+			mALPHA_CHAR(); 
+
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:26: ( ALPHA_CHAR )?
+			int alt14=2;
+			int LA14_0 = input.LA(1);
+			if ( ((LA14_0 >= 'A' && LA14_0 <= 'Z')||(LA14_0 >= 'a' && LA14_0 <= 'z')) ) {
+				alt14=1;
 			}
-			else {
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				recover(mse);
-				throw mse;
-			}
-			if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
-				input.consume();
-			}
-			else {
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				recover(mse);
-				throw mse;
-			}
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:348:24: ( 'a' .. 'z' )?
-			int alt15=2;
-			int LA15_0 = input.LA(1);
-			if ( ((LA15_0 >= 'a' && LA15_0 <= 'z')) ) {
-				alt15=1;
-			}
-			switch (alt15) {
+			switch (alt14) {
 				case 1 :
 					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 					{
-					if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
+					if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
 					}
 					else {
@@ -1626,52 +1214,42 @@ public class HttpLexer extends Lexer {
 
 			}
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:348:36: ( '-' ( ALPHA_CHAR )+ )?
-			int alt17=2;
-			int LA17_0 = input.LA(1);
-			if ( (LA17_0=='-') ) {
-				alt17=1;
-			}
-			switch (alt17) {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:38: ( '-' ( ALPHA_CHAR )+ )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:39: '-' ( ALPHA_CHAR )+
+			{
+			match('-'); 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:43: ( ALPHA_CHAR )+
+			int cnt15=0;
+			loop15:
+			while (true) {
+				int alt15=2;
+				int LA15_0 = input.LA(1);
+				if ( ((LA15_0 >= 'A' && LA15_0 <= 'Z')||(LA15_0 >= 'a' && LA15_0 <= 'z')) ) {
+					alt15=1;
+				}
+
+				switch (alt15) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:348:37: '-' ( ALPHA_CHAR )+
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 					{
-					match('-'); 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:348:41: ( ALPHA_CHAR )+
-					int cnt16=0;
-					loop16:
-					while (true) {
-						int alt16=2;
-						int LA16_0 = input.LA(1);
-						if ( ((LA16_0 >= 'A' && LA16_0 <= 'Z')||(LA16_0 >= 'a' && LA16_0 <= 'z')) ) {
-							alt16=1;
-						}
-
-						switch (alt16) {
-						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
-							{
-							if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
-								input.consume();
-							}
-							else {
-								MismatchedSetException mse = new MismatchedSetException(null,input);
-								recover(mse);
-								throw mse;
-							}
-							}
-							break;
-
-						default :
-							if ( cnt16 >= 1 ) break loop16;
-							EarlyExitException eee = new EarlyExitException(16, input);
-							throw eee;
-						}
-						cnt16++;
+					if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
+						input.consume();
 					}
-
+					else {
+						MismatchedSetException mse = new MismatchedSetException(null,input);
+						recover(mse);
+						throw mse;
+					}
 					}
 					break;
+
+				default :
+					if ( cnt15 >= 1 ) break loop15;
+					EarlyExitException eee = new EarlyExitException(15, input);
+					throw eee;
+				}
+				cnt15++;
+			}
 
 			}
 
@@ -1686,37 +1264,97 @@ public class HttpLexer extends Lexer {
 	}
 	// $ANTLR end "LANGUAGE_ELEMENT"
 
-	// $ANTLR start "STRING"
-	public final void mSTRING() throws RecognitionException {
+	// $ANTLR start "BODY_STRING"
+	public final void mBODY_STRING() throws RecognitionException {
 		try {
-			int _type = STRING;
+			int _type = BODY_STRING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:352:5: ( '\\'' ( ESC_SEQ |~ ( '\\\\' | '\\'' ) )* '\\'' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:352:7: '\\'' ( ESC_SEQ |~ ( '\\\\' | '\\'' ) )* '\\''
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:5: ( '°' ( ESC_SEQ |~ ( '\\\\' | '°' ) )* '°' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:7: '°' ( ESC_SEQ |~ ( '\\\\' | '°' ) )* '°'
 			{
-			match('\''); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:352:12: ( ESC_SEQ |~ ( '\\\\' | '\\'' ) )*
-			loop18:
+			match('\u00B0'); 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:11: ( ESC_SEQ |~ ( '\\\\' | '°' ) )*
+			loop16:
 			while (true) {
-				int alt18=3;
-				int LA18_0 = input.LA(1);
-				if ( (LA18_0=='\\') ) {
-					alt18=1;
+				int alt16=3;
+				int LA16_0 = input.LA(1);
+				if ( (LA16_0=='\\') ) {
+					alt16=1;
 				}
-				else if ( ((LA18_0 >= '\u0000' && LA18_0 <= '&')||(LA18_0 >= '(' && LA18_0 <= '[')||(LA18_0 >= ']' && LA18_0 <= '\uFFFF')) ) {
-					alt18=2;
+				else if ( ((LA16_0 >= '\u0000' && LA16_0 <= '[')||(LA16_0 >= ']' && LA16_0 <= '\u00AF')||(LA16_0 >= '\u00B1' && LA16_0 <= '\uFFFF')) ) {
+					alt16=2;
 				}
 
-				switch (alt18) {
+				switch (alt16) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:352:13: ESC_SEQ
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:12: ESC_SEQ
 					{
 					mESC_SEQ(); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:352:23: ~ ( '\\\\' | '\\'' )
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:22: ~ ( '\\\\' | '°' )
+					{
+					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\u00AF')||(input.LA(1) >= '\u00B1' && input.LA(1) <= '\uFFFF') ) {
+						input.consume();
+					}
+					else {
+						MismatchedSetException mse = new MismatchedSetException(null,input);
+						recover(mse);
+						throw mse;
+					}
+					}
+					break;
+
+				default :
+					break loop16;
+				}
+			}
+
+			match('\u00B0'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "BODY_STRING"
+
+	// $ANTLR start "STRING"
+	public final void mSTRING() throws RecognitionException {
+		try {
+			int _type = STRING;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:334:5: ( '\\'' ( ESC_SEQ |~ ( '\\\\' | '\\'' ) )* '\\'' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:334:7: '\\'' ( ESC_SEQ |~ ( '\\\\' | '\\'' ) )* '\\''
+			{
+			match('\''); 
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:334:12: ( ESC_SEQ |~ ( '\\\\' | '\\'' ) )*
+			loop17:
+			while (true) {
+				int alt17=3;
+				int LA17_0 = input.LA(1);
+				if ( (LA17_0=='\\') ) {
+					alt17=1;
+				}
+				else if ( ((LA17_0 >= '\u0000' && LA17_0 <= '&')||(LA17_0 >= '(' && LA17_0 <= '[')||(LA17_0 >= ']' && LA17_0 <= '\uFFFF')) ) {
+					alt17=2;
+				}
+
+				switch (alt17) {
+				case 1 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:334:13: ESC_SEQ
+					{
+					mESC_SEQ(); 
+
+					}
+					break;
+				case 2 :
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:334:23: ~ ( '\\\\' | '\\'' )
 					{
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
@@ -1730,7 +1368,7 @@ public class HttpLexer extends Lexer {
 					break;
 
 				default :
-					break loop18;
+					break loop17;
 				}
 			}
 
@@ -1751,16 +1389,16 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:356:2: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
-			int alt22=2;
-			int LA22_0 = input.LA(1);
-			if ( (LA22_0=='/') ) {
-				int LA22_1 = input.LA(2);
-				if ( (LA22_1=='/') ) {
-					alt22=1;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:338:2: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
+			int alt21=2;
+			int LA21_0 = input.LA(1);
+			if ( (LA21_0=='/') ) {
+				int LA21_1 = input.LA(2);
+				if ( (LA21_1=='/') ) {
+					alt21=1;
 				}
-				else if ( (LA22_1=='*') ) {
-					alt22=2;
+				else if ( (LA21_1=='*') ) {
+					alt21=2;
 				}
 
 				else {
@@ -1768,7 +1406,7 @@ public class HttpLexer extends Lexer {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 22, 1, input);
+							new NoViableAltException("", 21, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -1779,26 +1417,26 @@ public class HttpLexer extends Lexer {
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 22, 0, input);
+					new NoViableAltException("", 21, 0, input);
 				throw nvae;
 			}
 
-			switch (alt22) {
+			switch (alt21) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:356:4: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:338:4: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
 					{
 					match("//"); 
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:356:9: (~ ( '\\n' | '\\r' ) )*
-					loop19:
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:338:9: (~ ( '\\n' | '\\r' ) )*
+					loop18:
 					while (true) {
-						int alt19=2;
-						int LA19_0 = input.LA(1);
-						if ( ((LA19_0 >= '\u0000' && LA19_0 <= '\t')||(LA19_0 >= '\u000B' && LA19_0 <= '\f')||(LA19_0 >= '\u000E' && LA19_0 <= '\uFFFF')) ) {
-							alt19=1;
+						int alt18=2;
+						int LA18_0 = input.LA(1);
+						if ( ((LA18_0 >= '\u0000' && LA18_0 <= '\t')||(LA18_0 >= '\u000B' && LA18_0 <= '\f')||(LA18_0 >= '\u000E' && LA18_0 <= '\uFFFF')) ) {
+							alt18=1;
 						}
 
-						switch (alt19) {
+						switch (alt18) {
 						case 1 :
 							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 							{
@@ -1814,19 +1452,19 @@ public class HttpLexer extends Lexer {
 							break;
 
 						default :
-							break loop19;
+							break loop18;
 						}
 					}
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:356:23: ( '\\r' )?
-					int alt20=2;
-					int LA20_0 = input.LA(1);
-					if ( (LA20_0=='\r') ) {
-						alt20=1;
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:338:23: ( '\\r' )?
+					int alt19=2;
+					int LA19_0 = input.LA(1);
+					if ( (LA19_0=='\r') ) {
+						alt19=1;
 					}
-					switch (alt20) {
+					switch (alt19) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:356:23: '\\r'
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:338:23: '\\r'
 							{
 							match('\r'); 
 							}
@@ -1839,39 +1477,39 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:357:4: '/*' ( options {greedy=false; } : . )* '*/'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:339:4: '/*' ( options {greedy=false; } : . )* '*/'
 					{
 					match("/*"); 
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:357:9: ( options {greedy=false; } : . )*
-					loop21:
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:339:9: ( options {greedy=false; } : . )*
+					loop20:
 					while (true) {
-						int alt21=2;
-						int LA21_0 = input.LA(1);
-						if ( (LA21_0=='*') ) {
-							int LA21_1 = input.LA(2);
-							if ( (LA21_1=='/') ) {
-								alt21=2;
+						int alt20=2;
+						int LA20_0 = input.LA(1);
+						if ( (LA20_0=='*') ) {
+							int LA20_1 = input.LA(2);
+							if ( (LA20_1=='/') ) {
+								alt20=2;
 							}
-							else if ( ((LA21_1 >= '\u0000' && LA21_1 <= '.')||(LA21_1 >= '0' && LA21_1 <= '\uFFFF')) ) {
-								alt21=1;
+							else if ( ((LA20_1 >= '\u0000' && LA20_1 <= '.')||(LA20_1 >= '0' && LA20_1 <= '\uFFFF')) ) {
+								alt20=1;
 							}
 
 						}
-						else if ( ((LA21_0 >= '\u0000' && LA21_0 <= ')')||(LA21_0 >= '+' && LA21_0 <= '\uFFFF')) ) {
-							alt21=1;
+						else if ( ((LA20_0 >= '\u0000' && LA20_0 <= ')')||(LA20_0 >= '+' && LA20_0 <= '\uFFFF')) ) {
+							alt20=1;
 						}
 
-						switch (alt21) {
+						switch (alt20) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:357:37: .
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:339:37: .
 							{
 							matchAny(); 
 							}
 							break;
 
 						default :
-							break loop21;
+							break loop20;
 						}
 					}
 
@@ -1896,8 +1534,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:361:2: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:361:4: ( ' ' | '\\t' | '\\r' | '\\n' )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:343:2: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:343:4: ( ' ' | '\\t' | '\\r' | '\\n' )
 			{
 			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 				input.consume();
@@ -1922,20 +1560,20 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "VERS_NUM"
 	public final void mVERS_NUM() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:371:2: ( ( ALPHA_NUM_CHAR )+ ( '.' ( ALPHA_NUM_CHAR )+ )* )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:371:4: ( ALPHA_NUM_CHAR )+ ( '.' ( ALPHA_NUM_CHAR )+ )*
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:353:2: ( ( ALPHA_NUM_CHAR )+ ( '.' ( ALPHA_NUM_CHAR )+ )* )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:353:4: ( ALPHA_NUM_CHAR )+ ( '.' ( ALPHA_NUM_CHAR )+ )*
 			{
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:371:4: ( ALPHA_NUM_CHAR )+
-			int cnt23=0;
-			loop23:
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:353:4: ( ALPHA_NUM_CHAR )+
+			int cnt22=0;
+			loop22:
 			while (true) {
-				int alt23=2;
-				int LA23_0 = input.LA(1);
-				if ( ((LA23_0 >= '0' && LA23_0 <= '9')||(LA23_0 >= 'A' && LA23_0 <= 'Z')||(LA23_0 >= 'a' && LA23_0 <= 'z')) ) {
-					alt23=1;
+				int alt22=2;
+				int LA22_0 = input.LA(1);
+				if ( ((LA22_0 >= '0' && LA22_0 <= '9')||(LA22_0 >= 'A' && LA22_0 <= 'Z')||(LA22_0 >= 'a' && LA22_0 <= 'z')) ) {
+					alt22=1;
 				}
 
-				switch (alt23) {
+				switch (alt22) {
 				case 1 :
 					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 					{
@@ -1951,38 +1589,38 @@ public class HttpLexer extends Lexer {
 					break;
 
 				default :
-					if ( cnt23 >= 1 ) break loop23;
-					EarlyExitException eee = new EarlyExitException(23, input);
+					if ( cnt22 >= 1 ) break loop22;
+					EarlyExitException eee = new EarlyExitException(22, input);
 					throw eee;
 				}
-				cnt23++;
+				cnt22++;
 			}
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:371:20: ( '.' ( ALPHA_NUM_CHAR )+ )*
-			loop25:
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:353:20: ( '.' ( ALPHA_NUM_CHAR )+ )*
+			loop24:
 			while (true) {
-				int alt25=2;
-				int LA25_0 = input.LA(1);
-				if ( (LA25_0=='.') ) {
-					alt25=1;
+				int alt24=2;
+				int LA24_0 = input.LA(1);
+				if ( (LA24_0=='.') ) {
+					alt24=1;
 				}
 
-				switch (alt25) {
+				switch (alt24) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:371:21: '.' ( ALPHA_NUM_CHAR )+
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:353:21: '.' ( ALPHA_NUM_CHAR )+
 					{
 					match('.'); 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:371:25: ( ALPHA_NUM_CHAR )+
-					int cnt24=0;
-					loop24:
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:353:25: ( ALPHA_NUM_CHAR )+
+					int cnt23=0;
+					loop23:
 					while (true) {
-						int alt24=2;
-						int LA24_0 = input.LA(1);
-						if ( ((LA24_0 >= '0' && LA24_0 <= '9')||(LA24_0 >= 'A' && LA24_0 <= 'Z')||(LA24_0 >= 'a' && LA24_0 <= 'z')) ) {
-							alt24=1;
+						int alt23=2;
+						int LA23_0 = input.LA(1);
+						if ( ((LA23_0 >= '0' && LA23_0 <= '9')||(LA23_0 >= 'A' && LA23_0 <= 'Z')||(LA23_0 >= 'a' && LA23_0 <= 'z')) ) {
+							alt23=1;
 						}
 
-						switch (alt24) {
+						switch (alt23) {
 						case 1 :
 							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 							{
@@ -1998,18 +1636,18 @@ public class HttpLexer extends Lexer {
 							break;
 
 						default :
-							if ( cnt24 >= 1 ) break loop24;
-							EarlyExitException eee = new EarlyExitException(24, input);
+							if ( cnt23 >= 1 ) break loop23;
+							EarlyExitException eee = new EarlyExitException(23, input);
 							throw eee;
 						}
-						cnt24++;
+						cnt23++;
 					}
 
 					}
 					break;
 
 				default :
-					break loop25;
+					break loop24;
 				}
 			}
 
@@ -2025,8 +1663,8 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "DNS_ELEMENT"
 	public final void mDNS_ELEMENT() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:376:2: ( ( ALPHA_NUM_CHAR | '-' ) ( ALPHA_NUM_CHAR | '-' )+ )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:376:4: ( ALPHA_NUM_CHAR | '-' ) ( ALPHA_NUM_CHAR | '-' )+
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:358:2: ( ( ALPHA_NUM_CHAR | '-' ) ( ALPHA_NUM_CHAR | '-' )+ )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:358:4: ( ALPHA_NUM_CHAR | '-' ) ( ALPHA_NUM_CHAR | '-' )+
 			{
 			if ( input.LA(1)=='-'||(input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -2036,17 +1674,17 @@ public class HttpLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:376:27: ( ALPHA_NUM_CHAR | '-' )+
-			int cnt26=0;
-			loop26:
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:358:27: ( ALPHA_NUM_CHAR | '-' )+
+			int cnt25=0;
+			loop25:
 			while (true) {
-				int alt26=2;
-				int LA26_0 = input.LA(1);
-				if ( (LA26_0=='-'||(LA26_0 >= '0' && LA26_0 <= '9')||(LA26_0 >= 'A' && LA26_0 <= 'Z')||(LA26_0 >= 'a' && LA26_0 <= 'z')) ) {
-					alt26=1;
+				int alt25=2;
+				int LA25_0 = input.LA(1);
+				if ( (LA25_0=='-'||(LA25_0 >= '0' && LA25_0 <= '9')||(LA25_0 >= 'A' && LA25_0 <= 'Z')||(LA25_0 >= 'a' && LA25_0 <= 'z')) ) {
+					alt25=1;
 				}
 
-				switch (alt26) {
+				switch (alt25) {
 				case 1 :
 					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 					{
@@ -2062,11 +1700,11 @@ public class HttpLexer extends Lexer {
 					break;
 
 				default :
-					if ( cnt26 >= 1 ) break loop26;
-					EarlyExitException eee = new EarlyExitException(26, input);
+					if ( cnt25 >= 1 ) break loop25;
+					EarlyExitException eee = new EarlyExitException(25, input);
 					throw eee;
 				}
-				cnt26++;
+				cnt25++;
 			}
 
 			}
@@ -2081,14 +1719,14 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "PATH_ELEMENT"
 	public final void mPATH_ELEMENT() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:381:2: ( ( ALPHA_NUM_CHAR | '.' | '~' | '-' | '_' | '%' HEX_DIGIT HEX_DIGIT )+ )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:381:4: ( ALPHA_NUM_CHAR | '.' | '~' | '-' | '_' | '%' HEX_DIGIT HEX_DIGIT )+
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:363:2: ( ( ALPHA_NUM_CHAR | '.' | '~' | '-' | '_' | '%' HEX_DIGIT HEX_DIGIT )+ )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:363:4: ( ALPHA_NUM_CHAR | '.' | '~' | '-' | '_' | '%' HEX_DIGIT HEX_DIGIT )+
 			{
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:381:4: ( ALPHA_NUM_CHAR | '.' | '~' | '-' | '_' | '%' HEX_DIGIT HEX_DIGIT )+
-			int cnt27=0;
-			loop27:
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:363:4: ( ALPHA_NUM_CHAR | '.' | '~' | '-' | '_' | '%' HEX_DIGIT HEX_DIGIT )+
+			int cnt26=0;
+			loop26:
 			while (true) {
-				int alt27=7;
+				int alt26=7;
 				switch ( input.LA(1) ) {
 				case '0':
 				case '1':
@@ -2153,69 +1791,69 @@ public class HttpLexer extends Lexer {
 				case 'y':
 				case 'z':
 					{
-					alt27=1;
+					alt26=1;
 					}
 					break;
 				case '.':
 					{
-					alt27=2;
+					alt26=2;
 					}
 					break;
 				case '~':
 					{
-					alt27=3;
+					alt26=3;
 					}
 					break;
 				case '-':
 					{
-					alt27=4;
+					alt26=4;
 					}
 					break;
 				case '_':
 					{
-					alt27=5;
+					alt26=5;
 					}
 					break;
 				case '%':
 					{
-					alt27=6;
+					alt26=6;
 					}
 					break;
 				}
-				switch (alt27) {
+				switch (alt26) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:381:5: ALPHA_NUM_CHAR
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:363:5: ALPHA_NUM_CHAR
 					{
 					mALPHA_NUM_CHAR(); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:382:4: '.'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:364:4: '.'
 					{
 					match('.'); 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:382:10: '~'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:364:10: '~'
 					{
 					match('~'); 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:382:16: '-'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:364:16: '-'
 					{
 					match('-'); 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:382:22: '_'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:364:22: '_'
 					{
 					match('_'); 
 					}
 					break;
 				case 6 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:383:4: '%' HEX_DIGIT HEX_DIGIT
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:365:4: '%' HEX_DIGIT HEX_DIGIT
 					{
 					match('%'); 
 					mHEX_DIGIT(); 
@@ -2226,11 +1864,11 @@ public class HttpLexer extends Lexer {
 					break;
 
 				default :
-					if ( cnt27 >= 1 ) break loop27;
-					EarlyExitException eee = new EarlyExitException(27, input);
+					if ( cnt26 >= 1 ) break loop26;
+					EarlyExitException eee = new EarlyExitException(26, input);
 					throw eee;
 				}
-				cnt27++;
+				cnt26++;
 			}
 
 			}
@@ -2245,8 +1883,8 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "QUERY_ELEMENT"
 	public final void mQUERY_ELEMENT() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:2: ( PATH_ELEMENT '=' PATH_ELEMENT )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:4: PATH_ELEMENT '=' PATH_ELEMENT
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:371:2: ( PATH_ELEMENT '=' PATH_ELEMENT )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:371:4: PATH_ELEMENT '=' PATH_ELEMENT
 			{
 			mPATH_ELEMENT(); 
 
@@ -2265,17 +1903,17 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "MIME_TYPE"
 	public final void mMIME_TYPE() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:394:2: ( 'application' | 'audio' | 'chemical' | 'font' | 'image' | 'message' | 'model' | 'text' | 'video' )
-			int alt28=9;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:376:2: ( 'application' | 'audio' | 'chemical' | 'font' | 'image' | 'message' | 'model' | 'text' | 'video' )
+			int alt27=9;
 			switch ( input.LA(1) ) {
 			case 'a':
 				{
-				int LA28_1 = input.LA(2);
-				if ( (LA28_1=='p') ) {
-					alt28=1;
+				int LA27_1 = input.LA(2);
+				if ( (LA27_1=='p') ) {
+					alt27=1;
 				}
-				else if ( (LA28_1=='u') ) {
-					alt28=2;
+				else if ( (LA27_1=='u') ) {
+					alt27=2;
 				}
 
 				else {
@@ -2283,7 +1921,7 @@ public class HttpLexer extends Lexer {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 28, 1, input);
+							new NoViableAltException("", 27, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -2294,27 +1932,27 @@ public class HttpLexer extends Lexer {
 				break;
 			case 'c':
 				{
-				alt28=3;
+				alt27=3;
 				}
 				break;
 			case 'f':
 				{
-				alt28=4;
+				alt27=4;
 				}
 				break;
 			case 'i':
 				{
-				alt28=5;
+				alt27=5;
 				}
 				break;
 			case 'm':
 				{
-				int LA28_5 = input.LA(2);
-				if ( (LA28_5=='e') ) {
-					alt28=6;
+				int LA27_5 = input.LA(2);
+				if ( (LA27_5=='e') ) {
+					alt27=6;
 				}
-				else if ( (LA28_5=='o') ) {
-					alt28=7;
+				else if ( (LA27_5=='o') ) {
+					alt27=7;
 				}
 
 				else {
@@ -2322,7 +1960,7 @@ public class HttpLexer extends Lexer {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 28, 5, input);
+							new NoViableAltException("", 27, 5, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -2333,78 +1971,78 @@ public class HttpLexer extends Lexer {
 				break;
 			case 't':
 				{
-				alt28=8;
+				alt27=8;
 				}
 				break;
 			case 'v':
 				{
-				alt28=9;
+				alt27=9;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 28, 0, input);
+					new NoViableAltException("", 27, 0, input);
 				throw nvae;
 			}
-			switch (alt28) {
+			switch (alt27) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:394:4: 'application'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:376:4: 'application'
 					{
 					match("application"); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:395:4: 'audio'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:377:4: 'audio'
 					{
 					match("audio"); 
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:396:4: 'chemical'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:378:4: 'chemical'
 					{
 					match("chemical"); 
 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:397:4: 'font'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:379:4: 'font'
 					{
 					match("font"); 
 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:398:4: 'image'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:380:4: 'image'
 					{
 					match("image"); 
 
 					}
 					break;
 				case 6 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:399:4: 'message'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:381:4: 'message'
 					{
 					match("message"); 
 
 					}
 					break;
 				case 7 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:400:4: 'model'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:382:4: 'model'
 					{
 					match("model"); 
 
 					}
 					break;
 				case 8 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:401:4: 'text'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:383:4: 'text'
 					{
 					match("text"); 
 
 					}
 					break;
 				case 9 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:402:4: 'video'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:384:4: 'video'
 					{
 					match("video"); 
 
@@ -2422,37 +2060,37 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "MIME_SUBTYPE"
 	public final void mMIME_SUBTYPE() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:407:2: ( ( ALPHA_NUM_CHAR | '-' )+ ( '.' ( ALPHA_NUM_CHAR | '-' )+ )* ( '+' ( ALPHA_CHAR )+ )? | '*' )
-			int alt34=2;
-			int LA34_0 = input.LA(1);
-			if ( (LA34_0=='-'||(LA34_0 >= '0' && LA34_0 <= '9')||(LA34_0 >= 'A' && LA34_0 <= 'Z')||(LA34_0 >= 'a' && LA34_0 <= 'z')) ) {
-				alt34=1;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:2: ( ( ALPHA_NUM_CHAR | '-' )+ ( '.' ( ALPHA_NUM_CHAR | '-' )+ )* ( '+' ( ALPHA_CHAR )+ )? | '*' )
+			int alt33=2;
+			int LA33_0 = input.LA(1);
+			if ( (LA33_0=='-'||(LA33_0 >= '0' && LA33_0 <= '9')||(LA33_0 >= 'A' && LA33_0 <= 'Z')||(LA33_0 >= 'a' && LA33_0 <= 'z')) ) {
+				alt33=1;
 			}
-			else if ( (LA34_0=='*') ) {
-				alt34=2;
+			else if ( (LA33_0=='*') ) {
+				alt33=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 34, 0, input);
+					new NoViableAltException("", 33, 0, input);
 				throw nvae;
 			}
 
-			switch (alt34) {
+			switch (alt33) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:407:4: ( ALPHA_NUM_CHAR | '-' )+ ( '.' ( ALPHA_NUM_CHAR | '-' )+ )* ( '+' ( ALPHA_CHAR )+ )?
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:4: ( ALPHA_NUM_CHAR | '-' )+ ( '.' ( ALPHA_NUM_CHAR | '-' )+ )* ( '+' ( ALPHA_CHAR )+ )?
 					{
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:407:4: ( ALPHA_NUM_CHAR | '-' )+
-					int cnt29=0;
-					loop29:
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:4: ( ALPHA_NUM_CHAR | '-' )+
+					int cnt28=0;
+					loop28:
 					while (true) {
-						int alt29=2;
-						int LA29_0 = input.LA(1);
-						if ( (LA29_0=='-'||(LA29_0 >= '0' && LA29_0 <= '9')||(LA29_0 >= 'A' && LA29_0 <= 'Z')||(LA29_0 >= 'a' && LA29_0 <= 'z')) ) {
-							alt29=1;
+						int alt28=2;
+						int LA28_0 = input.LA(1);
+						if ( (LA28_0=='-'||(LA28_0 >= '0' && LA28_0 <= '9')||(LA28_0 >= 'A' && LA28_0 <= 'Z')||(LA28_0 >= 'a' && LA28_0 <= 'z')) ) {
+							alt28=1;
 						}
 
-						switch (alt29) {
+						switch (alt28) {
 						case 1 :
 							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 							{
@@ -2468,38 +2106,38 @@ public class HttpLexer extends Lexer {
 							break;
 
 						default :
-							if ( cnt29 >= 1 ) break loop29;
-							EarlyExitException eee = new EarlyExitException(29, input);
+							if ( cnt28 >= 1 ) break loop28;
+							EarlyExitException eee = new EarlyExitException(28, input);
 							throw eee;
 						}
-						cnt29++;
+						cnt28++;
 					}
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:407:28: ( '.' ( ALPHA_NUM_CHAR | '-' )+ )*
-					loop31:
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:28: ( '.' ( ALPHA_NUM_CHAR | '-' )+ )*
+					loop30:
 					while (true) {
-						int alt31=2;
-						int LA31_0 = input.LA(1);
-						if ( (LA31_0=='.') ) {
-							alt31=1;
+						int alt30=2;
+						int LA30_0 = input.LA(1);
+						if ( (LA30_0=='.') ) {
+							alt30=1;
 						}
 
-						switch (alt31) {
+						switch (alt30) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:407:29: '.' ( ALPHA_NUM_CHAR | '-' )+
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:29: '.' ( ALPHA_NUM_CHAR | '-' )+
 							{
 							match('.'); 
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:407:33: ( ALPHA_NUM_CHAR | '-' )+
-							int cnt30=0;
-							loop30:
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:33: ( ALPHA_NUM_CHAR | '-' )+
+							int cnt29=0;
+							loop29:
 							while (true) {
-								int alt30=2;
-								int LA30_0 = input.LA(1);
-								if ( (LA30_0=='-'||(LA30_0 >= '0' && LA30_0 <= '9')||(LA30_0 >= 'A' && LA30_0 <= 'Z')||(LA30_0 >= 'a' && LA30_0 <= 'z')) ) {
-									alt30=1;
+								int alt29=2;
+								int LA29_0 = input.LA(1);
+								if ( (LA29_0=='-'||(LA29_0 >= '0' && LA29_0 <= '9')||(LA29_0 >= 'A' && LA29_0 <= 'Z')||(LA29_0 >= 'a' && LA29_0 <= 'z')) ) {
+									alt29=1;
 								}
 
-								switch (alt30) {
+								switch (alt29) {
 								case 1 :
 									// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 									{
@@ -2515,43 +2153,43 @@ public class HttpLexer extends Lexer {
 									break;
 
 								default :
-									if ( cnt30 >= 1 ) break loop30;
-									EarlyExitException eee = new EarlyExitException(30, input);
+									if ( cnt29 >= 1 ) break loop29;
+									EarlyExitException eee = new EarlyExitException(29, input);
 									throw eee;
 								}
-								cnt30++;
+								cnt29++;
 							}
 
 							}
 							break;
 
 						default :
-							break loop31;
+							break loop30;
 						}
 					}
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:407:59: ( '+' ( ALPHA_CHAR )+ )?
-					int alt33=2;
-					int LA33_0 = input.LA(1);
-					if ( (LA33_0=='+') ) {
-						alt33=1;
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:59: ( '+' ( ALPHA_CHAR )+ )?
+					int alt32=2;
+					int LA32_0 = input.LA(1);
+					if ( (LA32_0=='+') ) {
+						alt32=1;
 					}
-					switch (alt33) {
+					switch (alt32) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:407:60: '+' ( ALPHA_CHAR )+
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:60: '+' ( ALPHA_CHAR )+
 							{
 							match('+'); 
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:407:64: ( ALPHA_CHAR )+
-							int cnt32=0;
-							loop32:
+							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:64: ( ALPHA_CHAR )+
+							int cnt31=0;
+							loop31:
 							while (true) {
-								int alt32=2;
-								int LA32_0 = input.LA(1);
-								if ( ((LA32_0 >= 'A' && LA32_0 <= 'Z')||(LA32_0 >= 'a' && LA32_0 <= 'z')) ) {
-									alt32=1;
+								int alt31=2;
+								int LA31_0 = input.LA(1);
+								if ( ((LA31_0 >= 'A' && LA31_0 <= 'Z')||(LA31_0 >= 'a' && LA31_0 <= 'z')) ) {
+									alt31=1;
 								}
 
-								switch (alt32) {
+								switch (alt31) {
 								case 1 :
 									// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 									{
@@ -2567,11 +2205,11 @@ public class HttpLexer extends Lexer {
 									break;
 
 								default :
-									if ( cnt32 >= 1 ) break loop32;
-									EarlyExitException eee = new EarlyExitException(32, input);
+									if ( cnt31 >= 1 ) break loop31;
+									EarlyExitException eee = new EarlyExitException(31, input);
 									throw eee;
 								}
-								cnt32++;
+								cnt31++;
 							}
 
 							}
@@ -2582,7 +2220,7 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:408:4: '*'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:390:4: '*'
 					{
 					match('*'); 
 					}
@@ -2599,31 +2237,31 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "NUM"
 	public final void mNUM() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:413:2: ( '0' | ( '1' .. '9' ) ( '0' .. '9' )* )
-			int alt36=2;
-			int LA36_0 = input.LA(1);
-			if ( (LA36_0=='0') ) {
-				alt36=1;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:395:2: ( '0' | ( '1' .. '9' ) ( '0' .. '9' )* )
+			int alt35=2;
+			int LA35_0 = input.LA(1);
+			if ( (LA35_0=='0') ) {
+				alt35=1;
 			}
-			else if ( ((LA36_0 >= '1' && LA36_0 <= '9')) ) {
-				alt36=2;
+			else if ( ((LA35_0 >= '1' && LA35_0 <= '9')) ) {
+				alt35=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 36, 0, input);
+					new NoViableAltException("", 35, 0, input);
 				throw nvae;
 			}
 
-			switch (alt36) {
+			switch (alt35) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:413:4: '0'
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:395:4: '0'
 					{
 					match('0'); 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:414:4: ( '1' .. '9' ) ( '0' .. '9' )*
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:396:4: ( '1' .. '9' ) ( '0' .. '9' )*
 					{
 					if ( (input.LA(1) >= '1' && input.LA(1) <= '9') ) {
 						input.consume();
@@ -2633,16 +2271,16 @@ public class HttpLexer extends Lexer {
 						recover(mse);
 						throw mse;
 					}
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:414:14: ( '0' .. '9' )*
-					loop35:
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:396:14: ( '0' .. '9' )*
+					loop34:
 					while (true) {
-						int alt35=2;
-						int LA35_0 = input.LA(1);
-						if ( ((LA35_0 >= '0' && LA35_0 <= '9')) ) {
-							alt35=1;
+						int alt34=2;
+						int LA34_0 = input.LA(1);
+						if ( ((LA34_0 >= '0' && LA34_0 <= '9')) ) {
+							alt34=1;
 						}
 
-						switch (alt35) {
+						switch (alt34) {
 						case 1 :
 							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 							{
@@ -2658,7 +2296,7 @@ public class HttpLexer extends Lexer {
 							break;
 
 						default :
-							break loop35;
+							break loop34;
 						}
 					}
 
@@ -2676,7 +2314,7 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "ALPHA_CHAR"
 	public final void mALPHA_CHAR() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:419:2: ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:401:2: ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) )
 			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
@@ -2699,7 +2337,7 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "ALPHA_NUM_CHAR"
 	public final void mALPHA_NUM_CHAR() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:425:2: ( ( '0' .. '9' ) | ALPHA_CHAR )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:407:2: ( ( '0' .. '9' ) | ALPHA_CHAR )
 			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
@@ -2722,10 +2360,10 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "ESC_SEQ"
 	public final void mESC_SEQ() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:431:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UNICODE_ESC | OCTAL_ESC )
-			int alt37=3;
-			int LA37_0 = input.LA(1);
-			if ( (LA37_0=='\\') ) {
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:413:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UNICODE_ESC | OCTAL_ESC )
+			int alt36=3;
+			int LA36_0 = input.LA(1);
+			if ( (LA36_0=='\\') ) {
 				switch ( input.LA(2) ) {
 				case '\"':
 				case '\'':
@@ -2736,12 +2374,12 @@ public class HttpLexer extends Lexer {
 				case 'r':
 				case 't':
 					{
-					alt37=1;
+					alt36=1;
 					}
 					break;
 				case 'u':
 					{
-					alt37=2;
+					alt36=2;
 					}
 					break;
 				case '0':
@@ -2753,7 +2391,7 @@ public class HttpLexer extends Lexer {
 				case '6':
 				case '7':
 					{
-					alt37=3;
+					alt36=3;
 					}
 					break;
 				default:
@@ -2761,7 +2399,7 @@ public class HttpLexer extends Lexer {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 37, 1, input);
+							new NoViableAltException("", 36, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -2771,13 +2409,13 @@ public class HttpLexer extends Lexer {
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 37, 0, input);
+					new NoViableAltException("", 36, 0, input);
 				throw nvae;
 			}
 
-			switch (alt37) {
+			switch (alt36) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:431:7: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:413:7: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
 					{
 					match('\\'); 
 					if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -2791,14 +2429,14 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:432:7: UNICODE_ESC
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:414:7: UNICODE_ESC
 					{
 					mUNICODE_ESC(); 
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:433:7: OCTAL_ESC
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:415:7: OCTAL_ESC
 					{
 					mOCTAL_ESC(); 
 
@@ -2816,38 +2454,38 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "OCTAL_ESC"
 	public final void mOCTAL_ESC() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:438:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
-			int alt38=3;
-			int LA38_0 = input.LA(1);
-			if ( (LA38_0=='\\') ) {
-				int LA38_1 = input.LA(2);
-				if ( ((LA38_1 >= '0' && LA38_1 <= '3')) ) {
-					int LA38_2 = input.LA(3);
-					if ( ((LA38_2 >= '0' && LA38_2 <= '7')) ) {
-						int LA38_4 = input.LA(4);
-						if ( ((LA38_4 >= '0' && LA38_4 <= '7')) ) {
-							alt38=1;
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:420:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
+			int alt37=3;
+			int LA37_0 = input.LA(1);
+			if ( (LA37_0=='\\') ) {
+				int LA37_1 = input.LA(2);
+				if ( ((LA37_1 >= '0' && LA37_1 <= '3')) ) {
+					int LA37_2 = input.LA(3);
+					if ( ((LA37_2 >= '0' && LA37_2 <= '7')) ) {
+						int LA37_4 = input.LA(4);
+						if ( ((LA37_4 >= '0' && LA37_4 <= '7')) ) {
+							alt37=1;
 						}
 
 						else {
-							alt38=2;
+							alt37=2;
 						}
 
 					}
 
 					else {
-						alt38=3;
+						alt37=3;
 					}
 
 				}
-				else if ( ((LA38_1 >= '4' && LA38_1 <= '7')) ) {
-					int LA38_3 = input.LA(3);
-					if ( ((LA38_3 >= '0' && LA38_3 <= '7')) ) {
-						alt38=2;
+				else if ( ((LA37_1 >= '4' && LA37_1 <= '7')) ) {
+					int LA37_3 = input.LA(3);
+					if ( ((LA37_3 >= '0' && LA37_3 <= '7')) ) {
+						alt37=2;
 					}
 
 					else {
-						alt38=3;
+						alt37=3;
 					}
 
 				}
@@ -2857,7 +2495,7 @@ public class HttpLexer extends Lexer {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 38, 1, input);
+							new NoViableAltException("", 37, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -2868,13 +2506,13 @@ public class HttpLexer extends Lexer {
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 38, 0, input);
+					new NoViableAltException("", 37, 0, input);
 				throw nvae;
 			}
 
-			switch (alt38) {
+			switch (alt37) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:438:7: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:420:7: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
 					{
 					match('\\'); 
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '3') ) {
@@ -2904,7 +2542,7 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:439:7: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:421:7: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
 					{
 					match('\\'); 
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '7') ) {
@@ -2926,7 +2564,7 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:440:7: '\\\\' ( '0' .. '7' )
+					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:422:7: '\\\\' ( '0' .. '7' )
 					{
 					match('\\'); 
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '7') ) {
@@ -2951,8 +2589,8 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "UNICODE_ESC"
 	public final void mUNICODE_ESC() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:445:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:445:7: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:427:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:427:7: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
 			{
 			match('\\'); 
 			match('u'); 
@@ -2976,7 +2614,7 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "HEX_DIGIT"
 	public final void mHEX_DIGIT() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:450:2: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:432:2: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
 			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'F')||(input.LA(1) >= 'a' && input.LA(1) <= 'f') ) {
@@ -3001,8 +2639,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = ERROR_TOKEN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:453:2: ( . )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:453:4: .
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:435:2: ( . )
+			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:435:4: .
 			{
 			matchAny(); 
 			}
@@ -3018,10 +2656,10 @@ public class HttpLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:8: ( GET | POST | HOST | USER_AGENT | CONTENT_TYPE | ACCEPT | COOKIE | AUTHORIZATION | CONTENT_LENGTH | CONNECTION | ACCEPT_LANGUAGE | ACCEPT_ENCODING | CACHE_CONTROL | Q | CHARSET | BOUNDARY | BASIC | DIGEST | USERNAME | REALM | URI | ALGORITHM | NONCE | NC | CNONCE | QOP | RESPONSE | OPAQUE | KEEP_ALIVE | CLOSE | EQUALS | COMMA | COLUMN | SEMI_COLUMN | TERMINAL | STAR | INT_NUM | HTTP_VERSION | PATH | DNS | IPV4 | MIME | MULTIPART_MIME | Q_VAL | PRODUCT | PRODUCT_INFO | ENCODING_ELEMENT | LANGUAGE_ELEMENT | STRING | COMMENT | WS | ERROR_TOKEN )
-		int alt39=52;
-		alt39 = dfa39.predict(input);
-		switch (alt39) {
+		// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:8: ( GET | POST | HOST | USER_AGENT | CONTENT_TYPE | ACCEPT | COOKIE | AUTHORIZATION | ACCEPT_LANGUAGE | ACCEPT_ENCODING | CACHE_CONTROL | MAX_FORWARDS | Q | EQUALS | COMMA | COLUMN | SEMI_COLUMN | TERMINAL | STAR | ID | INT_NUM | HTTP_VERSION | PATH | QUERY | DNS | IPV4 | MIME | MULTIPART_MIME | Q_VAL | PRODUCT | PRODUCT_INFO | LANGUAGE_ELEMENT | BODY_STRING | STRING | COMMENT | WS | ERROR_TOKEN )
+		int alt38=37;
+		alt38 = dfa38.predict(input);
+		switch (alt38) {
 			case 1 :
 				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:10: GET
 				{
@@ -3079,308 +2717,203 @@ public class HttpLexer extends Lexer {
 				}
 				break;
 			case 9 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:76: CONTENT_LENGTH
-				{
-				mCONTENT_LENGTH(); 
-
-				}
-				break;
-			case 10 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:91: CONNECTION
-				{
-				mCONNECTION(); 
-
-				}
-				break;
-			case 11 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:102: ACCEPT_LANGUAGE
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:76: ACCEPT_LANGUAGE
 				{
 				mACCEPT_LANGUAGE(); 
 
 				}
 				break;
-			case 12 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:118: ACCEPT_ENCODING
+			case 10 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:92: ACCEPT_ENCODING
 				{
 				mACCEPT_ENCODING(); 
 
 				}
 				break;
-			case 13 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:134: CACHE_CONTROL
+			case 11 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:108: CACHE_CONTROL
 				{
 				mCACHE_CONTROL(); 
 
 				}
 				break;
-			case 14 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:148: Q
+			case 12 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:122: MAX_FORWARDS
+				{
+				mMAX_FORWARDS(); 
+
+				}
+				break;
+			case 13 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:135: Q
 				{
 				mQ(); 
 
 				}
 				break;
-			case 15 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:150: CHARSET
-				{
-				mCHARSET(); 
-
-				}
-				break;
-			case 16 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:158: BOUNDARY
-				{
-				mBOUNDARY(); 
-
-				}
-				break;
-			case 17 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:167: BASIC
-				{
-				mBASIC(); 
-
-				}
-				break;
-			case 18 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:173: DIGEST
-				{
-				mDIGEST(); 
-
-				}
-				break;
-			case 19 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:180: USERNAME
-				{
-				mUSERNAME(); 
-
-				}
-				break;
-			case 20 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:189: REALM
-				{
-				mREALM(); 
-
-				}
-				break;
-			case 21 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:195: URI
-				{
-				mURI(); 
-
-				}
-				break;
-			case 22 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:199: ALGORITHM
-				{
-				mALGORITHM(); 
-
-				}
-				break;
-			case 23 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:209: NONCE
-				{
-				mNONCE(); 
-
-				}
-				break;
-			case 24 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:215: NC
-				{
-				mNC(); 
-
-				}
-				break;
-			case 25 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:218: CNONCE
-				{
-				mCNONCE(); 
-
-				}
-				break;
-			case 26 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:225: QOP
-				{
-				mQOP(); 
-
-				}
-				break;
-			case 27 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:229: RESPONSE
-				{
-				mRESPONSE(); 
-
-				}
-				break;
-			case 28 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:238: OPAQUE
-				{
-				mOPAQUE(); 
-
-				}
-				break;
-			case 29 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:245: KEEP_ALIVE
-				{
-				mKEEP_ALIVE(); 
-
-				}
-				break;
-			case 30 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:256: CLOSE
-				{
-				mCLOSE(); 
-
-				}
-				break;
-			case 31 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:262: EQUALS
+			case 14 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:137: EQUALS
 				{
 				mEQUALS(); 
 
 				}
 				break;
-			case 32 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:269: COMMA
+			case 15 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:144: COMMA
 				{
 				mCOMMA(); 
 
 				}
 				break;
-			case 33 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:275: COLUMN
+			case 16 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:150: COLUMN
 				{
 				mCOLUMN(); 
 
 				}
 				break;
-			case 34 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:282: SEMI_COLUMN
+			case 17 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:157: SEMI_COLUMN
 				{
 				mSEMI_COLUMN(); 
 
 				}
 				break;
-			case 35 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:294: TERMINAL
+			case 18 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:169: TERMINAL
 				{
 				mTERMINAL(); 
 
 				}
 				break;
-			case 36 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:303: STAR
+			case 19 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:178: STAR
 				{
 				mSTAR(); 
 
 				}
 				break;
-			case 37 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:308: INT_NUM
+			case 20 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:183: ID
+				{
+				mID(); 
+
+				}
+				break;
+			case 21 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:186: INT_NUM
 				{
 				mINT_NUM(); 
 
 				}
 				break;
-			case 38 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:316: HTTP_VERSION
+			case 22 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:194: HTTP_VERSION
 				{
 				mHTTP_VERSION(); 
 
 				}
 				break;
-			case 39 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:329: PATH
+			case 23 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:207: PATH
 				{
 				mPATH(); 
 
 				}
 				break;
-			case 40 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:334: DNS
+			case 24 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:212: QUERY
+				{
+				mQUERY(); 
+
+				}
+				break;
+			case 25 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:218: DNS
 				{
 				mDNS(); 
 
 				}
 				break;
-			case 41 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:338: IPV4
+			case 26 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:222: IPV4
 				{
 				mIPV4(); 
 
 				}
 				break;
-			case 42 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:343: MIME
+			case 27 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:227: MIME
 				{
 				mMIME(); 
 
 				}
 				break;
-			case 43 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:348: MULTIPART_MIME
+			case 28 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:232: MULTIPART_MIME
 				{
 				mMULTIPART_MIME(); 
 
 				}
 				break;
-			case 44 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:363: Q_VAL
+			case 29 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:247: Q_VAL
 				{
 				mQ_VAL(); 
 
 				}
 				break;
-			case 45 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:369: PRODUCT
+			case 30 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:253: PRODUCT
 				{
 				mPRODUCT(); 
 
 				}
 				break;
-			case 46 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:377: PRODUCT_INFO
+			case 31 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:261: PRODUCT_INFO
 				{
 				mPRODUCT_INFO(); 
 
 				}
 				break;
-			case 47 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:390: ENCODING_ELEMENT
-				{
-				mENCODING_ELEMENT(); 
-
-				}
-				break;
-			case 48 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:407: LANGUAGE_ELEMENT
+			case 32 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:274: LANGUAGE_ELEMENT
 				{
 				mLANGUAGE_ELEMENT(); 
 
 				}
 				break;
-			case 49 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:424: STRING
+			case 33 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:291: BODY_STRING
+				{
+				mBODY_STRING(); 
+
+				}
+				break;
+			case 34 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:303: STRING
 				{
 				mSTRING(); 
 
 				}
 				break;
-			case 50 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:431: COMMENT
+			case 35 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:310: COMMENT
 				{
 				mCOMMENT(); 
 
 				}
 				break;
-			case 51 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:439: WS
+			case 36 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:318: WS
 				{
 				mWS(); 
 
 				}
 				break;
-			case 52 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:442: ERROR_TOKEN
+			case 37 :
+				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:321: ERROR_TOKEN
 				{
 				mERROR_TOKEN(); 
 
@@ -3392,7 +2925,7 @@ public class HttpLexer extends Lexer {
 
 
 	protected DFA7 dfa7 = new DFA7(this);
-	protected DFA39 dfa39 = new DFA39(this);
+	protected DFA38 dfa38 = new DFA38(this);
 	static final String DFA7_eotS =
 		"\4\uffff\1\5\1\uffff";
 	static final String DFA7_eofS =
@@ -3445,149 +2978,107 @@ public class HttpLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "()* loopback of 308:16: ( '.' DNS_ELEMENT )*";
+			return "()* loopback of 294:16: ( '.' DNS_ELEMENT )*";
 		}
 	}
 
-	static final String DFA39_eotS =
-		"\1\uffff\6\51\1\70\12\51\5\uffff\1\121\2\123\1\127\6\51\1\123\6\51\16"+
-		"\uffff\2\163\1\uffff\5\163\1\172\2\uffff\7\163\1\u0085\2\163\12\uffff"+
-		"\1\123\2\uffff\11\163\2\uffff\1\163\2\uffff\1\u0096\11\uffff\1\u00a1\1"+
-		"\163\2\uffff\6\163\3\uffff\1\163\1\u00ac\6\163\1\uffff\2\163\3\u00b5\1"+
-		"\uffff\12\163\1\uffff\1\u00c3\1\u00c4\11\uffff\1\163\23\uffff\1\u00b5"+
-		"\12\uffff\1\172\16\uffff\1\u00f4\2\uffff\1\u00f7\2\uffff\1\u00fa\4\uffff"+
-		"\1\u00fe\2\uffff\1\u00b5\11\uffff\1\54\1\u0108\3\uffff\1\u010c\1\uffff"+
-		"\1\u010f\3\uffff\1\u0113\4\uffff\1\u0116\6\uffff\1\u011b\2\uffff\1\120"+
-		"\16\uffff\1\u012c\21\uffff\1\172\1\u0108\11\uffff\1\172\1\u0141\1\u0142"+
-		"\1\u0143\4\uffff\1\120\1\172\14\uffff\1\u0151\4\uffff\1\u0157\2\uffff"+
-		"\1\u015a\6\uffff\1\u0160\2\141\13\uffff\1\141\1\u0163\1\uffff\1\u016b"+
-		"\10\uffff\1\u0173\2\uffff\1\u0176\1\u0163\1\u0177\5\uffff\1\u017a\1\u017b"+
-		"\2\uffff";
-	static final String DFA39_eofS =
-		"\u017c\uffff";
-	static final String DFA39_minS =
-		"\1\0\21\55\5\uffff\1\57\2\55\1\52\10\55\1\0\3\55\1\0\2\uffff\2\55\2\uffff"+
-		"\12\55\1\uffff\22\55\7\uffff\1\60\1\uffff\1\60\1\55\2\uffff\11\55\2\uffff"+
-		"\1\55\2\uffff\15\55\1\uffff\6\55\1\uffff\12\55\1\uffff\2\55\3\56\13\55"+
-		"\1\uffff\12\55\1\uffff\12\55\1\uffff\10\55\1\uffff\1\56\14\55\2\uffff"+
-		"\1\60\30\55\1\56\1\55\1\52\7\55\2\56\12\55\1\uffff\2\55\1\uffff\2\55\1"+
-		"\uffff\3\55\1\uffff\3\55\1\56\4\55\1\60\1\uffff\3\55\1\uffff\2\55\1\uffff"+
-		"\3\55\1\uffff\2\55\1\uffff\4\55\1\uffff\10\55\1\56\7\55\1\uffff\11\55"+
-		"\1\56\12\55\3\uffff\15\55\1\uffff\4\55\1\52\1\uffff\2\55\1\uffff\5\55"+
-		"\1\uffff\1\55\1\56\1\uffff\7\55\1\uffff\5\55\1\56\1\55\1\uffff\2\55\2"+
-		"\uffff\2\55\2\uffff";
-	static final String DFA39_maxS =
-		"\1\uffff\21\172\5\uffff\1\57\2\172\1\57\10\172\1\uffff\3\172\1\uffff\2"+
-		"\uffff\2\172\2\uffff\12\172\1\uffff\22\172\7\uffff\1\71\1\uffff\1\71\1"+
-		"\172\2\uffff\11\172\2\uffff\1\172\2\uffff\15\172\1\uffff\6\172\1\uffff"+
-		"\12\172\1\uffff\2\172\1\56\1\71\1\56\13\172\1\uffff\12\172\1\uffff\12"+
-		"\172\1\uffff\10\172\1\uffff\1\71\14\172\2\uffff\31\172\1\71\11\172\1\56"+
-		"\13\172\1\uffff\2\172\1\uffff\2\172\1\uffff\3\172\1\uffff\11\172\1\uffff"+
-		"\3\172\1\uffff\2\172\1\uffff\3\172\1\uffff\2\172\1\uffff\4\172\1\uffff"+
-		"\20\172\1\uffff\24\172\3\uffff\15\172\1\uffff\5\172\1\uffff\2\172\1\uffff"+
-		"\5\172\1\uffff\2\172\1\uffff\7\172\1\uffff\7\172\1\uffff\2\172\2\uffff"+
-		"\2\172\2\uffff";
-	static final String DFA39_acceptS =
-		"\22\uffff\1\37\1\40\1\41\1\42\1\43\21\uffff\1\63\1\64\2\uffff\1\55\1\50"+
-		"\12\uffff\1\16\22\uffff\1\37\1\40\1\41\1\42\1\43\1\52\1\44\1\uffff\1\45"+
-		"\2\uffff\1\62\1\47\11\uffff\1\51\1\56\1\uffff\1\61\1\63\15\uffff\1\60"+
-		"\6\uffff\1\57\12\uffff\1\30\20\uffff\1\1\12\uffff\1\32\12\uffff\1\25\10"+
-		"\uffff\1\54\15\uffff\1\2\1\3\57\uffff\1\36\2\uffff\1\21\2\uffff\1\24\3"+
-		"\uffff\1\27\11\uffff\1\46\3\uffff\1\7\2\uffff\1\6\3\uffff\1\31\2\uffff"+
-		"\1\22\4\uffff\1\34\20\uffff\1\17\24\uffff\1\20\1\23\1\33\15\uffff\1\26"+
-		"\5\uffff\1\4\2\uffff\1\12\5\uffff\1\35\2\uffff\1\53\7\uffff\1\5\7\uffff"+
-		"\1\15\2\uffff\1\10\1\11\2\uffff\1\13\1\14";
-	static final String DFA39_specialS =
-		"\1\0\42\uffff\1\1\3\uffff\1\2\u0154\uffff}>";
-	static final String[] DFA39_transitionS = {
-			"\11\51\2\50\2\51\1\50\22\51\1\50\6\51\1\47\1\43\1\51\1\27\1\51\1\23\1"+
-			"\42\1\51\1\32\1\30\1\31\10\41\1\24\1\25\1\51\1\22\3\51\1\6\1\12\1\5\1"+
-			"\13\2\46\1\1\1\3\7\46\1\2\4\46\1\4\5\46\6\51\1\16\1\11\1\10\1\44\1\45"+
-			"\1\33\1\40\1\45\1\34\1\45\1\21\1\45\1\35\1\17\1\20\1\45\1\7\1\15\1\45"+
-			"\1\36\1\14\1\37\4\45\1\51\1\26\uff83\51",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\4\53\1\52\25\53\6\uffff\32\53",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\16\53\1\56\13\53\6\uffff\32\53",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\23\53\1\60\6\53\6\uffff\16\53\1\57"+
-			"\13\53",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\22\53\1\61\7\53",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\1\63\15\53\1\62\13\53",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\2\53\1\64\21\53\1\65"+
-			"\5\53",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\16\67\1\66\13\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\7\67\1\71\3\67\1\73\1"+
-			"\67\1\72\1\74\13\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\16\67\1\75\2\67\1\76"+
-			"\10\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\1\77\31\53",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\100\21\53",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\21\67\1\102\1\101\7\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\4\67\1\103\25\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\13\67\1\104\3\67\1\105"+
-			"\4\67\1\106\5\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\2\67\1\110\13\67\1\107"+
-			"\13\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\17\67\1\111\12\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\4\67\1\112\25\67",
+	static final String DFA38_eotS =
+		"\1\uffff\7\41\1\60\5\uffff\1\67\1\41\2\73\1\77\11\41\1\73\3\41\2\uffff"+
+		"\2\117\3\uffff\11\117\10\uffff\2\117\3\uffff\1\73\3\uffff\10\117\5\uffff"+
+		"\1\152\1\uffff\1\117\1\uffff\14\117\3\171\1\uffff\10\117\1\uffff\1\117"+
+		"\1\u0085\1\u0086\1\u0087\7\117\1\uffff\2\117\1\uffff\1\171\2\uffff\10"+
+		"\117\5\uffff\5\117\1\u0085\2\117\1\171\1\uffff\1\117\1\uffff\5\117\1\45"+
+		"\1\u00ab\1\uffff\1\117\1\u00ae\1\uffff\1\u00b1\1\117\1\u0085\1\117\1\uffff"+
+		"\1\117\1\66\2\117\3\uffff\1\117\4\uffff\1\117\1\u0085\1\117\2\uffff\1"+
+		"\117\1\uffff\2\117\1\u00ab\5\uffff\1\117\1\u0085\1\117\1\uffff\1\117\1"+
+		"\66\1\117\5\uffff\1\117\1\u0085\1\117\1\uffff\1\117\1\u00dd\4\uffff\1"+
+		"\117\1\u0085\1\117\2\111\6\uffff\1\117\1\u0085\1\117\1\111\1\u00e7\1\uffff"+
+		"\1\u00ef\3\uffff\1\117\1\u00f4\2\uffff\1\u00f6\2\uffff\1\u00f9\1\uffff"+
+		"\1\u00e7\4\uffff\1\u00fc\1\u00fd\2\uffff";
+	static final String DFA38_eofS =
+		"\u00fe\uffff";
+	static final String DFA38_minS =
+		"\1\0\10\55\5\uffff\1\57\3\55\1\52\1\45\11\55\3\0\2\uffff\3\55\2\uffff"+
+		"\11\55\10\uffff\2\55\1\60\1\uffff\1\60\1\55\3\uffff\10\55\5\uffff\1\55"+
+		"\1\uffff\16\55\3\56\11\55\1\uffff\16\55\1\uffff\1\56\12\55\3\uffff\1\60"+
+		"\11\55\1\56\2\55\1\52\5\55\2\56\12\55\1\56\2\55\1\60\1\uffff\2\55\1\uffff"+
+		"\2\55\1\uffff\11\55\1\56\12\55\1\56\25\55\1\52\1\uffff\10\55\1\56\1\uffff"+
+		"\7\55\1\uffff\4\55\1\uffff\1\56\1\uffff\2\55\1\uffff\2\55\2\uffff";
+	static final String DFA38_maxS =
+		"\1\uffff\10\172\5\uffff\1\57\3\172\1\57\1\176\11\172\3\uffff\2\uffff\3"+
+		"\172\2\uffff\11\172\10\uffff\2\172\1\71\1\uffff\1\71\1\172\3\uffff\10"+
+		"\172\5\uffff\1\172\1\uffff\16\172\1\56\1\71\1\56\11\172\1\uffff\16\172"+
+		"\1\uffff\1\71\12\172\3\uffff\12\172\1\71\10\172\1\56\17\172\1\uffff\2"+
+		"\172\1\uffff\2\172\1\uffff\53\172\1\uffff\11\172\1\uffff\7\172\1\uffff"+
+		"\4\172\1\uffff\1\172\1\uffff\2\172\1\uffff\2\172\2\uffff";
+	static final String DFA38_acceptS =
+		"\11\uffff\1\16\1\17\1\20\1\21\1\22\22\uffff\1\44\1\45\3\uffff\1\36\1\31"+
+		"\11\uffff\1\15\1\16\1\17\1\20\1\21\1\22\1\33\1\23\3\uffff\1\25\2\uffff"+
+		"\1\43\1\27\1\30\10\uffff\1\32\1\37\1\41\1\42\1\44\1\uffff\1\24\32\uffff"+
+		"\1\1\16\uffff\1\35\13\uffff\1\40\1\2\1\3\43\uffff\1\26\2\uffff\1\7\2\uffff"+
+		"\1\6\53\uffff\1\4\11\uffff\1\34\7\uffff\1\5\4\uffff\1\14\1\uffff\1\13"+
+		"\2\uffff\1\10\2\uffff\1\11\1\12";
+	static final String DFA38_specialS =
+		"\1\0\34\uffff\1\1\1\2\1\3\u00de\uffff}>";
+	static final String[] DFA38_transitionS = {
+			"\11\41\2\40\2\41\1\40\22\41\1\40\6\41\1\37\1\35\1\41\1\16\1\41\1\12\1"+
+			"\24\1\41\1\22\1\20\1\21\10\34\1\13\1\14\1\41\1\11\1\41\1\23\1\41\1\6"+
+			"\1\33\1\5\3\33\1\1\1\3\4\33\1\7\2\33\1\2\4\33\1\4\5\33\6\41\1\17\1\33"+
+			"\1\25\2\33\1\26\2\33\1\27\3\33\1\30\3\33\1\10\2\33\1\31\1\33\1\32\4\33"+
+			"\1\41\1\15\63\41\1\36\uff4f\41",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\4\43\1\42\25\43\6\uffff\32\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\16\43\1\47\13\43\6\uffff\32\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\23\43\1\51\6\43\6\uffff\16\43\1\50"+
+			"\13\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\22\43\1\52\7\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\1\54\15\43\1\53\13\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\2\43\1\55\21\43\1\56"+
+			"\5\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\1\57\31\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\32\43",
 			"",
 			"",
 			"",
 			"",
 			"",
-			"\1\120",
-			"\1\55\1\122\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\1\55\1\124\1\54\12\125\7\uffff\32\53\6\uffff\32\53",
-			"\1\126\4\uffff\1\126",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\16\67\1\130\13\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\3\67\1\132\10\67\1\131"+
-			"\15\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\4\67\1\133\11\67\1\134"+
-			"\5\67\1\135\5\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\4\67\1\136\25\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\10\67\1\137\21\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\31\67\1\140",
-			"\1\55\1\141\1\54\12\125\7\uffff\32\53\6\uffff\32\53",
-			"\1\55\2\uffff\12\55\7\uffff\32\55\6\uffff\32\55",
-			"\50\142\1\uffff\uffd7\142",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\4\67\1\143\25\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\32\67",
-			"\1\55\1\uffff\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\0\144",
+			"\1\66",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\17\43\1\70\4\43\1\71"+
+			"\5\43",
+			"\1\46\1\72\1\45\12\44\7\uffff\32\44\6\uffff\32\44",
+			"\1\46\1\74\1\45\12\75\7\uffff\32\44\6\uffff\32\44",
+			"\1\76\4\uffff\1\76",
+			"\1\100\7\uffff\2\100\1\uffff\12\100\7\uffff\32\100\4\uffff\1\100\1\uffff"+
+			"\32\100\3\uffff\1\100",
+			"\1\46\2\uffff\12\46\7\uffff\32\46\6\uffff\32\46",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\7\43\1\101\22\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\16\43\1\102\13\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\14\43\1\103\15\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\4\43\1\104\11\43\1\105"+
+			"\5\43\1\106\5\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\4\43\1\107\25\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\10\43\1\110\21\43",
+			"\1\46\1\uffff\1\45\12\44\7\uffff\32\43\6\uffff\32\43",
+			"\1\46\1\111\1\45\12\75\7\uffff\32\44\6\uffff\32\44",
+			"\50\112\1\uffff\uffd7\112",
+			"\0\113",
+			"\0\114",
 			"",
 			"",
-			"\2\55\1\54\12\53\7\uffff\23\53\1\146\6\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
+			"\1\121\1\46\1\45\12\44\7\uffff\23\120\1\116\6\120\6\uffff\32\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\32\120",
+			"\2\46\1\45\12\44\7\uffff\32\44\6\uffff\32\44",
 			"",
 			"",
-			"\2\55\1\54\12\53\7\uffff\22\53\1\147\7\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\22\53\1\150\7\53",
-			"\2\55\1\54\12\53\7\uffff\23\53\1\151\6\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\152\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\15\53\1\153\1\154\13\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\2\53\1\155\27\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\2\53\1\156\27\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\157\6\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\17\161\1\160\12\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\32\161",
-			"",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\1\164\3\161\1\165\25\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\16\161\1\166\13\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\16\161\1\167\13\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\14\161\1\170\15\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\24\161\1\171\5\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\32\161",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\22\53\1\173\7\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\6\53\1\174\23\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\4\161\1\175\25\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\10\161\1\176\21\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\1\177\21\161\1\u0080\7"+
-			"\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\6\161\1\u0081\23\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\17\161\1\u0082\12\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\3\161\1\u0083\26\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\15\161\1\u0084\14\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\32\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\1\u0086\31\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\4\161\1\u0087\25\161",
+			"\1\121\1\46\1\45\12\44\7\uffff\22\120\1\122\7\120\6\uffff\32\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\22\120\1\123\7\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\23\120\1\124\6\120\6\uffff\32\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\4\120\1\125\25\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\15\120\1\126\1\127\13"+
+			"\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\2\120\1\130\27\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\2\120\1\131\27\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\23\120\1\132\6\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\27\120\1\133\2\120",
 			"",
 			"",
 			"",
@@ -3595,342 +3086,241 @@ public class HttpLexer extends Lexer {
 			"",
 			"",
 			"",
-			"\1\u0088\11\u0089",
 			"",
-			"\1\u008a\11\141",
-			"\1\55\1\u008b\1\54\12\125\7\uffff\32\53\6\uffff\32\53",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\17\120\1\134\12\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\3\120\1\135\26\120",
+			"\1\136\11\137",
 			"",
-			"",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\15\161\1\u008c\14\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\1\u008d\31\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\4\161\1\u008e\25\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\22\161\1\u008f\7\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\3\161\1\u0090\26\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\13\161\1\u0091\16\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\27\161\1\u0092\2\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\3\161\1\u0093\26\161",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\10\161\1\u0094\21\161",
-			"",
-			"",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\5\161\1\u0095\24\161",
-			"",
-			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\23\53\1\u0097\6\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u0098\6\53",
-			"\2\55\1\54\12\53\7\uffff\17\53\1\u0099\12\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\21\53\1\u009a\10\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\15\53\1\u009c\5\53\1\u009b\6"+
-			"\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\12\53\1\u009d\17\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\7\53\1\u009e\22\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u009f\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\7\53\1\u00a0\22\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\uffff\12\55\7\uffff\32\u00a2\6\uffff\32\u00a2",
-			"",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\21\53\1\u00a3\10\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\14\53\1\u00a4\15\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\15\53\1\u00a5\14\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\22\53\1\u00a6\7\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\17\53\1\u00a7\12\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\15\53\1\u00a8\14\53",
-			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\u00a9\21\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00aa\25\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\21\53\1\u00ab\10\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\13\53\1\u00ad\16\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\17\53\1\u00ae\12\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\16\53\1\u00af\13\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\13\53\1\u00b0\16\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\u00b1\21\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\2\53\1\u00b2\27\53",
-			"",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\20\53\1\u00b3\11\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\17\53\1\u00b4\12\53",
-			"\1\141",
-			"\1\141\1\uffff\12\u00b6",
-			"\1\141",
-			"\1\55\2\uffff\1\u00b7\11\u00b8\7\uffff\32\55\6\uffff\32\55",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u00b9\6\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\6\53\1\u00ba\23\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\15\53\1\u00bb\14\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\22\53\1\u00bc\7\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00bd\25\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u00be\6\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u00bf\6\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00c0\25\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\17\53\1\u00c1\12\53",
-			"\1\162\1\55\1\54\12\53\7\uffff\32\53\6\uffff\13\53\1\u00c2\16\53",
-			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\u00c5\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\1\u00c6\1\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00c7\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00c8\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\u00c9\21\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00ca\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\17\53\1\u00cb\12\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\16\53\1\u00cc\13\53",
-			"",
-			"\2\55\1\uffff\12\55\7\uffff\32\u00a2\6\uffff\32\u00a2",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\22\53\1\u00cd\7\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\u00ce\21\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\2\53\1\u00cf\27\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00d0\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\21\53\1\u00d1\10\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\3\53\1\u00d2\26\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\2\53\1\u00d3\27\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\22\53\1\u00d4\7\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\15\53\1\u00d5\14\53",
-			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\14\53\1\u00d6\15\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\16\53\1\u00d7\13\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\21\53\1\u00d8\10\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\u00d9\21\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\16\53\1\u00da\13\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00db\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\24\53\1\u00dc\5\53",
-			"\1\u00dd\1\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"",
-			"\1\141\1\uffff\12\u00de",
-			"\1\55\1\141\1\uffff\12\55\7\uffff\32\55\6\uffff\32\55",
-			"\1\55\1\141\1\uffff\12\u00df\7\uffff\32\55\6\uffff\32\55",
-			"\2\55\1\u00e0\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00e1\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u00e2\6\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\1\u00e3\31\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\13\53\1\u00e4\16\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\u00e5\21\53",
-			"\2\55\1\u00e0\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\16\53\1\u00e6\13\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\1\u00e7\31\53",
-			"",
-			"",
-			"\1\54\1\u00e8\1\u00e9\7\54\7\uffff\32\54\6\uffff\32\54",
-			"\2\55\1\uffff\12\55\7\uffff\1\u00ea\31\55\6\uffff\32\55",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\15\53\1\u00eb\14\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\2\53\1\u00ec\27\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00ed\25\53",
-			"\1\u00ee\1\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u00ef\6\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\21\53\1\u00f0\10\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00f1\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\2\53\1\u00f2\27\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00f3\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00f5\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\1\u00f6\31\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u00f8\6\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\1\u00f9\31\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\15\53\1\u00fb\14\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\u00fc\21\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\2\53\1\u00fd\27\53",
-			"\2\55\1\u00e0\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u00ff\25\53",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\1\u0100\31\55",
-			"\1\141\1\uffff\12\141",
-			"\1\55\1\u0101\1\uffff\12\u00df\7\uffff\32\55\6\uffff\32\55",
-			"\1\120\2\uffff\1\120\2\uffff\12\u0102\7\uffff\32\u0102\6\uffff\32\u0102",
-			"\2\55\1\u00e0\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\u0103\21\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\6\53\1\u0104\23\53",
-			"\2\55\1\u00e0\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\17\53\1\u0105\12\53",
-			"\2\55\1\u00e0\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u0106\6\53",
-			"\1\u0107",
-			"\1\54\1\uffff\12\54\7\uffff\32\54\6\uffff\32\54",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\6\55\1\u0109\23\55",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u010a\6\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u010b\6\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\uffff\12\55\7\uffff\2\55\1\u010d\27\55\6\uffff\32\55",
-			"\1\u010e\1\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\u0110\21\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u0111\6\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\1\u0112\31\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\22\53\1\u0114\7\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\21\53\1\u0115\10\53",
-			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\14\53\1\u0117\15\53",
-			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\22\53\1\u0118\7\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u0119\6\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\1\u011a\31\53",
-			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\13\55\1\u011c\16\55",
-			"\1\55\2\uffff\1\u011d\11\u011e\7\uffff\32\55\6\uffff\32\55",
-			"\1\u011f\1\uffff\12\u0102\7\uffff\32\u0102\6\uffff\32\u0102",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u0120\6\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u0121\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\1\u0122\31\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u0123\25\53",
-			"\1\54\1\u0124\10\54\7\uffff\32\54\6\uffff\32\54",
-			"",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\4\55\1\u0125\25\55",
-			"\1\u0126\1\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\u0127\21\53",
-			"",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\16\55\1\u0128\13\55",
-			"\2\55\1\uffff\12\55\7\uffff\4\55\1\u012a\6\55\1\u0129\16\55\6\uffff"+
-			"\32\55",
-			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\31\53\1\u012b",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\13\53\1\u012d\16\53",
-			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\22\53\1\u012e\7\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\30\53\1\u012f\1\53",
-			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u0130\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\4\53\1\u0131\25\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\7\53\1\u0132\22\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u0133\6\53",
-			"",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\10\55\1\u0134\21\55",
-			"\1\55\1\141\1\uffff\12\55\7\uffff\32\55\6\uffff\32\55",
-			"\1\55\1\141\1\uffff\12\u0135\7\uffff\32\55\6\uffff\32\55",
-			"\1\120\2\uffff\12\u0136\7\uffff\32\u0136\6\uffff\32\u0136",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\30\53\1\u0137\1\53",
-			"\2\55\1\u00e0\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\21\53\1\u0138\10\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\1\54\1\uffff\12\54\7\uffff\32\54\6\uffff\32\54",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\15\55\1\u0139\14\55",
-			"\2\55\1\uffff\12\55\7\uffff\13\55\1\u013b\7\55\1\u013a\6\55\6\uffff"+
-			"\32\55",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\16\53\1\u013c\13\53",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\15\55\1\u013d\14\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\1\u013e\31\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\15\55\1\u013f\14\55",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\1\u0140\31\53",
-			"",
-			"\2\55\1\u00e0\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\14\53\1\u0144\15\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\u0145\21\53",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\25\55\1\u0146\4\55",
-			"\1\55\1\u0147\1\uffff\12\u0135\7\uffff\32\55\6\uffff\32\55",
-			"\1\u011f\1\uffff\12\u0136\7\uffff\32\u0136\6\uffff\32\u0136",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u0148\6\53",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\23\55\1\u0149\6\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\30\55\1\u014a\1\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\4\55\1\u014b\25\55",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\15\53\1\u014c\14\53",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\23\55\1\u014d\6\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\15\55\1\u014e\14\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\2\55\1\u014f\27\55",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\23\53\1\u0150\6\53",
+			"\1\140\11\111",
+			"\1\46\1\141\1\45\12\75\7\uffff\32\44\6\uffff\32\44",
 			"",
 			"",
 			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\16\53\1\u0152\13\53",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\4\55\1\u0153\25\55",
-			"\1\55\2\uffff\1\u0154\11\u0155\7\uffff\32\55\6\uffff\32\55",
-			"\2\55\1\u0156\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\32\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\17\55\1\u0158\12\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\15\55\1\u0159\14\55",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\21\55\1\u015b\10\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\6\55\1\u015c\23\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\16\55\1\u015d\13\55",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\10\53\1\u015e\21\53",
-			"",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\15\53\1\u015f\14\53",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\32\55",
-			"\1\55\2\uffff\12\55\7\uffff\32\55\6\uffff\32\55",
-			"\1\55\2\uffff\12\u0161\7\uffff\32\55\6\uffff\32\55",
-			"\1\u0163\2\uffff\1\u0163\2\uffff\12\u0162\7\uffff\32\u0162\6\uffff\32"+
-			"\u0162",
-			"",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\4\55\1\u0164\25\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\6\55\1\u0165\23\55",
-			"",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\16\55\1\u0166\13\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\24\55\1\u0167\5\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\3\55\1\u0168\26\55",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\16\53\1\u0169\13\53",
-			"\2\55\1\u00e0\12\53\7\uffff\32\53\6\uffff\32\53",
-			"",
-			"\2\55\1\uffff\12\u0161\7\uffff\32\55\6\uffff\32\55",
-			"\1\u016a\1\uffff\12\u0162\7\uffff\32\u0162\6\uffff\32\u0162",
-			"",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\32\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\23\55\1\u016c\6\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\13\55\1\u016d\16\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\1\u016e\31\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\10\55\1\u016f\21\55",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\15\53\1\u0170\14\53",
-			"\1\u0163\2\uffff\12\u0171\7\uffff\32\u0171\6\uffff\32\u0171",
-			"",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\7\55\1\u0172\22\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\32\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\6\55\1\u0174\23\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\15\55\1\u0175\14\55",
-			"\2\55\1\54\12\53\7\uffff\32\53\6\uffff\32\53",
-			"\1\u016a\1\uffff\12\u0171\7\uffff\32\u0171\6\uffff\32\u0171",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\32\55",
-			"",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\4\55\1\u0178\25\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\6\55\1\u0179\23\55",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\4\120\1\142\25\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\15\120\1\143\14\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\1\144\31\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\22\120\1\145\7\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\3\120\1\146\26\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\13\120\1\147\16\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\27\120\1\150\2\120",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\120\6\uffff\3\120\1\151\26\120",
 			"",
 			"",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\32\55",
-			"\2\55\1\uffff\12\55\7\uffff\32\55\6\uffff\32\55",
+			"",
+			"",
+			"",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\32\153",
+			"",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\uffff\12\46\7\uffff\32\154\6\uffff\32\154",
+			"\1\121\1\46\1\45\12\44\7\uffff\23\153\1\155\6\153\6\uffff\32\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\23\153\1\156\6\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\17\153\1\157\12\153\6\uffff\32\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\21\153\1\160\10\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\23\153\1\161\6\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\12\153\1\162\17\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\7\153\1\163\22\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\4\153\1\164\25\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\7\153\1\165\22\153",
+			"\1\166\1\46\1\45\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\13\153\1\167\16\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\10\153\1\170\21\153",
+			"\1\111",
+			"\1\111\1\uffff\12\172",
+			"\1\111",
+			"\1\46\2\uffff\1\173\11\174\7\uffff\32\46\6\uffff\32\46",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\14\153\1\175\15\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\23\153\1\176\6\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\6\153\1\177\23\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\22\153\1\u0080\7\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\4\153\1\u0081\25\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\23\153\1\u0082\6\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\23\153\1\u0083\6\153",
+			"\1\121\1\46\1\45\12\44\7\uffff\32\153\6\uffff\4\153\1\u0084\25\153",
+			"",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\uffff\12\46\7\uffff\32\154\6\uffff\32\154",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\u0088\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\1\u0089\1\46\1\45\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\4\153\1\u008a\25\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\10\153\1\u008b\21\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\4\153\1\u008c\25\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\17\153\1\u008d\12\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\16\153\1\u008e\13\153",
+			"\2\46\1\uffff\12\46\7\uffff\5\154\1\u008f\24\154\6\uffff\32\154",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\10\153\1\u0090\21\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\16\153\1\u0091\13\153",
+			"",
+			"\1\111\1\uffff\12\u0092",
+			"\1\46\1\111\1\uffff\12\46\7\uffff\32\46\6\uffff\32\46",
+			"\1\46\1\111\1\uffff\12\u0093\7\uffff\32\46\6\uffff\32\46",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\10\153\1\u0094\21\153",
+			"\2\46\1\u0095\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\4\153\1\u0096\25\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\1\u0097\31\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\13\153\1\u0098\16\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\10\153\1\u0099\21\153",
+			"\2\46\1\u0095\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\16\153\1\u009a\13\153",
+			"",
+			"",
+			"",
+			"\1\45\1\u009b\1\u009c\7\45\7\uffff\32\45\6\uffff\32\45",
+			"\2\46\1\uffff\12\46\7\uffff\1\u009d\31\46\6\uffff\32\46",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\15\153\1\u009e\14\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\4\153\1\u009f\25\153",
+			"\1\u00a0\1\46\1\45\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\23\153\1\u00a1\6\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\21\153\1\u00a2\10\153",
+			"\2\46\1\uffff\12\46\7\uffff\32\154\6\uffff\16\154\1\u00a3\13\154",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\2\153\1\u00a4\27\153",
+			"\2\46\1\u0095\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\1\111\1\uffff\12\111",
+			"\1\46\1\u00a5\1\uffff\12\u0093\7\uffff\32\46\6\uffff\32\46",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\2\153\1\u00a6\27\153",
+			"\1\66\2\uffff\1\66\2\uffff\12\u00a7\7\uffff\32\u00a7\6\uffff\32\u00a7",
+			"\2\46\1\u0095\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\6\153\1\u00a8\23\153",
+			"\2\46\1\u0095\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\17\153\1\u00a9\12\153",
+			"\2\46\1\u0095\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\1\u00aa",
+			"\1\45\1\uffff\12\45\7\uffff\32\45\6\uffff\32\45",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\6\46\1\u00ac\23\46",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\23\153\1\u00ad\6\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\uffff\12\46\7\uffff\2\46\1\u00af\27\46\6\uffff\32\46",
+			"\1\u00b0\1\46\1\45\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\10\153\1\u00b2\21\153",
+			"\2\46\1\uffff\12\46\7\uffff\32\154\6\uffff\21\154\1\u00b3\10\154",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\1\u00b4\31\153",
+			"\1\46\2\uffff\1\u00b5\11\u00b6\7\uffff\32\46\6\uffff\32\46",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\1\u00b7\31\153",
+			"\1\u00b8\1\uffff\12\u00a7\7\uffff\32\u00a7\6\uffff\32\u00a7",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\4\153\1\u00b9\25\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\1\u00ba\31\153",
+			"\1\45\1\u00bb\10\45\7\uffff\32\45\6\uffff\32\45",
+			"",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\4\46\1\u00bc\25\46",
+			"\1\u00bd\1\46\1\45\12\44\7\uffff\32\153\6\uffff\32\153",
+			"",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\16\46\1\u00be\13\46",
+			"\2\46\1\uffff\12\46\7\uffff\4\46\1\u00c0\6\46\1\u00bf\16\46\6\uffff"+
+			"\32\46",
+			"",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\31\153\1\u00c1",
+			"\2\46\1\uffff\12\46\7\uffff\32\154\6\uffff\26\154\1\u00c2\3\154",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\23\153\1\u00c3\6\153",
+			"\1\46\1\111\1\uffff\12\46\7\uffff\32\46\6\uffff\32\46",
+			"\1\46\1\111\1\uffff\12\u00c4\7\uffff\32\46\6\uffff\32\46",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\13\153\1\u00c5\16\153",
+			"\1\66\2\uffff\12\u00c6\7\uffff\32\u00c6\6\uffff\32\u00c6",
+			"\2\46\1\u0095\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\21\153\1\u00c7\10\153",
+			"\1\45\1\uffff\12\45\7\uffff\32\45\6\uffff\32\45",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\15\46\1\u00c8\14\46",
+			"\2\46\1\uffff\12\46\7\uffff\23\46\1\u00c9\6\46\6\uffff\32\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\15\46\1\u00ca\14\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\1\u00cb\31\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\15\46\1\u00cc\14\46",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\1\u00cd\31\153",
+			"\2\46\1\uffff\12\46\7\uffff\32\154\6\uffff\1\u00ce\31\154",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\10\153\1\u00cf\21\153",
+			"\1\46\1\u00d0\1\uffff\12\u00c4\7\uffff\32\46\6\uffff\32\46",
+			"\2\46\1\u0095\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\1\u00b8\1\uffff\12\u00c6\7\uffff\32\u00c6\6\uffff\32\u00c6",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\23\153\1\u00d1\6\153",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\23\46\1\u00d2\6\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\30\46\1\u00d3\1\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\23\46\1\u00d4\6\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\15\46\1\u00d5\14\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\2\46\1\u00d6\27\46",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\23\153\1\u00d7\6\153",
+			"\2\46\1\uffff\12\46\7\uffff\32\154\6\uffff\21\154\1\u00d8\10\154",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\16\153\1\u00d9\13\153",
+			"\1\46\2\uffff\1\u00da\11\u00db\7\uffff\32\46\6\uffff\32\46",
+			"\2\46\1\u00dc\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\32\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\17\46\1\u00de\12\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\21\46\1\u00df\10\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\6\46\1\u00e0\23\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\16\46\1\u00e1\13\46",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\10\153\1\u00e2\21\153",
+			"\2\46\1\uffff\12\46\7\uffff\32\154\6\uffff\3\154\1\u00e3\26\154",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\15\153\1\u00e4\14\153",
+			"\1\46\2\uffff\12\46\7\uffff\32\46\6\uffff\32\46",
+			"\1\46\2\uffff\12\u00e5\7\uffff\32\46\6\uffff\32\46",
+			"\1\u00e7\2\uffff\1\u00e7\2\uffff\12\u00e6\7\uffff\32\u00e6\6\uffff\32"+
+			"\u00e6",
+			"",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\4\46\1\u00e8\25\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\16\46\1\u00e9\13\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\24\46\1\u00ea\5\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\3\46\1\u00eb\26\46",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\16\153\1\u00ec\13\153",
+			"\2\46\1\uffff\12\46\7\uffff\32\154\6\uffff\22\154\1\u00ed\7\154",
+			"\2\46\1\u0095\12\44\7\uffff\32\153\6\uffff\32\153",
+			"\2\46\1\uffff\12\u00e5\7\uffff\32\46\6\uffff\32\46",
+			"\1\u00ee\1\uffff\12\u00e6\7\uffff\32\u00e6\6\uffff\32\u00e6",
+			"",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\32\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\13\46\1\u00f0\16\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\1\u00f1\31\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\10\46\1\u00f2\21\46",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\15\153\1\u00f3\14\153",
+			"\2\46\1\uffff\12\46\7\uffff\32\154\6\uffff\32\154",
+			"\1\u00e7\2\uffff\12\u00f5\7\uffff\32\u00f5\6\uffff\32\u00f5",
+			"",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\32\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\6\46\1\u00f7\23\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\15\46\1\u00f8\14\46",
+			"\2\46\1\45\12\44\7\uffff\32\153\6\uffff\32\153",
+			"",
+			"\1\u00ee\1\uffff\12\u00f5\7\uffff\32\u00f5\6\uffff\32\u00f5",
+			"",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\4\46\1\u00fa\25\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\6\46\1\u00fb\23\46",
+			"",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\32\46",
+			"\2\46\1\uffff\12\46\7\uffff\32\46\6\uffff\32\46",
 			"",
 			""
 	};
 
-	static final short[] DFA39_eot = DFA.unpackEncodedString(DFA39_eotS);
-	static final short[] DFA39_eof = DFA.unpackEncodedString(DFA39_eofS);
-	static final char[] DFA39_min = DFA.unpackEncodedStringToUnsignedChars(DFA39_minS);
-	static final char[] DFA39_max = DFA.unpackEncodedStringToUnsignedChars(DFA39_maxS);
-	static final short[] DFA39_accept = DFA.unpackEncodedString(DFA39_acceptS);
-	static final short[] DFA39_special = DFA.unpackEncodedString(DFA39_specialS);
-	static final short[][] DFA39_transition;
+	static final short[] DFA38_eot = DFA.unpackEncodedString(DFA38_eotS);
+	static final short[] DFA38_eof = DFA.unpackEncodedString(DFA38_eofS);
+	static final char[] DFA38_min = DFA.unpackEncodedStringToUnsignedChars(DFA38_minS);
+	static final char[] DFA38_max = DFA.unpackEncodedStringToUnsignedChars(DFA38_maxS);
+	static final short[] DFA38_accept = DFA.unpackEncodedString(DFA38_acceptS);
+	static final short[] DFA38_special = DFA.unpackEncodedString(DFA38_specialS);
+	static final short[][] DFA38_transition;
 
 	static {
-		int numStates = DFA39_transitionS.length;
-		DFA39_transition = new short[numStates][];
+		int numStates = DFA38_transitionS.length;
+		DFA38_transition = new short[numStates][];
 		for (int i=0; i<numStates; i++) {
-			DFA39_transition[i] = DFA.unpackEncodedString(DFA39_transitionS[i]);
+			DFA38_transition[i] = DFA.unpackEncodedString(DFA38_transitionS[i]);
 		}
 	}
 
-	protected class DFA39 extends DFA {
+	protected class DFA38 extends DFA {
 
-		public DFA39(BaseRecognizer recognizer) {
+		public DFA38(BaseRecognizer recognizer) {
 			this.recognizer = recognizer;
-			this.decisionNumber = 39;
-			this.eot = DFA39_eot;
-			this.eof = DFA39_eof;
-			this.min = DFA39_min;
-			this.max = DFA39_max;
-			this.accept = DFA39_accept;
-			this.special = DFA39_special;
-			this.transition = DFA39_transition;
+			this.decisionNumber = 38;
+			this.eot = DFA38_eot;
+			this.eof = DFA38_eof;
+			this.min = DFA38_min;
+			this.max = DFA38_max;
+			this.accept = DFA38_accept;
+			this.special = DFA38_special;
+			this.transition = DFA38_transition;
 		}
 		@Override
 		public String getDescription() {
-			return "1:1: Tokens : ( GET | POST | HOST | USER_AGENT | CONTENT_TYPE | ACCEPT | COOKIE | AUTHORIZATION | CONTENT_LENGTH | CONNECTION | ACCEPT_LANGUAGE | ACCEPT_ENCODING | CACHE_CONTROL | Q | CHARSET | BOUNDARY | BASIC | DIGEST | USERNAME | REALM | URI | ALGORITHM | NONCE | NC | CNONCE | QOP | RESPONSE | OPAQUE | KEEP_ALIVE | CLOSE | EQUALS | COMMA | COLUMN | SEMI_COLUMN | TERMINAL | STAR | INT_NUM | HTTP_VERSION | PATH | DNS | IPV4 | MIME | MULTIPART_MIME | Q_VAL | PRODUCT | PRODUCT_INFO | ENCODING_ELEMENT | LANGUAGE_ELEMENT | STRING | COMMENT | WS | ERROR_TOKEN );";
+			return "1:1: Tokens : ( GET | POST | HOST | USER_AGENT | CONTENT_TYPE | ACCEPT | COOKIE | AUTHORIZATION | ACCEPT_LANGUAGE | ACCEPT_ENCODING | CACHE_CONTROL | MAX_FORWARDS | Q | EQUALS | COMMA | COLUMN | SEMI_COLUMN | TERMINAL | STAR | ID | INT_NUM | HTTP_VERSION | PATH | QUERY | DNS | IPV4 | MIME | MULTIPART_MIME | Q_VAL | PRODUCT | PRODUCT_INFO | LANGUAGE_ELEMENT | BODY_STRING | STRING | COMMENT | WS | ERROR_TOKEN );";
 		}
 		@Override
 		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
@@ -3938,70 +3328,70 @@ public class HttpLexer extends Lexer {
 			int _s = s;
 			switch ( s ) {
 					case 0 : 
-						int LA39_0 = input.LA(1);
+						int LA38_0 = input.LA(1);
 						s = -1;
-						if ( (LA39_0=='G') ) {s = 1;}
-						else if ( (LA39_0=='P') ) {s = 2;}
-						else if ( (LA39_0=='H') ) {s = 3;}
-						else if ( (LA39_0=='U') ) {s = 4;}
-						else if ( (LA39_0=='C') ) {s = 5;}
-						else if ( (LA39_0=='A') ) {s = 6;}
-						else if ( (LA39_0=='q') ) {s = 7;}
-						else if ( (LA39_0=='c') ) {s = 8;}
-						else if ( (LA39_0=='b') ) {s = 9;}
-						else if ( (LA39_0=='B') ) {s = 10;}
-						else if ( (LA39_0=='D') ) {s = 11;}
-						else if ( (LA39_0=='u') ) {s = 12;}
-						else if ( (LA39_0=='r') ) {s = 13;}
-						else if ( (LA39_0=='a') ) {s = 14;}
-						else if ( (LA39_0=='n') ) {s = 15;}
-						else if ( (LA39_0=='o') ) {s = 16;}
-						else if ( (LA39_0=='k') ) {s = 17;}
-						else if ( (LA39_0=='=') ) {s = 18;}
-						else if ( (LA39_0==',') ) {s = 19;}
-						else if ( (LA39_0==':') ) {s = 20;}
-						else if ( (LA39_0==';') ) {s = 21;}
-						else if ( (LA39_0=='|') ) {s = 22;}
-						else if ( (LA39_0=='*') ) {s = 23;}
-						else if ( (LA39_0=='0') ) {s = 24;}
-						else if ( (LA39_0=='1') ) {s = 25;}
-						else if ( (LA39_0=='/') ) {s = 26;}
-						else if ( (LA39_0=='f') ) {s = 27;}
-						else if ( (LA39_0=='i') ) {s = 28;}
-						else if ( (LA39_0=='m') ) {s = 29;}
-						else if ( (LA39_0=='t') ) {s = 30;}
-						else if ( (LA39_0=='v') ) {s = 31;}
-						else if ( (LA39_0=='g') ) {s = 32;}
-						else if ( ((LA39_0 >= '2' && LA39_0 <= '9')) ) {s = 33;}
-						else if ( (LA39_0=='-') ) {s = 34;}
-						else if ( (LA39_0=='(') ) {s = 35;}
-						else if ( (LA39_0=='d') ) {s = 36;}
-						else if ( (LA39_0=='e'||LA39_0=='h'||LA39_0=='j'||LA39_0=='l'||LA39_0=='p'||LA39_0=='s'||(LA39_0 >= 'w' && LA39_0 <= 'z')) ) {s = 37;}
-						else if ( ((LA39_0 >= 'E' && LA39_0 <= 'F')||(LA39_0 >= 'I' && LA39_0 <= 'O')||(LA39_0 >= 'Q' && LA39_0 <= 'T')||(LA39_0 >= 'V' && LA39_0 <= 'Z')) ) {s = 38;}
-						else if ( (LA39_0=='\'') ) {s = 39;}
-						else if ( ((LA39_0 >= '\t' && LA39_0 <= '\n')||LA39_0=='\r'||LA39_0==' ') ) {s = 40;}
-						else if ( ((LA39_0 >= '\u0000' && LA39_0 <= '\b')||(LA39_0 >= '\u000B' && LA39_0 <= '\f')||(LA39_0 >= '\u000E' && LA39_0 <= '\u001F')||(LA39_0 >= '!' && LA39_0 <= '&')||LA39_0==')'||LA39_0=='+'||LA39_0=='.'||LA39_0=='<'||(LA39_0 >= '>' && LA39_0 <= '@')||(LA39_0 >= '[' && LA39_0 <= '`')||LA39_0=='{'||(LA39_0 >= '}' && LA39_0 <= '\uFFFF')) ) {s = 41;}
+						if ( (LA38_0=='G') ) {s = 1;}
+						else if ( (LA38_0=='P') ) {s = 2;}
+						else if ( (LA38_0=='H') ) {s = 3;}
+						else if ( (LA38_0=='U') ) {s = 4;}
+						else if ( (LA38_0=='C') ) {s = 5;}
+						else if ( (LA38_0=='A') ) {s = 6;}
+						else if ( (LA38_0=='M') ) {s = 7;}
+						else if ( (LA38_0=='q') ) {s = 8;}
+						else if ( (LA38_0=='=') ) {s = 9;}
+						else if ( (LA38_0==',') ) {s = 10;}
+						else if ( (LA38_0==':') ) {s = 11;}
+						else if ( (LA38_0==';') ) {s = 12;}
+						else if ( (LA38_0=='|') ) {s = 13;}
+						else if ( (LA38_0=='*') ) {s = 14;}
+						else if ( (LA38_0=='a') ) {s = 15;}
+						else if ( (LA38_0=='0') ) {s = 16;}
+						else if ( (LA38_0=='1') ) {s = 17;}
+						else if ( (LA38_0=='/') ) {s = 18;}
+						else if ( (LA38_0=='?') ) {s = 19;}
+						else if ( (LA38_0=='-') ) {s = 20;}
+						else if ( (LA38_0=='c') ) {s = 21;}
+						else if ( (LA38_0=='f') ) {s = 22;}
+						else if ( (LA38_0=='i') ) {s = 23;}
+						else if ( (LA38_0=='m') ) {s = 24;}
+						else if ( (LA38_0=='t') ) {s = 25;}
+						else if ( (LA38_0=='v') ) {s = 26;}
+						else if ( (LA38_0=='B'||(LA38_0 >= 'D' && LA38_0 <= 'F')||(LA38_0 >= 'I' && LA38_0 <= 'L')||(LA38_0 >= 'N' && LA38_0 <= 'O')||(LA38_0 >= 'Q' && LA38_0 <= 'T')||(LA38_0 >= 'V' && LA38_0 <= 'Z')||LA38_0=='b'||(LA38_0 >= 'd' && LA38_0 <= 'e')||(LA38_0 >= 'g' && LA38_0 <= 'h')||(LA38_0 >= 'j' && LA38_0 <= 'l')||(LA38_0 >= 'n' && LA38_0 <= 'p')||(LA38_0 >= 'r' && LA38_0 <= 's')||LA38_0=='u'||(LA38_0 >= 'w' && LA38_0 <= 'z')) ) {s = 27;}
+						else if ( ((LA38_0 >= '2' && LA38_0 <= '9')) ) {s = 28;}
+						else if ( (LA38_0=='(') ) {s = 29;}
+						else if ( (LA38_0=='\u00B0') ) {s = 30;}
+						else if ( (LA38_0=='\'') ) {s = 31;}
+						else if ( ((LA38_0 >= '\t' && LA38_0 <= '\n')||LA38_0=='\r'||LA38_0==' ') ) {s = 32;}
+						else if ( ((LA38_0 >= '\u0000' && LA38_0 <= '\b')||(LA38_0 >= '\u000B' && LA38_0 <= '\f')||(LA38_0 >= '\u000E' && LA38_0 <= '\u001F')||(LA38_0 >= '!' && LA38_0 <= '&')||LA38_0==')'||LA38_0=='+'||LA38_0=='.'||LA38_0=='<'||LA38_0=='>'||LA38_0=='@'||(LA38_0 >= '[' && LA38_0 <= '`')||LA38_0=='{'||(LA38_0 >= '}' && LA38_0 <= '\u00AF')||(LA38_0 >= '\u00B1' && LA38_0 <= '\uFFFF')) ) {s = 33;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 1 : 
-						int LA39_35 = input.LA(1);
+						int LA38_29 = input.LA(1);
 						s = -1;
-						if ( ((LA39_35 >= '\u0000' && LA39_35 <= '\'')||(LA39_35 >= ')' && LA39_35 <= '\uFFFF')) ) {s = 98;}
-						else s = 41;
+						if ( ((LA38_29 >= '\u0000' && LA38_29 <= '\'')||(LA38_29 >= ')' && LA38_29 <= '\uFFFF')) ) {s = 74;}
+						else s = 33;
 						if ( s>=0 ) return s;
 						break;
 
 					case 2 : 
-						int LA39_39 = input.LA(1);
+						int LA38_30 = input.LA(1);
 						s = -1;
-						if ( ((LA39_39 >= '\u0000' && LA39_39 <= '\uFFFF')) ) {s = 100;}
-						else s = 41;
+						if ( ((LA38_30 >= '\u0000' && LA38_30 <= '\uFFFF')) ) {s = 75;}
+						else s = 33;
+						if ( s>=0 ) return s;
+						break;
+
+					case 3 : 
+						int LA38_31 = input.LA(1);
+						s = -1;
+						if ( ((LA38_31 >= '\u0000' && LA38_31 <= '\uFFFF')) ) {s = 76;}
+						else s = 33;
 						if ( s>=0 ) return s;
 						break;
 			}
 			NoViableAltException nvae =
-				new NoViableAltException(getDescription(), 39, _s, input);
+				new NoViableAltException(getDescription(), 38, _s, input);
 			error(nvae);
 			throw nvae;
 		}

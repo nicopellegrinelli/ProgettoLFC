@@ -1,23 +1,23 @@
-POST /prova1/?val1=3&val2=test HTTP/1.1	|
+POST /prova1/?val1=3&val2=test HTTP/1.1 |
 
 Host: www.esempio.com	|
 User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) 
 			chrome/2.0 (Linux 3.1; x32) firefox/2.0
 			|
 Accept: application/json, model/vnd1+xml;q=0.753	|
+//Accept: application/json, model/vnd1+xml;q=0.753	|
 Cookie:	'time' = '17'; 'user'='pino'	|
-Authorization: 	Digest
-				username = 'sdasdicaskadc',
+Authorization: Digest
+				username = 'sdas"dicaskadc',
 				uri = 'www.esempio2.it',
 				algorithm = 'MD5',
 				response='7cffhfr54685gnnfgerg8'
 				|
 Content-Type: application/json;charset= 'utf-8'	|
-Content-Length: 475	|
-Connection: keep-alive	|
-Accept-Language: it,en-US,en;q=0.5, *; q=1.0	|
+Accept-Language: it, en-Latn, en;q=0.5, *; q=1.0	|
 Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5,br	|
 Cache-Control: 'public', 'max-age=604800', 'immutable'	|
-'a': 'b'|
+Max-Forwards: 4 |
+'Transfer-Encoding': 'gzip, chunked'	|
 
-'bo"dy'	|
+°{"a":"w'w"}°	|

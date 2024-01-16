@@ -2,7 +2,7 @@ grammar Http;
 
 options {
  	language = Java;
- 	k = 2;		
+ 	k = 1;		
 }
 
 @header{
@@ -22,9 +22,13 @@ options {
 	}
 	
 	public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
+		
+		Token tk = input.LT(1);
+	
 		String hdr = getErrorHeader(e);
 		String msg = getErrorMessage(e, tokenNames);
-		System.err.println(hdr + " -- " + msg);
+		
+		h.handleError(tk, hdr, msg);
 	}
 	
 }
@@ -36,8 +40,9 @@ options {
 // The 1st rule is the axiom
 request
 	:	rl=requestLine { h.addRequestLine(rl); }
-		(hdr=header { h.addHeader(hdr); })*
+		(hdr=header { h.addHeader(hdr); })* { h.checkHeaders(); }
 		(b=body { h.addBody(b); })?
+		EOF
 		{ h.generateJavaCode(); }
 	;
 	
@@ -49,8 +54,8 @@ requestLine returns[RequestLine rl]
 	;
 
 pathRule returns[String p]
-	:	(s=PATH
-	|	s=STRING) { p = $s.getText(); }
+	:	(s=PATH { p = $s.getText(); } (q=QUERY { p += $q.getText(); })?)
+	|	(s=STRING { p = h.handleQuotes($s.getText()); })
 	;
 
 method returns[String m]
@@ -65,11 +70,10 @@ header returns[Header hdr]
 	|	hd=acceptRule
 	|	hd=cookieRule
 	|	hd=authorizationRule
-	|	hd=contentLengthRule
-	|	hd=connectionRule
 	|	hd=acceptLanguageRule
 	|	hd=acceptEncodingRule
 	|	hd=chacheControlRule
+	|	hd=maxForwardsRule
 	|	hd=genericHeaderRule) { hdr = hd;}
 	;
 	
@@ -79,7 +83,7 @@ hostRule returns[Header hd]
 		k=HOST COLUMN 
 		(v=(DNS | IPV4) { value = $v.getText(); })
 		((c=COLUMN n=INT_NUM) { value += $c.getText() + $n.getText(); })?
-		TERMINAL { hd = new Header($k.getText(), value); }
+		TERMINAL { hd = new Header($k, value); }
 	;
 	
 userAgentRule returns[Header hd]
@@ -88,7 +92,7 @@ userAgentRule returns[Header hd]
 		p=productRule { value = p; }
 		(p1=productRule { value += " " + p1; }
 		(e=extensionRule { value += " " + e; })*)?
-		TERMINAL { hd = new Header($k.getText(), value); }
+		TERMINAL { hd = new Header($k, value); }
 	;
 	
 productRule returns[String s]
@@ -103,7 +107,7 @@ extensionRule returns[String s]
 acceptRule returns[Header hd]
 	:	k=ACCEPT COLUMN
 		value=mimeList
-		TERMINAL { hd = new Header($k.getText(), value); }
+		TERMINAL { hd = new Header($k, value); }
 	;
 	
 mimeList returns[String s]
@@ -121,23 +125,23 @@ contentTypeRule returns[Header hd]
 		k=CONTENT_TYPE COLUMN
 		(m=MIME { value = $m.getText(); } (cs=charsetRule { value += cs; })?
 		|m=MULTIPART_MIME b=boundaryRule { value = $m.getText() + b; } )
-		TERMINAL { hd = new Header($k.getText(), value); }
+		TERMINAL { hd = new Header($k, value); }
 	;
 	
 charsetRule returns[String s]
-	:	sc=SEMI_COLUMN cs=CHARSET e=EQUALS str=STRING 
-		{ s = $sc.getText() + " " + $cs.getText() + $e.getText() + h.substituteSingleQuote($str.getText(), ""); }
+	:	sc=SEMI_COLUMN (cs=ID { h.checkCharset($cs); }) e=EQUALS str=STRING 
+		{ s = $sc.getText() + " " + $cs.getText() + $e.getText() + h.handleQuotes($str.getText()); }
 	;
 	
 boundaryRule returns[String s]
-	:	sc=SEMI_COLUMN b=BOUNDARY e=EQUALS str=STRING
-		{ s = $sc.getText() + " " + $b.getText() + $e.getText() + h.substituteSingleQuote($str.getText(), ""); }
+	:	sc=SEMI_COLUMN (b=ID { h.checkBoundary($b); }) e=EQUALS str=STRING
+		{ s = $sc.getText() + " " + $b.getText() + $e.getText() + h.handleQuotes($str.getText()); }
 	;
 		
 cookieRule returns[Header hd]
 	:	k=COOKIE COLUMN
 		value=cookieList
-		TERMINAL { hd = new Header($k.getText(), value); }
+		TERMINAL { hd = new Header($k, value); }
 	;
 	
 cookieList returns[String s]
@@ -147,7 +151,7 @@ cookieList returns[String s]
 	
 cookieElement returns[String s]
 	:	str1=STRING e=EQUALS str2=STRING
-		{ s = h.substituteSingleQuote($str1.getText(), "") + $e.getText() + h.substituteSingleQuote($str2.getText(), ""); }
+		{ s = h.handleQuotes($str1.getText()) + $e.getText() + h.handleQuotes($str2.getText()); }
 	;
 	
 qValueRule returns[String s]
@@ -157,54 +161,35 @@ qValueRule returns[String s]
 	
 authorizationRule returns[Header hd]
 	:	k=AUTHORIZATION COLUMN
-		(value=basicAuthRule
-		| value=digestAuthRule)
-		TERMINAL { hd = new Header($k.getText(), value); }
+		bd=ID
+		(value=basicAuthRule[$bd]
+		| value=digestAuthRule[$bd])
+		TERMINAL { hd = new Header($k, value); }
 	;
 	
-basicAuthRule returns[String s]
-	:	b=BASIC str=STRING
-		{ s = $b.getText() + " " + h.substituteSingleQuote($str.getText(), ""); }
+basicAuthRule [Token b] returns[String s]
+	:	{ s = h.checkBasic($b); }
+		str=STRING
+		{ s = " " + h.handleQuotes($str.getText()); }
 	;
 	
-digestAuthRule returns[String s]
-	:	d=DIGEST { s = $d.getText(); }
+digestAuthRule [Token d] returns[String s]
+	:	{ s = h.checkDigest($d); }
 		a=authRule { s += " " + a; }
 		(c=COMMA a1=authRule { s += $c.getText() + " " + a1; })*
 	;
 	
 authRule returns[String s]
-	:	{ String substituter = "\\\\\""; }	
-	(t=USERNAME	
-	|	t=REALM
-	|	t=URI	
-	|	t=ALGORITHM { substituter = ""; }
-	|	t=NONCE
-	|	t=NC { substituter = ""; }
-	|	t=CNONCE
-	|	t=QOP { substituter = ""; }
-	|	t=RESPONSE
-	|	t=OPAQUE)	
+	:
+	t=ID { h.checkDigestElement($t); }
 	e=EQUALS str=STRING
-	{ s = $t.getText() + $e.getText() + h.substituteSingleQuote($str.getText(), substituter); }
+	{ s = $t.getText() + $e.getText() + h.handleDigestElement($t.getText(), $str.getText()); }
 	;
 
-contentLengthRule returns[Header hd]
-	:	k=CONTENT_LENGTH COLUMN
-		value=INT_NUM
-		TERMINAL { hd = new Header($k.getText(), $value.getText()); }
-	;
-	
-connectionRule returns[Header hd]
-	:	k=CONNECTION COLUMN
-		(value=KEEP_ALIVE | value=CLOSE)
-		TERMINAL { hd = new Header($k.getText(), $value.getText()); }
-	;
-	
 acceptLanguageRule returns[Header hd]
 	:	k=ACCEPT_LANGUAGE COLUMN
 		value=languageList
-		TERMINAL { hd = new Header($k.getText(), value); }
+		TERMINAL { hd = new Header($k, value); }
 	;
 	
 languageList returns[String s]
@@ -213,14 +198,16 @@ languageList returns[String s]
 	;
 	
 languageElement returns[String s]
-	:	(le=LANGUAGE_ELEMENT|le=STAR) { s = $le.getText(); }
+	:	((le=ID { h.checkLanguage($le); })
+		|le=LANGUAGE_ELEMENT
+		|le=STAR ) { s = $le.getText(); }
 		(q=qValueRule { s += q; })?
 	;
 	
 acceptEncodingRule returns[Header hd]
 	:	k=ACCEPT_ENCODING COLUMN
 		value=encodingList
-		TERMINAL { hd = new Header($k.getText(), value); }
+		TERMINAL { hd = new Header($k, value); }
 	;
 	
 encodingList returns[String s]
@@ -229,26 +216,34 @@ encodingList returns[String s]
 	;
 	
 encodingElement returns[String s]
-	:	(ee=ENCODING_ELEMENT|ee=STAR) { s = ee.getText(); }
+	:	(ee=ID { h.checkEncodingElement($ee); } 
+		|ee=STAR) 
+		{ s = ee.getText(); }
 		(q=qValueRule { s += q; })?
 	;
 	
 chacheControlRule returns[Header hd]
 	:	{ String value = ""; }
 		k=CACHE_CONTROL COLUMN
-		str=STRING { value = h.substituteSingleQuote($str.getText(), ""); }
-		(c=COMMA str1=STRING { value += h.substituteSingleQuote($c.getText(), "") + " " + h.substituteSingleQuote($str1.getText(), ""); })*
-		TERMINAL { hd = new Header($k.getText(), value); }
+		str=STRING { value = h.handleQuotes($str.getText()); }
+		(c=COMMA str1=STRING { value += h.handleQuotes($c.getText()) + " " + h.handleQuotes($str1.getText()); })*
+		TERMINAL { hd = new Header($k, value); }
+	;
+
+maxForwardsRule returns[Header hd]
+	:	k=MAX_FORWARDS COLUMN
+		value=INT_NUM 
+		TERMINAL { hd = new Header($k, $value.getText()); }
 	;
 	
 genericHeaderRule returns[Header hd]
 	:	k=STRING COLUMN value=STRING
-		TERMINAL { hd = new Header(h.substituteSingleQuote($k.getText(), ""), h.substituteSingleQuote($value.getText(), "")); }
+		TERMINAL { hd = new Header($k, h.handleQuotes($value.getText())); }
 	;
 
 body returns[String s]
-	:	str=STRING
-		TERMINAL { s = h.substituteSingleQuote($str.getText(), ""); }
+	:	str=BODY_STRING
+		TERMINAL { s = h.handleBody($str.getText()); }
 	;
 
 /* ***********************************************
@@ -262,34 +257,21 @@ CONTENT_TYPE		: 'Content-Type'		;
 ACCEPT				: 'Accept'			;
 COOKIE				: 'Cookie'			;
 AUTHORIZATION		: 'Authorization'	;
-CONTENT_LENGTH		: 'Content-Length'	;
-CONNECTION			: 'Connection'		;
 ACCEPT_LANGUAGE	: 'Accept-Language'	;
 ACCEPT_ENCODING	: 'Accept-Encoding'	;
 CACHE_CONTROL		: 'Cache-Control'	;
+MAX_FORWARDS		: 'Max-Forwards' ;
 Q						: 'q'				;
-CHARSET				: 'charset'			;
-BOUNDARY				: 'boundary'			;
-BASIC					: 'Basic'			;
-DIGEST				: 'Digest'			;
-USERNAME				: 'username'			;
-REALM					: 'realm'			;
-URI					: 'uri'				;
-ALGORITHM			: 'algorithm'		;
-NONCE					: 'nonce'			;
-NC						: 'nc'				;
-CNONCE				: 'cnonce'			;
-QOP					: 'qop'				;
-RESPONSE				: 'response'			;
-OPAQUE				: 'opaque'			;
-KEEP_ALIVE			: 'keep-alive'		;
-CLOSE					: 'close'			;
 EQUALS				: '='				;
-COMMA					: ',' 				;
+COMMA					: ',' 			;
 COLUMN				: ':'				;
 SEMI_COLUMN			: ';'				;
 TERMINAL				: '|'				;
 STAR					: '*'				;
+
+ID
+	:	ALPHA_CHAR ALPHA_CHAR+
+	;
 
 INT_NUM	
 	:	NUM
@@ -301,7 +283,11 @@ HTTP_VERSION
 	;
 
 PATH
-	:	('/' | ('/' PATH_ELEMENT)+ '/'?) ('?' QUERY_ELEMENT ('&' QUERY_ELEMENT)*)?
+	:	'/' | (('/' PATH_ELEMENT)+ '/'?)
+	;
+	
+QUERY
+	:	'?' QUERY_ELEMENT ('&' QUERY_ELEMENT)*
 	;
 	
 DNS
@@ -336,17 +322,13 @@ PRODUCT_INFO
 	:	'(' (~('('|')'))* ')'
 	;
 	
-ENCODING_ELEMENT
-	:	'gzip'
-	|	'compress'
-	|	'deflate'
-	|	'br'
-	|	'identity'
-	;
-
 LANGUAGE_ELEMENT
-	:	('a'..'z')('a'..'z')('a'..'z')? ('-' ALPHA_CHAR+)?
+	:	ALPHA_CHAR ALPHA_CHAR ALPHA_CHAR? ('-' ALPHA_CHAR+)
 	;
+	
+BODY_STRING
+    :	'°' (ESC_SEQ | ~('\\' | '°'))* '°'
+    ;
 
 STRING
     :	'\'' (ESC_SEQ | ~('\\'|'\''))* '\''

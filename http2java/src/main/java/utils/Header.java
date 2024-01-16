@@ -1,15 +1,17 @@
 package utils;
 
+import org.antlr.runtime.Token;
+
 public class Header {
-	private String key;
+	private Token key;
 	private String value;
 
-	public Header(String k, String v) {
+	public Header(Token k, String v) {
 		key = k;
 		value = v;
 	}
 
-	public String getKey() {
+	public Token getKey() {
 		return key;
 	}
 	public String getValue() {
