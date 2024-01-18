@@ -39,7 +39,7 @@ public class SemanticHandler {
 	private boolean existsBody;
 	//final output
 	private String javaCode;
-	
+
 	//constructor
 	public SemanticHandler () {
 		errors = new ArrayList<CompilerError>();
@@ -51,6 +51,16 @@ public class SemanticHandler {
 		existsBody = false;
 		
 		javaCode = "";
+	}
+	
+	public List<CompilerError> getErrors() {
+		return errors;
+	}
+	public List<CompilerError> getWarnings() {
+		return warnings;
+	}
+	public String getJavaCode() {
+		return javaCode;
 	}
 	
 	public RequestLine createRequestLine(String m, String p, String v) {	
