@@ -11,6 +11,7 @@ import javax.swing.JFileChooser;
 import java.awt.BorderLayout;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import org.antlr.runtime.ANTLRReaderStream;
@@ -22,13 +23,12 @@ import compiler.SemanticHandler;
 import utils.CompilerError;
 
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
 import java.awt.FlowLayout;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionListener;
@@ -40,6 +40,11 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.awt.event.ActionEvent;
 import javax.swing.JToggleButton;
+import javax.swing.border.MatteBorder;
+import java.awt.Color;
+import javax.swing.JScrollBar;
+import java.awt.ScrollPane;
+import java.awt.Point;
 
 public class Gui {
 
@@ -88,10 +93,12 @@ public class Gui {
 		frame.getContentPane().add(splitPane);
 
 		JPanel right_panel = new JPanel();
+		right_panel.setBorder(new EmptyBorder(0, 0, 0, 10));
 		splitPane.setRightComponent(right_panel);
 		right_panel.setLayout(new GridLayout(2, 1, 0, 0));
 
 		JPanel panel_Errors = new JPanel();
+		panel_Errors.setBorder(new MatteBorder(1, 1, 0, 1, (Color) new Color(0, 0, 0)));
 		right_panel.add(panel_Errors);
 		panel_Errors.setLayout(new BorderLayout(0, 0));
 
@@ -105,6 +112,7 @@ public class Gui {
 		panel_Errors.add(textArea_Errors);
 
 		JPanel panel_Warnings = new JPanel();
+		panel_Warnings.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		right_panel.add(panel_Warnings);
 		panel_Warnings.setLayout(new BorderLayout(0, 0));
 
@@ -118,21 +126,13 @@ public class Gui {
 		panel_Warnings.add(textArea_Warnings);
 
 		JPanel left_panel = new JPanel();
+		left_panel.setBorder(new EmptyBorder(0, 10, 0, 0));
 		splitPane.setLeftComponent(left_panel);
-		GridBagLayout gbl_left_panel = new GridBagLayout();
-		gbl_left_panel.columnWidths = new int[] { 0, 0 };
-		gbl_left_panel.rowHeights = new int[] { 0, 0, 0 };
-		gbl_left_panel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
-		gbl_left_panel.rowWeights = new double[] { 1.0, 1.0, Double.MIN_VALUE };
-		left_panel.setLayout(gbl_left_panel);
+		left_panel.setLayout(new GridLayout(0, 1, 0, 0));
 
 		JPanel panel_HTTP = new JPanel();
-		GridBagConstraints gbc_panel_HTTP = new GridBagConstraints();
-		gbc_panel_HTTP.insets = new Insets(0, 0, 5, 0);
-		gbc_panel_HTTP.fill = GridBagConstraints.BOTH;
-		gbc_panel_HTTP.gridx = 0;
-		gbc_panel_HTTP.gridy = 0;
-		left_panel.add(panel_HTTP, gbc_panel_HTTP);
+		panel_HTTP.setBorder(new MatteBorder(2, 2, 1, 2, (Color) new Color(0, 0, 0)));
+		left_panel.add(panel_HTTP);
 		panel_HTTP.setLayout(new BorderLayout(0, 0));
 
 		JLabel lblHTTP = new JLabel("HTTP request:");
@@ -140,17 +140,31 @@ public class Gui {
 		lblHTTP.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_HTTP.add(lblHTTP, BorderLayout.NORTH);
 
-		JTextArea txtrInsertHttpRequest = new JTextArea();
-		txtrInsertHttpRequest.setText("Insert HTTP request here:");
-		panel_HTTP.add(txtrInsertHttpRequest);
+		JTextArea textArea_HTTP = new JTextArea();
+		textArea_HTTP.setBorder(new EmptyBorder(10,10,10,10));
+		textArea_HTTP.setLineWrap(true);
+		textArea_HTTP.setEditable(false);
+		
+		JScrollPane scrollPane_HTTP = new JScrollPane(textArea_HTTP);
+		panel_HTTP.add(scrollPane_HTTP);
+		
+		TextLineNumber lineNumber = new TextLineNumber(textArea_HTTP, 2);
+		lineNumber.setUpdateFont(true);
+		float fontSize = textArea_HTTP.getFont().getSize() - 1;
+		Font font = textArea_HTTP.getFont().deriveFont(fontSize);
+		lineNumber.setFont(font);
+		lineNumber.setBorderGap(20);
+		lineNumber.setForeground(Color.ORANGE);
+		lineNumber.setDigitAlignment(TextLineNumber.LEFT);
+		scrollPane_HTTP.setRowHeaderView(lineNumber);
+		
+		//panel_HTTP.add(textArea_HTTP);
 
 		JPanel panel_Java = new JPanel();
-		GridBagConstraints gbc_panel_Java = new GridBagConstraints();
-		gbc_panel_Java.fill = GridBagConstraints.BOTH;
-		gbc_panel_Java.gridx = 0;
-		gbc_panel_Java.gridy = 1;
-		left_panel.add(panel_Java, gbc_panel_Java);
+		panel_Java.setBorder(new MatteBorder(1, 2, 2, 2, (Color) new Color(0, 0, 0)));
 		panel_Java.setLayout(new BorderLayout(0, 0));
+		left_panel.add(panel_Java);
+		
 
 		JLabel lblJava = new JLabel("Java code:");
 		lblJava.setHorizontalAlignment(SwingConstants.CENTER);
@@ -158,14 +172,14 @@ public class Gui {
 		panel_Java.add(lblJava, BorderLayout.NORTH);
 
 		JTextArea textArea_Java = new JTextArea();
-		panel_Java.add(textArea_Java);
+		panel_Java.add(textArea_Java);;
 
-		JPanel panel = new JPanel();
-		frame.getContentPane().add(panel, BorderLayout.SOUTH);
-		panel.setLayout(new BorderLayout(0, 0));
+		JPanel bottom_panel = new JPanel();
+		frame.getContentPane().add(bottom_panel, BorderLayout.SOUTH);
+		bottom_panel.setLayout(new BorderLayout(0, 0));
 
 		JPanel panel_text = new JPanel();
-		panel.add(panel_text, BorderLayout.CENTER);
+		bottom_panel.add(panel_text, BorderLayout.CENTER);
 
 		txtC = new JTextField();
 		txtC.setEditable(false);
@@ -180,9 +194,19 @@ public class Gui {
 		tglbtnFileOrText.setToolTipText(
 				"If selected, the input is the taken from the file; otherwise, if not selected, the input is taken from the HTTP text box");
 		panel_text.add(tglbtnFileOrText);
+		tglbtnFileOrText.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tglbtnFileOrText.isSelected()) {
+					textArea_HTTP.setEditable(false);
+				}
+				else {
+					textArea_HTTP.setEditable(true);
+				}
+			}
+		});
 
 		JPanel panel_buttons = new JPanel();
-		panel.add(panel_buttons, BorderLayout.EAST);
+		bottom_panel.add(panel_buttons, BorderLayout.EAST);
 		panel_buttons.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 5));
 
 		JButton btnImport = new JButton("Import File");
@@ -201,7 +225,7 @@ public class Gui {
 						filepath = inputFile.getAbsolutePath();
 						txtC.setText(filepath);
 						StringBuilder content = readFileContent(inputFile);
-						txtrInsertHttpRequest.setText(content.toString());
+						textArea_HTTP.setText(content.toString());
 					} else {
 						if (!filepath.equals("")) {
 							txtC.setText(filepath);
@@ -228,11 +252,11 @@ public class Gui {
 					// leggo da file
 					if (tglbtnFileOrText.isSelected()) {
 						lexer = new HttpLexer(new ANTLRReaderStream(new FileReader(filepath)));
-						txtrInsertHttpRequest.setText(readFileContent(inputFile).toString());
+						textArea_HTTP.setText(readFileContent(inputFile).toString());
 					}
 					//leggo da textBox
 					else {
-						lexer = new HttpLexer(new ANTLRReaderStream(new StringReader(txtrInsertHttpRequest.getText())));
+						lexer = new HttpLexer(new ANTLRReaderStream(new StringReader(textArea_HTTP.getText())));
 					}
 					CommonTokenStream tokens = new CommonTokenStream(lexer);
 					HttpParser parser = new HttpParser(tokens);
@@ -299,13 +323,14 @@ public class Gui {
 	}
 
 	private StringBuilder readFileContent(File inputFile) throws FileNotFoundException, IOException {
-		// legge il contenuto del file e lo stampa in textArea_http
+		// legge il contenuto del file e lo restituisce sotto forma di StringBuilder
 		BufferedReader reader = new BufferedReader(new FileReader(inputFile));
 		StringBuilder content = new StringBuilder();
 		String line;
 		while ((line = reader.readLine()) != null) {
 			content.append(line).append("\n");
 		}
+		reader.close();
 		return content;
 	}
 

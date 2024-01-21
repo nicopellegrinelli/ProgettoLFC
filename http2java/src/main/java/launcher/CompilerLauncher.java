@@ -4,7 +4,6 @@ import java.io.FileReader;
 
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.Token;
 
 import compiler.HttpLexer;
 import compiler.HttpParser;
