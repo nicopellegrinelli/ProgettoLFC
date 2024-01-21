@@ -256,7 +256,7 @@ public class SemanticHandler {
 			err += "GET requests should not have the Content-Type header";
 			break;
 		}
-		errors.add(new CompilerError(-1, -1, err));
+		warnings.add(new CompilerError(-1, -1, err));
 	}
 
 	public void checkCharset(Token tk) {

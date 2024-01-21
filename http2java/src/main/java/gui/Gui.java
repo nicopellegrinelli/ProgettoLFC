@@ -154,7 +154,7 @@ public class Gui {
 		Font font = textArea_HTTP.getFont().deriveFont(fontSize);
 		lineNumber.setFont(font);
 		lineNumber.setBorderGap(20);
-		lineNumber.setForeground(Color.ORANGE);
+		lineNumber.setForeground(Color.BLACK);
 		lineNumber.setDigitAlignment(TextLineNumber.LEFT);
 		scrollPane_HTTP.setRowHeaderView(lineNumber);
 		
@@ -266,6 +266,8 @@ public class Gui {
 					if (!h.getErrors().isEmpty()) {
 						// svuoto il risultato della traduzione
 						textArea_Java.setText("");
+						textArea_Errors.setText("");
+						textArea_Warnings.setText("");
 						// Segno che il parsing ha avuto dei problemi
 						parsedCorrectly = false;
 						// Stampali nella box degli errori
@@ -284,7 +286,10 @@ public class Gui {
 						// segno che il parsing ha avuto esito positivo
 						parsedCorrectly = true;
 					}
+					// ad ogni modo, se ci sono dei warnings
 					if (!h.getWarnings().isEmpty()) {
+						//pulisci la casella per poi riscrivere
+						textArea_Warnings.setText("");
 						// Stampa i warnings nella box dei warnings
 						for (CompilerError item : h.getWarnings()) {
 							textArea_Warnings
