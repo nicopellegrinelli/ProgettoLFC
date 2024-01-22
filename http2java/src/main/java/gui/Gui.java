@@ -4,7 +4,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
-
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -13,18 +12,14 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
-
 import compiler.HttpLexer;
 import compiler.HttpParser;
 import compiler.SemanticHandler;
 import variables.CompilerError;
-
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-
 import java.awt.FlowLayout;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
@@ -38,17 +33,17 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.Collection;
 import java.util.Collections;
 import java.awt.event.ActionEvent;
 import javax.swing.JToggleButton;
 import javax.swing.border.MatteBorder;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 import java.awt.Color;
-import javax.swing.JScrollBar;
-import java.awt.ScrollPane;
-import java.awt.Point;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
-public class Gui {
+public class Gui{
 
 	private JFrame frame;
 	private JTextField txtC;
@@ -83,12 +78,23 @@ public class Gui {
 		frame.setBounds(100, 100, 928, 626);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
-
-		JLabel lblNewLabel = new JLabel("Http2Java");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		frame.getContentPane().add(lblNewLabel, BorderLayout.NORTH);
-
+		
+		//-------------------------------------TOP PANEL-------------------------------------
+		JPanel topPanel = new JPanel();
+		topPanel.setBorder(new EmptyBorder(0, 15, 0, 0));
+		frame.getContentPane().add(topPanel, BorderLayout.NORTH);
+		topPanel.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblTitle = new JLabel("Http2Java");
+		lblTitle.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		topPanel.add(lblTitle, BorderLayout.CENTER);
+		
+		JLabel lblRowsAndColumns = new JLabel("[   :   ]");
+		lblRowsAndColumns.setFont(new Font("Trebuchet MS", Font.PLAIN, 15));
+		topPanel.add(lblRowsAndColumns, BorderLayout.WEST);
+		
+		//-------------------------------------SPLIT PANE-------------------------------------
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setDividerLocation(0.5);
 		splitPane.setResizeWeight(0.7);
@@ -108,10 +114,12 @@ public class Gui {
 		lblErrors.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblErrors.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_Errors.add(lblErrors, BorderLayout.NORTH);
-
+		
+		
 		JTextArea textArea_Errors = new JTextArea();
 		textArea_Errors.setEditable(false);
-		panel_Errors.add(textArea_Errors);
+		JScrollPane scrollPane_Errors = new JScrollPane(textArea_Errors);
+		panel_Errors.add(scrollPane_Errors);
 
 		JPanel panel_Warnings = new JPanel();
 		panel_Warnings.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
@@ -125,7 +133,8 @@ public class Gui {
 
 		JTextArea textArea_Warnings = new JTextArea();
 		textArea_Warnings.setEditable(false);
-		panel_Warnings.add(textArea_Warnings);
+		JScrollPane scrollPane_Warnings = new JScrollPane(textArea_Warnings);
+		panel_Warnings.add(scrollPane_Warnings);
 
 		JPanel left_panel = new JPanel();
 		left_panel.setBorder(new EmptyBorder(0, 10, 0, 0));
@@ -174,8 +183,10 @@ public class Gui {
 		panel_Java.add(lblJava, BorderLayout.NORTH);
 
 		JTextArea textArea_Java = new JTextArea();
-		panel_Java.add(textArea_Java);;
-
+		JScrollPane scrollPane_Java = new JScrollPane(textArea_Java);
+		panel_Java.add(scrollPane_Java);
+		
+		//-------------------------------------BOTTOM PANEL-------------------------------------
 		JPanel bottom_panel = new JPanel();
 		frame.getContentPane().add(bottom_panel, BorderLayout.SOUTH);
 		bottom_panel.setLayout(new BorderLayout(0, 0));
@@ -190,7 +201,34 @@ public class Gui {
 		txtC.setText("c:\\");
 		panel_text.add(txtC);
 		txtC.setColumns(40);
-
+		
+		// CaretListner per gestire la lettura della posizione del puntatore nella casella di testo
+		textArea_HTTP.addCaretListener(new CaretListener() {
+			
+			@Override
+			public void caretUpdate(CaretEvent e) {
+				int dot = e.getDot();
+				try {
+					// Prova ad ottenere la posizione della riga e della colonna
+					int row = textArea_HTTP.getLineOfOffset(dot) + 1; //L'indice delle righe parte da zero
+					int column = dot - textArea_HTTP.getLineStartOffset(row - 1) + 1; //L'indice delle colonne parte da 1 (perchè !?)
+					// Aggiorna la JLabel con la nuova posizione
+					lblRowsAndColumns.setText("[ " + row + " : " + column + " ]");
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+		});
+		
+		// FocusListener per gestire la perdita di focus della casella di testo
+		textArea_HTTP.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				lblRowsAndColumns.setText("[   :   ]");
+			}
+		});
+		
+		//-------------------------------------BUTTONS ACTIONS-------------------------------------
 		JToggleButton tglbtnFileOrText = new JToggleButton("Toggle File");
 		tglbtnFileOrText.setSelected(true);
 		tglbtnFileOrText.setToolTipText(
