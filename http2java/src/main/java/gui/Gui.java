@@ -264,6 +264,9 @@ public class Gui {
 					HttpParser parser = new HttpParser(tokens);
 					parser.request();
 					SemanticHandler h = parser.h;
+					
+					textArea_Errors.setForeground(Color.RED);
+					textArea_Warnings.setForeground(new Color(255,164,0));
 					// Se si sono verificati degli errori
 					if (!h.getErrors().isEmpty()) {
 						// svuoto il risultato della traduzione

@@ -171,76 +171,77 @@ public class SemanticHandler {
 	}
 
 	public void handleError(Token tk, String hdr, String msg) {
-		String coord = "[" + tk.getLine() + ":" + (tk.getCharPositionInLine()+1) + "]";
+		String coord = "  [" + tk.getLine() + ":" + (tk.getCharPositionInLine()+1) + "] - ";
 		if(tk.getType() == HttpLexer.ERROR_TOKEN) {
-			errors.add(new CompilerError(tk.getLine(), (tk.getCharPositionInLine()+1), coord + " Lexical error:\t" + msg));
+			errors.add(new CompilerError(tk.getLine(), 
+					(tk.getCharPositionInLine()+1), coord + "Wrong information: " + msg + "."));
 		} else {
-			errors.add(new CompilerError(tk.getLine(), (tk.getCharPositionInLine()+1), coord + " Syntax error:\t" + msg));
+			errors.add(new CompilerError(tk.getLine(), 
+					(tk.getCharPositionInLine()+1), coord + "Wrong information: " + msg + "."));
 		}
 	}
 	
 	public void addError(int errorCode) {
-		String err = "Semantic error:\t";
+		String err = "";
 		switch (errorCode) {
 		case NO_HOST_ERR:
-			err += "Host header never defined";
+			err = "  Missing information: 'Host' header never defined.";
 			break;
 		}
-		errors.add(new CompilerError(-1, -1, err));
+		errors.add(new CompilerError(Integer.MAX_VALUE, Integer.MAX_VALUE, err));
 	}
 	
 	public void addError(Token tk, int errorCode) {
-		String err = "[" + tk.getLine() + ":" + (tk.getCharPositionInLine()+1) + "]";
-		err += " Semantic error:\t";
+		String err = "  [" + tk.getLine() + ":" + (tk.getCharPositionInLine()+1) + "] - ";
 		switch (errorCode) {
 		case ALREADY_DEF_HDR_ERR:
-			err += tk.getText() + " header is already defined";
+			err +=  "Duplicate information: '" + tk.getText() + "' header is already defined.";
 			break;
 		case CHARSET_ERR:
-			err += "expected 'charset' but found '" + tk.getText() + "'";
+			err += "Wrong information: expected 'charset' but found '" + tk.getText() + "'.";
 			break;
 		case BOUNDARY_ERR:
-			err += "expected 'boundary' but found '" + tk.getText() + "'";
+			err += "Wrong information: expected 'boundary' but found '" + tk.getText() + "'.";
 			break;
 		case BASIC_ERR:
-			err += "expected 'Basic' but found '" + tk.getText() + "'";
+			err += "Wrong information: expected 'Basic' but found '" + tk.getText() + "'.";
 			break;
 		case DIGEST_ERR:
-			err += "expected 'Digest' but found '" + tk.getText() + "'";
+			err += "Wrong information: expected 'Digest' but found '" + tk.getText() + "'.";
 			break;
 		case DIGEST_ELEMENT_ERR:
-			err += "'" + tk.getText() + "' is not a valid digest parameter";
+			err += "Wrong information: '" + tk.getText() + "' is not a valid digest parameter.";
 			break;
 		case ALREADY_DEF_DIGEST_ELEMENT_ERR:
-			err += tk.getText() + " digest parameter is already defined";
+			err += "Duplicate information: '" + tk.getText() + "' digest parameter is already defined.";
 			break;
 		case LANGUAGE_ERR:
-			err += "base language tag '" + tk.getText() + "' is incorrect, it must have 2 or 3 characters";
+			err += "Wrong information: base language tag '" + tk.getText() + "' must have 2 or 3 characters.";
 			break;
 		case ENCODING_ELEMENT_ERR:
-			err += "'" + tk.getText() + "' is not a valid encoding element";
+			err += "Wrong information: '" + tk.getText() + "' is not a valid encoding element.";
 			break;
 		}
 		errors.add(new CompilerError(tk.getLine(), (tk.getCharPositionInLine()+1), err));
 	}
 	
 	public void addWarning(int warningCode) {
-		String err = "Warning:\t";
+		String err = "  Warning: ";
 		switch (warningCode) {
 		case BODY_GET_WARN:
-			err += "GET requests should not have a body";
+			err += "GET requests should not have a body.";
 			break;
 		case NO_BODY_POST_WARN:
-			err += "POST requests should have a body";
+			err += "POST requests should have a body.";
 			break;
 		case NO_CT_POST_WARN:
-			err += "POST requests should have the Content-Type header";
+			err += "POST requests should have the 'Content-Type' header.";
 			break;
 		case CT_GET_WARN:
-			err += "GET requests should not have the Content-Type header";
+			err += "GET requests should not have the 'Content-Type' header.";
 			break;
 		}
-		warnings.add(new CompilerError(-1, -1, err));
+		warnings.add(new CompilerError(Integer.MAX_VALUE, Integer.MAX_VALUE, err));
 	}
 
 	public void checkCharset(Token tk) {
