@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g 2024-01-16 18:50:21
+// $ANTLR 3.5.1 C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g 2024-01-22 11:57:17
 
 	package compiler; 	
 
@@ -75,15 +75,15 @@ public class HttpLexer extends Lexer {
 	public HttpLexer(CharStream input, RecognizerSharedState state) {
 		super(input,state);
 	}
-	@Override public String getGrammarFileName() { return "C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g"; }
+	@Override public String getGrammarFileName() { return "C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g"; }
 
 	// $ANTLR start "GET"
 	public final void mGET() throws RecognitionException {
 		try {
 			int _type = GET;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:252:9: ( 'GET' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:252:11: 'GET'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:243:9: ( 'GET' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:243:11: 'GET'
 			{
 			match("GET"); 
 
@@ -103,8 +103,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = POST;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:253:10: ( 'POST' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:253:12: 'POST'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:244:10: ( 'POST' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:244:12: 'POST'
 			{
 			match("POST"); 
 
@@ -124,8 +124,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = HOST;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:254:10: ( 'Host' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:254:12: 'Host'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:245:10: ( 'Host' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:245:12: 'Host'
 			{
 			match("Host"); 
 
@@ -145,8 +145,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = USER_AGENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:255:14: ( 'User-Agent' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:255:16: 'User-Agent'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:246:14: ( 'User-Agent' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:246:16: 'User-Agent'
 			{
 			match("User-Agent"); 
 
@@ -166,8 +166,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = CONTENT_TYPE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:256:15: ( 'Content-Type' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:256:17: 'Content-Type'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:247:15: ( 'Content-Type' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:247:17: 'Content-Type'
 			{
 			match("Content-Type"); 
 
@@ -187,8 +187,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = ACCEPT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:257:11: ( 'Accept' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:257:13: 'Accept'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:248:11: ( 'Accept' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:248:13: 'Accept'
 			{
 			match("Accept"); 
 
@@ -208,8 +208,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = COOKIE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:258:11: ( 'Cookie' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:258:13: 'Cookie'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:249:11: ( 'Cookie' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:249:13: 'Cookie'
 			{
 			match("Cookie"); 
 
@@ -229,8 +229,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = AUTHORIZATION;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:259:16: ( 'Authorization' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:259:18: 'Authorization'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:250:16: ( 'Authorization' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:250:18: 'Authorization'
 			{
 			match("Authorization"); 
 
@@ -250,8 +250,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = ACCEPT_LANGUAGE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:260:17: ( 'Accept-Language' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:260:19: 'Accept-Language'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:251:17: ( 'Accept-Language' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:251:19: 'Accept-Language'
 			{
 			match("Accept-Language"); 
 
@@ -271,8 +271,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = ACCEPT_ENCODING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:261:17: ( 'Accept-Encoding' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:261:19: 'Accept-Encoding'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:252:17: ( 'Accept-Encoding' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:252:19: 'Accept-Encoding'
 			{
 			match("Accept-Encoding"); 
 
@@ -292,8 +292,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = CACHE_CONTROL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:262:16: ( 'Cache-Control' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:262:18: 'Cache-Control'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:253:16: ( 'Cache-Control' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:253:18: 'Cache-Control'
 			{
 			match("Cache-Control"); 
 
@@ -313,8 +313,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = MAX_FORWARDS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:263:15: ( 'Max-Forwards' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:263:17: 'Max-Forwards'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:254:15: ( 'Max-Forwards' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:254:17: 'Max-Forwards'
 			{
 			match("Max-Forwards"); 
 
@@ -334,8 +334,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = Q;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:264:8: ( 'q' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:264:10: 'q'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:255:8: ( 'q' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:255:10: 'q'
 			{
 			match('q'); 
 			}
@@ -354,8 +354,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = EQUALS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:265:11: ( '=' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:265:13: '='
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:256:11: ( '=' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:256:13: '='
 			{
 			match('='); 
 			}
@@ -374,8 +374,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = COMMA;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:266:11: ( ',' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:266:13: ','
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:257:11: ( ',' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:257:13: ','
 			{
 			match(','); 
 			}
@@ -394,8 +394,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = COLUMN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:267:11: ( ':' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:267:13: ':'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:258:11: ( ':' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:258:13: ':'
 			{
 			match(':'); 
 			}
@@ -414,8 +414,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = SEMI_COLUMN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:268:15: ( ';' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:268:17: ';'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:259:15: ( ';' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:259:17: ';'
 			{
 			match(';'); 
 			}
@@ -434,8 +434,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = TERMINAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:269:13: ( '|' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:269:15: '|'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:260:13: ( '|' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:260:15: '|'
 			{
 			match('|'); 
 			}
@@ -454,8 +454,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = STAR;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:270:10: ( '*' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:270:12: '*'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:261:10: ( '*' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:261:12: '*'
 			{
 			match('*'); 
 			}
@@ -474,12 +474,12 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:273:2: ( ALPHA_CHAR ( ALPHA_CHAR )+ )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:273:4: ALPHA_CHAR ( ALPHA_CHAR )+
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:264:2: ( ALPHA_CHAR ( ALPHA_CHAR )+ )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:264:4: ALPHA_CHAR ( ALPHA_CHAR )+
 			{
 			mALPHA_CHAR(); 
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:273:15: ( ALPHA_CHAR )+
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:264:15: ( ALPHA_CHAR )+
 			int cnt1=0;
 			loop1:
 			while (true) {
@@ -491,7 +491,7 @@ public class HttpLexer extends Lexer {
 
 				switch (alt1) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 					{
 					if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -528,8 +528,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = INT_NUM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:2: ( NUM )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:4: NUM
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:268:2: ( NUM )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:268:4: NUM
 			{
 			mNUM(); 
 
@@ -549,12 +549,12 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = HTTP_VERSION;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:2: ( 'HTTP/' ( '1.1' | '2' ) )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:4: 'HTTP/' ( '1.1' | '2' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:272:2: ( 'HTTP/' ( '1.1' | '2' ) )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:272:4: 'HTTP/' ( '1.1' | '2' )
 			{
 			match("HTTP/"); 
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:12: ( '1.1' | '2' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:272:12: ( '1.1' | '2' )
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0=='1') ) {
@@ -572,14 +572,14 @@ public class HttpLexer extends Lexer {
 
 			switch (alt2) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:13: '1.1'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:272:13: '1.1'
 					{
 					match("1.1"); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:282:6: '2'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:273:6: '2'
 					{
 					match('2'); 
 					}
@@ -603,7 +603,7 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = PATH;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:2: ( '/' | ( ( '/' PATH_ELEMENT )+ ( '/' )? ) )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:2: ( '/' | ( ( '/' PATH_ELEMENT )+ ( '/' )? ) )
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0=='/') ) {
@@ -626,18 +626,18 @@ public class HttpLexer extends Lexer {
 
 			switch (alt5) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:4: '/'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:4: '/'
 					{
 					match('/'); 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:10: ( ( '/' PATH_ELEMENT )+ ( '/' )? )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:10: ( ( '/' PATH_ELEMENT )+ ( '/' )? )
 					{
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:10: ( ( '/' PATH_ELEMENT )+ ( '/' )? )
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:11: ( '/' PATH_ELEMENT )+ ( '/' )?
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:10: ( ( '/' PATH_ELEMENT )+ ( '/' )? )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:11: ( '/' PATH_ELEMENT )+ ( '/' )?
 					{
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:11: ( '/' PATH_ELEMENT )+
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:11: ( '/' PATH_ELEMENT )+
 					int cnt3=0;
 					loop3:
 					while (true) {
@@ -653,7 +653,7 @@ public class HttpLexer extends Lexer {
 
 						switch (alt3) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:12: '/' PATH_ELEMENT
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:12: '/' PATH_ELEMENT
 							{
 							match('/'); 
 							mPATH_ELEMENT(); 
@@ -669,7 +669,7 @@ public class HttpLexer extends Lexer {
 						cnt3++;
 					}
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:31: ( '/' )?
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:31: ( '/' )?
 					int alt4=2;
 					int LA4_0 = input.LA(1);
 					if ( (LA4_0=='/') ) {
@@ -677,7 +677,7 @@ public class HttpLexer extends Lexer {
 					}
 					switch (alt4) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:286:31: '/'
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:277:31: '/'
 							{
 							match('/'); 
 							}
@@ -705,13 +705,13 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = QUERY;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:290:2: ( '?' QUERY_ELEMENT ( '&' QUERY_ELEMENT )* )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:290:4: '?' QUERY_ELEMENT ( '&' QUERY_ELEMENT )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:2: ( '?' QUERY_ELEMENT ( '&' QUERY_ELEMENT )* )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:4: '?' QUERY_ELEMENT ( '&' QUERY_ELEMENT )*
 			{
 			match('?'); 
 			mQUERY_ELEMENT(); 
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:290:22: ( '&' QUERY_ELEMENT )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:22: ( '&' QUERY_ELEMENT )*
 			loop6:
 			while (true) {
 				int alt6=2;
@@ -722,7 +722,7 @@ public class HttpLexer extends Lexer {
 
 				switch (alt6) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:290:23: '&' QUERY_ELEMENT
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:281:23: '&' QUERY_ELEMENT
 					{
 					match('&'); 
 					mQUERY_ELEMENT(); 
@@ -751,19 +751,19 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = DNS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:2: ( DNS_ELEMENT ( '.' DNS_ELEMENT )* ( '.' ALPHA_CHAR ( ALPHA_CHAR )+ ) )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:4: DNS_ELEMENT ( '.' DNS_ELEMENT )* ( '.' ALPHA_CHAR ( ALPHA_CHAR )+ )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:285:2: ( DNS_ELEMENT ( '.' DNS_ELEMENT )* ( '.' ALPHA_CHAR ( ALPHA_CHAR )+ ) )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:285:4: DNS_ELEMENT ( '.' DNS_ELEMENT )* ( '.' ALPHA_CHAR ( ALPHA_CHAR )+ )
 			{
 			mDNS_ELEMENT(); 
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:16: ( '.' DNS_ELEMENT )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:285:16: ( '.' DNS_ELEMENT )*
 			loop7:
 			while (true) {
 				int alt7=2;
 				alt7 = dfa7.predict(input);
 				switch (alt7) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:17: '.' DNS_ELEMENT
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:285:17: '.' DNS_ELEMENT
 					{
 					match('.'); 
 					mDNS_ELEMENT(); 
@@ -776,13 +776,13 @@ public class HttpLexer extends Lexer {
 				}
 			}
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:35: ( '.' ALPHA_CHAR ( ALPHA_CHAR )+ )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:36: '.' ALPHA_CHAR ( ALPHA_CHAR )+
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:285:35: ( '.' ALPHA_CHAR ( ALPHA_CHAR )+ )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:285:36: '.' ALPHA_CHAR ( ALPHA_CHAR )+
 			{
 			match('.'); 
 			mALPHA_CHAR(); 
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:51: ( ALPHA_CHAR )+
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:285:51: ( ALPHA_CHAR )+
 			int cnt8=0;
 			loop8:
 			while (true) {
@@ -794,7 +794,7 @@ public class HttpLexer extends Lexer {
 
 				switch (alt8) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 					{
 					if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -833,8 +833,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = IPV4;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:298:2: ( NUM '.' NUM '.' NUM '.' NUM )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:298:4: NUM '.' NUM '.' NUM '.' NUM
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:289:2: ( NUM '.' NUM '.' NUM '.' NUM )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:289:4: NUM '.' NUM '.' NUM '.' NUM
 			{
 			mNUM(); 
 
@@ -863,7 +863,7 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = MIME;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:302:2: ( MIME_TYPE '/' MIME_SUBTYPE | '*/*' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:293:2: ( MIME_TYPE '/' MIME_SUBTYPE | '*/*' )
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0=='a'||LA9_0=='c'||LA9_0=='f'||LA9_0=='i'||LA9_0=='m'||LA9_0=='t'||LA9_0=='v') ) {
@@ -881,7 +881,7 @@ public class HttpLexer extends Lexer {
 
 			switch (alt9) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:302:4: MIME_TYPE '/' MIME_SUBTYPE
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:293:4: MIME_TYPE '/' MIME_SUBTYPE
 					{
 					mMIME_TYPE(); 
 
@@ -891,7 +891,7 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:303:4: '*/*'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:294:4: '*/*'
 					{
 					match("*/*"); 
 
@@ -913,8 +913,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = MULTIPART_MIME;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:307:2: ( 'multipart/' MIME_SUBTYPE )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:307:4: 'multipart/' MIME_SUBTYPE
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:298:2: ( 'multipart/' MIME_SUBTYPE )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:298:4: 'multipart/' MIME_SUBTYPE
 			{
 			match("multipart/"); 
 
@@ -936,7 +936,7 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = Q_VAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:311:2: ( '0' '.' ( ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) ) | '1.0' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:302:2: ( '0' '.' ( ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) ) | '1.0' )
 			int alt11=2;
 			int LA11_0 = input.LA(1);
 			if ( (LA11_0=='0') ) {
@@ -954,11 +954,11 @@ public class HttpLexer extends Lexer {
 
 			switch (alt11) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:311:4: '0' '.' ( ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:302:4: '0' '.' ( ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) )
 					{
 					match('0'); 
 					match('.'); 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:311:12: ( ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:302:12: ( ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) | ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' ) )
 					int alt10=3;
 					int LA10_0 = input.LA(1);
 					if ( ((LA10_0 >= '0' && LA10_0 <= '9')) ) {
@@ -989,7 +989,7 @@ public class HttpLexer extends Lexer {
 
 					switch (alt10) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:311:13: ( '0' .. '9' )
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:302:13: ( '0' .. '9' )
 							{
 							if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 								input.consume();
@@ -1002,7 +1002,7 @@ public class HttpLexer extends Lexer {
 							}
 							break;
 						case 2 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:312:6: ( '0' .. '9' ) ( '0' .. '9' )
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:303:6: ( '0' .. '9' ) ( '0' .. '9' )
 							{
 							if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 								input.consume();
@@ -1023,7 +1023,7 @@ public class HttpLexer extends Lexer {
 							}
 							break;
 						case 3 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:313:6: ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' )
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:304:6: ( '0' .. '9' ) ( '0' .. '9' ) ( '0' .. '9' )
 							{
 							if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 								input.consume();
@@ -1057,7 +1057,7 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:314:4: '1.0'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:305:4: '1.0'
 					{
 					match("1.0"); 
 
@@ -1079,10 +1079,10 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = PRODUCT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:318:2: ( ( ALPHA_NUM_CHAR )+ '/' VERS_NUM )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:318:4: ( ALPHA_NUM_CHAR )+ '/' VERS_NUM
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:309:2: ( ( ALPHA_NUM_CHAR )+ '/' VERS_NUM )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:309:4: ( ALPHA_NUM_CHAR )+ '/' VERS_NUM
 			{
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:318:4: ( ALPHA_NUM_CHAR )+
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:309:4: ( ALPHA_NUM_CHAR )+
 			int cnt12=0;
 			loop12:
 			while (true) {
@@ -1094,7 +1094,7 @@ public class HttpLexer extends Lexer {
 
 				switch (alt12) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 					{
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -1134,11 +1134,11 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = PRODUCT_INFO;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:322:2: ( '(' (~ ( '(' | ')' ) )* ')' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:322:4: '(' (~ ( '(' | ')' ) )* ')'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:313:2: ( '(' (~ ( '(' | ')' ) )* ')' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:313:4: '(' (~ ( '(' | ')' ) )* ')'
 			{
 			match('('); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:322:8: (~ ( '(' | ')' ) )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:313:8: (~ ( '(' | ')' ) )*
 			loop13:
 			while (true) {
 				int alt13=2;
@@ -1149,7 +1149,7 @@ public class HttpLexer extends Lexer {
 
 				switch (alt13) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 					{
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\'')||(input.LA(1) >= '*' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
@@ -1184,14 +1184,14 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = LANGUAGE_ELEMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:2: ( ALPHA_CHAR ALPHA_CHAR ( ALPHA_CHAR )? ( '-' ( ALPHA_CHAR )+ ) )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:4: ALPHA_CHAR ALPHA_CHAR ( ALPHA_CHAR )? ( '-' ( ALPHA_CHAR )+ )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:317:2: ( ALPHA_CHAR ALPHA_CHAR ( ALPHA_CHAR )? ( '-' ( ALPHA_CHAR )+ ) )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:317:4: ALPHA_CHAR ALPHA_CHAR ( ALPHA_CHAR )? ( '-' ( ALPHA_CHAR )+ )
 			{
 			mALPHA_CHAR(); 
 
 			mALPHA_CHAR(); 
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:26: ( ALPHA_CHAR )?
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:317:26: ( ALPHA_CHAR )?
 			int alt14=2;
 			int LA14_0 = input.LA(1);
 			if ( ((LA14_0 >= 'A' && LA14_0 <= 'Z')||(LA14_0 >= 'a' && LA14_0 <= 'z')) ) {
@@ -1199,7 +1199,7 @@ public class HttpLexer extends Lexer {
 			}
 			switch (alt14) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 					{
 					if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -1214,11 +1214,11 @@ public class HttpLexer extends Lexer {
 
 			}
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:38: ( '-' ( ALPHA_CHAR )+ )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:39: '-' ( ALPHA_CHAR )+
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:317:38: ( '-' ( ALPHA_CHAR )+ )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:317:39: '-' ( ALPHA_CHAR )+
 			{
 			match('-'); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:326:43: ( ALPHA_CHAR )+
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:317:43: ( ALPHA_CHAR )+
 			int cnt15=0;
 			loop15:
 			while (true) {
@@ -1230,7 +1230,7 @@ public class HttpLexer extends Lexer {
 
 				switch (alt15) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 					{
 					if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -1269,11 +1269,11 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = BODY_STRING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:5: ( '°' ( ESC_SEQ |~ ( '\\\\' | '°' ) )* '°' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:7: '°' ( ESC_SEQ |~ ( '\\\\' | '°' ) )* '°'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:5: ( '°' ( ESC_SEQ |~ ( '\\\\' | '°' ) )* '°' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:7: '°' ( ESC_SEQ |~ ( '\\\\' | '°' ) )* '°'
 			{
 			match('\u00B0'); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:11: ( ESC_SEQ |~ ( '\\\\' | '°' ) )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:11: ( ESC_SEQ |~ ( '\\\\' | '°' ) )*
 			loop16:
 			while (true) {
 				int alt16=3;
@@ -1287,14 +1287,14 @@ public class HttpLexer extends Lexer {
 
 				switch (alt16) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:12: ESC_SEQ
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:12: ESC_SEQ
 					{
 					mESC_SEQ(); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:22: ~ ( '\\\\' | '°' )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:22: ~ ( '\\\\' | '°' )
 					{
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\u00AF')||(input.LA(1) >= '\u00B1' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
@@ -1329,11 +1329,11 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = STRING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:334:5: ( '\\'' ( ESC_SEQ |~ ( '\\\\' | '\\'' ) )* '\\'' )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:334:7: '\\'' ( ESC_SEQ |~ ( '\\\\' | '\\'' ) )* '\\''
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:325:5: ( '\\'' ( ESC_SEQ |~ ( '\\\\' | '\\'' ) )* '\\'' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:325:7: '\\'' ( ESC_SEQ |~ ( '\\\\' | '\\'' ) )* '\\''
 			{
 			match('\''); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:334:12: ( ESC_SEQ |~ ( '\\\\' | '\\'' ) )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:325:12: ( ESC_SEQ |~ ( '\\\\' | '\\'' ) )*
 			loop17:
 			while (true) {
 				int alt17=3;
@@ -1347,14 +1347,14 @@ public class HttpLexer extends Lexer {
 
 				switch (alt17) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:334:13: ESC_SEQ
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:325:13: ESC_SEQ
 					{
 					mESC_SEQ(); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:334:23: ~ ( '\\\\' | '\\'' )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:325:23: ~ ( '\\\\' | '\\'' )
 					{
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
@@ -1389,7 +1389,7 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:338:2: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:329:2: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
 			int alt21=2;
 			int LA21_0 = input.LA(1);
 			if ( (LA21_0=='/') ) {
@@ -1423,11 +1423,11 @@ public class HttpLexer extends Lexer {
 
 			switch (alt21) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:338:4: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:329:4: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
 					{
 					match("//"); 
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:338:9: (~ ( '\\n' | '\\r' ) )*
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:329:9: (~ ( '\\n' | '\\r' ) )*
 					loop18:
 					while (true) {
 						int alt18=2;
@@ -1438,7 +1438,7 @@ public class HttpLexer extends Lexer {
 
 						switch (alt18) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 							{
 							if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
 								input.consume();
@@ -1456,7 +1456,7 @@ public class HttpLexer extends Lexer {
 						}
 					}
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:338:23: ( '\\r' )?
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:329:23: ( '\\r' )?
 					int alt19=2;
 					int LA19_0 = input.LA(1);
 					if ( (LA19_0=='\r') ) {
@@ -1464,7 +1464,7 @@ public class HttpLexer extends Lexer {
 					}
 					switch (alt19) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:338:23: '\\r'
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:329:23: '\\r'
 							{
 							match('\r'); 
 							}
@@ -1477,11 +1477,11 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:339:4: '/*' ( options {greedy=false; } : . )* '*/'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:4: '/*' ( options {greedy=false; } : . )* '*/'
 					{
 					match("/*"); 
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:339:9: ( options {greedy=false; } : . )*
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:9: ( options {greedy=false; } : . )*
 					loop20:
 					while (true) {
 						int alt20=2;
@@ -1502,7 +1502,7 @@ public class HttpLexer extends Lexer {
 
 						switch (alt20) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:339:37: .
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:330:37: .
 							{
 							matchAny(); 
 							}
@@ -1534,8 +1534,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:343:2: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:343:4: ( ' ' | '\\t' | '\\r' | '\\n' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:334:2: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:334:4: ( ' ' | '\\t' | '\\r' | '\\n' )
 			{
 			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 				input.consume();
@@ -1560,10 +1560,10 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "VERS_NUM"
 	public final void mVERS_NUM() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:353:2: ( ( ALPHA_NUM_CHAR )+ ( '.' ( ALPHA_NUM_CHAR )+ )* )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:353:4: ( ALPHA_NUM_CHAR )+ ( '.' ( ALPHA_NUM_CHAR )+ )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:344:2: ( ( ALPHA_NUM_CHAR )+ ( '.' ( ALPHA_NUM_CHAR )+ )* )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:344:4: ( ALPHA_NUM_CHAR )+ ( '.' ( ALPHA_NUM_CHAR )+ )*
 			{
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:353:4: ( ALPHA_NUM_CHAR )+
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:344:4: ( ALPHA_NUM_CHAR )+
 			int cnt22=0;
 			loop22:
 			while (true) {
@@ -1575,7 +1575,7 @@ public class HttpLexer extends Lexer {
 
 				switch (alt22) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 					{
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -1596,7 +1596,7 @@ public class HttpLexer extends Lexer {
 				cnt22++;
 			}
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:353:20: ( '.' ( ALPHA_NUM_CHAR )+ )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:344:20: ( '.' ( ALPHA_NUM_CHAR )+ )*
 			loop24:
 			while (true) {
 				int alt24=2;
@@ -1607,10 +1607,10 @@ public class HttpLexer extends Lexer {
 
 				switch (alt24) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:353:21: '.' ( ALPHA_NUM_CHAR )+
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:344:21: '.' ( ALPHA_NUM_CHAR )+
 					{
 					match('.'); 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:353:25: ( ALPHA_NUM_CHAR )+
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:344:25: ( ALPHA_NUM_CHAR )+
 					int cnt23=0;
 					loop23:
 					while (true) {
@@ -1622,7 +1622,7 @@ public class HttpLexer extends Lexer {
 
 						switch (alt23) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 							{
 							if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 								input.consume();
@@ -1663,8 +1663,8 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "DNS_ELEMENT"
 	public final void mDNS_ELEMENT() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:358:2: ( ( ALPHA_NUM_CHAR | '-' ) ( ALPHA_NUM_CHAR | '-' )+ )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:358:4: ( ALPHA_NUM_CHAR | '-' ) ( ALPHA_NUM_CHAR | '-' )+
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:349:2: ( ( ALPHA_NUM_CHAR | '-' ) ( ALPHA_NUM_CHAR | '-' )+ )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:349:4: ( ALPHA_NUM_CHAR | '-' ) ( ALPHA_NUM_CHAR | '-' )+
 			{
 			if ( input.LA(1)=='-'||(input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -1674,7 +1674,7 @@ public class HttpLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:358:27: ( ALPHA_NUM_CHAR | '-' )+
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:349:27: ( ALPHA_NUM_CHAR | '-' )+
 			int cnt25=0;
 			loop25:
 			while (true) {
@@ -1686,7 +1686,7 @@ public class HttpLexer extends Lexer {
 
 				switch (alt25) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 					{
 					if ( input.LA(1)=='-'||(input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -1719,10 +1719,10 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "PATH_ELEMENT"
 	public final void mPATH_ELEMENT() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:363:2: ( ( ALPHA_NUM_CHAR | '.' | '~' | '-' | '_' | '%' HEX_DIGIT HEX_DIGIT )+ )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:363:4: ( ALPHA_NUM_CHAR | '.' | '~' | '-' | '_' | '%' HEX_DIGIT HEX_DIGIT )+
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:354:2: ( ( ALPHA_NUM_CHAR | '.' | '~' | '-' | '_' | '%' HEX_DIGIT HEX_DIGIT )+ )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:354:4: ( ALPHA_NUM_CHAR | '.' | '~' | '-' | '_' | '%' HEX_DIGIT HEX_DIGIT )+
 			{
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:363:4: ( ALPHA_NUM_CHAR | '.' | '~' | '-' | '_' | '%' HEX_DIGIT HEX_DIGIT )+
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:354:4: ( ALPHA_NUM_CHAR | '.' | '~' | '-' | '_' | '%' HEX_DIGIT HEX_DIGIT )+
 			int cnt26=0;
 			loop26:
 			while (true) {
@@ -1822,38 +1822,38 @@ public class HttpLexer extends Lexer {
 				}
 				switch (alt26) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:363:5: ALPHA_NUM_CHAR
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:354:5: ALPHA_NUM_CHAR
 					{
 					mALPHA_NUM_CHAR(); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:364:4: '.'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:355:4: '.'
 					{
 					match('.'); 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:364:10: '~'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:355:10: '~'
 					{
 					match('~'); 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:364:16: '-'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:355:16: '-'
 					{
 					match('-'); 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:364:22: '_'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:355:22: '_'
 					{
 					match('_'); 
 					}
 					break;
 				case 6 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:365:4: '%' HEX_DIGIT HEX_DIGIT
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:356:4: '%' HEX_DIGIT HEX_DIGIT
 					{
 					match('%'); 
 					mHEX_DIGIT(); 
@@ -1883,8 +1883,8 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "QUERY_ELEMENT"
 	public final void mQUERY_ELEMENT() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:371:2: ( PATH_ELEMENT '=' PATH_ELEMENT )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:371:4: PATH_ELEMENT '=' PATH_ELEMENT
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:362:2: ( PATH_ELEMENT '=' PATH_ELEMENT )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:362:4: PATH_ELEMENT '=' PATH_ELEMENT
 			{
 			mPATH_ELEMENT(); 
 
@@ -1903,7 +1903,7 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "MIME_TYPE"
 	public final void mMIME_TYPE() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:376:2: ( 'application' | 'audio' | 'chemical' | 'font' | 'image' | 'message' | 'model' | 'text' | 'video' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:367:2: ( 'application' | 'audio' | 'chemical' | 'font' | 'image' | 'message' | 'model' | 'text' | 'video' )
 			int alt27=9;
 			switch ( input.LA(1) ) {
 			case 'a':
@@ -1986,63 +1986,63 @@ public class HttpLexer extends Lexer {
 			}
 			switch (alt27) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:376:4: 'application'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:367:4: 'application'
 					{
 					match("application"); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:377:4: 'audio'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:368:4: 'audio'
 					{
 					match("audio"); 
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:378:4: 'chemical'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:369:4: 'chemical'
 					{
 					match("chemical"); 
 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:379:4: 'font'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:370:4: 'font'
 					{
 					match("font"); 
 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:380:4: 'image'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:371:4: 'image'
 					{
 					match("image"); 
 
 					}
 					break;
 				case 6 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:381:4: 'message'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:372:4: 'message'
 					{
 					match("message"); 
 
 					}
 					break;
 				case 7 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:382:4: 'model'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:373:4: 'model'
 					{
 					match("model"); 
 
 					}
 					break;
 				case 8 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:383:4: 'text'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:374:4: 'text'
 					{
 					match("text"); 
 
 					}
 					break;
 				case 9 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:384:4: 'video'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:375:4: 'video'
 					{
 					match("video"); 
 
@@ -2060,7 +2060,7 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "MIME_SUBTYPE"
 	public final void mMIME_SUBTYPE() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:2: ( ( ALPHA_NUM_CHAR | '-' )+ ( '.' ( ALPHA_NUM_CHAR | '-' )+ )* ( '+' ( ALPHA_CHAR )+ )? | '*' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:380:2: ( ( ALPHA_NUM_CHAR | '-' )+ ( '.' ( ALPHA_NUM_CHAR | '-' )+ )* ( '+' ( ALPHA_CHAR )+ )? | '*' )
 			int alt33=2;
 			int LA33_0 = input.LA(1);
 			if ( (LA33_0=='-'||(LA33_0 >= '0' && LA33_0 <= '9')||(LA33_0 >= 'A' && LA33_0 <= 'Z')||(LA33_0 >= 'a' && LA33_0 <= 'z')) ) {
@@ -2078,9 +2078,9 @@ public class HttpLexer extends Lexer {
 
 			switch (alt33) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:4: ( ALPHA_NUM_CHAR | '-' )+ ( '.' ( ALPHA_NUM_CHAR | '-' )+ )* ( '+' ( ALPHA_CHAR )+ )?
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:380:4: ( ALPHA_NUM_CHAR | '-' )+ ( '.' ( ALPHA_NUM_CHAR | '-' )+ )* ( '+' ( ALPHA_CHAR )+ )?
 					{
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:4: ( ALPHA_NUM_CHAR | '-' )+
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:380:4: ( ALPHA_NUM_CHAR | '-' )+
 					int cnt28=0;
 					loop28:
 					while (true) {
@@ -2092,7 +2092,7 @@ public class HttpLexer extends Lexer {
 
 						switch (alt28) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 							{
 							if ( input.LA(1)=='-'||(input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 								input.consume();
@@ -2113,7 +2113,7 @@ public class HttpLexer extends Lexer {
 						cnt28++;
 					}
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:28: ( '.' ( ALPHA_NUM_CHAR | '-' )+ )*
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:380:28: ( '.' ( ALPHA_NUM_CHAR | '-' )+ )*
 					loop30:
 					while (true) {
 						int alt30=2;
@@ -2124,10 +2124,10 @@ public class HttpLexer extends Lexer {
 
 						switch (alt30) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:29: '.' ( ALPHA_NUM_CHAR | '-' )+
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:380:29: '.' ( ALPHA_NUM_CHAR | '-' )+
 							{
 							match('.'); 
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:33: ( ALPHA_NUM_CHAR | '-' )+
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:380:33: ( ALPHA_NUM_CHAR | '-' )+
 							int cnt29=0;
 							loop29:
 							while (true) {
@@ -2139,7 +2139,7 @@ public class HttpLexer extends Lexer {
 
 								switch (alt29) {
 								case 1 :
-									// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+									// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 									{
 									if ( input.LA(1)=='-'||(input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 										input.consume();
@@ -2168,7 +2168,7 @@ public class HttpLexer extends Lexer {
 						}
 					}
 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:59: ( '+' ( ALPHA_CHAR )+ )?
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:380:59: ( '+' ( ALPHA_CHAR )+ )?
 					int alt32=2;
 					int LA32_0 = input.LA(1);
 					if ( (LA32_0=='+') ) {
@@ -2176,10 +2176,10 @@ public class HttpLexer extends Lexer {
 					}
 					switch (alt32) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:60: '+' ( ALPHA_CHAR )+
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:380:60: '+' ( ALPHA_CHAR )+
 							{
 							match('+'); 
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:389:64: ( ALPHA_CHAR )+
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:380:64: ( ALPHA_CHAR )+
 							int cnt31=0;
 							loop31:
 							while (true) {
@@ -2191,7 +2191,7 @@ public class HttpLexer extends Lexer {
 
 								switch (alt31) {
 								case 1 :
-									// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+									// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 									{
 									if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 										input.consume();
@@ -2220,7 +2220,7 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:390:4: '*'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:381:4: '*'
 					{
 					match('*'); 
 					}
@@ -2237,7 +2237,7 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "NUM"
 	public final void mNUM() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:395:2: ( '0' | ( '1' .. '9' ) ( '0' .. '9' )* )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:386:2: ( '0' | ( '1' .. '9' ) ( '0' .. '9' )* )
 			int alt35=2;
 			int LA35_0 = input.LA(1);
 			if ( (LA35_0=='0') ) {
@@ -2255,13 +2255,13 @@ public class HttpLexer extends Lexer {
 
 			switch (alt35) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:395:4: '0'
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:386:4: '0'
 					{
 					match('0'); 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:396:4: ( '1' .. '9' ) ( '0' .. '9' )*
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:387:4: ( '1' .. '9' ) ( '0' .. '9' )*
 					{
 					if ( (input.LA(1) >= '1' && input.LA(1) <= '9') ) {
 						input.consume();
@@ -2271,7 +2271,7 @@ public class HttpLexer extends Lexer {
 						recover(mse);
 						throw mse;
 					}
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:396:14: ( '0' .. '9' )*
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:387:14: ( '0' .. '9' )*
 					loop34:
 					while (true) {
 						int alt34=2;
@@ -2282,7 +2282,7 @@ public class HttpLexer extends Lexer {
 
 						switch (alt34) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 							{
 							if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 								input.consume();
@@ -2314,8 +2314,8 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "ALPHA_CHAR"
 	public final void mALPHA_CHAR() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:401:2: ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:392:2: ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -2337,8 +2337,8 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "ALPHA_NUM_CHAR"
 	public final void mALPHA_NUM_CHAR() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:407:2: ( ( '0' .. '9' ) | ALPHA_CHAR )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:398:2: ( ( '0' .. '9' ) | ALPHA_CHAR )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -2360,7 +2360,7 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "ESC_SEQ"
 	public final void mESC_SEQ() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:413:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UNICODE_ESC | OCTAL_ESC )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:404:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UNICODE_ESC | OCTAL_ESC )
 			int alt36=3;
 			int LA36_0 = input.LA(1);
 			if ( (LA36_0=='\\') ) {
@@ -2415,7 +2415,7 @@ public class HttpLexer extends Lexer {
 
 			switch (alt36) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:413:7: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:404:7: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
 					{
 					match('\\'); 
 					if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -2429,14 +2429,14 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:414:7: UNICODE_ESC
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:405:7: UNICODE_ESC
 					{
 					mUNICODE_ESC(); 
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:415:7: OCTAL_ESC
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:406:7: OCTAL_ESC
 					{
 					mOCTAL_ESC(); 
 
@@ -2454,7 +2454,7 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "OCTAL_ESC"
 	public final void mOCTAL_ESC() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:420:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:411:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
 			int alt37=3;
 			int LA37_0 = input.LA(1);
 			if ( (LA37_0=='\\') ) {
@@ -2512,7 +2512,7 @@ public class HttpLexer extends Lexer {
 
 			switch (alt37) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:420:7: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:411:7: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
 					{
 					match('\\'); 
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '3') ) {
@@ -2542,7 +2542,7 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:421:7: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:412:7: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
 					{
 					match('\\'); 
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '7') ) {
@@ -2564,7 +2564,7 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:422:7: '\\\\' ( '0' .. '7' )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:413:7: '\\\\' ( '0' .. '7' )
 					{
 					match('\\'); 
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '7') ) {
@@ -2589,8 +2589,8 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "UNICODE_ESC"
 	public final void mUNICODE_ESC() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:427:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:427:7: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:418:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:418:7: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
 			{
 			match('\\'); 
 			match('u'); 
@@ -2614,8 +2614,8 @@ public class HttpLexer extends Lexer {
 	// $ANTLR start "HEX_DIGIT"
 	public final void mHEX_DIGIT() throws RecognitionException {
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:432:2: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:423:2: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'F')||(input.LA(1) >= 'a' && input.LA(1) <= 'f') ) {
 				input.consume();
@@ -2639,8 +2639,8 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = ERROR_TOKEN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:435:2: ( . )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:435:4: .
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:426:2: ( . )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:426:4: .
 			{
 			matchAny(); 
 			}
@@ -2656,264 +2656,264 @@ public class HttpLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:8: ( GET | POST | HOST | USER_AGENT | CONTENT_TYPE | ACCEPT | COOKIE | AUTHORIZATION | ACCEPT_LANGUAGE | ACCEPT_ENCODING | CACHE_CONTROL | MAX_FORWARDS | Q | EQUALS | COMMA | COLUMN | SEMI_COLUMN | TERMINAL | STAR | ID | INT_NUM | HTTP_VERSION | PATH | QUERY | DNS | IPV4 | MIME | MULTIPART_MIME | Q_VAL | PRODUCT | PRODUCT_INFO | LANGUAGE_ELEMENT | BODY_STRING | STRING | COMMENT | WS | ERROR_TOKEN )
+		// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:8: ( GET | POST | HOST | USER_AGENT | CONTENT_TYPE | ACCEPT | COOKIE | AUTHORIZATION | ACCEPT_LANGUAGE | ACCEPT_ENCODING | CACHE_CONTROL | MAX_FORWARDS | Q | EQUALS | COMMA | COLUMN | SEMI_COLUMN | TERMINAL | STAR | ID | INT_NUM | HTTP_VERSION | PATH | QUERY | DNS | IPV4 | MIME | MULTIPART_MIME | Q_VAL | PRODUCT | PRODUCT_INFO | LANGUAGE_ELEMENT | BODY_STRING | STRING | COMMENT | WS | ERROR_TOKEN )
 		int alt38=37;
 		alt38 = dfa38.predict(input);
 		switch (alt38) {
 			case 1 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:10: GET
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:10: GET
 				{
 				mGET(); 
 
 				}
 				break;
 			case 2 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:14: POST
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:14: POST
 				{
 				mPOST(); 
 
 				}
 				break;
 			case 3 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:19: HOST
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:19: HOST
 				{
 				mHOST(); 
 
 				}
 				break;
 			case 4 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:24: USER_AGENT
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:24: USER_AGENT
 				{
 				mUSER_AGENT(); 
 
 				}
 				break;
 			case 5 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:35: CONTENT_TYPE
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:35: CONTENT_TYPE
 				{
 				mCONTENT_TYPE(); 
 
 				}
 				break;
 			case 6 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:48: ACCEPT
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:48: ACCEPT
 				{
 				mACCEPT(); 
 
 				}
 				break;
 			case 7 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:55: COOKIE
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:55: COOKIE
 				{
 				mCOOKIE(); 
 
 				}
 				break;
 			case 8 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:62: AUTHORIZATION
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:62: AUTHORIZATION
 				{
 				mAUTHORIZATION(); 
 
 				}
 				break;
 			case 9 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:76: ACCEPT_LANGUAGE
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:76: ACCEPT_LANGUAGE
 				{
 				mACCEPT_LANGUAGE(); 
 
 				}
 				break;
 			case 10 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:92: ACCEPT_ENCODING
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:92: ACCEPT_ENCODING
 				{
 				mACCEPT_ENCODING(); 
 
 				}
 				break;
 			case 11 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:108: CACHE_CONTROL
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:108: CACHE_CONTROL
 				{
 				mCACHE_CONTROL(); 
 
 				}
 				break;
 			case 12 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:122: MAX_FORWARDS
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:122: MAX_FORWARDS
 				{
 				mMAX_FORWARDS(); 
 
 				}
 				break;
 			case 13 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:135: Q
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:135: Q
 				{
 				mQ(); 
 
 				}
 				break;
 			case 14 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:137: EQUALS
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:137: EQUALS
 				{
 				mEQUALS(); 
 
 				}
 				break;
 			case 15 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:144: COMMA
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:144: COMMA
 				{
 				mCOMMA(); 
 
 				}
 				break;
 			case 16 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:150: COLUMN
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:150: COLUMN
 				{
 				mCOLUMN(); 
 
 				}
 				break;
 			case 17 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:157: SEMI_COLUMN
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:157: SEMI_COLUMN
 				{
 				mSEMI_COLUMN(); 
 
 				}
 				break;
 			case 18 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:169: TERMINAL
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:169: TERMINAL
 				{
 				mTERMINAL(); 
 
 				}
 				break;
 			case 19 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:178: STAR
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:178: STAR
 				{
 				mSTAR(); 
 
 				}
 				break;
 			case 20 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:183: ID
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:183: ID
 				{
 				mID(); 
 
 				}
 				break;
 			case 21 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:186: INT_NUM
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:186: INT_NUM
 				{
 				mINT_NUM(); 
 
 				}
 				break;
 			case 22 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:194: HTTP_VERSION
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:194: HTTP_VERSION
 				{
 				mHTTP_VERSION(); 
 
 				}
 				break;
 			case 23 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:207: PATH
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:207: PATH
 				{
 				mPATH(); 
 
 				}
 				break;
 			case 24 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:212: QUERY
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:212: QUERY
 				{
 				mQUERY(); 
 
 				}
 				break;
 			case 25 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:218: DNS
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:218: DNS
 				{
 				mDNS(); 
 
 				}
 				break;
 			case 26 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:222: IPV4
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:222: IPV4
 				{
 				mIPV4(); 
 
 				}
 				break;
 			case 27 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:227: MIME
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:227: MIME
 				{
 				mMIME(); 
 
 				}
 				break;
 			case 28 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:232: MULTIPART_MIME
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:232: MULTIPART_MIME
 				{
 				mMULTIPART_MIME(); 
 
 				}
 				break;
 			case 29 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:247: Q_VAL
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:247: Q_VAL
 				{
 				mQ_VAL(); 
 
 				}
 				break;
 			case 30 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:253: PRODUCT
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:253: PRODUCT
 				{
 				mPRODUCT(); 
 
 				}
 				break;
 			case 31 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:261: PRODUCT_INFO
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:261: PRODUCT_INFO
 				{
 				mPRODUCT_INFO(); 
 
 				}
 				break;
 			case 32 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:274: LANGUAGE_ELEMENT
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:274: LANGUAGE_ELEMENT
 				{
 				mLANGUAGE_ELEMENT(); 
 
 				}
 				break;
 			case 33 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:291: BODY_STRING
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:291: BODY_STRING
 				{
 				mBODY_STRING(); 
 
 				}
 				break;
 			case 34 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:303: STRING
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:303: STRING
 				{
 				mSTRING(); 
 
 				}
 				break;
 			case 35 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:310: COMMENT
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:310: COMMENT
 				{
 				mCOMMENT(); 
 
 				}
 				break;
 			case 36 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:318: WS
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:318: WS
 				{
 				mWS(); 
 
 				}
 				break;
 			case 37 :
-				// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:321: ERROR_TOKEN
+				// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:1:321: ERROR_TOKEN
 				{
 				mERROR_TOKEN(); 
 
@@ -2978,7 +2978,7 @@ public class HttpLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "()* loopback of 294:16: ( '.' DNS_ELEMENT )*";
+			return "()* loopback of 285:16: ( '.' DNS_ELEMENT )*";
 		}
 	}
 

@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.antlr.runtime.Token;
 
-import utils.*;
+import variables.*;
 
 
 public class SemanticHandler {
@@ -168,22 +168,6 @@ public class SemanticHandler {
 		
 		//build
 		javaCode += "\t.build();";
-	}
-	
-	public void printJavaCode() {
-		System.out.println(javaCode + "\n");
-		
-		Collections.sort(errors);
-		for(CompilerError e: errors) {
-			System.err.println(e.getErrorMsg());
-		}
-		
-		System.out.println();
-		
-		Collections.sort(warnings);
-		for(CompilerError w: warnings) {
-			System.err.println(w.getErrorMsg());
-		}
 	}
 
 	public void handleError(Token tk, String hdr, String msg) {

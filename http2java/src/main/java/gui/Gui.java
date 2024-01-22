@@ -20,7 +20,7 @@ import org.antlr.runtime.CommonTokenStream;
 import compiler.HttpLexer;
 import compiler.HttpParser;
 import compiler.SemanticHandler;
-import utils.CompilerError;
+import variables.CompilerError;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -38,6 +38,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.Collection;
+import java.util.Collections;
 import java.awt.event.ActionEvent;
 import javax.swing.JToggleButton;
 import javax.swing.border.MatteBorder;
@@ -261,7 +263,7 @@ public class Gui {
 					CommonTokenStream tokens = new CommonTokenStream(lexer);
 					HttpParser parser = new HttpParser(tokens);
 					parser.request();
-					SemanticHandler h = parser.getHandler();
+					SemanticHandler h = parser.h;
 					// Se si sono verificati degli errori
 					if (!h.getErrors().isEmpty()) {
 						// svuoto il risultato della traduzione
@@ -271,6 +273,7 @@ public class Gui {
 						// Segno che il parsing ha avuto dei problemi
 						parsedCorrectly = false;
 						// Stampali nella box degli errori
+						Collections.sort(h.getErrors());
 						for (CompilerError item : h.getErrors()) {
 							textArea_Errors.setText(textArea_Errors.getText() + "\n" + item.getErrorMsg().toString());
 						}
@@ -291,12 +294,13 @@ public class Gui {
 						//pulisci la casella per poi riscrivere
 						textArea_Warnings.setText("");
 						// Stampa i warnings nella box dei warnings
+						Collections.sort(h.getWarnings());
 						for (CompilerError item : h.getWarnings()) {
 							textArea_Warnings
 									.setText(textArea_Warnings.getText() + "\n" + item.getErrorMsg().toString());
-							// Rimuove la prima riga vuota
-							textArea_Warnings.replaceRange("", 0, textArea_Warnings.getLineEndOffset(0));
 						}
+						// Rimuove la prima riga vuota
+						textArea_Warnings.replaceRange("", 0, textArea_Warnings.getLineEndOffset(0));
 					}
 					// se non ci sono warning, pulisco la relativa textbox
 					else {

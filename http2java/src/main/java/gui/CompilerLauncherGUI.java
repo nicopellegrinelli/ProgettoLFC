@@ -1,4 +1,4 @@
-package launcher;
+package gui;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,8 +10,7 @@ import org.antlr.runtime.RecognitionException;
 
 import compiler.HttpLexer;
 import compiler.HttpParser;
-import compiler.SemanticHandler;
-import utils.Output;
+import variables.Output;
 
 public class CompilerLauncherGUI {
 	
@@ -21,10 +20,8 @@ public class CompilerLauncherGUI {
 		HttpParser parser = new HttpParser(tokens);
 
 		parser.request();
-
-		SemanticHandler h = parser.getHandler();
 		
-		return new Output(h.getJavaCode(), h.getErrors(), h.getWarnings());
+		return new Output(parser.h.getJavaCode(), parser.h.getErrors(), parser.h.getWarnings());
 	}
 
 }

@@ -7,7 +7,7 @@ options {
 
 @header{
 	package compiler; 		
-	import utils.*;
+	import variables.*;
 }
 
 @lexer::header{
@@ -15,20 +15,11 @@ options {
 }
 
 @members{
-	SemanticHandler h = new SemanticHandler();
+	public SemanticHandler h = new SemanticHandler();
 	
-	public SemanticHandler getHandler() {
-		return h;
-	}
-	
-	public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
-		
-		Token tk = input.LT(1);
-	
-		String hdr = getErrorHeader(e);
-		String msg = getErrorMessage(e, tokenNames);
-		
-		h.handleError(tk, hdr, msg);
+	@Override
+	public void displayRecognitionError(String[] tokenNames, RecognitionException e) {		
+		h.handleError(input.LT(1), getErrorHeader(e), getErrorMessage(e, tokenNames));
 	}
 	
 }

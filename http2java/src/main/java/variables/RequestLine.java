@@ -1,4 +1,4 @@
-package utils;
+package variables;
 
 public class RequestLine {
 	private String method;

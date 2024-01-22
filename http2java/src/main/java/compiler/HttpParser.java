@@ -1,7 +1,7 @@
-// $ANTLR 3.5.1 C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g 2024-01-16 18:50:21
+// $ANTLR 3.5.1 C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g 2024-01-22 11:57:17
 
 	package compiler; 		
-	import utils.*;
+	import variables.*;
 
 
 import org.antlr.runtime.*;
@@ -90,45 +90,36 @@ public class HttpParser extends Parser {
 	}
 
 	@Override public String[] getTokenNames() { return HttpParser.tokenNames; }
-	@Override public String getGrammarFileName() { return "C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g"; }
+	@Override public String getGrammarFileName() { return "C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g"; }
 
 
-		SemanticHandler h = new SemanticHandler();
+		public SemanticHandler h = new SemanticHandler();
 		
-		public SemanticHandler getHandler() {
-			return h;
-		}
-		
-		public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
-			
-			Token tk = input.LT(1);
-		
-			String hdr = getErrorHeader(e);
-			String msg = getErrorMessage(e, tokenNames);
-			
-			h.handleError(tk, hdr, msg);
+		@Override
+		public void displayRecognitionError(String[] tokenNames, RecognitionException e) {		
+			h.handleError(input.LT(1), getErrorHeader(e), getErrorMessage(e, tokenNames));
 		}
 		
 
 
 
 	// $ANTLR start "request"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:41:1: request : rl= requestLine (hdr= header )* (b= body )? EOF ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:32:1: request : rl= requestLine (hdr= header )* (b= body )? EOF ;
 	public final void request() throws RecognitionException {
 		RequestLine rl =null;
 		Header hdr =null;
 		String b =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:42:2: (rl= requestLine (hdr= header )* (b= body )? EOF )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:42:4: rl= requestLine (hdr= header )* (b= body )? EOF
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:33:2: (rl= requestLine (hdr= header )* (b= body )? EOF )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:33:4: rl= requestLine (hdr= header )* (b= body )? EOF
 			{
 			pushFollow(FOLLOW_requestLine_in_request61);
 			rl=requestLine();
 			state._fsp--;
 
 			 h.addRequestLine(rl); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:43:3: (hdr= header )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:34:3: (hdr= header )*
 			loop1:
 			while (true) {
 				int alt1=2;
@@ -139,7 +130,7 @@ public class HttpParser extends Parser {
 
 				switch (alt1) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:43:4: hdr= header
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:34:4: hdr= header
 					{
 					pushFollow(FOLLOW_header_in_request70);
 					hdr=header();
@@ -155,7 +146,7 @@ public class HttpParser extends Parser {
 			}
 
 			 h.checkHeaders(); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:44:3: (b= body )?
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:35:3: (b= body )?
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0==BODY_STRING) ) {
@@ -163,7 +154,7 @@ public class HttpParser extends Parser {
 			}
 			switch (alt2) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:44:4: b= body
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:35:4: b= body
 					{
 					pushFollow(FOLLOW_body_in_request83);
 					b=body();
@@ -193,7 +184,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "requestLine"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:49:1: requestLine returns [RequestLine rl] : m= method p= pathRule v= HTTP_VERSION TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:40:1: requestLine returns [RequestLine rl] : m= method p= pathRule v= HTTP_VERSION TERMINAL ;
 	public final RequestLine requestLine() throws RecognitionException {
 		RequestLine rl = null;
 
@@ -203,8 +194,8 @@ public class HttpParser extends Parser {
 		String p =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:50:2: (m= method p= pathRule v= HTTP_VERSION TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:50:4: m= method p= pathRule v= HTTP_VERSION TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:41:2: (m= method p= pathRule v= HTTP_VERSION TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:41:4: m= method p= pathRule v= HTTP_VERSION TERMINAL
 			{
 			pushFollow(FOLLOW_method_in_requestLine112);
 			m=method();
@@ -234,7 +225,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "pathRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:56:1: pathRule returns [String p] : ( (s= PATH (q= QUERY )? ) | (s= STRING ) );
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:47:1: pathRule returns [String p] : ( (s= PATH (q= QUERY )? ) | (s= STRING ) );
 	public final String pathRule() throws RecognitionException {
 		String p = null;
 
@@ -243,7 +234,7 @@ public class HttpParser extends Parser {
 		Token q=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:57:2: ( (s= PATH (q= QUERY )? ) | (s= STRING ) )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:48:2: ( (s= PATH (q= QUERY )? ) | (s= STRING ) )
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0==PATH) ) {
@@ -261,14 +252,14 @@ public class HttpParser extends Parser {
 
 			switch (alt4) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:57:4: (s= PATH (q= QUERY )? )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:48:4: (s= PATH (q= QUERY )? )
 					{
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:57:4: (s= PATH (q= QUERY )? )
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:57:5: s= PATH (q= QUERY )?
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:48:4: (s= PATH (q= QUERY )? )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:48:5: s= PATH (q= QUERY )?
 					{
 					s=(Token)match(input,PATH,FOLLOW_PATH_in_pathRule147); 
 					 p = s.getText(); 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:57:34: (q= QUERY )?
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:48:34: (q= QUERY )?
 					int alt3=2;
 					int LA3_0 = input.LA(1);
 					if ( (LA3_0==QUERY) ) {
@@ -276,7 +267,7 @@ public class HttpParser extends Parser {
 					}
 					switch (alt3) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:57:35: q= QUERY
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:48:35: q= QUERY
 							{
 							q=(Token)match(input,QUERY,FOLLOW_QUERY_in_pathRule154); 
 							 p += q.getText(); 
@@ -290,10 +281,10 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:58:4: (s= STRING )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:49:4: (s= STRING )
 					{
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:58:4: (s= STRING )
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:58:5: s= STRING
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:49:4: (s= STRING )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:49:5: s= STRING
 					{
 					s=(Token)match(input,STRING,FOLLOW_STRING_in_pathRule167); 
 					 p = h.handleQuotes(s.getText()); 
@@ -318,7 +309,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "method"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:61:1: method returns [String m] : (s= GET |s= POST ) ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:52:1: method returns [String m] : (s= GET |s= POST ) ;
 	public final String method() throws RecognitionException {
 		String m = null;
 
@@ -326,10 +317,10 @@ public class HttpParser extends Parser {
 		Token s=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:62:2: ( (s= GET |s= POST ) )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:62:4: (s= GET |s= POST )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:53:2: ( (s= GET |s= POST ) )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:53:4: (s= GET |s= POST )
 			{
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:62:4: (s= GET |s= POST )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:53:4: (s= GET |s= POST )
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0==GET) ) {
@@ -347,13 +338,13 @@ public class HttpParser extends Parser {
 
 			switch (alt5) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:62:5: s= GET
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:53:5: s= GET
 					{
 					s=(Token)match(input,GET,FOLLOW_GET_in_method187); 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:63:4: s= POST
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:54:4: s= POST
 					{
 					s=(Token)match(input,POST,FOLLOW_POST_in_method194); 
 					}
@@ -379,7 +370,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "header"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:66:1: header returns [Header hdr] : (hd= hostRule |hd= userAgentRule |hd= contentTypeRule |hd= acceptRule |hd= cookieRule |hd= authorizationRule |hd= acceptLanguageRule |hd= acceptEncodingRule |hd= chacheControlRule |hd= maxForwardsRule |hd= genericHeaderRule ) ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:57:1: header returns [Header hdr] : (hd= hostRule |hd= userAgentRule |hd= contentTypeRule |hd= acceptRule |hd= cookieRule |hd= authorizationRule |hd= acceptLanguageRule |hd= acceptEncodingRule |hd= chacheControlRule |hd= maxForwardsRule |hd= genericHeaderRule ) ;
 	public final Header header() throws RecognitionException {
 		Header hdr = null;
 
@@ -387,10 +378,10 @@ public class HttpParser extends Parser {
 		Header hd =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:67:2: ( (hd= hostRule |hd= userAgentRule |hd= contentTypeRule |hd= acceptRule |hd= cookieRule |hd= authorizationRule |hd= acceptLanguageRule |hd= acceptEncodingRule |hd= chacheControlRule |hd= maxForwardsRule |hd= genericHeaderRule ) )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:67:4: (hd= hostRule |hd= userAgentRule |hd= contentTypeRule |hd= acceptRule |hd= cookieRule |hd= authorizationRule |hd= acceptLanguageRule |hd= acceptEncodingRule |hd= chacheControlRule |hd= maxForwardsRule |hd= genericHeaderRule )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:58:2: ( (hd= hostRule |hd= userAgentRule |hd= contentTypeRule |hd= acceptRule |hd= cookieRule |hd= authorizationRule |hd= acceptLanguageRule |hd= acceptEncodingRule |hd= chacheControlRule |hd= maxForwardsRule |hd= genericHeaderRule ) )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:58:4: (hd= hostRule |hd= userAgentRule |hd= contentTypeRule |hd= acceptRule |hd= cookieRule |hd= authorizationRule |hd= acceptLanguageRule |hd= acceptEncodingRule |hd= chacheControlRule |hd= maxForwardsRule |hd= genericHeaderRule )
 			{
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:67:4: (hd= hostRule |hd= userAgentRule |hd= contentTypeRule |hd= acceptRule |hd= cookieRule |hd= authorizationRule |hd= acceptLanguageRule |hd= acceptEncodingRule |hd= chacheControlRule |hd= maxForwardsRule |hd= genericHeaderRule )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:58:4: (hd= hostRule |hd= userAgentRule |hd= contentTypeRule |hd= acceptRule |hd= cookieRule |hd= authorizationRule |hd= acceptLanguageRule |hd= acceptEncodingRule |hd= chacheControlRule |hd= maxForwardsRule |hd= genericHeaderRule )
 			int alt6=11;
 			switch ( input.LA(1) ) {
 			case HOST:
@@ -455,7 +446,7 @@ public class HttpParser extends Parser {
 			}
 			switch (alt6) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:67:5: hd= hostRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:58:5: hd= hostRule
 					{
 					pushFollow(FOLLOW_hostRule_in_header215);
 					hd=hostRule();
@@ -464,7 +455,7 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:68:4: hd= userAgentRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:59:4: hd= userAgentRule
 					{
 					pushFollow(FOLLOW_userAgentRule_in_header222);
 					hd=userAgentRule();
@@ -473,7 +464,7 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:69:4: hd= contentTypeRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:60:4: hd= contentTypeRule
 					{
 					pushFollow(FOLLOW_contentTypeRule_in_header229);
 					hd=contentTypeRule();
@@ -482,7 +473,7 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 4 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:70:4: hd= acceptRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:61:4: hd= acceptRule
 					{
 					pushFollow(FOLLOW_acceptRule_in_header236);
 					hd=acceptRule();
@@ -491,7 +482,7 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 5 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:71:4: hd= cookieRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:62:4: hd= cookieRule
 					{
 					pushFollow(FOLLOW_cookieRule_in_header243);
 					hd=cookieRule();
@@ -500,7 +491,7 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 6 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:72:4: hd= authorizationRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:63:4: hd= authorizationRule
 					{
 					pushFollow(FOLLOW_authorizationRule_in_header250);
 					hd=authorizationRule();
@@ -509,7 +500,7 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 7 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:73:4: hd= acceptLanguageRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:64:4: hd= acceptLanguageRule
 					{
 					pushFollow(FOLLOW_acceptLanguageRule_in_header257);
 					hd=acceptLanguageRule();
@@ -518,7 +509,7 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 8 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:74:4: hd= acceptEncodingRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:65:4: hd= acceptEncodingRule
 					{
 					pushFollow(FOLLOW_acceptEncodingRule_in_header264);
 					hd=acceptEncodingRule();
@@ -527,7 +518,7 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 9 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:75:4: hd= chacheControlRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:66:4: hd= chacheControlRule
 					{
 					pushFollow(FOLLOW_chacheControlRule_in_header271);
 					hd=chacheControlRule();
@@ -536,7 +527,7 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 10 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:76:4: hd= maxForwardsRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:67:4: hd= maxForwardsRule
 					{
 					pushFollow(FOLLOW_maxForwardsRule_in_header278);
 					hd=maxForwardsRule();
@@ -545,7 +536,7 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 11 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:77:4: hd= genericHeaderRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:68:4: hd= genericHeaderRule
 					{
 					pushFollow(FOLLOW_genericHeaderRule_in_header285);
 					hd=genericHeaderRule();
@@ -574,7 +565,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "hostRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:81:1: hostRule returns [Header hd] :k= HOST COLUMN (v= ( DNS | IPV4 ) ) ( (c= COLUMN n= INT_NUM ) )? TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:72:1: hostRule returns [Header hd] :k= HOST COLUMN (v= ( DNS | IPV4 ) ) ( (c= COLUMN n= INT_NUM ) )? TERMINAL ;
 	public final Header hostRule() throws RecognitionException {
 		Header hd = null;
 
@@ -585,14 +576,14 @@ public class HttpParser extends Parser {
 		Token n=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:82:2: (k= HOST COLUMN (v= ( DNS | IPV4 ) ) ( (c= COLUMN n= INT_NUM ) )? TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:82:4: k= HOST COLUMN (v= ( DNS | IPV4 ) ) ( (c= COLUMN n= INT_NUM ) )? TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:73:2: (k= HOST COLUMN (v= ( DNS | IPV4 ) ) ( (c= COLUMN n= INT_NUM ) )? TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:73:4: k= HOST COLUMN (v= ( DNS | IPV4 ) ) ( (c= COLUMN n= INT_NUM ) )? TERMINAL
 			{
 			 String value = ""; 
 			k=(Token)match(input,HOST,FOLLOW_HOST_in_hostRule311); 
 			match(input,COLUMN,FOLLOW_COLUMN_in_hostRule313); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:84:3: (v= ( DNS | IPV4 ) )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:84:4: v= ( DNS | IPV4 )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:75:3: (v= ( DNS | IPV4 ) )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:75:4: v= ( DNS | IPV4 )
 			{
 			v=input.LT(1);
 			if ( input.LA(1)==DNS||input.LA(1)==IPV4 ) {
@@ -606,7 +597,7 @@ public class HttpParser extends Parser {
 			 value = v.getText(); 
 			}
 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:85:3: ( (c= COLUMN n= INT_NUM ) )?
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:76:3: ( (c= COLUMN n= INT_NUM ) )?
 			int alt7=2;
 			int LA7_0 = input.LA(1);
 			if ( (LA7_0==COLUMN) ) {
@@ -614,10 +605,10 @@ public class HttpParser extends Parser {
 			}
 			switch (alt7) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:85:4: (c= COLUMN n= INT_NUM )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:76:4: (c= COLUMN n= INT_NUM )
 					{
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:85:4: (c= COLUMN n= INT_NUM )
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:85:5: c= COLUMN n= INT_NUM
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:76:4: (c= COLUMN n= INT_NUM )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:76:5: c= COLUMN n= INT_NUM
 					{
 					c=(Token)match(input,COLUMN,FOLLOW_COLUMN_in_hostRule338); 
 					n=(Token)match(input,INT_NUM,FOLLOW_INT_NUM_in_hostRule342); 
@@ -648,7 +639,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "userAgentRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:89:1: userAgentRule returns [Header hd] :k= USER_AGENT COLUMN p= productRule (p1= productRule (e= extensionRule )* )? TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:80:1: userAgentRule returns [Header hd] :k= USER_AGENT COLUMN p= productRule (p1= productRule (e= extensionRule )* )? TERMINAL ;
 	public final Header userAgentRule() throws RecognitionException {
 		Header hd = null;
 
@@ -659,8 +650,8 @@ public class HttpParser extends Parser {
 		String e =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:90:2: (k= USER_AGENT COLUMN p= productRule (p1= productRule (e= extensionRule )* )? TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:90:4: k= USER_AGENT COLUMN p= productRule (p1= productRule (e= extensionRule )* )? TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:81:2: (k= USER_AGENT COLUMN p= productRule (p1= productRule (e= extensionRule )* )? TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:81:4: k= USER_AGENT COLUMN p= productRule (p1= productRule (e= extensionRule )* )? TERMINAL
 			{
 			 String value = ""; 
 			k=(Token)match(input,USER_AGENT,FOLLOW_USER_AGENT_in_userAgentRule374); 
@@ -670,7 +661,7 @@ public class HttpParser extends Parser {
 			state._fsp--;
 
 			 value = p; 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:93:3: (p1= productRule (e= extensionRule )* )?
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:84:3: (p1= productRule (e= extensionRule )* )?
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0==PRODUCT) ) {
@@ -678,14 +669,14 @@ public class HttpParser extends Parser {
 			}
 			switch (alt9) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:93:4: p1= productRule (e= extensionRule )*
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:84:4: p1= productRule (e= extensionRule )*
 					{
 					pushFollow(FOLLOW_productRule_in_userAgentRule391);
 					p1=productRule();
 					state._fsp--;
 
 					 value += " " + p1; 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:94:3: (e= extensionRule )*
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:85:3: (e= extensionRule )*
 					loop8:
 					while (true) {
 						int alt8=2;
@@ -696,7 +687,7 @@ public class HttpParser extends Parser {
 
 						switch (alt8) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:94:4: e= extensionRule
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:85:4: e= extensionRule
 							{
 							pushFollow(FOLLOW_extensionRule_in_userAgentRule400);
 							e=extensionRule();
@@ -735,7 +726,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "productRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:98:1: productRule returns [String s] : p= PRODUCT (pi= PRODUCT_INFO )? ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:89:1: productRule returns [String s] : p= PRODUCT (pi= PRODUCT_INFO )? ;
 	public final String productRule() throws RecognitionException {
 		String s = null;
 
@@ -744,12 +735,12 @@ public class HttpParser extends Parser {
 		Token pi=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:99:2: (p= PRODUCT (pi= PRODUCT_INFO )? )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:99:4: p= PRODUCT (pi= PRODUCT_INFO )?
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:90:2: (p= PRODUCT (pi= PRODUCT_INFO )? )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:90:4: p= PRODUCT (pi= PRODUCT_INFO )?
 			{
 			p=(Token)match(input,PRODUCT,FOLLOW_PRODUCT_in_productRule429); 
 			 s = p.getText(); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:100:3: (pi= PRODUCT_INFO )?
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:91:3: (pi= PRODUCT_INFO )?
 			int alt10=2;
 			int LA10_0 = input.LA(1);
 			if ( (LA10_0==PRODUCT_INFO) ) {
@@ -757,7 +748,7 @@ public class HttpParser extends Parser {
 			}
 			switch (alt10) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:100:4: pi= PRODUCT_INFO
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:91:4: pi= PRODUCT_INFO
 					{
 					pi=(Token)match(input,PRODUCT_INFO,FOLLOW_PRODUCT_INFO_in_productRule438); 
 					 s += " " + pi.getText();
@@ -783,7 +774,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "extensionRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:103:1: extensionRule returns [String s] : p= PRODUCT ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:94:1: extensionRule returns [String s] : p= PRODUCT ;
 	public final String extensionRule() throws RecognitionException {
 		String s = null;
 
@@ -791,8 +782,8 @@ public class HttpParser extends Parser {
 		Token p=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:104:2: (p= PRODUCT )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:104:4: p= PRODUCT
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:95:2: (p= PRODUCT )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:95:4: p= PRODUCT
 			{
 			p=(Token)match(input,PRODUCT,FOLLOW_PRODUCT_in_extensionRule459); 
 			 s = p.getText(); 
@@ -813,7 +804,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "acceptRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:107:1: acceptRule returns [Header hd] : k= ACCEPT COLUMN value= mimeList TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:98:1: acceptRule returns [Header hd] : k= ACCEPT COLUMN value= mimeList TERMINAL ;
 	public final Header acceptRule() throws RecognitionException {
 		Header hd = null;
 
@@ -822,8 +813,8 @@ public class HttpParser extends Parser {
 		String value =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:108:2: (k= ACCEPT COLUMN value= mimeList TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:108:4: k= ACCEPT COLUMN value= mimeList TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:99:2: (k= ACCEPT COLUMN value= mimeList TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:99:4: k= ACCEPT COLUMN value= mimeList TERMINAL
 			{
 			k=(Token)match(input,ACCEPT,FOLLOW_ACCEPT_in_acceptRule478); 
 			match(input,COLUMN,FOLLOW_COLUMN_in_acceptRule480); 
@@ -850,7 +841,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "mimeList"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:113:1: mimeList returns [String s] : m= mimeElement (c= COMMA m1= mimeElement )* ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:104:1: mimeList returns [String s] : m= mimeElement (c= COMMA m1= mimeElement )* ;
 	public final String mimeList() throws RecognitionException {
 		String s = null;
 
@@ -860,15 +851,15 @@ public class HttpParser extends Parser {
 		String m1 =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:114:2: (m= mimeElement (c= COMMA m1= mimeElement )* )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:114:4: m= mimeElement (c= COMMA m1= mimeElement )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:105:2: (m= mimeElement (c= COMMA m1= mimeElement )* )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:105:4: m= mimeElement (c= COMMA m1= mimeElement )*
 			{
 			pushFollow(FOLLOW_mimeElement_in_mimeList509);
 			m=mimeElement();
 			state._fsp--;
 
 			 s = m; 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:115:3: (c= COMMA m1= mimeElement )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:106:3: (c= COMMA m1= mimeElement )*
 			loop11:
 			while (true) {
 				int alt11=2;
@@ -879,7 +870,7 @@ public class HttpParser extends Parser {
 
 				switch (alt11) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:115:4: c= COMMA m1= mimeElement
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:106:4: c= COMMA m1= mimeElement
 					{
 					c=(Token)match(input,COMMA,FOLLOW_COMMA_in_mimeList518); 
 					pushFollow(FOLLOW_mimeElement_in_mimeList522);
@@ -912,7 +903,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "mimeElement"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:118:1: mimeElement returns [String s] : m= MIME (q= qValueRule )? ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:109:1: mimeElement returns [String s] : m= MIME (q= qValueRule )? ;
 	public final String mimeElement() throws RecognitionException {
 		String s = null;
 
@@ -921,12 +912,12 @@ public class HttpParser extends Parser {
 		String q =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:119:2: (m= MIME (q= qValueRule )? )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:119:4: m= MIME (q= qValueRule )?
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:110:2: (m= MIME (q= qValueRule )? )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:110:4: m= MIME (q= qValueRule )?
 			{
 			m=(Token)match(input,MIME,FOLLOW_MIME_in_mimeElement543); 
 			 s = m.getText();
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:120:3: (q= qValueRule )?
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:111:3: (q= qValueRule )?
 			int alt12=2;
 			int LA12_0 = input.LA(1);
 			if ( (LA12_0==SEMI_COLUMN) ) {
@@ -934,7 +925,7 @@ public class HttpParser extends Parser {
 			}
 			switch (alt12) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:120:4: q= qValueRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:111:4: q= qValueRule
 					{
 					pushFollow(FOLLOW_qValueRule_in_mimeElement552);
 					q=qValueRule();
@@ -963,7 +954,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "contentTypeRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:123:1: contentTypeRule returns [Header hd] :k= CONTENT_TYPE COLUMN (m= MIME (cs= charsetRule )? |m= MULTIPART_MIME b= boundaryRule ) TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:114:1: contentTypeRule returns [Header hd] :k= CONTENT_TYPE COLUMN (m= MIME (cs= charsetRule )? |m= MULTIPART_MIME b= boundaryRule ) TERMINAL ;
 	public final Header contentTypeRule() throws RecognitionException {
 		Header hd = null;
 
@@ -974,13 +965,13 @@ public class HttpParser extends Parser {
 		String b =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:124:2: (k= CONTENT_TYPE COLUMN (m= MIME (cs= charsetRule )? |m= MULTIPART_MIME b= boundaryRule ) TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:124:4: k= CONTENT_TYPE COLUMN (m= MIME (cs= charsetRule )? |m= MULTIPART_MIME b= boundaryRule ) TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:115:2: (k= CONTENT_TYPE COLUMN (m= MIME (cs= charsetRule )? |m= MULTIPART_MIME b= boundaryRule ) TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:115:4: k= CONTENT_TYPE COLUMN (m= MIME (cs= charsetRule )? |m= MULTIPART_MIME b= boundaryRule ) TERMINAL
 			{
 			 String value = ""; 
 			k=(Token)match(input,CONTENT_TYPE,FOLLOW_CONTENT_TYPE_in_contentTypeRule578); 
 			match(input,COLUMN,FOLLOW_COLUMN_in_contentTypeRule580); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:126:3: (m= MIME (cs= charsetRule )? |m= MULTIPART_MIME b= boundaryRule )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:117:3: (m= MIME (cs= charsetRule )? |m= MULTIPART_MIME b= boundaryRule )
 			int alt14=2;
 			int LA14_0 = input.LA(1);
 			if ( (LA14_0==MIME) ) {
@@ -998,11 +989,11 @@ public class HttpParser extends Parser {
 
 			switch (alt14) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:126:4: m= MIME (cs= charsetRule )?
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:117:4: m= MIME (cs= charsetRule )?
 					{
 					m=(Token)match(input,MIME,FOLLOW_MIME_in_contentTypeRule587); 
 					 value = m.getText(); 
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:126:37: (cs= charsetRule )?
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:117:37: (cs= charsetRule )?
 					int alt13=2;
 					int LA13_0 = input.LA(1);
 					if ( (LA13_0==SEMI_COLUMN) ) {
@@ -1010,7 +1001,7 @@ public class HttpParser extends Parser {
 					}
 					switch (alt13) {
 						case 1 :
-							// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:126:38: cs= charsetRule
+							// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:117:38: cs= charsetRule
 							{
 							pushFollow(FOLLOW_charsetRule_in_contentTypeRule594);
 							cs=charsetRule();
@@ -1025,7 +1016,7 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:127:4: m= MULTIPART_MIME b= boundaryRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:118:4: m= MULTIPART_MIME b= boundaryRule
 					{
 					m=(Token)match(input,MULTIPART_MIME,FOLLOW_MULTIPART_MIME_in_contentTypeRule605); 
 					pushFollow(FOLLOW_boundaryRule_in_contentTypeRule609);
@@ -1057,7 +1048,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "charsetRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:131:1: charsetRule returns [String s] : sc= SEMI_COLUMN (cs= ID ) e= EQUALS str= STRING ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:122:1: charsetRule returns [String s] : sc= SEMI_COLUMN (cs= ID ) e= EQUALS str= STRING ;
 	public final String charsetRule() throws RecognitionException {
 		String s = null;
 
@@ -1068,12 +1059,12 @@ public class HttpParser extends Parser {
 		Token str=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:132:2: (sc= SEMI_COLUMN (cs= ID ) e= EQUALS str= STRING )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:132:4: sc= SEMI_COLUMN (cs= ID ) e= EQUALS str= STRING
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:123:2: (sc= SEMI_COLUMN (cs= ID ) e= EQUALS str= STRING )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:123:4: sc= SEMI_COLUMN (cs= ID ) e= EQUALS str= STRING
 			{
 			sc=(Token)match(input,SEMI_COLUMN,FOLLOW_SEMI_COLUMN_in_charsetRule636); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:132:19: (cs= ID )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:132:20: cs= ID
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:123:19: (cs= ID )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:123:20: cs= ID
 			{
 			cs=(Token)match(input,ID,FOLLOW_ID_in_charsetRule641); 
 			 h.checkCharset(cs); 
@@ -1099,7 +1090,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "boundaryRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:136:1: boundaryRule returns [String s] : sc= SEMI_COLUMN (b= ID ) e= EQUALS str= STRING ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:127:1: boundaryRule returns [String s] : sc= SEMI_COLUMN (b= ID ) e= EQUALS str= STRING ;
 	public final String boundaryRule() throws RecognitionException {
 		String s = null;
 
@@ -1110,12 +1101,12 @@ public class HttpParser extends Parser {
 		Token str=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:137:2: (sc= SEMI_COLUMN (b= ID ) e= EQUALS str= STRING )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:137:4: sc= SEMI_COLUMN (b= ID ) e= EQUALS str= STRING
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:128:2: (sc= SEMI_COLUMN (b= ID ) e= EQUALS str= STRING )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:128:4: sc= SEMI_COLUMN (b= ID ) e= EQUALS str= STRING
 			{
 			sc=(Token)match(input,SEMI_COLUMN,FOLLOW_SEMI_COLUMN_in_boundaryRule674); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:137:19: (b= ID )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:137:20: b= ID
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:128:19: (b= ID )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:128:20: b= ID
 			{
 			b=(Token)match(input,ID,FOLLOW_ID_in_boundaryRule679); 
 			 h.checkBoundary(b); 
@@ -1141,7 +1132,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "cookieRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:141:1: cookieRule returns [Header hd] : k= COOKIE COLUMN value= cookieList TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:132:1: cookieRule returns [Header hd] : k= COOKIE COLUMN value= cookieList TERMINAL ;
 	public final Header cookieRule() throws RecognitionException {
 		Header hd = null;
 
@@ -1150,8 +1141,8 @@ public class HttpParser extends Parser {
 		String value =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:142:2: (k= COOKIE COLUMN value= cookieList TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:142:4: k= COOKIE COLUMN value= cookieList TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:133:2: (k= COOKIE COLUMN value= cookieList TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:133:4: k= COOKIE COLUMN value= cookieList TERMINAL
 			{
 			k=(Token)match(input,COOKIE,FOLLOW_COOKIE_in_cookieRule712); 
 			match(input,COLUMN,FOLLOW_COLUMN_in_cookieRule714); 
@@ -1178,7 +1169,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "cookieList"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:147:1: cookieList returns [String s] : ce= cookieElement (sc= SEMI_COLUMN ce1= cookieElement )* ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:138:1: cookieList returns [String s] : ce= cookieElement (sc= SEMI_COLUMN ce1= cookieElement )* ;
 	public final String cookieList() throws RecognitionException {
 		String s = null;
 
@@ -1188,15 +1179,15 @@ public class HttpParser extends Parser {
 		String ce1 =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:148:2: (ce= cookieElement (sc= SEMI_COLUMN ce1= cookieElement )* )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:148:4: ce= cookieElement (sc= SEMI_COLUMN ce1= cookieElement )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:139:2: (ce= cookieElement (sc= SEMI_COLUMN ce1= cookieElement )* )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:139:4: ce= cookieElement (sc= SEMI_COLUMN ce1= cookieElement )*
 			{
 			pushFollow(FOLLOW_cookieElement_in_cookieList743);
 			ce=cookieElement();
 			state._fsp--;
 
 			 s = ce; 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:149:3: (sc= SEMI_COLUMN ce1= cookieElement )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:140:3: (sc= SEMI_COLUMN ce1= cookieElement )*
 			loop15:
 			while (true) {
 				int alt15=2;
@@ -1207,7 +1198,7 @@ public class HttpParser extends Parser {
 
 				switch (alt15) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:149:4: sc= SEMI_COLUMN ce1= cookieElement
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:140:4: sc= SEMI_COLUMN ce1= cookieElement
 					{
 					sc=(Token)match(input,SEMI_COLUMN,FOLLOW_SEMI_COLUMN_in_cookieList752); 
 					pushFollow(FOLLOW_cookieElement_in_cookieList756);
@@ -1240,7 +1231,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "cookieElement"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:152:1: cookieElement returns [String s] : str1= STRING e= EQUALS str2= STRING ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:143:1: cookieElement returns [String s] : str1= STRING e= EQUALS str2= STRING ;
 	public final String cookieElement() throws RecognitionException {
 		String s = null;
 
@@ -1250,8 +1241,8 @@ public class HttpParser extends Parser {
 		Token str2=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:153:2: (str1= STRING e= EQUALS str2= STRING )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:153:4: str1= STRING e= EQUALS str2= STRING
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:144:2: (str1= STRING e= EQUALS str2= STRING )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:144:4: str1= STRING e= EQUALS str2= STRING
 			{
 			str1=(Token)match(input,STRING,FOLLOW_STRING_in_cookieElement778); 
 			e=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_cookieElement782); 
@@ -1274,7 +1265,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "qValueRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:157:1: qValueRule returns [String s] : sc= SEMI_COLUMN q= Q e= EQUALS qv= Q_VAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:148:1: qValueRule returns [String s] : sc= SEMI_COLUMN q= Q e= EQUALS qv= Q_VAL ;
 	public final String qValueRule() throws RecognitionException {
 		String s = null;
 
@@ -1285,8 +1276,8 @@ public class HttpParser extends Parser {
 		Token qv=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:158:2: (sc= SEMI_COLUMN q= Q e= EQUALS qv= Q_VAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:158:4: sc= SEMI_COLUMN q= Q e= EQUALS qv= Q_VAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:149:2: (sc= SEMI_COLUMN q= Q e= EQUALS qv= Q_VAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:149:4: sc= SEMI_COLUMN q= Q e= EQUALS qv= Q_VAL
 			{
 			sc=(Token)match(input,SEMI_COLUMN,FOLLOW_SEMI_COLUMN_in_qValueRule807); 
 			q=(Token)match(input,Q,FOLLOW_Q_in_qValueRule811); 
@@ -1310,7 +1301,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "authorizationRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:162:1: authorizationRule returns [Header hd] : k= AUTHORIZATION COLUMN bd= ID (value= basicAuthRule[$bd] |value= digestAuthRule[$bd] ) TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:153:1: authorizationRule returns [Header hd] : k= AUTHORIZATION COLUMN bd= ID (value= basicAuthRule[$bd] |value= digestAuthRule[$bd] ) TERMINAL ;
 	public final Header authorizationRule() throws RecognitionException {
 		Header hd = null;
 
@@ -1320,13 +1311,13 @@ public class HttpParser extends Parser {
 		String value =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:163:2: (k= AUTHORIZATION COLUMN bd= ID (value= basicAuthRule[$bd] |value= digestAuthRule[$bd] ) TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:163:4: k= AUTHORIZATION COLUMN bd= ID (value= basicAuthRule[$bd] |value= digestAuthRule[$bd] ) TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:154:2: (k= AUTHORIZATION COLUMN bd= ID (value= basicAuthRule[$bd] |value= digestAuthRule[$bd] ) TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:154:4: k= AUTHORIZATION COLUMN bd= ID (value= basicAuthRule[$bd] |value= digestAuthRule[$bd] ) TERMINAL
 			{
 			k=(Token)match(input,AUTHORIZATION,FOLLOW_AUTHORIZATION_in_authorizationRule841); 
 			match(input,COLUMN,FOLLOW_COLUMN_in_authorizationRule843); 
 			bd=(Token)match(input,ID,FOLLOW_ID_in_authorizationRule849); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:165:3: (value= basicAuthRule[$bd] |value= digestAuthRule[$bd] )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:156:3: (value= basicAuthRule[$bd] |value= digestAuthRule[$bd] )
 			int alt16=2;
 			int LA16_0 = input.LA(1);
 			if ( (LA16_0==STRING) ) {
@@ -1344,7 +1335,7 @@ public class HttpParser extends Parser {
 
 			switch (alt16) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:165:4: value= basicAuthRule[$bd]
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:156:4: value= basicAuthRule[$bd]
 					{
 					pushFollow(FOLLOW_basicAuthRule_in_authorizationRule856);
 					value=basicAuthRule(bd);
@@ -1353,7 +1344,7 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:166:5: value= digestAuthRule[$bd]
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:157:5: value= digestAuthRule[$bd]
 					{
 					pushFollow(FOLLOW_digestAuthRule_in_authorizationRule865);
 					value=digestAuthRule(bd);
@@ -1383,7 +1374,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "basicAuthRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:170:1: basicAuthRule[Token b] returns [String s] :str= STRING ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:161:1: basicAuthRule[Token b] returns [String s] :str= STRING ;
 	public final String basicAuthRule(Token b) throws RecognitionException {
 		String s = null;
 
@@ -1391,8 +1382,8 @@ public class HttpParser extends Parser {
 		Token str=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:171:2: (str= STRING )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:171:4: str= STRING
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:162:2: (str= STRING )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:162:4: str= STRING
 			{
 			 s = h.checkBasic(b); 
 			str=(Token)match(input,STRING,FOLLOW_STRING_in_basicAuthRule896); 
@@ -1414,7 +1405,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "digestAuthRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:176:1: digestAuthRule[Token d] returns [String s] :a= authRule (c= COMMA a1= authRule )* ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:167:1: digestAuthRule[Token d] returns [String s] :a= authRule (c= COMMA a1= authRule )* ;
 	public final String digestAuthRule(Token d) throws RecognitionException {
 		String s = null;
 
@@ -1424,8 +1415,8 @@ public class HttpParser extends Parser {
 		String a1 =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:177:2: (a= authRule (c= COMMA a1= authRule )* )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:177:4: a= authRule (c= COMMA a1= authRule )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:168:2: (a= authRule (c= COMMA a1= authRule )* )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:168:4: a= authRule (c= COMMA a1= authRule )*
 			{
 			 s = h.checkDigest(d); 
 			pushFollow(FOLLOW_authRule_in_digestAuthRule923);
@@ -1433,7 +1424,7 @@ public class HttpParser extends Parser {
 			state._fsp--;
 
 			 s += " " + a; 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:179:3: (c= COMMA a1= authRule )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:170:3: (c= COMMA a1= authRule )*
 			loop17:
 			while (true) {
 				int alt17=2;
@@ -1444,7 +1435,7 @@ public class HttpParser extends Parser {
 
 				switch (alt17) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:179:4: c= COMMA a1= authRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:170:4: c= COMMA a1= authRule
 					{
 					c=(Token)match(input,COMMA,FOLLOW_COMMA_in_digestAuthRule932); 
 					pushFollow(FOLLOW_authRule_in_digestAuthRule936);
@@ -1477,7 +1468,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "authRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:182:1: authRule returns [String s] : t= ID e= EQUALS str= STRING ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:173:1: authRule returns [String s] : t= ID e= EQUALS str= STRING ;
 	public final String authRule() throws RecognitionException {
 		String s = null;
 
@@ -1487,8 +1478,8 @@ public class HttpParser extends Parser {
 		Token str=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:183:2: (t= ID e= EQUALS str= STRING )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:184:2: t= ID e= EQUALS str= STRING
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:174:2: (t= ID e= EQUALS str= STRING )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:175:2: t= ID e= EQUALS str= STRING
 			{
 			t=(Token)match(input,ID,FOLLOW_ID_in_authRule958); 
 			 h.checkDigestElement(t); 
@@ -1512,7 +1503,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "acceptLanguageRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:189:1: acceptLanguageRule returns [Header hd] : k= ACCEPT_LANGUAGE COLUMN value= languageList TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:180:1: acceptLanguageRule returns [Header hd] : k= ACCEPT_LANGUAGE COLUMN value= languageList TERMINAL ;
 	public final Header acceptLanguageRule() throws RecognitionException {
 		Header hd = null;
 
@@ -1521,8 +1512,8 @@ public class HttpParser extends Parser {
 		String value =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:190:2: (k= ACCEPT_LANGUAGE COLUMN value= languageList TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:190:4: k= ACCEPT_LANGUAGE COLUMN value= languageList TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:181:2: (k= ACCEPT_LANGUAGE COLUMN value= languageList TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:181:4: k= ACCEPT_LANGUAGE COLUMN value= languageList TERMINAL
 			{
 			k=(Token)match(input,ACCEPT_LANGUAGE,FOLLOW_ACCEPT_LANGUAGE_in_acceptLanguageRule988); 
 			match(input,COLUMN,FOLLOW_COLUMN_in_acceptLanguageRule990); 
@@ -1549,7 +1540,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "languageList"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:195:1: languageList returns [String s] : le= languageElement (c= COMMA le1= languageElement )* ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:186:1: languageList returns [String s] : le= languageElement (c= COMMA le1= languageElement )* ;
 	public final String languageList() throws RecognitionException {
 		String s = null;
 
@@ -1559,15 +1550,15 @@ public class HttpParser extends Parser {
 		String le1 =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:196:2: (le= languageElement (c= COMMA le1= languageElement )* )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:196:4: le= languageElement (c= COMMA le1= languageElement )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:187:2: (le= languageElement (c= COMMA le1= languageElement )* )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:187:4: le= languageElement (c= COMMA le1= languageElement )*
 			{
 			pushFollow(FOLLOW_languageElement_in_languageList1019);
 			le=languageElement();
 			state._fsp--;
 
 			 s = le; 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:197:3: (c= COMMA le1= languageElement )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:188:3: (c= COMMA le1= languageElement )*
 			loop18:
 			while (true) {
 				int alt18=2;
@@ -1578,7 +1569,7 @@ public class HttpParser extends Parser {
 
 				switch (alt18) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:197:4: c= COMMA le1= languageElement
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:188:4: c= COMMA le1= languageElement
 					{
 					c=(Token)match(input,COMMA,FOLLOW_COMMA_in_languageList1028); 
 					pushFollow(FOLLOW_languageElement_in_languageList1032);
@@ -1611,7 +1602,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "languageElement"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:200:1: languageElement returns [String s] : ( (le= ID ) |le= LANGUAGE_ELEMENT |le= STAR ) (q= qValueRule )? ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:191:1: languageElement returns [String s] : ( (le= ID ) |le= LANGUAGE_ELEMENT |le= STAR ) (q= qValueRule )? ;
 	public final String languageElement() throws RecognitionException {
 		String s = null;
 
@@ -1620,10 +1611,10 @@ public class HttpParser extends Parser {
 		String q =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:201:2: ( ( (le= ID ) |le= LANGUAGE_ELEMENT |le= STAR ) (q= qValueRule )? )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:201:4: ( (le= ID ) |le= LANGUAGE_ELEMENT |le= STAR ) (q= qValueRule )?
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:192:2: ( ( (le= ID ) |le= LANGUAGE_ELEMENT |le= STAR ) (q= qValueRule )? )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:192:4: ( (le= ID ) |le= LANGUAGE_ELEMENT |le= STAR ) (q= qValueRule )?
 			{
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:201:4: ( (le= ID ) |le= LANGUAGE_ELEMENT |le= STAR )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:192:4: ( (le= ID ) |le= LANGUAGE_ELEMENT |le= STAR )
 			int alt19=3;
 			switch ( input.LA(1) ) {
 			case ID:
@@ -1648,10 +1639,10 @@ public class HttpParser extends Parser {
 			}
 			switch (alt19) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:201:5: (le= ID )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:192:5: (le= ID )
 					{
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:201:5: (le= ID )
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:201:6: le= ID
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:192:5: (le= ID )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:192:6: le= ID
 					{
 					le=(Token)match(input,ID,FOLLOW_ID_in_languageElement1056); 
 					 h.checkLanguage(le); 
@@ -1660,13 +1651,13 @@ public class HttpParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:202:4: le= LANGUAGE_ELEMENT
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:193:4: le= LANGUAGE_ELEMENT
 					{
 					le=(Token)match(input,LANGUAGE_ELEMENT,FOLLOW_LANGUAGE_ELEMENT_in_languageElement1066); 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:203:4: le= STAR
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:194:4: le= STAR
 					{
 					le=(Token)match(input,STAR,FOLLOW_STAR_in_languageElement1073); 
 					}
@@ -1675,7 +1666,7 @@ public class HttpParser extends Parser {
 			}
 
 			 s = le.getText(); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:204:3: (q= qValueRule )?
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:195:3: (q= qValueRule )?
 			int alt20=2;
 			int LA20_0 = input.LA(1);
 			if ( (LA20_0==SEMI_COLUMN) ) {
@@ -1683,7 +1674,7 @@ public class HttpParser extends Parser {
 			}
 			switch (alt20) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:204:4: q= qValueRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:195:4: q= qValueRule
 					{
 					pushFollow(FOLLOW_qValueRule_in_languageElement1084);
 					q=qValueRule();
@@ -1712,7 +1703,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "acceptEncodingRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:207:1: acceptEncodingRule returns [Header hd] : k= ACCEPT_ENCODING COLUMN value= encodingList TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:198:1: acceptEncodingRule returns [Header hd] : k= ACCEPT_ENCODING COLUMN value= encodingList TERMINAL ;
 	public final Header acceptEncodingRule() throws RecognitionException {
 		Header hd = null;
 
@@ -1721,8 +1712,8 @@ public class HttpParser extends Parser {
 		String value =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:208:2: (k= ACCEPT_ENCODING COLUMN value= encodingList TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:208:4: k= ACCEPT_ENCODING COLUMN value= encodingList TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:199:2: (k= ACCEPT_ENCODING COLUMN value= encodingList TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:199:4: k= ACCEPT_ENCODING COLUMN value= encodingList TERMINAL
 			{
 			k=(Token)match(input,ACCEPT_ENCODING,FOLLOW_ACCEPT_ENCODING_in_acceptEncodingRule1105); 
 			match(input,COLUMN,FOLLOW_COLUMN_in_acceptEncodingRule1107); 
@@ -1749,7 +1740,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "encodingList"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:213:1: encodingList returns [String s] : ee= encodingElement (c= COMMA ee1= encodingElement )* ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:204:1: encodingList returns [String s] : ee= encodingElement (c= COMMA ee1= encodingElement )* ;
 	public final String encodingList() throws RecognitionException {
 		String s = null;
 
@@ -1759,15 +1750,15 @@ public class HttpParser extends Parser {
 		String ee1 =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:214:2: (ee= encodingElement (c= COMMA ee1= encodingElement )* )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:214:4: ee= encodingElement (c= COMMA ee1= encodingElement )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:205:2: (ee= encodingElement (c= COMMA ee1= encodingElement )* )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:205:4: ee= encodingElement (c= COMMA ee1= encodingElement )*
 			{
 			pushFollow(FOLLOW_encodingElement_in_encodingList1136);
 			ee=encodingElement();
 			state._fsp--;
 
 			 s = ee; 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:215:3: (c= COMMA ee1= encodingElement )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:206:3: (c= COMMA ee1= encodingElement )*
 			loop21:
 			while (true) {
 				int alt21=2;
@@ -1778,7 +1769,7 @@ public class HttpParser extends Parser {
 
 				switch (alt21) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:215:4: c= COMMA ee1= encodingElement
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:206:4: c= COMMA ee1= encodingElement
 					{
 					c=(Token)match(input,COMMA,FOLLOW_COMMA_in_encodingList1145); 
 					pushFollow(FOLLOW_encodingElement_in_encodingList1149);
@@ -1811,7 +1802,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "encodingElement"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:218:1: encodingElement returns [String s] : (ee= ID |ee= STAR ) (q= qValueRule )? ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:209:1: encodingElement returns [String s] : (ee= ID |ee= STAR ) (q= qValueRule )? ;
 	public final String encodingElement() throws RecognitionException {
 		String s = null;
 
@@ -1820,10 +1811,10 @@ public class HttpParser extends Parser {
 		String q =null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:219:2: ( (ee= ID |ee= STAR ) (q= qValueRule )? )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:219:4: (ee= ID |ee= STAR ) (q= qValueRule )?
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:210:2: ( (ee= ID |ee= STAR ) (q= qValueRule )? )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:210:4: (ee= ID |ee= STAR ) (q= qValueRule )?
 			{
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:219:4: (ee= ID |ee= STAR )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:210:4: (ee= ID |ee= STAR )
 			int alt22=2;
 			int LA22_0 = input.LA(1);
 			if ( (LA22_0==ID) ) {
@@ -1841,14 +1832,14 @@ public class HttpParser extends Parser {
 
 			switch (alt22) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:219:5: ee= ID
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:210:5: ee= ID
 					{
 					ee=(Token)match(input,ID,FOLLOW_ID_in_encodingElement1172); 
 					 h.checkEncodingElement(ee); 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:220:4: ee= STAR
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:211:4: ee= STAR
 					{
 					ee=(Token)match(input,STAR,FOLLOW_STAR_in_encodingElement1182); 
 					}
@@ -1857,7 +1848,7 @@ public class HttpParser extends Parser {
 			}
 
 			 s = ee.getText(); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:222:3: (q= qValueRule )?
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:213:3: (q= qValueRule )?
 			int alt23=2;
 			int LA23_0 = input.LA(1);
 			if ( (LA23_0==SEMI_COLUMN) ) {
@@ -1865,7 +1856,7 @@ public class HttpParser extends Parser {
 			}
 			switch (alt23) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:222:4: q= qValueRule
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:213:4: q= qValueRule
 					{
 					pushFollow(FOLLOW_qValueRule_in_encodingElement1195);
 					q=qValueRule();
@@ -1894,7 +1885,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "chacheControlRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:225:1: chacheControlRule returns [Header hd] :k= CACHE_CONTROL COLUMN str= STRING (c= COMMA str1= STRING )* TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:216:1: chacheControlRule returns [Header hd] :k= CACHE_CONTROL COLUMN str= STRING (c= COMMA str1= STRING )* TERMINAL ;
 	public final Header chacheControlRule() throws RecognitionException {
 		Header hd = null;
 
@@ -1905,15 +1896,15 @@ public class HttpParser extends Parser {
 		Token str1=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:226:2: (k= CACHE_CONTROL COLUMN str= STRING (c= COMMA str1= STRING )* TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:226:4: k= CACHE_CONTROL COLUMN str= STRING (c= COMMA str1= STRING )* TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:217:2: (k= CACHE_CONTROL COLUMN str= STRING (c= COMMA str1= STRING )* TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:217:4: k= CACHE_CONTROL COLUMN str= STRING (c= COMMA str1= STRING )* TERMINAL
 			{
 			 String value = ""; 
 			k=(Token)match(input,CACHE_CONTROL,FOLLOW_CACHE_CONTROL_in_chacheControlRule1220); 
 			match(input,COLUMN,FOLLOW_COLUMN_in_chacheControlRule1222); 
 			str=(Token)match(input,STRING,FOLLOW_STRING_in_chacheControlRule1228); 
 			 value = h.handleQuotes(str.getText()); 
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:229:3: (c= COMMA str1= STRING )*
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:220:3: (c= COMMA str1= STRING )*
 			loop24:
 			while (true) {
 				int alt24=2;
@@ -1924,7 +1915,7 @@ public class HttpParser extends Parser {
 
 				switch (alt24) {
 				case 1 :
-					// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:229:4: c= COMMA str1= STRING
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:220:4: c= COMMA str1= STRING
 					{
 					c=(Token)match(input,COMMA,FOLLOW_COMMA_in_chacheControlRule1237); 
 					str1=(Token)match(input,STRING,FOLLOW_STRING_in_chacheControlRule1241); 
@@ -1956,7 +1947,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "maxForwardsRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:233:1: maxForwardsRule returns [Header hd] : k= MAX_FORWARDS COLUMN value= INT_NUM TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:224:1: maxForwardsRule returns [Header hd] : k= MAX_FORWARDS COLUMN value= INT_NUM TERMINAL ;
 	public final Header maxForwardsRule() throws RecognitionException {
 		Header hd = null;
 
@@ -1965,8 +1956,8 @@ public class HttpParser extends Parser {
 		Token value=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:234:2: (k= MAX_FORWARDS COLUMN value= INT_NUM TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:234:4: k= MAX_FORWARDS COLUMN value= INT_NUM TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:225:2: (k= MAX_FORWARDS COLUMN value= INT_NUM TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:225:4: k= MAX_FORWARDS COLUMN value= INT_NUM TERMINAL
 			{
 			k=(Token)match(input,MAX_FORWARDS,FOLLOW_MAX_FORWARDS_in_maxForwardsRule1267); 
 			match(input,COLUMN,FOLLOW_COLUMN_in_maxForwardsRule1269); 
@@ -1990,7 +1981,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "genericHeaderRule"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:239:1: genericHeaderRule returns [Header hd] : k= STRING COLUMN value= STRING TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:230:1: genericHeaderRule returns [Header hd] : k= STRING COLUMN value= STRING TERMINAL ;
 	public final Header genericHeaderRule() throws RecognitionException {
 		Header hd = null;
 
@@ -1999,8 +1990,8 @@ public class HttpParser extends Parser {
 		Token value=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:240:2: (k= STRING COLUMN value= STRING TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:240:4: k= STRING COLUMN value= STRING TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:231:2: (k= STRING COLUMN value= STRING TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:231:4: k= STRING COLUMN value= STRING TERMINAL
 			{
 			k=(Token)match(input,STRING,FOLLOW_STRING_in_genericHeaderRule1299); 
 			match(input,COLUMN,FOLLOW_COLUMN_in_genericHeaderRule1301); 
@@ -2024,7 +2015,7 @@ public class HttpParser extends Parser {
 
 
 	// $ANTLR start "body"
-	// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:244:1: body returns [String s] : str= BODY_STRING TERMINAL ;
+	// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:235:1: body returns [String s] : str= BODY_STRING TERMINAL ;
 	public final String body() throws RecognitionException {
 		String s = null;
 
@@ -2032,8 +2023,8 @@ public class HttpParser extends Parser {
 		Token str=null;
 
 		try {
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:245:2: (str= BODY_STRING TERMINAL )
-			// C:\\Users\\Pelle\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:245:4: str= BODY_STRING TERMINAL
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:236:2: (str= BODY_STRING TERMINAL )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:236:4: str= BODY_STRING TERMINAL
 			{
 			str=(Token)match(input,BODY_STRING,FOLLOW_BODY_STRING_in_body1327); 
 			match(input,TERMINAL,FOLLOW_TERMINAL_in_body1331); 

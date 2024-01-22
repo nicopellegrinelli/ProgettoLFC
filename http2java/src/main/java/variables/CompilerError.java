@@ -1,4 +1,4 @@
-package utils;
+package variables;
 
 public class CompilerError implements Comparable<CompilerError> {
 	private String errorMsg;

@@ -1,4 +1,4 @@
-package utils;
+package variables;
 
 import org.antlr.runtime.Token;
 
