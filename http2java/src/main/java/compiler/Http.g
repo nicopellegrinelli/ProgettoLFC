@@ -318,7 +318,7 @@ LANGUAGE_ELEMENT
 	;
 	
 BODY_STRING
-    :	'°' (ESC_SEQ | ~('\\' | '°'))* '°'
+    :	'#' (ESC_SEQ | ~('\\' | '#'))* '#'
     ;
 
 STRING

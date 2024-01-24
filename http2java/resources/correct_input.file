@@ -20,4 +20,4 @@ Cache-Control: 'public', 'max-age=604800', 'immutable'	|
 Max-Forwards: 4 |
 'Transfer-Encoding': 'gzip, chunked'	|
 
-°{"a":"w'w"}°	|
+#{"a":"w'w"}#	|

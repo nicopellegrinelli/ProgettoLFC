@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g 2024-01-22 11:57:17
+// $ANTLR 3.5.1 C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g 2024-01-24 17:02:27
 
 	package compiler; 	
 
@@ -1269,11 +1269,11 @@ public class HttpLexer extends Lexer {
 		try {
 			int _type = BODY_STRING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:5: ( '°' ( ESC_SEQ |~ ( '\\\\' | '°' ) )* '°' )
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:7: '°' ( ESC_SEQ |~ ( '\\\\' | '°' ) )* '°'
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:5: ( '#' ( ESC_SEQ |~ ( '\\\\' | '#' ) )* '#' )
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:7: '#' ( ESC_SEQ |~ ( '\\\\' | '#' ) )* '#'
 			{
-			match('\u00B0'); 
-			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:11: ( ESC_SEQ |~ ( '\\\\' | '°' ) )*
+			match('#'); 
+			// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:11: ( ESC_SEQ |~ ( '\\\\' | '#' ) )*
 			loop16:
 			while (true) {
 				int alt16=3;
@@ -1281,7 +1281,7 @@ public class HttpLexer extends Lexer {
 				if ( (LA16_0=='\\') ) {
 					alt16=1;
 				}
-				else if ( ((LA16_0 >= '\u0000' && LA16_0 <= '[')||(LA16_0 >= ']' && LA16_0 <= '\u00AF')||(LA16_0 >= '\u00B1' && LA16_0 <= '\uFFFF')) ) {
+				else if ( ((LA16_0 >= '\u0000' && LA16_0 <= '\"')||(LA16_0 >= '$' && LA16_0 <= '[')||(LA16_0 >= ']' && LA16_0 <= '\uFFFF')) ) {
 					alt16=2;
 				}
 
@@ -1294,9 +1294,9 @@ public class HttpLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:22: ~ ( '\\\\' | '°' )
+					// C:\\Users\\lenovo\\Desktop\\ProgettiGit\\ProgettoLFC\\http2java\\src\\main\\java\\compiler\\Http.g:321:22: ~ ( '\\\\' | '#' )
 					{
-					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\u00AF')||(input.LA(1) >= '\u00B1' && input.LA(1) <= '\uFFFF') ) {
+					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\"')||(input.LA(1) >= '$' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
 					}
 					else {
@@ -1312,7 +1312,7 @@ public class HttpLexer extends Lexer {
 				}
 			}
 
-			match('\u00B0'); 
+			match('#'); 
 			}
 
 			state.type = _type;
@@ -3021,11 +3021,11 @@ public class HttpLexer extends Lexer {
 	static final String DFA38_specialS =
 		"\1\0\34\uffff\1\1\1\2\1\3\u00de\uffff}>";
 	static final String[] DFA38_transitionS = {
-			"\11\41\2\40\2\41\1\40\22\41\1\40\6\41\1\37\1\35\1\41\1\16\1\41\1\12\1"+
-			"\24\1\41\1\22\1\20\1\21\10\34\1\13\1\14\1\41\1\11\1\41\1\23\1\41\1\6"+
-			"\1\33\1\5\3\33\1\1\1\3\4\33\1\7\2\33\1\2\4\33\1\4\5\33\6\41\1\17\1\33"+
-			"\1\25\2\33\1\26\2\33\1\27\3\33\1\30\3\33\1\10\2\33\1\31\1\33\1\32\4\33"+
-			"\1\41\1\15\63\41\1\36\uff4f\41",
+			"\11\41\2\40\2\41\1\40\22\41\1\40\2\41\1\36\3\41\1\37\1\35\1\41\1\16\1"+
+			"\41\1\12\1\24\1\41\1\22\1\20\1\21\10\34\1\13\1\14\1\41\1\11\1\41\1\23"+
+			"\1\41\1\6\1\33\1\5\3\33\1\1\1\3\4\33\1\7\2\33\1\2\4\33\1\4\5\33\6\41"+
+			"\1\17\1\33\1\25\2\33\1\26\2\33\1\27\3\33\1\30\3\33\1\10\2\33\1\31\1\33"+
+			"\1\32\4\33\1\41\1\15\uff83\41",
 			"\1\46\1\uffff\1\45\12\44\7\uffff\4\43\1\42\25\43\6\uffff\32\43",
 			"\1\46\1\uffff\1\45\12\44\7\uffff\16\43\1\47\13\43\6\uffff\32\43",
 			"\1\46\1\uffff\1\45\12\44\7\uffff\23\43\1\51\6\43\6\uffff\16\43\1\50"+
@@ -3359,10 +3359,10 @@ public class HttpLexer extends Lexer {
 						else if ( (LA38_0=='B'||(LA38_0 >= 'D' && LA38_0 <= 'F')||(LA38_0 >= 'I' && LA38_0 <= 'L')||(LA38_0 >= 'N' && LA38_0 <= 'O')||(LA38_0 >= 'Q' && LA38_0 <= 'T')||(LA38_0 >= 'V' && LA38_0 <= 'Z')||LA38_0=='b'||(LA38_0 >= 'd' && LA38_0 <= 'e')||(LA38_0 >= 'g' && LA38_0 <= 'h')||(LA38_0 >= 'j' && LA38_0 <= 'l')||(LA38_0 >= 'n' && LA38_0 <= 'p')||(LA38_0 >= 'r' && LA38_0 <= 's')||LA38_0=='u'||(LA38_0 >= 'w' && LA38_0 <= 'z')) ) {s = 27;}
 						else if ( ((LA38_0 >= '2' && LA38_0 <= '9')) ) {s = 28;}
 						else if ( (LA38_0=='(') ) {s = 29;}
-						else if ( (LA38_0=='\u00B0') ) {s = 30;}
+						else if ( (LA38_0=='#') ) {s = 30;}
 						else if ( (LA38_0=='\'') ) {s = 31;}
 						else if ( ((LA38_0 >= '\t' && LA38_0 <= '\n')||LA38_0=='\r'||LA38_0==' ') ) {s = 32;}
-						else if ( ((LA38_0 >= '\u0000' && LA38_0 <= '\b')||(LA38_0 >= '\u000B' && LA38_0 <= '\f')||(LA38_0 >= '\u000E' && LA38_0 <= '\u001F')||(LA38_0 >= '!' && LA38_0 <= '&')||LA38_0==')'||LA38_0=='+'||LA38_0=='.'||LA38_0=='<'||LA38_0=='>'||LA38_0=='@'||(LA38_0 >= '[' && LA38_0 <= '`')||LA38_0=='{'||(LA38_0 >= '}' && LA38_0 <= '\u00AF')||(LA38_0 >= '\u00B1' && LA38_0 <= '\uFFFF')) ) {s = 33;}
+						else if ( ((LA38_0 >= '\u0000' && LA38_0 <= '\b')||(LA38_0 >= '\u000B' && LA38_0 <= '\f')||(LA38_0 >= '\u000E' && LA38_0 <= '\u001F')||(LA38_0 >= '!' && LA38_0 <= '\"')||(LA38_0 >= '$' && LA38_0 <= '&')||LA38_0==')'||LA38_0=='+'||LA38_0=='.'||LA38_0=='<'||LA38_0=='>'||LA38_0=='@'||(LA38_0 >= '[' && LA38_0 <= '`')||LA38_0=='{'||(LA38_0 >= '}' && LA38_0 <= '\uFFFF')) ) {s = 33;}
 						if ( s>=0 ) return s;
 						break;
 

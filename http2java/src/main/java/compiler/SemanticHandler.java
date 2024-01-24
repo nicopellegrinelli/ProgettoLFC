@@ -2,7 +2,6 @@ package compiler;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import org.antlr.runtime.Token;
@@ -118,7 +117,7 @@ public class SemanticHandler {
 	}
 	
 	public String handleBody(String text) {
-		return text.replaceAll("\"", "\\\\\"").replaceAll("°", "");
+		return text.replaceAll("\"", "\\\\\"").replaceAll("#", "");
 	}
 	
 	public void addBody(String b) {
