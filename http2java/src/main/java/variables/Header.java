@@ -6,9 +6,9 @@ public class Header {
 	private Token key;
 	private String value;
 
-	public Header(Token k, String v) {
-		key = k;
-		value = v;
+	public Header(Token key, String value) {
+		this.key = key;
+		this.value = value;
 	}
 
 	public Token getKey() {
