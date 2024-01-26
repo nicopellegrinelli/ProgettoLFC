@@ -5,10 +5,10 @@ public class RequestLine {
 	private String path;
 	private String version;
 
-	public RequestLine(String m, String p, String v) {
-		method = m;
-		path = p;
-		version = v;
+	public RequestLine(String method, String path, String version) {
+		this.method = method;
+		this.path = path;
+		this.version = version;
 	}
 	
 	public String getMethod() {

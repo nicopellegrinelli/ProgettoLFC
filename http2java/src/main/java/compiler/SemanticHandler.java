@@ -62,8 +62,8 @@ public class SemanticHandler {
 		return javaCode;
 	}
 	
-	public RequestLine createRequestLine(String m, String p, String v) {	
-		return new RequestLine(m, p, v);
+	public RequestLine createRequestLine(String method, String path, String version) {	
+		return new RequestLine(method, path, version);
 	}
 
 	public void addRequestLine(RequestLine rl) {
@@ -228,7 +228,7 @@ public class SemanticHandler {
 		String err = "  Warning: ";
 		switch (warningCode) {
 		case BODY_GET_WARN:
-			err += "GET requests should not have a body.";
+			err += "GET requests should not have a body, the current body will be ignored.";
 			break;
 		case NO_BODY_POST_WARN:
 			err += "POST requests should have a body.";
